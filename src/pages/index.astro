@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import PatternStrip from "../components/PatternStrip.astro";
 ---
 
 <BaseLayout title="Maud Hendrix">
@@ -33,8 +32,6 @@ import PatternStrip from "../components/PatternStrip.astro";
         </div>
       </div>
     </section>
-
-    <PatternStrip />
 
     <section class="entries wrap" aria-label="Kies een ingang">
       <a href="/professioneel" class="entry entry--pro">
@@ -73,7 +70,9 @@ import PatternStrip from "../components/PatternStrip.astro";
     </section>
 
     <footer class="home-footer">
-      <PatternStrip />
+      <div class="tick-row" aria-hidden="true">
+        {Array.from({ length: 22 }).map((_, i) => <span class={`tick tick-${i % 4}`} />)}
+      </div>
       <div class="wrap home-footer-line">
         <span class="mono small">© {new Date().getFullYear()} Maud Hendrix</span>
         <span class="mono small">Criminologie · Ondernemerschap</span>
@@ -95,6 +94,7 @@ import PatternStrip from "../components/PatternStrip.astro";
     position: relative;
     padding-block: clamp(48px, 8vw, 96px) clamp(56px, 9vw, 108px);
     overflow: hidden;
+    border-bottom: 3px solid var(--ink);
   }
 
   .hero-shapes {
@@ -354,6 +354,42 @@ import PatternStrip from "../components/PatternStrip.astro";
   }
 
   /* ---------- FOOTER STRIP ---------- */
+  .home-footer {
+    border-top: 3px solid var(--ink);
+  }
+  .tick-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    padding: 22px clamp(20px, 5vw, 56px) 0;
+    overflow: hidden;
+  }
+  .tick {
+    flex: 0 0 auto;
+  }
+  .tick-0 {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--navy);
+  }
+  .tick-1 {
+    width: 2px;
+    height: 18px;
+    background: var(--mustard);
+  }
+  .tick-2 {
+    width: 8px;
+    height: 8px;
+    background: var(--rust);
+  }
+  .tick-3 {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 10px solid var(--navy);
+  }
   .home-footer-line {
     display: flex;
     justify-content: space-between;

@@ -2,7 +2,6 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
-import PatternStrip from "../../components/PatternStrip.astro";
 import Timeline from "../../components/Timeline.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
 import { getCollection } from "astro:content";
@@ -53,8 +52,6 @@ const articles = (await getCollection("articles"))
         </div>
       </div>
     </section>
-
-    <PatternStrip />
 
     <!-- STUDIE -->
     <section class="row wrap">
@@ -256,6 +253,7 @@ const articles = (await getCollection("articles"))
 
   /* INTRO */
   .intro {
+    border-bottom: 3px solid var(--ink);
     padding-block: clamp(48px, 7vw, 88px);
     position: relative;
   }
@@ -270,16 +268,6 @@ const articles = (await getCollection("articles"))
     height: 90px;
     background: var(--mustard);
     z-index: 0;
-  }
-  .block-mark::before {
-    content: "";
-    position: absolute;
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    border: 3px solid var(--navy);
-    top: 60px;
-    left: -30px;
   }
   .intro-copy {
     position: relative;

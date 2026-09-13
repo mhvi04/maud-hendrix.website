@@ -1,6 +1,4 @@
 ---
-import PatternStrip from "./PatternStrip.astro";
-
 interface Props {
   world?: "pro" | "prive";
 }
@@ -8,7 +6,13 @@ const { world = "pro" } = Astro.props;
 ---
 
 <footer class="site-footer">
-  <PatternStrip />
+  <div class="tick-row" aria-hidden="true">
+    {
+      Array.from({ length: 18 }).map((_, i) => (
+        <span class={`tick tick-${i % 4}`} />
+      ))
+    }
+  </div>
   <div class="wrap bottom">
     <p class="mono small">
       © {new Date().getFullYear()} Maud Hendrix
@@ -20,7 +24,42 @@ const { world = "pro" } = Astro.props;
 
 <style>
   .site-footer {
+    border-top: 3px solid var(--ink);
     background: var(--paper);
+  }
+  .tick-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    padding: 22px clamp(20px, 5vw, 56px) 0;
+    overflow: hidden;
+  }
+  .tick {
+    flex: 0 0 auto;
+    display: block;
+  }
+  .tick-0 {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--navy);
+  }
+  .tick-1 {
+    width: 2px;
+    height: 20px;
+    background: var(--mustard);
+  }
+  .tick-2 {
+    width: 8px;
+    height: 8px;
+    background: var(--rust);
+  }
+  .tick-3 {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 11px solid var(--navy);
   }
   .bottom {
     display: flex;
