@@ -2,19 +2,25 @@
 interface Milestone {
   age: string;
   title: string;
-  body: string;
+  body: string | string[];
 }
 
 const milestones: Milestone[] = [
   {
     age: "14 jaar",
     title: "Eerste verkoop",
-    body: "Tupperware wordt de eerste keer dat ik geld verdien met verkopen. Het begin van een fascinatie voor vraag, aanbod en timing.",
+    body: [
+      "Tupperware wordt de eerste keer dat ik geld verdien met verkopen. Het begin van een fascinatie voor vraag, aanbod en timing.",
+      "Mijn allereerste verkoop was een plastic Tupperware potje. Ik was veertien. Ingekocht voor twee euro, doorverkocht voor vijf. Drie euro winst, en het gevoel dat ik iets begreep wat de meeste mensen om me heen niet zagen: dat de waarde van een ding niet vastzit in wat het is, maar in wie het zoekt en waar het aangeboden wordt. Dat klinkt achteraf veel strategischer dan het was.",
+    ],
   },
   {
     age: "Sneakers-jaren",
     title: "Restocks en het omslaan van een markt",
-    body: "Handel in sneakers, tot het faillissement van Restocks. Een harde les in hoe snel een markt — en het vertrouwen erin — kan kantelen.",
+    body: [
+      "Na ontelbare verkochte vintage Tupperware-potjes ging ik sneakers doen. Exclusieve Nikes, Jordans, en zo verder. Wekker om 8u50, meedoen aan online raffles om 9u, hopen dat je geselecteerd werd. Het paar inkopen voor 120 tot 220 euro en dan proberen het met een beetje winst door te verkopen. Op papier leek dat slim. In de praktijk waren de marges flinterdun en het risico veel groter dan ik toen besefte.",
+      "En toen ging Restocks failliet.",
+    ],
   },
   {
     age: "Afgerond",
@@ -45,7 +51,11 @@ const milestones: Milestone[] = [
             <span class="milestone-dot" aria-hidden="true" />
             <span class="milestone-year mono">{m.age}</span>
             <h3>{m.title}</h3>
-            <p>{m.body}</p>
+            {Array.isArray(m.body) ? (
+              m.body.map((para) => <p>{para}</p>)
+            ) : (
+              <p>{m.body}</p>
+            )}
           </div>
         ))
       }
@@ -137,6 +147,9 @@ const milestones: Milestone[] = [
     font-size: 15px;
     line-height: 1.6;
     color: var(--ink);
+  }
+  .milestone p + p {
+    margin-top: 10px;
   }
 
   @media (max-width: 640px) {
