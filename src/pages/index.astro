@@ -64,6 +64,19 @@ import Typewriter from "../components/Typewriter.astro";
       </a>
     </section>
 
+    <section class="blog-links wrap" aria-label="Blogs">
+      <a href="/professioneel/artikelen" class="blog-link blog-link--pro">
+        <span class="blog-link-dot" aria-hidden="true"></span>
+        Artikelen
+        <span aria-hidden="true">→</span>
+      </a>
+      <a href="/prive/blog" class="blog-link blog-link--prive">
+        <span class="blog-link-dot" aria-hidden="true"></span>
+        Blog
+        <span aria-hidden="true">→</span>
+      </a>
+    </section>
+
     <section class="home-contact wrap">
       <span class="label">Contact</span>
       <div class="home-contact-row">
@@ -121,6 +134,7 @@ import Typewriter from "../components/Typewriter.astro";
       <BauhausStrip />
       <div class="wrap home-footer-line">
         <span class="mono small">© {new Date().getFullYear()} Maud Hendrix</span>
+        <a href="/explore-my-brain" class="mono small footer-link">Explore my brain →</a>
         <span class="mono small">Criminologie · Ondernemerschap</span>
       </div>
     </footer>
@@ -380,6 +394,44 @@ import Typewriter from "../components/Typewriter.astro";
     }
   }
 
+  /* ---------- BLOG LINKS ---------- */
+  .blog-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding-bottom: clamp(28px, 5vw, 48px);
+  }
+  .blog-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    padding: 12px 18px;
+    border: 2px solid var(--ink);
+    background: var(--paper);
+    color: var(--ink);
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .blog-link:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+  .blog-link-dot {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+  }
+  .blog-link--pro .blog-link-dot {
+    background: var(--mustard);
+  }
+  .blog-link--prive .blog-link-dot {
+    background: var(--navy);
+  }
+
   /* ---------- CONTACT ---------- */
   .home-contact {
     display: flex;
@@ -462,5 +514,12 @@ import Typewriter from "../components/Typewriter.astro";
     font-size: 12px;
     color: var(--navy);
     opacity: 0.75;
+  }
+  .footer-link {
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+  }
+  .footer-link:hover {
+    opacity: 1;
   }
 </style>
