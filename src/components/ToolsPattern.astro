@@ -1,0 +1,160 @@
+---
+interface Tool {
+  name: string;
+  shape: "square" | "ring" | "arc" | "dome" | "triangle" | "node";
+  accent: "navy" | "mustard";
+}
+
+const tools: Tool[] = [
+  { name: "Word", shape: "square", accent: "navy" },
+  { name: "Excel", shape: "ring", accent: "navy" },
+  { name: "PowerPoint", shape: "arc", accent: "mustard" },
+  { name: "Canva", shape: "dome", accent: "mustard" },
+  { name: "CapCut", shape: "triangle", accent: "navy" },
+  { name: "AI-tools", shape: "node", accent: "mustard" },
+];
+---
+
+<div class="tools-grid">
+  {
+    tools.map((t) => (
+      <div class="tool-tile">
+        <span
+          class={`tool-shape tool-shape--${t.shape} accent-${t.accent}`}
+          aria-hidden="true"
+        />
+        <span class="tool-name mono">{t.name}</span>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .tool-tile {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 3px solid var(--ink);
+    background: var(--paper);
+    padding: 10px;
+    min-width: 0;
+  }
+
+  .tool-shape {
+    position: relative;
+    display: block;
+    width: 40%;
+    aspect-ratio: 1;
+  }
+
+  .tool-shape--square.accent-navy {
+    background: var(--navy);
+  }
+  .tool-shape--square.accent-mustard {
+    background: var(--mustard);
+  }
+
+  .tool-shape--ring {
+    border-radius: 50%;
+    background: transparent;
+    border-style: solid;
+    border-width: 15%;
+  }
+  .tool-shape--ring.accent-navy {
+    border-color: var(--navy);
+  }
+  .tool-shape--ring.accent-mustard {
+    border-color: var(--mustard);
+  }
+
+  .tool-shape--dome {
+    height: 50%;
+    align-self: flex-end;
+    border-radius: 999px 999px 0 0;
+  }
+  .tool-shape--dome.accent-navy {
+    background: var(--navy);
+  }
+  .tool-shape--dome.accent-mustard {
+    background: var(--mustard);
+  }
+
+  .tool-shape--arc {
+    border-radius: 100% 0 0 0;
+  }
+  .tool-shape--arc.accent-navy {
+    background: var(--navy);
+  }
+  .tool-shape--arc.accent-mustard {
+    background: var(--mustard);
+  }
+
+  .tool-shape--triangle {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+  .tool-shape--triangle.accent-navy {
+    background: var(--navy);
+  }
+  .tool-shape--triangle.accent-mustard {
+    background: var(--mustard);
+  }
+
+  .tool-shape--node {
+    border-radius: 50%;
+  }
+  .tool-shape--node.accent-navy {
+    background: var(--navy);
+  }
+  .tool-shape--node.accent-mustard {
+    background: var(--mustard);
+  }
+  .tool-shape--node::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 34%;
+    height: 34%;
+    border-radius: 50%;
+    background: var(--ink);
+    transform: translate(-50%, -50%);
+  }
+
+  .tool-name {
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+
+  @media (max-width: 900px) {
+    .tools-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .tools-grid {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      padding-bottom: 10px;
+      scroll-snap-type: x proximity;
+    }
+    .tool-tile {
+      flex: 0 0 108px;
+      scroll-snap-align: start;
+    }
+  }
+</style>

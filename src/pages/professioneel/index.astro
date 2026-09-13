@@ -4,6 +4,7 @@ import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import Timeline from "../../components/Timeline.astro";
 import SkillsMarquee from "../../components/SkillsMarquee.astro";
+import ToolsPattern from "../../components/ToolsPattern.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
 import { getCollection } from "astro:content";
 
@@ -73,6 +74,34 @@ const articles = (await getCollection("articles"))
         <span class="row-label label">Vaardigheden</span>
       </div>
       <SkillsMarquee />
+    </section>
+
+    <!-- TALEN & TOOLS -->
+    <section class="row wrap">
+      <span class="row-label label">Talen & Tools</span>
+      <div class="row-body langs-tools">
+        <div class="langs">
+          <span class="subhead label">Talen</span>
+          <ul class="lang-list">
+            <li class="lang-row">
+              <span class="lang-name">Nederlands</span>
+              <span class="lang-level mono">C2 · moedertaal</span>
+            </li>
+            <li class="lang-row">
+              <span class="lang-name">Engels</span>
+              <span class="lang-level mono">B2</span>
+            </li>
+            <li class="lang-row">
+              <span class="lang-name">Frans</span>
+              <span class="lang-level mono">A2</span>
+            </li>
+          </ul>
+        </div>
+        <div class="tools">
+          <span class="subhead label">Software &amp; tools</span>
+          <ToolsPattern />
+        </div>
+      </div>
     </section>
 
     <!-- ERVARING -->
@@ -315,6 +344,52 @@ const articles = (await getCollection("articles"))
   }
   .skills-head {
     padding-bottom: 20px;
+  }
+
+  /* LANGUAGES & TOOLS */
+  .langs-tools {
+    display: grid;
+    grid-template-columns: minmax(200px, 300px) 1fr;
+    gap: 44px;
+  }
+  .langs,
+  .tools {
+    min-width: 0;
+  }
+  .subhead {
+    display: flex;
+    margin-bottom: 18px;
+  }
+
+  .lang-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 2px solid var(--ink);
+  }
+  .lang-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 14px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .lang-name {
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .lang-level {
+    font-size: 13px;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 780px) {
+    .langs-tools {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
   }
 
   /* EXPERIENCE */
