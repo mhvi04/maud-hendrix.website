@@ -2,6 +2,8 @@
 interface Props {
   end: number;
   suffix?: string;
+  decimals?: number;
+  title?: string;
   label: string;
   duration?: number;
   href?: string;
@@ -11,6 +13,8 @@ interface Props {
 const {
   end,
   suffix = "",
+  decimals = 0,
+  title,
   label,
   duration = 1800,
   href,
@@ -19,6 +23,7 @@ const {
 
 const Tag = href ? "a" : "div";
 const linkAttrs = href ? { href, target: "_blank", rel: "noopener" } : {};
+const zero = (0).toFixed(decimals);
 ---
 
 <Tag
@@ -26,11 +31,13 @@ const linkAttrs = href ? { href, target: "_blank", rel: "noopener" } : {};
   data-countup
   data-end={end}
   data-suffix={suffix}
+  data-decimals={decimals}
   data-duration={duration}
   {...linkAttrs}
 >
   <span class="countup-shape" aria-hidden="true"></span>
-  <span class="countup-number mono" data-countup-value>0{suffix}</span>
+  {title && <span class="countup-title">{title}</span>}
+  <span class="countup-number mono" data-countup-value>{zero}{suffix}</span>
   <span class="countup-label">{label}</span>
 </Tag>
 
@@ -42,6 +49,7 @@ const linkAttrs = href ? { href, target: "_blank", rel: "noopener" } : {};
   function animate(el: HTMLElement) {
     const end = parseFloat(el.dataset.end || "0");
     const suffix = el.dataset.suffix || "";
+    const decimals = parseInt(el.dataset.decimals || "0", 10);
     const duration = parseFloat(el.dataset.duration || "1800");
     const valueEl = el.querySelector<HTMLElement>("[data-countup-value]");
     if (!valueEl) return;
@@ -50,7 +58,7 @@ const linkAttrs = href ? { href, target: "_blank", rel: "noopener" } : {};
       "(prefers-reduced-motion: reduce)"
     ).matches;
     if (prefersReducedMotion) {
-      valueEl.textContent = `${end}${suffix}`;
+      valueEl.textContent = `${end.toFixed(decimals)}${suffix}`;
       return;
     }
 
@@ -60,7 +68,7 @@ const linkAttrs = href ? { href, target: "_blank", rel: "noopener" } : {};
       const elapsed = now - start;
       const t = Math.min(elapsed / duration, 1);
       const eased = easeOutCubic(t);
-      const current = Math.round(end * eased);
+      const current = (end * eased).toFixed(decimals);
       valueEl!.textContent = `${current}${suffix}`;
       if (t < 1) requestAnimationFrame(frame);
     }
@@ -129,6 +137,15 @@ const linkAttrs = href ? { href, target: "_blank", rel: "noopener" } : {};
   .countup--navy .countup-shape {
     background: var(--navy);
     transform: rotate(8deg);
+  }
+
+  .countup-title {
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--navy);
   }
 
   .countup-number {
