@@ -5,7 +5,7 @@ const rows: string[][] = [
   ["Duurzaamheid", "Klantentevredenheid", "Marketing op social media", "Ondernemerschap"],
 ];
 
-const variants = ["mustard", "navy", "paper"];
+const variants = ["mustard", "navy", "rust", "olive", "paper"];
 ---
 
 <div class="skills-marquee">
@@ -81,8 +81,9 @@ const variants = ["mustard", "navy", "paper"];
     font-weight: 500;
     letter-spacing: 0.03em;
     white-space: nowrap;
-    padding: 10px 18px;
+    padding: 10px 20px;
     border: 2px solid var(--ink);
+    border-radius: 9999px;
   }
   .skill-mustard {
     background: var(--mustard);
@@ -90,6 +91,14 @@ const variants = ["mustard", "navy", "paper"];
   }
   .skill-navy {
     background: var(--navy);
+    color: var(--paper);
+  }
+  .skill-rust {
+    background: var(--rust);
+    color: var(--paper);
+  }
+  .skill-olive {
+    background: var(--olive);
     color: var(--paper);
   }
   .skill-paper {
