@@ -152,6 +152,22 @@ const articles = (await getCollection("articles"))
       </div>
     </section>
 
+    <!-- VINTED LEGACY -->
+    <div class="wrap vinted-legacy">
+      <p>
+        Mijn reputatie bouwde ik op via
+        <a
+          href="https://www.vinted.be/member/38856549-maudhendrix"
+          target="_blank"
+          rel="noopener">@maud.hendrix</a
+        >
+        op Vinted: <span class="mono">1881</span> verkopen,
+        <span class="mono">5</span> sterren, <span class="mono">3233</span>
+        volgers — tot het account geblokkeerd werd wegens te veel verkocht.
+        Studio Maud is het vervolg.
+      </p>
+    </div>
+
     <!-- ONDERNEMING -->
     <section class="row wrap">
       <span class="row-label label">Onderneming</span>
@@ -450,6 +466,27 @@ const articles = (await getCollection("articles"))
   }
   .exp--closed li::before {
     background: var(--rust);
+  }
+
+  /* VINTED LEGACY */
+  .vinted-legacy {
+    padding-block: clamp(20px, 3vw, 28px);
+    border-bottom: 2px solid var(--ink);
+  }
+  .vinted-legacy p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink);
+    max-width: 72ch;
+  }
+  .vinted-legacy a {
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--navy);
+  }
+  .vinted-legacy a:hover {
+    color: var(--rust);
+    border-color: var(--rust);
   }
 
   /* PROJECTS */
