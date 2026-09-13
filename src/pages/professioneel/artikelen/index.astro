@@ -24,7 +24,7 @@ const articles = (await getCollection("articles")).filter(
       {
         articles.map((a) => (
           <ArticleCard
-            href={`/professioneel/artikelen/${a.slug}`}
+            href={`/professioneel/artikelen/${a.id}`}
             tag={a.data.tag}
             title={a.data.title}
             excerpt={a.data.excerpt}

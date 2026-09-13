@@ -124,7 +124,7 @@ const interests = [
           ) : (
             <div class="article-grid">
               {articles.map((a) => (
-                <a class="card" href={`/prive/blog/${a.slug}`}>
+                <a class="card" href={`/prive/blog/${a.id}`}>
                   <span class="mono card-tag">{a.data.tag}</span>
                   <h3>{a.data.title}</h3>
                   <p>{a.data.excerpt}</p>
