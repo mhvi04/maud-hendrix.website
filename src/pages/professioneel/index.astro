@@ -6,6 +6,8 @@ import Timeline from "../../components/Timeline.astro";
 import SkillsMarquee from "../../components/SkillsMarquee.astro";
 import ToolsPattern from "../../components/ToolsPattern.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
+import { Image } from "astro:assets";
+import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
 import { getCollection } from "astro:content";
 
 const articles = (await getCollection("articles"))
@@ -155,7 +157,7 @@ const articles = (await getCollection("articles"))
     <!-- VOORGESCHIEDENIS -->
     <section class="row wrap">
       <span class="row-label label">Voorgeschiedenis</span>
-      <div class="row-body">
+      <div class="row-body voorgeschiedenis-body">
         <p>
           Mijn reputatie bouwde ik op via
           <a
@@ -169,6 +171,15 @@ const articles = (await getCollection("articles"))
           volgers, tot het account geblokkeerd werd. Studio Maud is het
           vervolg.
         </p>
+        <div class="voorgeschiedenis-proof">
+          <Image
+            src={vintedProfielOud}
+            alt="Screenshot van het geblokkeerde Vinted-profiel @maud.hendrix: 5 sterren, 1881 verkopen, Gent, 3233 volgers"
+            loading="lazy"
+            widths={[380, 600, 900]}
+            sizes="(max-width: 680px) 90vw, 340px"
+          />
+        </div>
       </div>
     </section>
 
@@ -480,6 +491,28 @@ const articles = (await getCollection("articles"))
   .inline-link:hover {
     color: var(--rust);
     border-color: var(--rust);
+  }
+
+  .voorgeschiedenis-body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 28px;
+  }
+  .voorgeschiedenis-body p {
+    flex: 1 1 320px;
+  }
+  .voorgeschiedenis-proof {
+    flex: 0 1 340px;
+    border: 3px solid var(--ink);
+    background: var(--paper);
+    padding: 10px;
+    min-width: 0;
+  }
+  .voorgeschiedenis-proof :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
   /* PROJECTS */
