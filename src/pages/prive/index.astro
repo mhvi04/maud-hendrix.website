@@ -39,8 +39,13 @@ const interests = [
   <main class="prive">
     <section class="intro">
       <div class="wrap intro-grid">
+        <span class="intro-shape" aria-hidden="true"></span>
         <div class="intro-copy">
           <h1>Privé</h1>
+          <p class="intro-lede">
+            Een verzameling van interesses, kleine ontdekkingen en dingen
+            waar ik graag tijd voor maak.
+          </p>
         </div>
       </div>
     </section>
@@ -154,6 +159,22 @@ const interests = [
     font-size: clamp(40px, 6vw, 68px);
     font-weight: 600;
     line-height: 1.05;
+  }
+  .intro-lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink);
+    margin-top: 14px;
+  }
+  .intro-shape {
+    position: absolute;
+    top: -12px;
+    right: 8%;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: var(--mustard);
+    z-index: 0;
   }
 
   .row {
