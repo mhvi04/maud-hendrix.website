@@ -1,0 +1,38 @@
+---
+// PersonSchema.astro
+// Voeg dit component toe in je layout (bv. BaseLayout.astro) binnen de <head>
+// Gebruik: <PersonSchema /> ergens in de <head> van je hoofdlayout
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Maud Hendrix",
+  "url": "https://maud-hendrix.com",
+  "jobTitle": "Student-ondernemer",
+  "description": "Laatstejaarsstudent Criminologische Wetenschappen aan de Universiteit Gent en student-zelfstandige in tweedehands e-commerce.",
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Universiteit Gent"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gent",
+    "addressCountry": "BE"
+  },
+  "knowsAbout": [
+    "Criminologie",
+    "E-commerce",
+    "Reselling",
+    "Data-analyse",
+    "Ondernemerschap"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/maud-hendrix-522245374",
+    "https://www.instagram.com/hendrix.maud",
+    "https://www.tiktok.com/@hendrix.maud",
+    "https://vinted.be/member/306398525-studiomaud"
+  ]
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)} is:inline />

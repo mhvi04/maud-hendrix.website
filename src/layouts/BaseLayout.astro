@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import PersonSchema from "../components/PersonSchema.astro";
 
 interface Props {
   title: string;
@@ -62,6 +63,7 @@ const jsonLd =
     {jsonLd && (
       <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
     )}
+    <PersonSchema />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
