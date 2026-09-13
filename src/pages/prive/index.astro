@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
+import PatternStrip from "../../components/PatternStrip.astro";
 import { getCollection } from "astro:content";
 
 const articles = (await getCollection("articles")).filter(
@@ -52,6 +53,8 @@ const interests = [
         </div>
       </div>
     </section>
+
+    <PatternStrip />
 
     <section class="row wrap">
       <span class="row-label label">Sociale kanalen</span>
@@ -120,7 +123,6 @@ const interests = [
   }
 
   .intro {
-    border-bottom: 3px solid var(--ink);
     padding-block: clamp(48px, 7vw, 88px);
     position: relative;
   }
@@ -137,6 +139,16 @@ const interests = [
     border-right: 46px solid transparent;
     border-bottom: 80px solid var(--rust);
     z-index: 0;
+  }
+  .block-mark::before {
+    content: "";
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    background: var(--mustard);
+    top: 24px;
+    left: -68px;
+    transform: rotate(10deg);
   }
   .intro-copy {
     position: relative;

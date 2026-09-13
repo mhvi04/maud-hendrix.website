@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PatternStrip from "../components/PatternStrip.astro";
 ---
 
 <BaseLayout title="Maud Hendrix">
@@ -33,6 +34,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
     </section>
 
+    <PatternStrip />
+
     <section class="entries wrap" aria-label="Kies een ingang">
       <a href="/professioneel" class="entry entry--pro">
         <div class="entry-body">
@@ -61,10 +64,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </a>
     </section>
 
-    <footer class="home-footer">
-      <div class="tick-row" aria-hidden="true">
-        {Array.from({ length: 22 }).map((_, i) => <span class={`tick tick-${i % 4}`} />)}
+    <section class="home-contact wrap">
+      <span class="label">Contact</span>
+      <div class="home-contact-row">
+        <a class="btn btn--solid" href="mailto:StudioMaud@outlook.com">Stuur een mail</a>
+        <span class="mono contact-email">StudioMaud@outlook.com</span>
       </div>
+    </section>
+
+    <footer class="home-footer">
+      <PatternStrip />
       <div class="wrap home-footer-line">
         <span class="mono small">© {new Date().getFullYear()} Maud Hendrix</span>
         <span class="mono small">Criminologie · Ondernemerschap</span>
@@ -86,7 +95,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     position: relative;
     padding-block: clamp(48px, 8vw, 96px) clamp(56px, 9vw, 108px);
     overflow: hidden;
-    border-bottom: 3px solid var(--ink);
   }
 
   .hero-shapes {
@@ -326,43 +334,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
   }
 
-  /* ---------- FOOTER STRIP ---------- */
-  .home-footer {
-    border-top: 3px solid var(--ink);
-  }
-  .tick-row {
+  /* ---------- CONTACT ---------- */
+  .home-contact {
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
     gap: 14px;
-    padding: 22px clamp(20px, 5vw, 56px) 0;
-    overflow: hidden;
+    padding-block: 4px clamp(32px, 5vw, 48px);
   }
-  .tick {
-    flex: 0 0 auto;
+  .home-contact-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
   }
-  .tick-0 {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--navy);
+  .contact-email {
+    font-size: 13px;
+    color: var(--navy);
+    opacity: 0.85;
   }
-  .tick-1 {
-    width: 2px;
-    height: 18px;
-    background: var(--mustard);
-  }
-  .tick-2 {
-    width: 8px;
-    height: 8px;
-    background: var(--rust);
-  }
-  .tick-3 {
-    width: 0;
-    height: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 10px solid var(--navy);
-  }
+
+  /* ---------- FOOTER STRIP ---------- */
   .home-footer-line {
     display: flex;
     justify-content: space-between;
