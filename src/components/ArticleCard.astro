@@ -1,0 +1,60 @@
+---
+interface Props {
+  href: string;
+  tag: string;
+  title: string;
+  excerpt: string;
+  date: string;
+}
+const { href, tag, title, excerpt, date } = Astro.props;
+---
+
+<a href={href} class="card">
+  <span class="card-tag mono">{tag}</span>
+  <h3>{title}</h3>
+  <p>{excerpt}</p>
+  <span class="card-date mono">{date}</span>
+</a>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 3px solid var(--ink);
+    background: var(--paper);
+    padding: 26px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+  .card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 var(--ink);
+    background: var(--cream);
+  }
+  .card-tag {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mustard-deep);
+  }
+  .card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  .card p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink);
+    opacity: 0.85;
+  }
+  .card-date {
+    margin-top: auto;
+    font-size: 12px;
+    color: var(--navy);
+    opacity: 0.7;
+    padding-top: 8px;
+  }
+</style>

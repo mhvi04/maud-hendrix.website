@@ -1,0 +1,269 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import { getCollection } from "astro:content";
+
+const articles = (await getCollection("articles")).filter(
+  (a) => a.data.world === "prive"
+);
+
+const socials = [
+  {
+    name: "Instagram",
+    handle: "@hendrix.maud",
+    href: "https://www.instagram.com/hendrix.maud",
+  },
+  {
+    name: "TikTok",
+    handle: "@hendrix.maud",
+    href: "https://www.tiktok.com/@hendrix.maud",
+  },
+  {
+    name: "Pinterest",
+    handle: "Moodboards & inspiratie",
+    href: "https://pin.it/5QS0AwBzB",
+  },
+];
+
+const interests = [
+  { title: "Kattenmoeder", desc: "Vaste versterking thuis, en de reden dat ik in het Dierenasiel Gent vrijwillig katten socialiseer." },
+  { title: "Muurklimmen", desc: "Probleemoplossen in real time — één beweging tegelijk." },
+];
+---
+
+<BaseLayout
+  title="Privé — Maud Hendrix"
+  description="Interesses, sociale kanalen en blog van Maud Hendrix."
+>
+  <SiteHeader world="prive" />
+
+  <main class="prive">
+    <section class="intro">
+      <div class="wrap intro-grid">
+        <span class="block-mark" aria-hidden="true"></span>
+        <div class="intro-copy">
+          <span class="label">Even iets anders</span>
+          <h1>Privé</h1>
+          <p class="lede">
+            Dit is de kant van mij die niet in een cv past: katten, klimzalen
+            en de dingen waar ik in mijn vrije tijd mee bezig ben.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="row wrap">
+      <span class="row-label label">Sociale kanalen</span>
+      <div class="row-body socials">
+        {
+          socials.map((s) => (
+            <a class="social" href={s.href} target="_blank" rel="noopener">
+              <span class="social-dot" aria-hidden="true" />
+              <h3>{s.name}</h3>
+              <p class="mono">{s.handle}</p>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="row wrap">
+      <span class="row-label label">Interesses</span>
+      <div class="row-body interests">
+        {
+          interests.map((i) => (
+            <div class="interest">
+              <h3>{i.title}</h3>
+              <p>{i.desc}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="row wrap row--last">
+      <span class="row-label label">Blog</span>
+      <div class="row-body">
+        {
+          articles.length === 0 ? (
+            <div class="empty-state">
+              <span class="mono">Binnenkort</span>
+              <p>Hier komen binnenkort blogposts te staan.</p>
+            </div>
+          ) : (
+            <div class="article-grid">
+              {articles.map((a) => (
+                <a class="card" href={`/prive/blog/${a.slug}`}>
+                  <span class="mono card-tag">{a.data.tag}</span>
+                  <h3>{a.data.title}</h3>
+                  <p>{a.data.excerpt}</p>
+                </a>
+              ))}
+            </div>
+          )
+        }
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter world="prive" />
+</BaseLayout>
+
+<style>
+  .prive {
+    background: var(--cream);
+  }
+
+  .intro {
+    border-bottom: 3px solid var(--ink);
+    padding-block: clamp(48px, 7vw, 88px);
+    position: relative;
+  }
+  .intro-grid {
+    position: relative;
+  }
+  .block-mark {
+    position: absolute;
+    top: -12px;
+    right: 8%;
+    width: 0;
+    height: 0;
+    border-left: 46px solid transparent;
+    border-right: 46px solid transparent;
+    border-bottom: 80px solid var(--rust);
+    z-index: 0;
+  }
+  .intro-copy {
+    position: relative;
+    z-index: 1;
+    max-width: 62ch;
+  }
+  .intro-copy h1 {
+    font-size: clamp(40px, 6vw, 68px);
+    font-weight: 600;
+    margin-block: 16px 20px;
+    line-height: 1.05;
+  }
+  .lede {
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 28px;
+    padding-block: clamp(36px, 5vw, 56px);
+    border-bottom: 2px solid var(--ink);
+  }
+  .row--last {
+    border-bottom: 3px solid var(--ink);
+  }
+  .row-label {
+    padding-top: 4px;
+  }
+  @media (max-width: 680px) {
+    .row {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+  }
+
+  .socials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .social {
+    border: 3px solid var(--ink);
+    background: var(--paper);
+    padding: 24px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+  .social:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 var(--ink);
+    background: var(--cream);
+  }
+  .social-dot {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: var(--rust);
+    margin-bottom: 18px;
+  }
+  .social h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .social p {
+    font-size: 13px;
+    color: var(--navy);
+    opacity: 0.85;
+  }
+
+  .interests {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  .interest {
+    border: 3px solid var(--ink);
+    padding: 24px;
+    background: var(--paper);
+  }
+  .interest h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .interest p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .empty-state {
+    border: 2px dashed var(--ink);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 46ch;
+  }
+  .empty-state .mono {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--rust);
+  }
+  .empty-state p {
+    font-size: 15px;
+    color: var(--navy);
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 3px solid var(--ink);
+    background: var(--paper);
+    padding: 26px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .card-tag {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--rust);
+  }
+</style>

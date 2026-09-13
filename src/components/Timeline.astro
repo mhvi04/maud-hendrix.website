@@ -1,0 +1,184 @@
+---
+interface Milestone {
+  phase: string;
+  age?: string;
+  title: string;
+  body: string;
+}
+
+const milestones: Milestone[] = [
+  {
+    phase: "Fase 01",
+    age: "14 jaar",
+    title: "Eerste verkoop",
+    body: "Tupperware wordt de eerste keer dat ik geld verdien met verkopen. Het begin van een fascinatie voor vraag, aanbod en timing.",
+  },
+  {
+    phase: "Fase 02",
+    age: "Sneakers-jaren",
+    title: "Restocks en het omslaan van een markt",
+    body: "Handel in sneakers, tot het faillissement van Restocks. Een harde les in hoe snel een markt — en het vertrouwen erin — kan kantelen.",
+  },
+  {
+    phase: "Fase 03",
+    age: "Afgerond",
+    title: "VintieBulk",
+    body: "B2B-groothandel in gecureerde Ralph Lauren-partijen, door mij opgezet en opgebouwd. Het bedrijf bestaat intussen onder een andere naam verder, zonder mij.",
+  },
+  {
+    phase: "Fase 04",
+    age: "Actief",
+    title: "Studio Maud",
+    body: "Data-gedreven reselling op Vinted: van sourcing tot logistiek, gebouwd op inmiddels meer dan 2.500 transacties.",
+  },
+  {
+    phase: "Fase 05",
+    age: "Vandaag",
+    title: "Criminologie & ondernemerschap",
+    body: "Laatstejaars Criminologische Wetenschappen aan de UGent, naast het runnen van Studio Maud. Twee werelden, één blik op patronen en systemen.",
+  },
+];
+---
+
+<div class="timeline" data-timeline>
+  <div class="timeline-tabs" role="tablist">
+    {
+      milestones.map((m, i) => (
+        <button
+          type="button"
+          class="tab mono"
+          data-index={i}
+          aria-selected={i === 0 ? "true" : "false"}
+        >
+          <span class="tab-dot" />
+          <span class="tab-phase">{m.phase}</span>
+          <span class="tab-age">{m.age}</span>
+        </button>
+      ))
+    }
+  </div>
+
+  <div class="timeline-panels">
+    {
+      milestones.map((m, i) => (
+        <article class="panel" data-panel={i} hidden={i !== 0}>
+          <span class="panel-index mono">{m.phase}</span>
+          <h3>{m.title}</h3>
+          <p>{m.body}</p>
+        </article>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-timeline]").forEach((root) => {
+    const tabs = root.querySelectorAll<HTMLButtonElement>(".tab");
+    const panels = root.querySelectorAll<HTMLElement>(".panel");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const idx = tab.dataset.index;
+        tabs.forEach((t) => t.setAttribute("aria-selected", t === tab ? "true" : "false"));
+        panels.forEach((p) => {
+          p.hidden = p.dataset.panel !== idx;
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  .timeline {
+    border: 3px solid var(--ink);
+    background: var(--paper);
+  }
+
+  .timeline-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 3px solid var(--ink);
+  }
+
+  .tab {
+    flex: 1 1 160px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    border: none;
+    border-right: 2px solid var(--ink);
+    padding: 16px 14px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--navy);
+    text-align: left;
+    transition: background 0.15s ease;
+  }
+  .tab:last-child {
+    border-right: none;
+  }
+  .tab:hover {
+    background: rgba(37, 56, 99, 0.08);
+  }
+  .tab[aria-selected="true"] {
+    background: var(--navy);
+    color: var(--cream);
+  }
+  .tab[aria-selected="true"] .tab-age {
+    color: var(--mustard);
+  }
+  .tab[aria-selected="true"] .tab-dot {
+    background: var(--mustard);
+  }
+
+  .tab-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--mustard-deep);
+    flex-shrink: 0;
+  }
+  .tab-phase {
+    font-weight: 600;
+  }
+  .tab-age {
+    opacity: 0.8;
+    margin-left: auto;
+  }
+
+  .timeline-panels {
+    padding: clamp(24px, 4vw, 40px);
+    min-height: 180px;
+  }
+  .panel-index {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--mustard-deep);
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+  .panel h3 {
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .panel p {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink);
+    max-width: 62ch;
+  }
+
+  @media (max-width: 640px) {
+    .tab {
+      flex: 1 1 100%;
+      border-right: none;
+      border-bottom: 2px solid var(--ink);
+    }
+    .tab:last-child {
+      border-bottom: none;
+    }
+  }
+</style>

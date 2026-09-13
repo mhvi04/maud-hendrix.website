@@ -1,0 +1,195 @@
+/* ---------------------------------------------------------
+   Design tokens
+   Crème + gedempt marineblauw + mosterdgeel/oranje.
+   De Stijl: platte kleurvlakken, geometrische vormen, asymmetrie.
+--------------------------------------------------------- */
+:root {
+  --cream: #f2ecdc;
+  --paper: #faf6ea;
+  --ink: #1a160f;
+  --navy: #253863;
+  --navy-deep: #1a2749;
+  --mustard: #dc9327;
+  --mustard-deep: #b8721c;
+  --rust: #c1502e;
+  --line: rgba(26, 22, 15, 0.86);
+
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+
+  --edge: 6px;
+  --container: 1240px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--cream);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  margin: 0;
+  color: var(--navy);
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.wrap {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-inline: clamp(20px, 5vw, 56px);
+}
+
+/* Kapitaal-label systeem */
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.label::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  background: var(--mustard);
+}
+
+.label--on-dark {
+  color: var(--mustard);
+}
+.label--on-dark::before {
+  background: var(--cream);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.eyebrow-index {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--mustard-deep);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 15px 26px;
+  border: 2px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+  background: var(--ink);
+  color: var(--paper);
+  transform: translate(-2px, -2px);
+}
+
+.btn--solid {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--paper);
+}
+.btn--solid:hover {
+  background: var(--navy-deep);
+  border-color: var(--navy-deep);
+  color: var(--paper);
+}
+
+.btn--mustard {
+  background: var(--mustard);
+  border-color: var(--mustard);
+  color: var(--ink);
+}
+.btn--mustard:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--mustard);
+}
+
+.btn--rust {
+  background: var(--rust);
+  border-color: var(--rust);
+  color: var(--paper);
+}
+.btn--rust:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--rust);
+}
+
+/* Shared geometric primitives, used for De Stijl accents */
+.shape {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+}
+.shape-circle {
+  border-radius: 50%;
+}
+.shape-ring {
+  border-radius: 50%;
+  background: transparent !important;
+}
+.shape-triangle {
+  width: 0;
+  height: 0;
+  background: transparent !important;
+}
+
+::selection {
+  background: var(--mustard);
+  color: var(--ink);
+}
+
+@media (max-width: 640px) {
+  .btn:hover {
+    transform: none;
+  }
+}

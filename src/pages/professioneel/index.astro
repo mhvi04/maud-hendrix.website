@@ -1,0 +1,374 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import Timeline from "../../components/Timeline.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+import { getCollection } from "astro:content";
+
+const articles = (await getCollection("articles"))
+  .filter((a) => a.data.world === "pro")
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<BaseLayout
+  title="Professioneel — Maud Hendrix"
+  description="Criminologie, ondernemerschap, projecten en artikelen van Maud Hendrix."
+>
+  <SiteHeader world="pro" />
+
+  <main class="pro">
+    <!-- INTRO -->
+    <section class="intro">
+      <div class="wrap intro-grid">
+        <span class="block-mark" aria-hidden="true"></span>
+        <div class="intro-copy">
+          <span class="label">Profiel</span>
+          <h1>Ik ben Maud Hendrix</h1>
+          <p class="lede">
+            Laatstejaarsstudent Criminologische Wetenschappen aan de UGent, en
+            student-zelfstandige in tweedehands e-commerce. Twee werelden die
+            allebei draaien om hetzelfde: patronen herkennen en systemen
+            doorgronden.
+          </p>
+          <div class="intro-links">
+            <a
+              class="btn btn--solid"
+              href="https://www.linkedin.com/in/maud-hendrix-522245374"
+              target="_blank"
+              rel="noopener">LinkedIn</a
+            >
+            <a
+              class="btn btn--mustard"
+              href="https://www.vinted.be/member/306398525-studiomaud"
+              target="_blank"
+              rel="noopener">Studio Maud op Vinted</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDIE -->
+    <section class="row wrap">
+      <span class="row-label label">Studie</span>
+      <div class="row-body">
+        <h2>Criminologische Wetenschappen — UGent</h2>
+        <p>Laatstejaars. Focus op formeel strafrecht, digitalisering van politiewerk en netwerkorganisaties.</p>
+      </div>
+    </section>
+
+    <!-- ONDERNEMING -->
+    <section class="row wrap">
+      <span class="row-label label">Onderneming</span>
+      <div class="row-body projects">
+        <a
+          class="project"
+          href="https://www.vinted.be/member/306398525-studiomaud"
+          target="_blank"
+          rel="noopener"
+        >
+          <span class="project-status mono">Actief</span>
+          <h3>Studio Maud</h3>
+          <p>
+            Data-gedreven tweedehands e-commerce op Vinted: van sourcing en
+            prijszetting tot logistiek, gebouwd op inmiddels meer dan 2.500
+            transacties.
+          </p>
+          <span class="project-cta mono">Bekijk profiel →</span>
+        </a>
+
+        <div class="project project--closed">
+          <span class="project-status mono">Afgerond</span>
+          <h3>VintieBulk</h3>
+          <p>
+            B2B-groothandel in gecureerde Ralph Lauren-partijen, door mij
+            opgezet en opgebouwd. Bestaat niet langer als mijn onderneming —
+            wordt door anderen onder een andere naam verdergezet.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VRIJWILLIGERSWERK -->
+    <section class="row wrap">
+      <span class="row-label label">Vrijwilligerswerk</span>
+      <div class="row-body">
+        <h2>Dierenasiel Gent</h2>
+        <p>Katten socialiseren.</p>
+      </div>
+    </section>
+
+    <!-- TRAJECT -->
+    <section class="row wrap traject">
+      <span class="row-label label">Traject</span>
+      <div class="row-body">
+        <Timeline />
+      </div>
+    </section>
+
+    <!-- ARTIKELEN -->
+    <section class="row wrap">
+      <span class="row-label label">Artikelen</span>
+      <div class="row-body">
+        <p class="articles-intro">
+          Gebaseerd op mijn boek <em>"De Ku(n)s(t) van resellen"</em>.
+        </p>
+        <div class="article-grid">
+          {
+            articles.map((a) => (
+              <ArticleCard
+                href={`/professioneel/artikelen/${a.slug}`}
+                tag={a.data.tag}
+                title={a.data.title}
+                excerpt={a.data.excerpt}
+                date={a.data.date}
+              />
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <span class="label label--on-dark">Contact</span>
+          <h2>Laten we praten.</h2>
+          <p>
+            Vragen, samenwerkingen, of gewoon interesse in patronen en cijfers
+            — stuur gerust een bericht.
+          </p>
+          <div class="contact-actions">
+            <a class="btn btn--mustard" href="mailto:StudioMaud@outlook.com"
+              >Mail sturen</a
+            >
+            <a class="btn" href="/cv.pdf">CV downloaden</a>
+          </div>
+        </div>
+        <div class="contact-meta">
+          <p class="mono"><span>Mail</span>StudioMaud@outlook.com</p>
+          <p class="mono">
+            <span>LinkedIn</span>
+            <a href="https://www.linkedin.com/in/maud-hendrix-522245374" target="_blank" rel="noopener"
+              >maud-hendrix-522245374</a
+            >
+          </p>
+          <p class="mono"><span>Locatie</span>Gent, België</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter world="pro" />
+</BaseLayout>
+
+<style>
+  .pro {
+    background: var(--cream);
+  }
+
+  /* INTRO */
+  .intro {
+    border-bottom: 3px solid var(--ink);
+    padding-block: clamp(48px, 7vw, 88px);
+    position: relative;
+  }
+  .intro-grid {
+    position: relative;
+  }
+  .block-mark {
+    position: absolute;
+    top: -12px;
+    right: 8%;
+    width: 90px;
+    height: 90px;
+    background: var(--mustard);
+    z-index: 0;
+  }
+  .intro-copy {
+    position: relative;
+    z-index: 1;
+    max-width: 62ch;
+  }
+  .intro-copy h1 {
+    font-size: clamp(36px, 5.5vw, 60px);
+    font-weight: 600;
+    margin-block: 16px 20px;
+    line-height: 1.05;
+  }
+  .lede {
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+  .intro-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  /* ROWS */
+  .row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 28px;
+    padding-block: clamp(36px, 5vw, 56px);
+    border-bottom: 2px solid var(--ink);
+  }
+  .row-label {
+    padding-top: 4px;
+  }
+  .row-body h2 {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .row-body > p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 60ch;
+  }
+
+  @media (max-width: 680px) {
+    .row {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+  }
+
+  /* PROJECTS */
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+  }
+  .project {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 3px solid var(--ink);
+    background: var(--paper);
+    padding: 26px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  a.project:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+  .project--closed {
+    background: transparent;
+    opacity: 0.85;
+  }
+  .project-status {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mustard-deep);
+  }
+  .project h3 {
+    font-size: 21px;
+    font-weight: 600;
+  }
+  .project p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .project-cta {
+    margin-top: auto;
+    font-size: 12px;
+    padding-top: 8px;
+    color: var(--navy);
+  }
+
+  /* ARTICLES */
+  .articles-intro {
+    font-size: 16px;
+    margin-bottom: 22px;
+  }
+  .article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+  }
+
+  /* CONTACT */
+  .contact {
+    background: var(--navy);
+    color: var(--paper);
+    padding-block: clamp(48px, 7vw, 88px);
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
+  }
+  .contact h2 {
+    color: var(--paper);
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 600;
+    margin-block: 14px 16px;
+  }
+  .contact p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 46ch;
+    opacity: 0.92;
+    margin-bottom: 26px;
+  }
+  .contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .contact .btn {
+    border-color: var(--paper);
+    color: var(--paper);
+  }
+  .contact .btn:hover {
+    background: var(--paper);
+    color: var(--navy);
+  }
+  .contact-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    border-left: 2px solid rgba(250, 246, 234, 0.35);
+    padding-left: 32px;
+  }
+  .contact-meta p {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+    margin: 0;
+  }
+  .contact-meta span {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mustard);
+  }
+  .contact-meta a {
+    text-decoration: none;
+    border-bottom: 1px solid rgba(250, 246, 234, 0.5);
+    width: fit-content;
+  }
+
+  @media (max-width: 680px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+    .contact-meta {
+      border-left: none;
+      padding-left: 0;
+      border-top: 2px solid rgba(250, 246, 234, 0.35);
+      padding-top: 24px;
+    }
+  }
+</style>

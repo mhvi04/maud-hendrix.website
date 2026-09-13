@@ -1,0 +1,412 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Maud Hendrix">
+  <main class="home">
+    <section class="hero">
+      <div class="hero-shapes" aria-hidden="true">
+        <span class="ring ring-a"></span>
+        <span class="ring ring-b"></span>
+        <span class="square sq-a"></span>
+        <span class="triangle tri-a"></span>
+        <span class="dot dot-a"></span>
+        <span class="rule rule-a"></span>
+        <span class="rule rule-b"></span>
+      </div>
+
+      <div class="wrap hero-grid">
+        <div class="hero-meta">
+          <span class="eyebrow-index mono">MH — GENT, BE</span>
+          <span class="label">Persoonlijke website</span>
+        </div>
+
+        <h1 class="hero-title">Maud<br />Hendrix</h1>
+
+        <div class="hero-statement">
+          <span class="stmt-index mono">01 / statement</span>
+          <p>
+            Criminologie bestudeert waarom mensen doen wat ze doen.
+            Ondernemerschap vraagt dezelfde blik: patronen lezen, systemen
+            doorgronden en er sneller op reageren dan de rest. Dat is de
+            gemeenschappelijke noemer.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="entries wrap" aria-label="Kies een ingang">
+      <a href="/professioneel" class="entry entry--pro">
+        <span class="entry-badge mono">01</span>
+        <div class="entry-body">
+          <span class="label label--on-dark">Ingang</span>
+          <h2>Professioneel</h2>
+          <p>Studie, ondernemerschap, projecten en artikelen.</p>
+          <span class="entry-cta mono">Ontdek <span aria-hidden="true">→</span></span>
+        </div>
+        <span class="entry-shape entry-shape--pro" aria-hidden="true"></span>
+      </a>
+
+      <a href="/prive" class="entry entry--prive">
+        <span class="entry-badge mono">02</span>
+        <div class="entry-body">
+          <span class="label label--on-dark">Ingang</span>
+          <h2>Privé</h2>
+          <p>Interesses, inspiratie en sociale kanalen.</p>
+          <span class="entry-cta mono">Ontdek <span aria-hidden="true">→</span></span>
+        </div>
+        <span class="entry-shape entry-shape--prive" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <footer class="home-footer">
+      <div class="tick-row" aria-hidden="true">
+        {Array.from({ length: 22 }).map((_, i) => <span class={`tick tick-${i % 4}`} />)}
+      </div>
+      <div class="wrap home-footer-line">
+        <span class="mono small">© {new Date().getFullYear()} Maud Hendrix</span>
+        <span class="mono small">Criminologie · Ondernemerschap</span>
+      </div>
+    </footer>
+  </main>
+</BaseLayout>
+
+<style>
+  .home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--cream);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    padding-block: clamp(48px, 8vw, 96px) clamp(56px, 9vw, 108px);
+    overflow: hidden;
+    border-bottom: 3px solid var(--ink);
+  }
+
+  .hero-shapes {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid var(--navy);
+  }
+  .ring-a {
+    width: 230px;
+    height: 230px;
+    top: -70px;
+    right: 6%;
+    border-color: var(--mustard);
+    opacity: 0.9;
+  }
+  .ring-b {
+    width: 120px;
+    height: 120px;
+    top: 46%;
+    right: 18%;
+    border-width: 2px;
+  }
+  .square {
+    position: absolute;
+    background: var(--rust);
+  }
+  .sq-a {
+    width: 70px;
+    height: 70px;
+    top: 14%;
+    right: 30%;
+    transform: rotate(8deg);
+  }
+  .triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 34px solid transparent;
+    border-right: 34px solid transparent;
+    border-bottom: 58px solid var(--navy);
+  }
+  .tri-a {
+    top: 4%;
+    right: 5%;
+  }
+  .dot {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--ink);
+  }
+  .dot-a {
+    width: 14px;
+    height: 14px;
+    bottom: 10%;
+    right: 24%;
+  }
+  .rule {
+    position: absolute;
+    background: var(--ink);
+  }
+  .rule-a {
+    width: 2px;
+    height: 130px;
+    top: 8%;
+    right: 22%;
+    opacity: 0.5;
+  }
+  .rule-b {
+    width: 90px;
+    height: 2px;
+    bottom: 14%;
+    right: 4%;
+    background: var(--mustard-deep);
+  }
+
+  .hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    column-gap: clamp(24px, 4vw, 64px);
+    row-gap: 28px;
+  }
+
+  .hero-meta {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .hero-title {
+    grid-column: 1 / 8;
+    font-size: clamp(58px, 11vw, 148px);
+    font-weight: 600;
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-statement {
+    grid-column: 8 / 13;
+    align-self: end;
+    padding-top: 22px;
+    border-top: 2px solid var(--ink);
+    max-width: 40ch;
+  }
+  .stmt-index {
+    display: block;
+    font-size: 12px;
+    color: var(--mustard-deep);
+    margin-bottom: 12px;
+    letter-spacing: 0.06em;
+  }
+  .hero-statement p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
+  @media (max-width: 860px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-title,
+    .hero-statement {
+      grid-column: 1 / -1;
+    }
+    .hero-statement {
+      max-width: none;
+    }
+    .ring-a {
+      width: 140px;
+      height: 140px;
+      top: -50px;
+      right: -30px;
+    }
+    .tri-a,
+    .ring-b,
+    .rule-a,
+    .rule-b,
+    .dot-a,
+    .sq-a {
+      display: none;
+    }
+  }
+
+  /* ---------- ENTRIES ---------- */
+  .entries {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: clamp(20px, 3vw, 36px);
+    padding-block: clamp(28px, 5vw, 48px);
+    align-items: stretch;
+  }
+
+  .entry {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: clamp(320px, 40vw, 420px);
+    padding: clamp(28px, 3.5vw, 48px);
+    border: 3px solid var(--ink);
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .entry:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0 var(--ink);
+  }
+  .entry:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 4px;
+  }
+
+  .entry--pro {
+    background: var(--mustard);
+    color: var(--ink);
+  }
+  .entry--prive {
+    background: var(--navy);
+    color: var(--paper);
+    margin-top: clamp(0px, 6vw, 56px);
+  }
+
+  .entry-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+
+  .entry--pro .label {
+    color: var(--navy-deep);
+  }
+  .entry--pro .label::before {
+    background: var(--ink);
+  }
+  .entry--prive .label {
+    color: var(--mustard);
+  }
+  .entry--prive .label::before {
+    background: var(--cream);
+  }
+
+  .entry-body {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 34ch;
+  }
+  .entry h2 {
+    font-size: clamp(32px, 4.4vw, 52px);
+    font-weight: 600;
+    color: inherit;
+    line-height: 1;
+  }
+  .entry p {
+    font-size: 16px;
+    line-height: 1.55;
+    opacity: 0.92;
+  }
+  .entry-cta {
+    margin-top: 6px;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    padding-bottom: 3px;
+    border-bottom: 2px solid currentColor;
+    width: fit-content;
+  }
+
+  .entry-shape {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .entry-shape--pro {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    background: var(--rust);
+    top: -70px;
+    right: -60px;
+    opacity: 0.9;
+  }
+  .entry-shape--prive {
+    width: 0;
+    height: 0;
+    border-left: 90px solid transparent;
+    border-right: 90px solid transparent;
+    border-bottom: 150px solid var(--mustard);
+    top: -20px;
+    right: -10px;
+    opacity: 0.95;
+  }
+
+  @media (max-width: 780px) {
+    .entries {
+      grid-template-columns: 1fr;
+    }
+    .entry--prive {
+      margin-top: 0;
+    }
+  }
+
+  /* ---------- FOOTER STRIP ---------- */
+  .home-footer {
+    border-top: 3px solid var(--ink);
+  }
+  .tick-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+    padding: 22px clamp(20px, 5vw, 56px) 0;
+    overflow: hidden;
+  }
+  .tick {
+    flex: 0 0 auto;
+  }
+  .tick-0 {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--navy);
+  }
+  .tick-1 {
+    width: 2px;
+    height: 18px;
+    background: var(--mustard);
+  }
+  .tick-2 {
+    width: 8px;
+    height: 8px;
+    background: var(--rust);
+  }
+  .tick-3 {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 10px solid var(--navy);
+  }
+  .home-footer-line {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    padding-block: 20px 26px;
+  }
+  .small {
+    font-size: 12px;
+    color: var(--navy);
+    opacity: 0.75;
+  }
+</style>

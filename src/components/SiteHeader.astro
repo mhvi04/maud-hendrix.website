@@ -1,0 +1,83 @@
+---
+interface Props {
+  world: "pro" | "prive";
+}
+const { world } = Astro.props;
+const otherHref = world === "pro" ? "/prive" : "/professioneel";
+const otherLabel = world === "pro" ? "Privé" : "Professioneel";
+const accent = world === "pro" ? "var(--mustard)" : "var(--rust)";
+---
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a href="/" class="mark">
+      <span class="mark-block" style={`background:${accent}`}></span>
+      Maud Hendrix
+    </a>
+    <nav class="links">
+      <a href="/" class="home-link">Start</a>
+      <a href={otherHref} class="switch">
+        {otherLabel} <span aria-hidden="true">→</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 3px solid var(--ink);
+    background: var(--cream);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 18px;
+  }
+  .mark {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 19px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .mark-block {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+  }
+  .links a {
+    text-decoration: none;
+  }
+  .home-link {
+    color: var(--navy);
+    opacity: 0.75;
+  }
+  .home-link:hover {
+    opacity: 1;
+  }
+  .switch {
+    color: var(--ink);
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 3px;
+    font-weight: 500;
+  }
+  .switch:hover {
+    color: var(--navy);
+    border-color: var(--navy);
+  }
+</style>

@@ -1,0 +1,96 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
+import SiteFooter from "../../../components/SiteFooter.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const articles = (await getCollection("articles")).filter(
+    (a) => a.data.world === "pro"
+  );
+  return articles.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout title={`${entry.data.title} — Maud Hendrix`} description={entry.data.excerpt}>
+  <SiteHeader world="pro" />
+  <main class="article">
+    <div class="wrap">
+      <a href="/professioneel/artikelen" class="back mono">← Alle artikelen</a>
+      <span class="tag mono">{entry.data.tag}</span>
+      <h1>{entry.data.title}</h1>
+      <p class="date mono">{entry.data.date}</p>
+      <div class="prose">
+        <Content />
+      </div>
+    </div>
+  </main>
+  <SiteFooter world="pro" />
+</BaseLayout>
+
+<style>
+  .article {
+    background: var(--cream);
+    padding-block: clamp(40px, 6vw, 72px) clamp(56px, 8vw, 96px);
+  }
+  .wrap {
+    max-width: 720px;
+  }
+  .back {
+    display: inline-block;
+    font-size: 13px;
+    color: var(--navy);
+    text-decoration: none;
+    margin-bottom: 28px;
+    opacity: 0.8;
+  }
+  .back:hover {
+    opacity: 1;
+  }
+  .tag {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mustard-deep);
+  }
+  h1 {
+    font-size: clamp(30px, 4.5vw, 46px);
+    font-weight: 600;
+    line-height: 1.1;
+    margin-block: 14px 10px;
+  }
+  .date {
+    font-size: 13px;
+    color: var(--navy);
+    opacity: 0.75;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+  }
+  .prose {
+    font-size: 17px;
+    line-height: 1.75;
+  }
+  .prose :global(h2) {
+    font-size: 24px;
+    font-weight: 600;
+    margin-block: 36px 14px;
+  }
+  .prose :global(p) {
+    margin-bottom: 18px;
+  }
+  .prose :global(blockquote) {
+    margin: 32px 0;
+    padding-left: 22px;
+    border-left: 3px solid var(--mustard);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 20px;
+  }
+</style>
