@@ -1,0 +1,154 @@
+---
+interface Props {
+  end: number;
+  suffix?: string;
+  label: string;
+  duration?: number;
+  href?: string;
+  accent?: "mustard" | "navy";
+}
+
+const {
+  end,
+  suffix = "",
+  label,
+  duration = 1800,
+  href,
+  accent = "mustard",
+} = Astro.props;
+
+const Tag = href ? "a" : "div";
+const linkAttrs = href ? { href, target: "_blank", rel: "noopener" } : {};
+---
+
+<Tag
+  class={`countup countup--${accent}`}
+  data-countup
+  data-end={end}
+  data-suffix={suffix}
+  data-duration={duration}
+  {...linkAttrs}
+>
+  <span class="countup-shape" aria-hidden="true"></span>
+  <span class="countup-number mono" data-countup-value>0{suffix}</span>
+  <span class="countup-label">{label}</span>
+</Tag>
+
+<script>
+  function easeOutCubic(t: number) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+
+  function animate(el: HTMLElement) {
+    const end = parseFloat(el.dataset.end || "0");
+    const suffix = el.dataset.suffix || "";
+    const duration = parseFloat(el.dataset.duration || "1800");
+    const valueEl = el.querySelector<HTMLElement>("[data-countup-value]");
+    if (!valueEl) return;
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReducedMotion) {
+      valueEl.textContent = `${end}${suffix}`;
+      return;
+    }
+
+    const start = performance.now();
+
+    function frame(now: number) {
+      const elapsed = now - start;
+      const t = Math.min(elapsed / duration, 1);
+      const eased = easeOutCubic(t);
+      const current = Math.round(end * eased);
+      valueEl!.textContent = `${current}${suffix}`;
+      if (t < 1) requestAnimationFrame(frame);
+    }
+
+    requestAnimationFrame(frame);
+  }
+
+  const nodes = document.querySelectorAll<HTMLElement>("[data-countup]:not([data-observed])");
+
+  if (nodes.length) {
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target as HTMLElement;
+          if (el.dataset.played === "true") return;
+          el.dataset.played = "true";
+          obs.unobserve(el);
+          animate(el);
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    nodes.forEach((el) => {
+      el.dataset.observed = "true";
+      observer.observe(el);
+    });
+  }
+</script>
+
+<style>
+  .countup {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    padding: clamp(28px, 4vw, 44px);
+    border: 3px solid var(--ink);
+    background: var(--paper);
+    text-decoration: none;
+    color: var(--ink);
+    overflow: hidden;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  a.countup:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0 var(--ink);
+  }
+
+  .countup-shape {
+    position: absolute;
+    top: -36px;
+    right: -36px;
+    width: 150px;
+    height: 150px;
+    z-index: 0;
+    opacity: 0.9;
+  }
+  .countup--mustard .countup-shape {
+    background: var(--mustard);
+    border-radius: 50%;
+  }
+  .countup--navy .countup-shape {
+    background: var(--navy);
+    transform: rotate(8deg);
+  }
+
+  .countup-number {
+    position: relative;
+    z-index: 1;
+    font-size: clamp(52px, 7vw, 80px);
+    font-weight: 500;
+    line-height: 1;
+    color: var(--navy);
+  }
+  .countup--navy .countup-number {
+    color: var(--ink);
+  }
+
+  .countup-label {
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    color: var(--ink);
+    opacity: 0.8;
+    max-width: 34ch;
+  }
+</style>

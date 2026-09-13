@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
+import CountUp from "../../components/CountUp.astro";
 import { getCollection } from "astro:content";
 
 const articles = (await getCollection("articles")).filter(
@@ -18,11 +19,6 @@ const socials = [
     name: "TikTok",
     handle: "@hendrix.maud",
     href: "https://www.tiktok.com/@hendrix.maud",
-  },
-  {
-    name: "Pinterest",
-    handle: "Moodboards & inspiratie",
-    href: "https://pin.it/5QS0AwBzB",
   },
 ];
 
@@ -68,6 +64,13 @@ const interests = [
           ))
         }
         </div>
+        <CountUp
+          end={850}
+          suffix="K"
+          label="impressies per maand op Pinterest"
+          href="https://pin.it/5QS0AwBzB"
+          accent="mustard"
+        />
       </div>
     </section>
 
@@ -183,6 +186,7 @@ const interests = [
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
+    margin-bottom: 20px;
   }
   .social {
     border: 3px solid var(--ink);
