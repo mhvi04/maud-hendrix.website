@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import Timeline from "../../components/Timeline.astro";
+import SkillsMarquee from "../../components/SkillsMarquee.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
 import { getCollection } from "astro:content";
 
@@ -42,11 +43,8 @@ const articles = (await getCollection("articles"))
               target="_blank"
               rel="noopener">LinkedIn</a
             >
-            <a
-              class="btn btn--mustard"
-              href="https://www.vinted.be/member/306398525-studiomaud"
-              target="_blank"
-              rel="noopener">Studio Maud op Vinted</a
+            <a class="btn btn--mustard" href="/cv-maud-hendrix.pdf" download
+              >CV downloaden</a
             >
           </div>
         </div>
@@ -60,14 +58,21 @@ const articles = (await getCollection("articles"))
         <div class="edu">
           <span class="edu-period mono">2021 — verwacht 2026</span>
           <h2>Bachelor Criminologische Wetenschappen — UGent</h2>
-          <p>Derde en laatste bachelorjaar.</p>
         </div>
         <div class="edu">
           <span class="edu-period mono">Afgestudeerd 2020</span>
           <h2>Humane Wetenschappen — GO! Atheneum Voskenslaan, Gent</h2>
-          <p>Cum laude.</p>
+          <p>Afgestudeerd met cum laude.</p>
         </div>
       </div>
+    </section>
+
+    <!-- VAARDIGHEDEN -->
+    <section class="skills-section">
+      <div class="wrap skills-head">
+        <span class="row-label label">Vaardigheden</span>
+      </div>
+      <SkillsMarquee />
     </section>
 
     <!-- ERVARING -->
@@ -226,7 +231,7 @@ const articles = (await getCollection("articles"))
             <a class="btn btn--mustard" href="mailto:StudioMaud@outlook.com"
               >Mail sturen</a
             >
-            <a class="btn" href="/cv.pdf">CV downloaden</a>
+            <a class="btn" href="/cv-maud-hendrix.pdf" download>CV downloaden</a>
           </div>
         </div>
         <div class="contact-meta">
@@ -337,6 +342,15 @@ const articles = (await getCollection("articles"))
   .edu p {
     font-size: 15px;
     opacity: 0.85;
+  }
+
+  /* SKILLS */
+  .skills-section {
+    border-bottom: 2px solid var(--ink);
+    padding-block: clamp(36px, 5vw, 56px) 0;
+  }
+  .skills-head {
+    padding-bottom: 20px;
   }
 
   /* EXPERIENCE */

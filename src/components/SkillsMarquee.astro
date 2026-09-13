@@ -1,0 +1,114 @@
+---
+const rows: string[][] = [
+  ["Contentontwikkeling", "Digitale marketing", "Klantenondersteuning", "Bedrijfscommunicatie", "Copywriting"],
+  ["Merkbekendheid", "Content-strategie", "Communicatie van sociale media", "Communicatie"],
+  ["Duurzaamheid", "Klantentevredenheid", "Marketing op social media", "Ondernemerschap"],
+];
+
+const variants = ["mustard", "navy", "paper"];
+---
+
+<div class="skills-marquee">
+  {
+    rows.map((skills, rowIndex) => (
+      <div class="marquee-row">
+        <div class={`marquee-track speed-${rowIndex}`}>
+          {[0, 1].map(() => (
+            <span class="marquee-set">
+              {skills.map((skill, i) => (
+                <span class={`skill-badge skill-${variants[(i + rowIndex) % variants.length]}`}>
+                  {skill}
+                </span>
+              ))}
+            </span>
+          ))}
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .skills-marquee {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-block: 4px clamp(36px, 5vw, 56px);
+  }
+
+  .marquee-row {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #000 6%,
+      #000 94%,
+      transparent
+    );
+    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  }
+
+  .marquee-track {
+    display: inline-flex;
+    width: max-content;
+    animation: marquee 34s linear infinite;
+  }
+  .marquee-track.speed-0 {
+    animation-duration: 30s;
+  }
+  .marquee-track.speed-1 {
+    animation-duration: 40s;
+  }
+  .marquee-track.speed-2 {
+    animation-duration: 25s;
+  }
+
+  .marquee-row:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  .marquee-set {
+    display: inline-flex;
+    flex-shrink: 0;
+    gap: 14px;
+    padding-right: 14px;
+  }
+
+  .skill-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    padding: 10px 18px;
+    border: 2px solid var(--ink);
+  }
+  .skill-mustard {
+    background: var(--mustard);
+    color: var(--ink);
+  }
+  .skill-navy {
+    background: var(--navy);
+    color: var(--paper);
+  }
+  .skill-paper {
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+</style>
