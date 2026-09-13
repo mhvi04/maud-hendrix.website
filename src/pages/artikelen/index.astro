@@ -1,12 +1,12 @@
 ---
-import BaseLayout from "../../../layouts/BaseLayout.astro";
-import SiteHeader from "../../../components/SiteHeader.astro";
-import SiteFooter from "../../../components/SiteFooter.astro";
-import ArticleCard from "../../../components/ArticleCard.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
 import { getCollection } from "astro:content";
 
-const articles = (await getCollection("articles")).filter(
-  (a) => a.data.world === "pro"
+const articles = (await getCollection("articles")).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title)
 );
 ---
 
@@ -17,14 +17,14 @@ const articles = (await getCollection("articles")).filter(
   <SiteHeader world="pro" />
   <main class="listing">
     <section class="wrap head">
-      <span class="label">Professioneel</span>
+      <span class="label">Maud Hendrix</span>
       <h1>Artikelen</h1>
     </section>
     <section class="wrap grid">
       {
         articles.map((a) => (
           <ArticleCard
-            href={`/professioneel/artikelen/${a.id}`}
+            href={`/artikelen/${a.id}`}
             tag={a.data.tag}
             title={a.data.title}
             excerpt={a.data.excerpt}

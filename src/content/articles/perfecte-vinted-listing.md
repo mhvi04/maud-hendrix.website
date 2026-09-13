@@ -3,7 +3,6 @@ title: "De perfecte Vinted-listing"
 excerpt: "Een listing is geen samenvatting van een item, maar een antwoord op elke vraag voordat ze gesteld wordt: over maat, conditie, authenticiteit en materiaal."
 date: "2026-09-13"
 tag: "Praktijk"
-world: "pro"
 draft: false
 ---
 

@@ -3,7 +3,6 @@ title: "Boosten op Vinted: wat 206 boosts en €482 mij hebben geleerd"
 excerpt: "206 boosts en €482 aan advertentiebudget: wat de data leert over timing, itemkeuze en wanneer een boost geld weggooien is."
 date: "2026-09-13"
 tag: "Praktijk"
-world: "pro"
 draft: false
 ---
 

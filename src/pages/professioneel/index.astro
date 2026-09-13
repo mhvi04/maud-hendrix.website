@@ -10,9 +10,9 @@ import { Image } from "astro:assets";
 import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
 import { getCollection } from "astro:content";
 
-const articles = (await getCollection("articles"))
-  .filter((a) => a.data.world === "pro")
-  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+const articles = (await getCollection("articles")).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title)
+);
 ---
 
 <BaseLayout
@@ -222,7 +222,7 @@ const articles = (await getCollection("articles"))
           {
             articles.map((a) => (
               <ArticleCard
-                href={`/professioneel/artikelen/${a.id}`}
+                href={`/artikelen/${a.id}`}
                 tag={a.data.tag}
                 title={a.data.title}
                 excerpt={a.data.excerpt}

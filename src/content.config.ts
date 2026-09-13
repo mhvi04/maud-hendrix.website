@@ -8,7 +8,6 @@ const articles = defineCollection({
     excerpt: z.string(),
     date: z.string(),
     tag: z.string(),
-    world: z.enum(["pro", "prive"]),
     draft: z.boolean().optional().default(false),
   }),
 });

@@ -1,13 +1,11 @@
 ---
-import BaseLayout from "../../../layouts/BaseLayout.astro";
-import SiteHeader from "../../../components/SiteHeader.astro";
-import SiteFooter from "../../../components/SiteFooter.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-  const articles = (await getCollection("articles")).filter(
-    (a) => a.data.world === "prive"
-  );
+  const articles = await getCollection("articles");
   return articles.map((entry) => ({
     params: { slug: entry.id },
     props: { entry },
@@ -26,10 +24,10 @@ const publishedDate = entry.data.date.startsWith("[") ? undefined : entry.data.d
   publishedDate={publishedDate}
   noindex={entry.data.draft}
 >
-  <SiteHeader world="prive" />
+  <SiteHeader world="pro" />
   <main class="article">
     <div class="wrap">
-      <a href="/prive/blog" class="back mono">← Alle posts</a>
+      <a href="/artikelen" class="back mono">← Alle artikelen</a>
       <span class="tag mono">{entry.data.tag}</span>
       <h1>{entry.data.title}</h1>
       <p class="date mono">{entry.data.date}</p>
@@ -38,7 +36,7 @@ const publishedDate = entry.data.date.startsWith("[") ? undefined : entry.data.d
       </div>
     </div>
   </main>
-  <SiteFooter world="prive" />
+  <SiteFooter world="pro" />
 </BaseLayout>
 
 <style>
@@ -57,11 +55,14 @@ const publishedDate = entry.data.date.startsWith("[") ? undefined : entry.data.d
     margin-bottom: 28px;
     opacity: 0.8;
   }
+  .back:hover {
+    opacity: 1;
+  }
   .tag {
     font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--rust);
+    color: var(--mustard-deep);
   }
   h1 {
     font-size: clamp(30px, 4.5vw, 46px);
@@ -80,5 +81,21 @@ const publishedDate = entry.data.date.startsWith("[") ? undefined : entry.data.d
   .prose {
     font-size: 17px;
     line-height: 1.75;
+  }
+  .prose :global(h2) {
+    font-size: 24px;
+    font-weight: 600;
+    margin-block: 36px 14px;
+  }
+  .prose :global(p) {
+    margin-bottom: 18px;
+  }
+  .prose :global(blockquote) {
+    margin: 32px 0;
+    padding-left: 22px;
+    border-left: 3px solid var(--mustard);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 20px;
   }
 </style>

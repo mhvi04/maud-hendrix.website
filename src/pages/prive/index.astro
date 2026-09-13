@@ -4,11 +4,6 @@ import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import CountUp from "../../components/CountUp.astro";
 import PhotoGallery from "../../components/PhotoGallery.astro";
-import { getCollection } from "astro:content";
-
-const articles = (await getCollection("articles")).filter(
-  (a) => a.data.world === "prive"
-);
 
 const socials = [
   {
@@ -101,38 +96,10 @@ const interests = [
       </div>
     </section>
 
-    <section class="row wrap">
+    <section class="row wrap row--last">
       <span class="row-label label">Fotografie</span>
       <div class="row-body">
         <PhotoGallery />
-      </div>
-    </section>
-
-    <section class="row wrap row--last">
-      <span class="row-label label">Blog</span>
-      <div class="row-body">
-        <p class="section-intro">Losse stukken die nergens anders passen.</p>
-        <p class="blog-crosslink">
-          Voor de professionele kant: <a href="/professioneel/artikelen">Artikelen op Professioneel →</a>
-        </p>
-        {
-          articles.length === 0 ? (
-            <div class="empty-state">
-              <span class="mono">Binnenkort</span>
-              <p>Hier komen binnenkort blogposts te staan.</p>
-            </div>
-          ) : (
-            <div class="article-grid">
-              {articles.map((a) => (
-                <a class="card" href={`/prive/blog/${a.id}`}>
-                  <span class="mono card-tag">{a.data.tag}</span>
-                  <h3>{a.data.title}</h3>
-                  <p>{a.data.excerpt}</p>
-                </a>
-              ))}
-            </div>
-          )
-        }
       </div>
     </section>
   </main>
@@ -208,22 +175,6 @@ const interests = [
     margin-bottom: 22px;
   }
 
-  .blog-crosslink {
-    font-size: 14px;
-    color: var(--navy);
-    margin-top: -8px;
-    margin-bottom: 22px;
-  }
-  .blog-crosslink a {
-    color: var(--navy);
-    text-decoration: none;
-    border-bottom: 1px solid var(--navy);
-  }
-  .blog-crosslink a:hover {
-    color: var(--rust);
-    border-color: var(--rust);
-  }
-
   .socials {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -287,44 +238,4 @@ const interests = [
     line-height: 1.55;
   }
 
-  .empty-state {
-    border: 2px dashed var(--ink);
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    max-width: 46ch;
-  }
-  .empty-state .mono {
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--rust);
-  }
-  .empty-state p {
-    font-size: 15px;
-    color: var(--navy);
-  }
-
-  .article-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 22px;
-  }
-  .card {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border: 3px solid var(--ink);
-    background: var(--paper);
-    padding: 26px;
-    text-decoration: none;
-    color: var(--ink);
-  }
-  .card-tag {
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--rust);
-  }
 </style>
