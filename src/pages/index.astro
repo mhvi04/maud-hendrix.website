@@ -7,7 +7,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <section class="hero">
       <div class="hero-shapes" aria-hidden="true">
         <span class="ring ring-a"></span>
-        <span class="ring ring-b"></span>
         <span class="square sq-a"></span>
         <span class="triangle tri-a"></span>
         <span class="dot dot-a"></span>
@@ -24,7 +23,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <h1 class="hero-title">Maud<br />Hendrix</h1>
 
         <div class="hero-statement">
-          <span class="stmt-index mono">01 / statement</span>
           <p>
             Criminologie bestudeert waarom mensen doen wat ze doen.
             Ondernemerschap vraagt dezelfde blik: patronen lezen, systemen
@@ -37,25 +35,29 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     <section class="entries wrap" aria-label="Kies een ingang">
       <a href="/professioneel" class="entry entry--pro">
-        <span class="entry-badge mono">01</span>
         <div class="entry-body">
           <span class="label label--on-dark">Ingang</span>
           <h2>Professioneel</h2>
           <p>Studie, ondernemerschap, projecten en artikelen.</p>
-          <span class="entry-cta mono">Ontdek <span aria-hidden="true">→</span></span>
         </div>
-        <span class="entry-shape entry-shape--pro" aria-hidden="true"></span>
+        <span class="entry-arrow" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M3 15L15 3M15 3H6M15 3V12" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+          </svg>
+        </span>
       </a>
 
       <a href="/prive" class="entry entry--prive">
-        <span class="entry-badge mono">02</span>
         <div class="entry-body">
           <span class="label label--on-dark">Ingang</span>
           <h2>Privé</h2>
           <p>Interesses, inspiratie en sociale kanalen.</p>
-          <span class="entry-cta mono">Ontdek <span aria-hidden="true">→</span></span>
         </div>
-        <span class="entry-shape entry-shape--prive" aria-hidden="true"></span>
+        <span class="entry-arrow" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M3 15L15 3M15 3H6M15 3V12" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+          </svg>
+        </span>
       </a>
     </section>
 
@@ -104,13 +106,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     right: 6%;
     border-color: var(--mustard);
     opacity: 0.9;
-  }
-  .ring-b {
-    width: 120px;
-    height: 120px;
-    top: 46%;
-    right: 18%;
-    border-width: 2px;
   }
   .square {
     position: absolute;
@@ -197,13 +192,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     border-top: 2px solid var(--ink);
     max-width: 40ch;
   }
-  .stmt-index {
-    display: block;
-    font-size: 12px;
-    color: var(--mustard-deep);
-    margin-bottom: 12px;
-    letter-spacing: 0.06em;
-  }
   .hero-statement p {
     font-size: 17px;
     line-height: 1.6;
@@ -228,7 +216,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       right: -30px;
     }
     .tri-a,
-    .ring-b,
     .rule-a,
     .rule-b,
     .dot-a,
@@ -250,9 +237,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .entry {
     position: relative;
     display: flex;
-    align-items: flex-end;
-    min-height: clamp(320px, 40vw, 420px);
-    padding: clamp(28px, 3.5vw, 48px);
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: clamp(150px, 16vw, 190px);
+    padding: clamp(22px, 2.5vw, 30px);
     border: 3px solid var(--ink);
     text-decoration: none;
     overflow: hidden;
@@ -274,15 +263,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .entry--prive {
     background: var(--navy);
     color: var(--paper);
-    margin-top: clamp(0px, 6vw, 56px);
-  }
-
-  .entry-badge {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 13px;
-    letter-spacing: 0.08em;
+    margin-top: clamp(0px, 4vw, 32px);
   }
 
   .entry--pro .label {
@@ -303,52 +284,37 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     z-index: 1;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     max-width: 34ch;
   }
   .entry h2 {
-    font-size: clamp(32px, 4.4vw, 52px);
+    font-size: clamp(24px, 3vw, 34px);
     font-weight: 600;
     color: inherit;
     line-height: 1;
   }
   .entry p {
-    font-size: 16px;
-    line-height: 1.55;
+    font-size: 14px;
+    line-height: 1.5;
     opacity: 0.92;
   }
-  .entry-cta {
-    margin-top: 6px;
-    font-size: 13px;
-    letter-spacing: 0.04em;
-    padding-bottom: 3px;
-    border-bottom: 2px solid currentColor;
-    width: fit-content;
-  }
 
-  .entry-shape {
-    position: absolute;
-    z-index: 0;
-    pointer-events: none;
+  .entry-arrow {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 2px solid var(--ink);
   }
-  .entry-shape--pro {
-    width: 190px;
-    height: 190px;
-    border-radius: 50%;
-    background: var(--rust);
-    top: -70px;
-    right: -60px;
-    opacity: 0.9;
+  .entry--pro .entry-arrow {
+    background: var(--navy);
+    color: var(--cream);
   }
-  .entry-shape--prive {
-    width: 0;
-    height: 0;
-    border-left: 90px solid transparent;
-    border-right: 90px solid transparent;
-    border-bottom: 150px solid var(--mustard);
-    top: -20px;
-    right: -10px;
-    opacity: 0.95;
+  .entry--prive .entry-arrow {
+    background: var(--mustard);
+    color: var(--ink);
   }
 
   @media (max-width: 780px) {
