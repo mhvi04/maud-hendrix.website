@@ -10,13 +10,15 @@ const articles = (await getCollection("articles")).filter(
 );
 ---
 
-<BaseLayout title="Artikelen — Maud Hendrix">
+<BaseLayout
+  title="Artikelen — Maud Hendrix"
+  description="Artikelen over reselling, Vinted en data-gedreven ondernemen, geschreven door Maud Hendrix."
+>
   <SiteHeader world="pro" />
   <main class="listing">
     <section class="wrap head">
       <span class="label">Professioneel</span>
       <h1>Artikelen</h1>
-      <p>Gebaseerd op mijn boek <em>"De Ku(n)s(t) van resellen"</em>.</p>
     </section>
     <section class="wrap grid">
       {
