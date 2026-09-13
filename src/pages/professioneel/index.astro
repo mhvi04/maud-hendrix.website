@@ -146,16 +146,6 @@ const articles = (await getCollection("articles"))
           </p>
           <span class="project-cta mono">Bekijk profiel →</span>
         </a>
-
-        <div class="project project--closed">
-          <span class="project-status mono">Afgerond</span>
-          <h3>VintieBulk</h3>
-          <p>
-            B2B-groothandel in gecureerde Ralph Lauren-partijen, door mij
-            opgezet en opgebouwd. Bestaat niet langer als mijn onderneming —
-            wordt door anderen onder een andere naam verdergezet.
-          </p>
-        </div>
       </div>
     </section>
 
@@ -171,13 +161,6 @@ const articles = (await getCollection("articles"))
     <section class="row wrap">
       <span class="row-label label">Artikelen</span>
       <div class="row-body">
-        <p class="articles-intro">
-          Ik schreef <em>"De Ku(n)s(t) van resellen"</em> — een gids over de
-          economie van reselling, opgebouwd uit mijn eigen transactiedata:
-          inkoop, marges, voorraadrotatie, authenticiteit, seizoenspatronen,
-          prijsstrategie en koperpsychologie. Deze artikelen zijn uitwerkingen
-          daarvan.
-        </p>
         <div class="article-grid">
           {
             articles.map((a) => (
@@ -445,10 +428,6 @@ const articles = (await getCollection("articles"))
   }
 
   /* ARTICLES */
-  .articles-intro {
-    font-size: 16px;
-    margin-bottom: 22px;
-  }
   .article-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));

@@ -4,12 +4,37 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description?: string;
+  type?: "website" | "article";
+  publishedDate?: string;
+  noindex?: boolean;
 }
 
 const {
   title,
   description = "Maud Hendrix — criminologie, ondernemerschap en patronen in systemen.",
+  type = "website",
+  publishedDate,
+  noindex = false,
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const jsonLd =
+  type === "article"
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: title,
+        description,
+        url: canonicalURL.toString(),
+        inLanguage: "nl",
+        author: {
+          "@type": "Person",
+          name: "Maud Hendrix",
+        },
+        ...(publishedDate ? { datePublished: publishedDate } : {}),
+      }
+    : null;
 ---
 
 <!doctype html>
@@ -20,6 +45,23 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="Maud Hendrix" />
+    <meta property="og:locale" content="nl_BE" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    {jsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+    )}
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

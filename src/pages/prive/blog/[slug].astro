@@ -16,9 +16,16 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+const publishedDate = entry.data.date.startsWith("[") ? undefined : entry.data.date;
 ---
 
-<BaseLayout title={`${entry.data.title} — Maud Hendrix`} description={entry.data.excerpt}>
+<BaseLayout
+  title={`${entry.data.title} — Maud Hendrix`}
+  description={entry.data.excerpt}
+  type="article"
+  publishedDate={publishedDate}
+  noindex={entry.data.draft}
+>
   <SiteHeader world="prive" />
   <main class="article">
     <div class="wrap">
