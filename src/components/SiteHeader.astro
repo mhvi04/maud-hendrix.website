@@ -1,12 +1,11 @@
 ---
 interface Props {
-  world: "pro" | "prive" | "explore";
+  world: "pro" | "prive";
 }
 const { world } = Astro.props;
 const otherHref = world === "pro" ? "/prive" : "/professioneel";
 const otherLabel = world === "pro" ? "Privé" : "Professioneel";
-const accent =
-  world === "pro" ? "var(--mustard)" : world === "prive" ? "var(--rust)" : "var(--navy)";
+const accent = world === "pro" ? "var(--mustard)" : "var(--rust)";
 ---
 
 <header class="site-header">
@@ -17,21 +16,9 @@ const accent =
     </a>
     <nav class="links">
       <a href="/" class="home-link">Start</a>
-      {
-        world === "explore" ? (
-          <>
-            <a href="/professioneel" class="home-link">Professioneel</a>
-            <a href="/prive" class="home-link">Privé</a>
-          </>
-        ) : (
-          <>
-            <a href="/explore-my-brain" class="home-link brain-link">Brain</a>
-            <a href={otherHref} class="switch">
-              {otherLabel} <span aria-hidden="true">→</span>
-            </a>
-          </>
-        )
-      }
+      <a href={otherHref} class="switch">
+        {otherLabel} <span aria-hidden="true">→</span>
+      </a>
     </nav>
   </div>
 </header>
