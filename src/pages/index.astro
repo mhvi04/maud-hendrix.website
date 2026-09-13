@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import BauhausStrip from "../components/BauhausStrip.astro";
 ---
 
 <BaseLayout title="Maud Hendrix">
@@ -17,7 +18,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="wrap hero-grid">
         <div class="hero-meta">
           <span class="eyebrow-index mono">MH — GENT, BE</span>
-          <span class="label">Persoonlijke website</span>
         </div>
 
         <h1 class="hero-title">Maud<br />Hendrix</h1>
@@ -64,15 +64,58 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <section class="home-contact wrap">
       <span class="label">Contact</span>
       <div class="home-contact-row">
-        <a class="btn btn--solid" href="mailto:StudioMaud@outlook.com">Stuur een mail</a>
-        <span class="mono contact-email">StudioMaud@outlook.com</span>
+        <div class="mail-btn-wrap">
+          <span class="mail-cat" aria-hidden="true">
+            <svg width="58" height="32" viewBox="0 0 58 32" fill="none">
+              <path d="M46 22c8 0 10-10 2-14" stroke="var(--rust)" stroke-width="4" stroke-linecap="round" fill="none"/>
+              <ellipse cx="27" cy="22" rx="20" ry="9" fill="var(--rust)"/>
+              <circle cx="11" cy="14" r="8" fill="var(--rust)"/>
+              <polygon points="4,10 8,1 13,9" fill="var(--rust)"/>
+              <polygon points="11,8 16,0 19,8" fill="var(--rust)"/>
+              <circle cx="9" cy="14" r="1.4" fill="var(--paper)"/>
+            </svg>
+          </span>
+          <button type="button" class="btn btn--solid" id="mail-reveal-btn" aria-expanded="false" aria-controls="email-reveal">
+            Stuur een mail
+          </button>
+        </div>
+        <div class="email-reveal" id="email-reveal">
+          <div class="email-reveal-inner">
+            <a href="mailto:StudioMaud@outlook.com" class="mono email-link">StudioMaud@outlook.com</a>
+            <button type="button" class="copy-btn" id="copy-email-btn" aria-label="E-mailadres kopiëren">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <rect x="4.5" y="4.5" width="8" height="8" stroke="currentColor" stroke-width="1.4"/>
+                <rect x="1.5" y="1.5" width="8" height="8" stroke="currentColor" stroke-width="1.4"/>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </section>
 
+    <script>
+      const revealBtn = document.getElementById("mail-reveal-btn");
+      const reveal = document.getElementById("email-reveal");
+      const copyBtn = document.getElementById("copy-email-btn");
+
+      revealBtn?.addEventListener("click", () => {
+        const isOpen = reveal?.classList.toggle("is-open");
+        revealBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      copyBtn?.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText("StudioMaud@outlook.com");
+          copyBtn.classList.add("copied");
+          setTimeout(() => copyBtn.classList.remove("copied"), 1500);
+        } catch {
+          /* clipboard unavailable, mailto link still works */
+        }
+      });
+    </script>
+
     <footer class="home-footer">
-      <div class="tick-row" aria-hidden="true">
-        {Array.from({ length: 22 }).map((_, i) => <span class={`tick tick-${i % 4}`} />)}
-      </div>
+      <BauhausStrip />
       <div class="wrap home-footer-line">
         <span class="mono small">© {new Date().getFullYear()} Maud Hendrix</span>
         <span class="mono small">Criminologie · Ondernemerschap</span>
@@ -344,52 +387,67 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .home-contact-row {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 14px;
     flex-wrap: wrap;
   }
-  .contact-email {
-    font-size: 13px;
+  .mail-btn-wrap {
+    position: relative;
+  }
+  .mail-cat {
+    position: absolute;
+    top: -22px;
+    right: -6px;
+    transform: rotate(-6deg);
+    pointer-events: none;
+  }
+
+  .email-reveal {
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width 0.3s ease;
+  }
+  .email-reveal.is-open {
+    max-width: 320px;
+  }
+  .email-reveal-inner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    width: max-content;
+    border: 2px solid var(--ink);
+    padding: 13px 16px;
+  }
+  .email-link {
+    font-size: 14px;
     color: var(--navy);
-    opacity: 0.85;
+    text-decoration: none;
+    border-bottom: 1px solid var(--navy);
+  }
+  .email-link:hover {
+    color: var(--rust);
+    border-color: var(--rust);
+  }
+  .copy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border: none;
+    background: transparent;
+    color: var(--navy);
+    padding: 0;
+  }
+  .copy-btn:hover {
+    color: var(--rust);
+  }
+  .copy-btn.copied {
+    color: var(--mustard-deep);
   }
 
   /* ---------- FOOTER STRIP ---------- */
-  .home-footer {
-    border-top: 3px solid var(--ink);
-  }
-  .tick-row {
-    display: flex;
-    align-items: flex-end;
-    gap: 14px;
-    padding: 22px clamp(20px, 5vw, 56px) 0;
-    overflow: hidden;
-  }
-  .tick {
-    flex: 0 0 auto;
-  }
-  .tick-0 {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--navy);
-  }
-  .tick-1 {
-    width: 2px;
-    height: 18px;
-    background: var(--mustard);
-  }
-  .tick-2 {
-    width: 8px;
-    height: 8px;
-    background: var(--rust);
-  }
-  .tick-3 {
-    width: 0;
-    height: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 10px solid var(--navy);
-  }
   .home-footer-line {
     display: flex;
     justify-content: space-between;
