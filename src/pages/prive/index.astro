@@ -27,8 +27,8 @@ const socials = [
 ];
 
 const interests = [
-  { title: "Kattenmoeder", desc: "Vaste versterking thuis, en de reden dat ik in het Dierenasiel Gent vrijwillig katten socialiseer." },
-  { title: "Muurklimmen", desc: "Probleemoplossen in real time — één beweging tegelijk." },
+  { title: "Kattenmoeder", desc: "Katten thuis, en de reden dat ik vrijwillig katten socialiseer bij het Dierenasiel Gent." },
+  { title: "Muurklimmen", desc: "Probleemoplossen, één beweging tegelijk." },
 ];
 ---
 
@@ -55,7 +55,9 @@ const interests = [
 
     <section class="row wrap">
       <span class="row-label label">Sociale kanalen</span>
-      <div class="row-body socials">
+      <div class="row-body">
+        <p class="section-intro">Waar ik online rondhang, buiten Vinted.</p>
+        <div class="socials">
         {
           socials.map((s) => (
             <a class="social" href={s.href} target="_blank" rel="noopener">
@@ -65,6 +67,7 @@ const interests = [
             </a>
           ))
         }
+        </div>
       </div>
     </section>
 
@@ -85,6 +88,7 @@ const interests = [
     <section class="row wrap row--last">
       <span class="row-label label">Blog</span>
       <div class="row-body">
+        <p class="section-intro">Losse stukken die nergens anders passen.</p>
         {
           articles.length === 0 ? (
             <div class="empty-state">
@@ -168,6 +172,11 @@ const interests = [
       grid-template-columns: 1fr;
       gap: 14px;
     }
+  }
+
+  .section-intro {
+    font-size: 16px;
+    margin-bottom: 22px;
   }
 
   .socials {

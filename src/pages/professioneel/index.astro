@@ -26,10 +26,14 @@ const articles = (await getCollection("articles"))
           <span class="label">Profiel</span>
           <h1>Ik ben Maud Hendrix</h1>
           <p class="lede">
-            Laatstejaarsstudent Criminologische Wetenschappen aan de UGent, en
-            student-zelfstandige in tweedehands e-commerce. Twee werelden die
-            allebei draaien om hetzelfde: patronen herkennen en systemen
-            doorgronden.
+            Criminologie en handel zijn voor mij geen twee aparte dingen — het
+            zijn twee sporen die dezelfde vraag stellen: hoe werkt een systeem
+            in de praktijk, niet in theorie. Ik ben laatstejaarsstudent
+            Criminologische Wetenschappen aan de UGent en student-zelfstandige
+            in tweedehands e-commerce, met meer dan 2.500 transacties sinds
+            mijn veertiende. Ik weet welke categorieën roteren, waar de marge
+            zit, wanneer het seizoen kantelt en welke prijs een stuk effectief
+            verkoopt.
           </p>
           <div class="intro-links">
             <a
@@ -52,9 +56,90 @@ const articles = (await getCollection("articles"))
     <!-- STUDIE -->
     <section class="row wrap">
       <span class="row-label label">Studie</span>
-      <div class="row-body">
-        <h2>Criminologische Wetenschappen — UGent</h2>
-        <p>Laatstejaars. Focus op formeel strafrecht, digitalisering van politiewerk en netwerkorganisaties.</p>
+      <div class="row-body education">
+        <div class="edu">
+          <span class="edu-period mono">2021 — verwacht 2026</span>
+          <h2>Bachelor Criminologische Wetenschappen — UGent</h2>
+          <p>Derde en laatste bachelorjaar.</p>
+        </div>
+        <div class="edu">
+          <span class="edu-period mono">[JAARTALLEN AUB AANVULLEN]</span>
+          <h2>Humane Wetenschappen — GO! Atheneum Voskenslaan, Gent</h2>
+          <p>Cum laude afgestudeerd.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ERVARING -->
+    <section class="row wrap">
+      <span class="row-label label">Ervaring</span>
+      <div class="row-body experience">
+        <article class="exp">
+          <div class="exp-head">
+            <h2>Student-zelfstandige — tweedehands e-commerce</h2>
+            <span class="exp-period mono">Februari 2025 — heden</span>
+          </div>
+          <p class="exp-context">
+            Gent en omgeving. Officieel zelfstandige sinds februari 2025,
+            actief in de handel sinds mijn veertiende.
+          </p>
+          <ul>
+            <li>
+              Meer dan 2.500 transacties, van sourcing en prijszetting tot
+              kwaliteitscontrole, verkoop en logistiek — allemaal in eigen
+              beheer.
+            </li>
+            <li>
+              774 orders en 1.039 verkochte items in 2025, aan 56% brutomarge
+              en een verkopersbeoordeling van 4,81/5.
+            </li>
+            <li>
+              Eigen analysekader voor inkoopprijzen, marges, voorraadrotatie,
+              categorieprestaties en seizoenseffecten stuurt elke inkoop- en
+              prijsbeslissing.
+            </li>
+            <li>
+              Authenticiteits- en kwaliteitscontrole op merkkleding, met Ralph
+              Lauren als hoofdcategorie.
+            </li>
+            <li>
+              Fotografie, metingen en zoekgeoptimaliseerde listings: de volledige
+              productpresentatie in eigen hand.
+            </li>
+            <li>
+              Gemiddeld 23 tot 31 uur per week naast een voltijdse opleiding.
+            </li>
+          </ul>
+        </article>
+
+        <article class="exp exp--closed">
+          <div class="exp-head">
+            <h2>Mede-oprichter — VintieBulk</h2>
+            <span class="exp-period mono">[PERIODE AUB AANVULLEN] · Afgerond</span>
+          </div>
+          <p class="exp-context">
+            B2B-aanbod van gecureerde partijen en resellerboxen met
+            tweedehands Ralph Lauren. Niet langer actief als mijn
+            onderneming — wordt door anderen onder een andere naam
+            verdergezet.
+          </p>
+          <ul>
+            <li>
+              Bouwde het aanbod op eigen transactiedata en verkoopervaring:
+              gecureerde partijen samengesteld op wat effectief verkoopt.
+            </li>
+            <li>
+              Verantwoordelijk voor voorraadselectie, kwaliteits- en
+              authenticiteitscontrole, categorie-analyse en prijsstrategie.
+            </li>
+            <li>Bouwde de webshop, branding, content en klantencommunicatie op.</li>
+            <li>
+              Vertrekpunt: individueel sourcen bleek moeilijk schaalbaar,
+              terwijl beginnende resellers vastliepen op selectie,
+              authenticiteit en prijszetting.
+            </li>
+          </ul>
+        </article>
       </div>
     </section>
 
@@ -71,9 +156,10 @@ const articles = (await getCollection("articles"))
           <span class="project-status mono">Actief</span>
           <h3>Studio Maud</h3>
           <p>
-            Data-gedreven tweedehands e-commerce op Vinted: van sourcing en
-            prijszetting tot logistiek, gebouwd op inmiddels meer dan 2.500
-            transacties.
+            Data-gedreven tweedehands e-commerce op Vinted: 2.500+ transacties,
+            774 orders in 2025 aan 56% brutomarge, verkopersbeoordeling
+            4,81/5. Sourcing, prijszetting, kwaliteitscontrole en logistiek
+            allemaal in eigen beheer.
           </p>
           <span class="project-cta mono">Bekijk profiel →</span>
         </a>
@@ -112,7 +198,11 @@ const articles = (await getCollection("articles"))
       <span class="row-label label">Artikelen</span>
       <div class="row-body">
         <p class="articles-intro">
-          Gebaseerd op mijn boek <em>"De Ku(n)s(t) van resellen"</em>.
+          Ik schreef <em>"De Ku(n)s(t) van resellen"</em> — een gids over de
+          economie van reselling, opgebouwd uit mijn eigen transactiedata:
+          inkoop, marges, voorraadrotatie, authenticiteit, seizoenspatronen,
+          prijsstrategie en koperpsychologie. Deze artikelen zijn uitwerkingen
+          daarvan.
         </p>
         <div class="article-grid">
           {
@@ -137,8 +227,9 @@ const articles = (await getCollection("articles"))
           <span class="label label--on-dark">Contact</span>
           <h2>Laten we praten.</h2>
           <p>
-            Vragen, samenwerkingen, of gewoon interesse in patronen en cijfers
-            — stuur gerust een bericht.
+            Open voor stages, studentenjobs en samenwerkingen rond
+            reselling, e-commerce of data — en voor gesprekken die criminologie
+            en handel samenbrengen.
           </p>
           <div class="contact-actions">
             <a class="btn btn--mustard" href="mailto:StudioMaud@outlook.com"
@@ -237,6 +328,88 @@ const articles = (await getCollection("articles"))
       grid-template-columns: 1fr;
       gap: 14px;
     }
+  }
+
+  /* EDUCATION */
+  .education {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .edu-period {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--mustard-deep);
+    margin-bottom: 8px;
+  }
+  .edu p {
+    font-size: 15px;
+    opacity: 0.85;
+  }
+
+  /* EXPERIENCE */
+  .experience {
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+  }
+  .exp-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px 20px;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+  }
+  .exp-head h2 {
+    font-size: clamp(20px, 2.6vw, 26px);
+  }
+  .exp-period {
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--navy);
+    opacity: 0.8;
+    white-space: nowrap;
+  }
+  .exp--closed .exp-period {
+    color: var(--rust);
+    opacity: 1;
+  }
+  .exp-context {
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 62ch;
+    margin-bottom: 16px;
+  }
+  .exp ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 68ch;
+  }
+  .exp li {
+    position: relative;
+    padding-left: 22px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .exp li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background: var(--mustard);
+  }
+  .exp--closed li::before {
+    background: var(--rust);
   }
 
   /* PROJECTS */
