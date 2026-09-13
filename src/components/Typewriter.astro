@@ -1,0 +1,123 @@
+---
+interface Props {
+  lines: string[];
+  minDelay?: number;
+  maxDelay?: number;
+  blinks?: number;
+}
+
+const { lines, minDelay = 60, maxDelay = 120, blinks = 4 } = Astro.props;
+---
+
+<span
+  class="tw"
+  data-tw
+  data-min={minDelay}
+  data-max={maxDelay}
+  data-blinks={blinks}
+  aria-hidden="true"
+>
+  {
+    lines.map((line, li) => (
+      <>
+        {li > 0 && <br />}
+        <span class="tw-line">
+          {line.split("").map((ch) => (
+            <span class="tw-char">{ch}</span>
+          ))}
+        </span>
+      </>
+    ))
+  }
+  <span class="tw-cursor" data-tw-cursor>|</span>
+</span>
+
+<script>
+  function initTypewriter(container: HTMLElement) {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReducedMotion) return;
+
+    const chars = Array.from(container.querySelectorAll<HTMLElement>(".tw-char"));
+    const cursor = container.querySelector<HTMLElement>("[data-tw-cursor]");
+    if (!chars.length || !cursor) return;
+
+    const minDelay = parseFloat(container.dataset.min || "60");
+    const maxDelay = parseFloat(container.dataset.max || "120");
+    const blinks = parseInt(container.dataset.blinks || "4", 10);
+
+    container.classList.add("tw-js");
+    chars[0].before(cursor);
+    cursor.style.animation = "tw-blink 1s step-end infinite";
+
+    let i = 0;
+    function revealNext() {
+      const ch = chars[i];
+      ch.classList.add("is-visible");
+      ch.after(cursor as HTMLElement);
+      i++;
+
+      if (i < chars.length) {
+        const delay = minDelay + Math.random() * (maxDelay - minDelay);
+        setTimeout(revealNext, delay);
+      } else {
+        finishTyping();
+      }
+    }
+
+    function finishTyping() {
+      if (!cursor) return;
+      cursor.style.animation = `tw-blink 1s step-end ${blinks}`;
+      cursor.addEventListener(
+        "animationend",
+        () => {
+          cursor.classList.add("tw-cursor-fade");
+        },
+        { once: true }
+      );
+    }
+
+    setTimeout(revealNext, minDelay);
+  }
+
+  document
+    .querySelectorAll<HTMLElement>("[data-tw]")
+    .forEach((el) => initTypewriter(el));
+</script>
+
+<style>
+  .tw-char {
+    visibility: visible;
+  }
+  .tw.tw-js .tw-char {
+    visibility: hidden;
+  }
+  .tw.tw-js .tw-char.is-visible {
+    visibility: visible;
+  }
+
+  .tw-cursor {
+    visibility: hidden;
+    display: inline-block;
+    color: var(--navy);
+    font-weight: 400;
+  }
+  .tw.tw-js .tw-cursor {
+    visibility: visible;
+  }
+  .tw-cursor.tw-cursor-fade {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+
+  @keyframes tw-blink {
+    from,
+    to {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+</style>

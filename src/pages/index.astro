@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BauhausStrip from "../components/BauhausStrip.astro";
+import Typewriter from "../components/Typewriter.astro";
 ---
 
 <BaseLayout title="Maud Hendrix">
@@ -20,7 +21,9 @@ import BauhausStrip from "../components/BauhausStrip.astro";
           <span class="eyebrow-index mono">MH — GENT, BE</span>
         </div>
 
-        <h1 class="hero-title">Maud<br />Hendrix</h1>
+        <h1 class="hero-title" aria-label="Maud Hendrix">
+          <Typewriter lines={["Maud", "Hendrix"]} minDelay={60} maxDelay={120} blinks={4} />
+        </h1>
 
         <div class="hero-statement">
           <p>
