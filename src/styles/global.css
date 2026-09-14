@@ -25,49 +25,6 @@
   --footer-bar-h: clamp(4.75rem, 9vw, 5.75rem);
 }
 
-/* ---------------------------------------------------------
-   Dark mode
-   Keert het kleurenschema om: crème achtergrond wordt marineblauw,
-   tekst wordt crème, mosterdgeel blijft de accentkleur. Werkt op
-   alle bestaande secties omdat die allemaal deze tokens gebruiken.
---------------------------------------------------------- */
-html.dark-mode {
-  --cream: #253863;
-  --paper: #1a2749;
-  --ink: #f2ecdc;
-  --navy: #f2ecdc;
-  --navy-deep: #d9d0ba;
-  --mustard: #dc9327;
-  --mustard-deep: #b8721c;
-  --rust: #c1502e;
-  --olive: #4b5c34;
-  --line: rgba(242, 236, 220, 0.86);
-}
-
-/* ---------------------------------------------------------
-   Reduced motion
-   Handmatige toggle (html.reduce-motion) én systeeminstelling
-   (prefers-reduced-motion) schakelen alle transitions/animaties
-   op de site vrijwel uit.
---------------------------------------------------------- */
-html.reduce-motion *,
-html.reduce-motion *::before,
-html.reduce-motion *::after {
-  transition-duration: 0.001s !important;
-  animation-duration: 0.001s !important;
-  scroll-behavior: auto !important;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    transition-duration: 0.001s !important;
-    animation-duration: 0.001s !important;
-    scroll-behavior: auto !important;
-  }
-}
-
 * {
   box-sizing: border-box;
 }

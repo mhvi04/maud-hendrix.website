@@ -2,15 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import StickyFooterBar from "../components/StickyFooterBar.astro";
 import Typewriter from "../components/Typewriter.astro";
-import InteractiePaneel from "../components/InteractiePaneel.astro";
 ---
 
 <BaseLayout title="Maud Hendrix">
   <main class="home">
-    <div class="wrap interactie-paneel-wrap">
-      <InteractiePaneel />
-    </div>
-
     <section class="hero">
       <div class="hero-shapes" aria-hidden="true">
         <span class="ring ring-a"></span>
@@ -140,11 +135,6 @@ import InteractiePaneel from "../components/InteractiePaneel.astro";
     display: flex;
     flex-direction: column;
     background: var(--cream);
-  }
-
-  /* ---------- INTERACTIEPANEEL ---------- */
-  .interactie-paneel-wrap {
-    padding-top: clamp(20px, 4vw, 32px);
   }
 
   /* ---------- HERO ---------- */
