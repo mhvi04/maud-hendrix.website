@@ -1,0 +1,132 @@
+---
+// ConsentBanner.astro
+// Blokkeert het laden van GTM tot de bezoeker kiest. De keuze wordt
+// onthouden in localStorage zodat de banner niet elk bezoek terugkomt.
+// window.__loadGTM wordt in BaseLayout.astro gedefinieerd.
+---
+
+<div class="consent-banner" data-consent-banner hidden>
+  <p class="consent-text">
+    Deze site gebruikt Google Tag Manager om bezoekersstatistieken te
+    verzamelen. Aanvaarden of weigeren?
+  </p>
+  <div class="consent-actions">
+    <button type="button" class="consent-btn" data-consent-decline
+      >Weigeren</button
+    >
+    <button
+      type="button"
+      class="consent-btn consent-btn--accept"
+      data-consent-accept>Accepteren</button
+    >
+  </div>
+</div>
+
+<script>
+  const STORAGE_KEY = "cookie-consent";
+  const banner = document.querySelector<HTMLDivElement>("[data-consent-banner]");
+
+  if (banner) {
+    let stored: string | null = null;
+    try {
+      stored = localStorage.getItem(STORAGE_KEY);
+    } catch {
+      stored = null;
+    }
+
+    if (!stored) {
+      banner.hidden = false;
+    }
+
+    function respond(value: "accepted" | "declined") {
+      try {
+        localStorage.setItem(STORAGE_KEY, value);
+      } catch {
+        // localStorage niet beschikbaar: banner verdwijnt wel voor deze
+        // sessie, maar komt bij een volgend bezoek opnieuw terug.
+      }
+      if (banner) banner.hidden = true;
+      if (value === "accepted") {
+        (window as typeof window & { __loadGTM?: () => void }).__loadGTM?.();
+      }
+    }
+
+    banner
+      .querySelector("[data-consent-accept]")
+      ?.addEventListener("click", () => respond("accepted"));
+    banner
+      .querySelector("[data-consent-decline]")
+      ?.addEventListener("click", () => respond("declined"));
+  }
+</script>
+
+<style>
+  .consent-banner {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: calc(var(--footer-bar-h) + 16px);
+    z-index: 200;
+    max-width: 520px;
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    background: var(--cream);
+    border: 3px solid var(--ink);
+    box-shadow: 6px 6px 0 var(--ink);
+    padding: 20px 22px;
+  }
+
+  .consent-text {
+    flex: 1 1 240px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  .consent-actions {
+    display: flex;
+    flex-shrink: 0;
+    gap: 10px;
+    margin-left: auto;
+  }
+
+  .consent-btn {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 10px 18px;
+    border: 2px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .consent-btn:hover {
+    background: rgba(26, 22, 15, 0.08);
+  }
+
+  .consent-btn--accept {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--paper);
+  }
+  .consent-btn--accept:hover {
+    background: var(--navy-deep);
+  }
+
+  @media (max-width: 480px) {
+    .consent-banner {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .consent-actions {
+      margin-left: 0;
+      justify-content: flex-end;
+    }
+  }
+</style>

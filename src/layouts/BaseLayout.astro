@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import PersonSchema from "../components/PersonSchema.astro";
+import ConsentBanner from "../components/ConsentBanner.astro";
 
 interface Props {
   title: string;
@@ -43,13 +44,23 @@ const jsonLd =
 <!doctype html>
 <html lang="nl">
   <head>
-<!-- Google Tag Manager -->
+<!-- Google Tag Manager: laadt pas na consent (zie ConsentBanner.astro) -->
 <script is:inline>
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PXTHL5MQ');
+  (function () {
+    function loadGTM() {
+      if (window.__gtmLoaded) return;
+      window.__gtmLoaded = true;
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PXTHL5MQ');
+    }
+    window.__loadGTM = loadGTM;
+    try {
+      if (localStorage.getItem("cookie-consent") === "accepted") loadGTM();
+    } catch (e) {}
+  })();
 </script>
 <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
@@ -86,17 +97,7 @@ const jsonLd =
     />
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-PXTHL5MQ"
-        height="0"
-        width="0"
-        style="display:none;visibility:hidden"
-      ></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <slot />
+    <ConsentBanner />
   </body>
 </html>
