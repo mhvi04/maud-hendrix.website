@@ -5,23 +5,39 @@
 // geometrisch vlak (vierkant/cirkel) dat van vorm en kleur wisselt.
 //
 // Functioneel: zet echte dark mode + reduced-motion classes op <html>,
-// bewaart de keuze in localStorage.
+// bewaart de keuze in localStorage. Staat als compact icoon vast in de
+// rechterbovenhoek en vouwt open bij klik.
 ---
 
 <div class="interactie-paneel" data-panel>
-  <button class="paneel-header" data-toggle-panel aria-expanded="false" aria-controls="paneel-body">
-    <span class="paneel-titel">Weergave</span>
-    <div class="status-indicator" data-status data-level="hoog">
-      <span class="status-vorm" data-shape></span>
-      <span class="status-label" data-label>Hoog</span>
-    </div>
+  <button
+    class="paneel-icon"
+    data-toggle-panel
+    aria-expanded="false"
+    aria-controls="paneel-dropdown"
+    aria-label="Weergave-instellingen"
+    data-status
+    data-level="hoog"
+  >
+    <span class="status-vorm" data-shape></span>
   </button>
 
-  <div class="paneel-body" id="paneel-body" data-panel-body hidden>
+  <div class="paneel-dropdown" id="paneel-dropdown" data-panel-body hidden>
+    <div class="paneel-dropdown-header">
+      <span class="paneel-titel">Weergave</span>
+      <span class="status-label" data-label>Hoog</span>
+    </div>
+    <p class="paneel-omschrijving">
+      Donkere modus en verminderde animatie besparen tot 35% van de batterij
+      van je toestel en verkleinen zo de ecologische voetafdruk.
+    </p>
+
     <div class="toggle-rij">
       <div class="toggle-tekst">
         <p class="toggle-naam">Donkere modus</p>
-        <p class="toggle-omschrijving">Minder licht op het scherm.</p>
+        <p class="toggle-omschrijving">
+          Kan energie besparen op schermen met OLED- of AMOLED-technologie.
+        </p>
       </div>
       <button
         class="toggle-knop"
@@ -37,7 +53,9 @@
     <div class="toggle-rij">
       <div class="toggle-tekst">
         <p class="toggle-naam">Verminder animatie</p>
-        <p class="toggle-omschrijving">Minder beweging, rustiger ervaring.</p>
+        <p class="toggle-omschrijving">
+          Vermindert het gebruik van CPU/GPU aanzienlijk en bespaart energie.
+        </p>
       </div>
       <button
         class="toggle-knop"
@@ -54,66 +72,98 @@
 
 <style>
   .interactie-paneel {
-    background: var(--cream);
-    border: 2px solid var(--navy);
-    max-width: 420px;
+    position: fixed;
+    top: clamp(14px, 3vw, 24px);
+    right: clamp(14px, 3vw, 24px);
+    z-index: 60;
   }
 
-  .paneel-header {
+  .paneel-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--navy);
+    background: var(--cream);
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .paneel-icon:hover,
+  .paneel-icon:focus-visible {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+  .paneel-icon:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
+  .paneel-icon[aria-expanded="true"] {
+    background: var(--navy);
+  }
+
+  .status-vorm {
+    width: 12px;
+    height: 12px;
+    transition: background 0.2s ease, border-radius 0.2s ease;
+  }
+
+  /* drie toestanden = drie vormen/kleuren, geen gradient */
+  .paneel-icon[data-level="hoog"] .status-vorm {
+    background: var(--mustard);
+    border-radius: 0;
+  }
+  .paneel-icon[data-level="gemiddeld"] .status-vorm {
+    background: var(--mustard);
+    border-radius: 50%;
+  }
+  .paneel-icon[data-level="laag"] .status-vorm {
+    background: var(--navy);
+    border-radius: 50%;
+  }
+  .paneel-icon[aria-expanded="true"][data-level="laag"] .status-vorm {
+    background: var(--cream);
+  }
+
+  .paneel-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: min(300px, calc(100vw - 28px));
+    background: var(--cream);
+    border: 2px solid var(--navy);
+    box-shadow: 6px 6px 0 var(--ink);
+    padding: 1rem 1.25rem 1.1rem;
+  }
+
+  .paneel-dropdown-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    border: none;
-    background: transparent;
-    padding: 1.5rem;
-    font: inherit;
-    cursor: pointer;
+    align-items: baseline;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(28, 43, 74, 0.2);
   }
 
   .paneel-titel {
     font-family: var(--font-display);
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: var(--navy);
   }
 
-  .status-indicator {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: var(--font-mono);
-  }
-
-  .status-vorm {
-    width: 14px;
-    height: 14px;
-    transition: background 0.2s ease, border-radius 0.2s ease;
-  }
-
   .status-label {
-    font-size: 0.85rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--navy);
   }
 
-  /* drie toestanden = drie vormen/kleuren, geen gradient */
-  .status-indicator[data-level="hoog"] .status-vorm {
-    background: var(--mustard);
-    border-radius: 0;
-  }
-  .status-indicator[data-level="gemiddeld"] .status-vorm {
-    background: var(--mustard);
-    border-radius: 50%;
-  }
-  .status-indicator[data-level="laag"] .status-vorm {
-    background: var(--navy);
-    border-radius: 50%;
-  }
-
-  .paneel-body {
-    padding: 0 1.5rem 1.5rem;
-    border-top: 2px solid var(--navy);
+  .paneel-omschrijving {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: rgba(28, 43, 74, 0.75);
+    margin: 0.6rem 0 0;
   }
 
   .toggle-rij {
@@ -121,7 +171,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    padding: 0.75rem 0;
+    padding: 0.7rem 0;
   }
 
   .toggle-rij + .toggle-rij {
@@ -131,12 +181,13 @@
   .toggle-naam {
     font-family: var(--font-mono);
     font-weight: 600;
+    font-size: 0.9rem;
     color: var(--navy);
     margin: 0;
   }
 
   .toggle-omschrijving {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: rgba(28, 43, 74, 0.65);
     margin: 0.2rem 0 0;
   }
@@ -171,16 +222,28 @@
   if (paneel) {
     const panelToggle = paneel.querySelector<HTMLButtonElement>("[data-toggle-panel]");
     const panelBody = paneel.querySelector<HTMLDivElement>("[data-panel-body]");
-    const statusIndicator = paneel.querySelector<HTMLDivElement>("[data-status]");
     const statusLabel = paneel.querySelector<HTMLSpanElement>("[data-label]");
     const darkToggle = paneel.querySelector<HTMLButtonElement>('[data-toggle="dark"]');
     const motionToggle = paneel.querySelector<HTMLButtonElement>('[data-toggle="motion"]');
+
+    function closePanel() {
+      panelToggle?.setAttribute("aria-expanded", "false");
+      if (panelBody) panelBody.hidden = true;
+    }
 
     panelToggle?.addEventListener("click", () => {
       const isOpen = panelToggle.getAttribute("aria-expanded") === "true";
       const nextOpen = !isOpen;
       panelToggle.setAttribute("aria-expanded", String(nextOpen));
       if (panelBody) panelBody.hidden = !nextOpen;
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!paneel.contains(event.target as Node)) closePanel();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closePanel();
     });
 
     function updateStatus() {
@@ -197,7 +260,7 @@
         label = "Gemiddeld";
       }
 
-      statusIndicator?.setAttribute("data-level", niveau);
+      panelToggle?.setAttribute("data-level", niveau);
       if (statusLabel) statusLabel.textContent = label;
     }
 
