@@ -27,11 +27,17 @@
       <span class="paneel-titel">Weergave</span>
       <span class="status-label" data-label>Hoog</span>
     </div>
+    <p class="paneel-omschrijving">
+      Donkere modus en verminderde animatie besparen tot 35% van de batterij
+      van je toestel en verkleinen zo de ecologische voetafdruk.
+    </p>
 
     <div class="toggle-rij">
       <div class="toggle-tekst">
         <p class="toggle-naam">Donkere modus</p>
-        <p class="toggle-omschrijving">Minder licht op het scherm.</p>
+        <p class="toggle-omschrijving">
+          Kan energie besparen op schermen met OLED- of AMOLED-technologie.
+        </p>
       </div>
       <button
         class="toggle-knop"
@@ -47,7 +53,9 @@
     <div class="toggle-rij">
       <div class="toggle-tekst">
         <p class="toggle-naam">Verminder animatie</p>
-        <p class="toggle-omschrijving">Minder beweging, rustiger ervaring.</p>
+        <p class="toggle-omschrijving">
+          Vermindert het gebruik van CPU/GPU aanzienlijk en bespaart energie.
+        </p>
       </div>
       <button
         class="toggle-knop"
@@ -149,6 +157,13 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--navy);
+  }
+
+  .paneel-omschrijving {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: rgba(28, 43, 74, 0.75);
+    margin: 0.6rem 0 0;
   }
 
   .toggle-rij {
