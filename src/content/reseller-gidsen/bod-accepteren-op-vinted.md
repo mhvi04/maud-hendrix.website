@@ -1,5 +1,5 @@
 ---
-slug: "accepterenvaneenbod"
+slug: "bod-accepteren-op-vinted"
 title: "Bijna nooit meteen een bod accepteren? Wat mijn verkoopdata laat zien over het omgaan met biedingen op Vinted"
 excerpt: "Van meer dan 2.500 Vinted-transacties liep ik de meeste marge mis op de deals die ik het snelst sloot. Wat er gebeurt als je een bod meteen accepteert, en waarom een tegenbod bijna altijd slimmer is."
 date: "2026-06-23"

@@ -1,5 +1,5 @@
 ---
-slug: "post-niet-alle-vinted-kopers-zijn-hetzeflde-w"
+slug: "niet-alle-vinted-kopers-zijn-hetzelfde"
 title: "Niet alle Vinted-kopers zijn hetzelfde. Ze wonen ook ergens anders."
 excerpt: "Een analyse van de 250 meest recente orders, met kopers uit acht landen, over hoe geografie het koopgedrag op Vinted verandert."
 date: "2026-06-23"

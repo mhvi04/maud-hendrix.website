@@ -1,5 +1,5 @@
 ---
-slug: "belastingen.betalen.op.Vinted.in.Belgie.VintieBulk"
+slug: "belasting-betalen-op-vinted-in-belgie"
 title: "Belasting betalen op Vinted verkopen in België: wat je écht moet weten"
 excerpt: "Er is geen magisch bedrag waaronder je veilig zit. Wat vier jaar en meer dan 2.500 transacties mij hebben geleerd over het fiscale kader rond verkopen op Vinted."
 date: "2026-08-08"

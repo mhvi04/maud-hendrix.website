@@ -1,5 +1,5 @@
 ---
-slug: "ralph-lauren-supplier.inkoopmethoden-vinted-resellers_VintieBulk"
+slug: "drie-inkoopmethoden-vinted-resellers"
 title: "Drie manieren om aan voorraad te komen als Vinted reseller"
 excerpt: "Stuk voor stuk inkopen, ongefilterde bulk of curated bulk: drie inkoopmethoden met elk een ander risicoprofiel, en de beslisregel om te kiezen welke bij jouw fase past."
 date: "2026-07-23"

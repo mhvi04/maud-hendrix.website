@@ -17,8 +17,7 @@ const resellerGidsen = defineCollection({
   schema: z.object({
     // Expliciete slug: de glob-loader gebruikt dit veld letterlijk als entry.id
     // (zie generateIdDefault in astro/content/loaders/glob.js), zonder te
-    // slugifiëren. Nodig omdat sommige originele VintieBulk-URL's spelfouten,
-    // punten of hoofdletters bevatten die exact behouden moeten blijven.
+    // slugifiëren. Laat de bestandsnaam afwijken van de uiteindelijke route.
     slug: z.string(),
     title: z.string(),
     excerpt: z.string(),

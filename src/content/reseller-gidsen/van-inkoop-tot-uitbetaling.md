@@ -1,5 +1,5 @@
 ---
-slug: "vaninkooptotuitbetaling"
+slug: "van-inkoop-tot-uitbetaling"
 title: "Van Inkoop tot Uitbetaling: Alle Stappen van Resellen op Vinted"
 excerpt: "Een overzicht van het volledige verkoopsysteem op Vinted, van sourcing tot afhandeling na de verkoop, gebaseerd op meer dan 2.500 transacties."
 date: "2026-06-16"
