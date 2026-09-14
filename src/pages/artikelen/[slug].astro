@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
-import SiteFooter from "../../components/SiteFooter.astro";
+import StickyFooterBar from "../../components/StickyFooterBar.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -36,7 +36,7 @@ const publishedDate = entry.data.date.startsWith("[") ? undefined : entry.data.d
       </div>
     </div>
   </main>
-  <SiteFooter world="pro" />
+  <StickyFooterBar showVat />
 </BaseLayout>
 
 <style>

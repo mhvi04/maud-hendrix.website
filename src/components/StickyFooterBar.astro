@@ -1,0 +1,63 @@
+---
+interface Props {
+  showVat?: boolean;
+  subtitle?: string;
+}
+const { showVat = false, subtitle = "Gent, België" } = Astro.props;
+---
+
+<footer class="sticky-footer-bar">
+  <div class="wrap bar-inner">
+    <img src="/logo.png" alt="Maud Hendrix" class="logo" width="192" height="192" />
+    <div class="bar-text">
+      <p class="mono small">
+        © {new Date().getFullYear()} Maud Hendrix
+        {showVat && <span class="ond"> · BE 1019.593.031</span>}
+      </p>
+      <p class="mono small">{subtitle}</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /* Hoogte ~2 tot 3cm, schaalt mee met de viewport: clamp(4.75rem, 9vw, 5.75rem) ≈ 76–92px. */
+  .sticky-footer-bar {
+    position: fixed;
+    inset-block-end: 0;
+    inset-inline: 0;
+    z-index: 40;
+    height: var(--footer-bar-h);
+    background: var(--cream);
+    border-top: 3px solid var(--ink);
+  }
+  .bar-inner {
+    display: flex;
+    align-items: center;
+    gap: clamp(12px, 3vw, 20px);
+    height: 100%;
+  }
+  .logo {
+    flex: 0 0 auto;
+    width: clamp(36px, 6vw, 48px);
+    height: clamp(36px, 6vw, 48px);
+    object-fit: contain;
+  }
+  .bar-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    min-width: 0;
+  }
+  .small {
+    font-size: clamp(10px, 2.6vw, 12px);
+    color: var(--ink);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .ond {
+    opacity: 0.75;
+  }
+</style>

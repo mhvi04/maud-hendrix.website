@@ -21,6 +21,8 @@
 
   --edge: 6px;
   --container: 1240px;
+  /* Hoogte vaste footer-balk, ongeveer 2 tot 3cm, schalend met de viewport. */
+  --footer-bar-h: clamp(4.75rem, 9vw, 5.75rem);
 }
 
 * {
@@ -34,6 +36,7 @@ html {
 
 body {
   margin: 0;
+  padding-bottom: var(--footer-bar-h);
   background: var(--cream);
   color: var(--ink);
   font-family: var(--font-body);
