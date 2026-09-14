@@ -1,7 +1,7 @@
 ---
 title: "Vinted-foto's die verkopen: wat de data zegt, niet wat mooi oogt"
 excerpt: "Fotografie bij resellen is geen creatief proces maar risicoreductie. Vijf vaste foto's, in een vaste volgorde, gebouwd op wat écht minder klachten en meer clicks oplevert."
-date: "2026-09-13"
+date: "2026-08-03"
 tag: "Praktijk"
 draft: false
 ---
