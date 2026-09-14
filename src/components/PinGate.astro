@@ -1,0 +1,243 @@
+---
+interface Props {
+  code: string;
+  storageKey?: string;
+}
+const { code, storageKey = "prive-gate-unlocked" } = Astro.props;
+---
+
+<div id="pin-gate" class="pin-gate" role="dialog" aria-modal="true" aria-label="Toegang tot Privé">
+  <div class="gate-shapes" aria-hidden="true">
+    <span class="gate-ring"></span>
+    <span class="gate-square"></span>
+    <span class="gate-dot"></span>
+    <span class="gate-triangle"></span>
+  </div>
+  <div class="gate-body">
+    <span class="label">Toegang vereist</span>
+    <h1>Privé</h1>
+    <p class="gate-hint">Voer de code in om verder te gaan.</p>
+    <div class="pin-row" id="pin-row">
+      <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="pin-box" aria-label="Cijfer 1" data-pin-input />
+      <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="pin-box" aria-label="Cijfer 2" data-pin-input />
+      <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="pin-box" aria-label="Cijfer 3" data-pin-input />
+      <input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" class="pin-box" aria-label="Cijfer 4" data-pin-input />
+    </div>
+  </div>
+</div>
+
+<div id="pin-content" hidden>
+  <slot />
+</div>
+
+<script is:inline define:vars={{ code, storageKey }}>
+  (function () {
+    const gate = document.getElementById("pin-gate");
+    const content = document.getElementById("pin-content");
+    const row = document.getElementById("pin-row");
+    const inputs = Array.from(document.querySelectorAll("[data-pin-input]"));
+
+    function unlock() {
+      try {
+        sessionStorage.setItem(storageKey, "true");
+      } catch {
+        /* sessionStorage unavailable, unlock still works for this page view */
+      }
+      gate.setAttribute("hidden", "");
+      content.removeAttribute("hidden");
+    }
+
+    let alreadyUnlocked = false;
+    try {
+      alreadyUnlocked = sessionStorage.getItem(storageKey) === "true";
+    } catch {
+      /* sessionStorage unavailable, fall through to showing the gate */
+    }
+
+    if (alreadyUnlocked) {
+      unlock();
+    } else {
+      inputs[0]?.focus();
+    }
+
+    function currentValue() {
+      return inputs.map((i) => i.value).join("");
+    }
+
+    function checkCode() {
+      if (currentValue() === code) {
+        unlock();
+        return;
+      }
+      row.classList.remove("shake");
+      void row.offsetWidth;
+      row.classList.add("shake");
+      inputs.forEach((i) => (i.value = ""));
+      inputs[0]?.focus();
+    }
+
+    inputs.forEach((input, i) => {
+      input.addEventListener("input", () => {
+        input.value = input.value.replace(/[^0-9]/g, "").slice(0, 1);
+        if (input.value && i < inputs.length - 1) {
+          inputs[i + 1].focus();
+        }
+        if (currentValue().length === inputs.length) {
+          checkCode();
+        }
+      });
+
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Backspace" && !input.value && i > 0) {
+          inputs[i - 1].focus();
+        }
+      });
+
+      input.addEventListener("paste", (e) => {
+        const text = e.clipboardData.getData("text").replace(/[^0-9]/g, "");
+        if (text.length === inputs.length) {
+          e.preventDefault();
+          inputs.forEach((inp, idx) => (inp.value = text[idx] || ""));
+          checkCode();
+        }
+      });
+    });
+  })();
+</script>
+
+<style>
+  .pin-gate {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .pin-gate[hidden] {
+    display: none;
+  }
+
+  .gate-shapes {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .gate-ring {
+    position: absolute;
+    top: -70px;
+    right: 8%;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 3px solid var(--mustard);
+    opacity: 0.9;
+  }
+  .gate-square {
+    position: absolute;
+    bottom: 12%;
+    left: 8%;
+    width: 56px;
+    height: 56px;
+    background: var(--rust);
+    transform: rotate(8deg);
+  }
+  .gate-dot {
+    position: absolute;
+    top: 22%;
+    left: 18%;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--ink);
+  }
+  .gate-triangle {
+    position: absolute;
+    bottom: 18%;
+    right: 14%;
+    width: 0;
+    height: 0;
+    border-left: 26px solid transparent;
+    border-right: 26px solid transparent;
+    border-bottom: 44px solid var(--navy);
+  }
+
+  .gate-body {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+    padding: 32px;
+  }
+  .gate-body h1 {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 7vw, 64px);
+    font-weight: 600;
+    color: var(--navy);
+    margin: 6px 0 0;
+  }
+  .gate-hint {
+    font-size: 15px;
+    color: var(--ink);
+    opacity: 0.75;
+    margin: 0 0 22px;
+  }
+
+  .pin-row {
+    display: flex;
+    gap: 14px;
+  }
+  .pin-box {
+    width: 56px;
+    height: 64px;
+    border: 3px solid var(--ink);
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 0;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .pin-box:focus {
+    outline: none;
+    border-color: var(--navy);
+    background: var(--cream);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes gate-shake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-8px); }
+      40% { transform: translateX(8px); }
+      60% { transform: translateX(-6px); }
+      80% { transform: translateX(6px); }
+    }
+    .pin-row.shake {
+      animation: gate-shake 0.4s ease;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .pin-box {
+      width: 46px;
+      height: 56px;
+      font-size: 22px;
+    }
+    .gate-ring {
+      width: 140px;
+      height: 140px;
+    }
+    .gate-square {
+      width: 40px;
+      height: 40px;
+    }
+  }
+</style>
