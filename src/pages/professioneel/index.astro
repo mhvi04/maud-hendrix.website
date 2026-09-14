@@ -386,9 +386,18 @@ const articles = (await getCollection("articles")).sort((a, b) =>
   }
   .skills-stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     margin-bottom: 28px;
+  }
+  .skills-stats :global(.countup-number) {
+    font-size: clamp(36px, 4.5vw, 56px);
+  }
+
+  @media (max-width: 560px) {
+    .skills-stats {
+      grid-template-columns: 1fr;
+    }
   }
   .skills-concrete {
     display: flex;
