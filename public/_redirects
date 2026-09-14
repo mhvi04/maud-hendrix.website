@@ -1,8 +1,0 @@
-# VintieBulk reseller gidsen: oude alternatieve/Engelse routes -> definitieve gids
-/reseller.gidsen.vintiebulk/post-2 /reseller-gidsen/vaninkooptotuitbetaling 301
-/en/reseller.gidsen.vintiebulk/vaninkooptotuitbetaling /reseller-gidsen/vaninkooptotuitbetaling 301
-/reseller.gidsen.vintiebulk/drie-inkoopmethoden-vinted-resellers /reseller-gidsen/ralph-lauren-supplier.inkoopmethoden-vinted-resellers_VintieBulk 301
-
-# Hernoemde hoofdroute: oude VintieBulk-padstructuur -> /reseller-gidsen/
-/reseller.gidsen.vintiebulk /reseller-gidsen 301
-/reseller.gidsen.vintiebulk/* /reseller-gidsen/:splat 301
