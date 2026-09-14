@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import StickyFooterBar from "../../components/StickyFooterBar.astro";
 import Timeline from "../../components/Timeline.astro";
-import SkillsMarquee from "../../components/SkillsMarquee.astro";
+import CountUp from "../../components/CountUp.astro";
 import ToolsPattern from "../../components/ToolsPattern.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
 import { Image } from "astro:assets";
@@ -72,7 +72,19 @@ const articles = (await getCollection("articles")).sort((a, b) =>
       <div class="wrap skills-head">
         <span class="row-label label">Vaardigheden</span>
       </div>
-      <SkillsMarquee />
+      <div class="wrap">
+        <div class="skills-stats">
+          <CountUp end={2500} suffix="+" label="transacties verwerkt" accent="mustard" />
+          <CountUp end={774} label="orders in 2025" accent="navy" />
+          <CountUp end={56} suffix="%" label="brutomarge" accent="mustard" />
+          <CountUp end={4.81} decimals={2} suffix="/5" label="verkopersbeoordeling" accent="navy" />
+        </div>
+        <div class="skills-concrete">
+          <span class="skill-tag">Data-analyse</span>
+          <span class="skill-tag">No-code bouwen</span>
+          <span class="skill-tag">Resell-strategie</span>
+        </div>
+      </div>
     </section>
 
     <!-- TALEN & TOOLS -->
@@ -371,6 +383,29 @@ const articles = (await getCollection("articles")).sort((a, b) =>
   }
   .skills-head {
     padding-bottom: 20px;
+  }
+  .skills-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+  .skills-concrete {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-bottom: clamp(36px, 5vw, 56px);
+  }
+  .skill-tag {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    padding: 10px 20px;
+    border: 2px solid var(--ink);
+    border-radius: 9999px;
+    background: var(--paper);
+    color: var(--ink);
   }
 
   /* LANGUAGES & TOOLS */
