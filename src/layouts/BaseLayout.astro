@@ -8,6 +8,7 @@ interface Props {
   type?: "website" | "article";
   publishedDate?: string;
   noindex?: boolean;
+  canonicalPath?: string;
 }
 
 const {
@@ -16,9 +17,10 @@ const {
   type = "website",
   publishedDate,
   noindex = false,
+  canonicalPath,
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = new URL(canonicalPath ?? Astro.url.pathname, Astro.site);
 
 const jsonLd =
   type === "article"

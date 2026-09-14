@@ -1,0 +1,168 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const gidsen = await getCollection("resellerGidsen");
+  return gidsen.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const alleGidsen = await getCollection("resellerGidsen");
+const gerelateerd = alleGidsen
+  .filter((g) => g.id !== entry.id)
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<BaseLayout
+  title={`${entry.data.title} — Maud Hendrix`}
+  description={entry.data.excerpt}
+  type="article"
+  publishedDate={entry.data.date}
+  noindex={entry.data.draft}
+  canonicalPath={entry.data.canonicalPath}
+>
+  <SiteHeader world="pro" />
+  <main class="article">
+    <div class="wrap">
+      <a href="/reseller-gidsen" class="back mono">← Alle reseller gidsen</a>
+      <span class="tag mono">{entry.data.tag}</span>
+      <h1>{entry.data.title}</h1>
+      <p class="meta mono">
+        {entry.data.date} — {entry.data.author}
+      </p>
+
+      {
+        entry.data.draft && (
+          <div class="notice">
+            Deze gids is nog niet volledig. De oorspronkelijke tekst wordt
+            momenteel verder aangevuld met de resterende inhoud.
+          </div>
+        )
+      }
+
+      <div class="prose">
+        <Content />
+      </div>
+
+      {
+        gerelateerd.length > 0 && (
+          <nav class="related">
+            <h2>Andere reseller gidsen</h2>
+            <ul>
+              {gerelateerd.map((g) => (
+                <li>
+                  <a href={`/reseller-gidsen/${g.id}`}>{g.data.title}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )
+      }
+    </div>
+  </main>
+  <SiteFooter world="pro" />
+</BaseLayout>
+
+<style>
+  .article {
+    background: var(--cream);
+    padding-block: clamp(40px, 6vw, 72px) clamp(56px, 8vw, 96px);
+  }
+  .wrap {
+    max-width: 720px;
+  }
+  .back {
+    display: inline-block;
+    font-size: 13px;
+    color: var(--navy);
+    text-decoration: none;
+    margin-bottom: 28px;
+    opacity: 0.8;
+  }
+  .back:hover {
+    opacity: 1;
+  }
+  .tag {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mustard-deep);
+  }
+  h1 {
+    font-size: clamp(30px, 4.5vw, 46px);
+    font-weight: 600;
+    line-height: 1.1;
+    margin-block: 14px 10px;
+  }
+  .meta {
+    font-size: 13px;
+    color: var(--navy);
+    opacity: 0.75;
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .notice {
+    font-size: 14px;
+    line-height: 1.5;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-left: 6px solid var(--mustard);
+    padding: 16px 18px;
+    margin-bottom: 32px;
+  }
+  .prose {
+    font-size: 17px;
+    line-height: 1.75;
+  }
+  .prose :global(h2) {
+    font-size: 24px;
+    font-weight: 600;
+    margin-block: 36px 14px;
+  }
+  .prose :global(h3) {
+    font-size: 19px;
+    font-weight: 600;
+    margin-block: 24px 10px;
+  }
+  .prose :global(p) {
+    margin-bottom: 18px;
+  }
+  .prose :global(a) {
+    color: var(--navy);
+  }
+  .related {
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 3px solid var(--ink);
+  }
+  .related h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .related ul {
+    display: grid;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .related a {
+    font-size: 15px;
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .related a:hover {
+    border-bottom-color: var(--navy);
+  }
+</style>
