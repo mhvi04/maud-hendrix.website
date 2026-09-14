@@ -41,7 +41,7 @@ const milestones: Milestone[] = [
 ---
 
 <div class="timeline-wrap">
-  <p class="timeline-hint mono">Scroll voor het volledige traject →</p>
+  <p class="timeline-hint mono">Scroll → en tap een periode open voor meer detail</p>
   <div class="timeline-scroll">
     <div class="timeline-track">
       <div class="timeline-line" aria-hidden="true"></div>
@@ -49,19 +49,51 @@ const milestones: Milestone[] = [
         milestones.map((m) => (
           <div class="milestone">
             <span class="milestone-dot" aria-hidden="true" />
-            <span class="milestone-year mono">{m.age}</span>
-            <h3>{m.title}</h3>
-            {Array.isArray(m.body) ? (
-              m.body.map((para) => <p>{para}</p>)
-            ) : (
-              <p>{m.body}</p>
-            )}
+            <details class="milestone-details">
+              <summary class="milestone-summary">
+                <span class="milestone-year mono">{m.age}</span>
+                <h3>{m.title}</h3>
+                <span class="milestone-toggle" aria-hidden="true" />
+              </summary>
+              <div class="milestone-body">
+                {Array.isArray(m.body) ? (
+                  m.body.map((para) => <p>{para}</p>)
+                ) : (
+                  <p>{m.body}</p>
+                )}
+              </div>
+            </details>
           </div>
         ))
       }
     </div>
   </div>
 </div>
+
+<script>
+  function prefersReducedMotion() {
+    return (
+      document.documentElement.classList.contains("reduce-motion") ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    );
+  }
+
+  document
+    .querySelectorAll<HTMLDetailsElement>(".milestone-details")
+    .forEach((details) => {
+      details.addEventListener("toggle", () => {
+        if (!details.open || prefersReducedMotion()) return;
+        const body = details.querySelector<HTMLElement>(".milestone-body");
+        body?.animate(
+          [
+            { opacity: 0, transform: "translateY(-6px)" },
+            { opacity: 1, transform: "translateY(0)" },
+          ],
+          { duration: 220, easing: "ease-out" }
+        );
+      });
+    });
+</script>
 
 <style>
   .timeline-hint {
@@ -126,9 +158,28 @@ const milestones: Milestone[] = [
     z-index: 1;
   }
 
+  .milestone-details {
+    margin-top: 56px;
+  }
+
+  .milestone-summary {
+    display: block;
+    cursor: pointer;
+    list-style: none;
+  }
+  .milestone-summary::-webkit-details-marker {
+    display: none;
+  }
+  .milestone-summary::marker {
+    content: "";
+  }
+  .milestone-summary:focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: 4px;
+  }
+
   .milestone-year {
     display: block;
-    margin-top: 56px;
     margin-bottom: 12px;
     font-size: 13px;
     letter-spacing: 0.06em;
@@ -137,10 +188,29 @@ const milestones: Milestone[] = [
   }
 
   .milestone h3 {
+    display: inline;
     font-size: clamp(19px, 2.4vw, 23px);
     font-weight: 600;
     line-height: 1.2;
-    margin-bottom: 12px;
+  }
+
+  .milestone-toggle {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-left: 8px;
+    vertical-align: middle;
+    border-right: 2px solid var(--navy);
+    border-bottom: 2px solid var(--navy);
+    transform: translateY(-3px) rotate(45deg);
+    transition: transform 0.2s ease;
+  }
+  .milestone-details[open] .milestone-toggle {
+    transform: translateY(2px) rotate(-135deg);
+  }
+
+  .milestone-body {
+    padding-top: 12px;
   }
 
   .milestone p {
