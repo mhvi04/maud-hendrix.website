@@ -1,0 +1,43 @@
+---
+interface Props {
+  text: string;
+  tone?: "rust" | "olive" | "navy";
+  rotate?: number;
+}
+const { text, tone = "rust", rotate = -8 } = Astro.props;
+---
+
+<span class={`case-stamp stamp--${tone}`} style={`--rotate:${rotate}deg`} aria-hidden="true">
+  {text}
+</span>
+
+<style>
+  .case-stamp {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border: 2.5px solid currentColor;
+    border-radius: 2px;
+    transform: rotate(var(--rotate));
+    opacity: 0.9;
+    mix-blend-mode: multiply;
+    user-select: none;
+  }
+  .stamp--rust {
+    color: var(--rust);
+  }
+  .stamp--olive {
+    color: var(--olive);
+  }
+  .stamp--navy {
+    color: var(--navy);
+  }
+  html.dark-mode .case-stamp {
+    mix-blend-mode: normal;
+  }
+</style>

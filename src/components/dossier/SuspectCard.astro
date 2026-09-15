@@ -1,0 +1,115 @@
+---
+interface Props {
+  number: string;
+  title: string;
+  summary: string;
+  evidence: string;
+  description: string;
+}
+const { number, title, summary, evidence, description } = Astro.props;
+---
+
+<details class="suspect" data-discover="identiteit">
+  <summary>
+    <span class="suspect-head">
+      <span class="suspect-number mono">Profiel {number}</span>
+      <span class="suspect-title">{title}</span>
+    </span>
+    <span class="suspect-summary">{summary}</span>
+    <span class="suspect-toggle mono" aria-hidden="true">Dossier openen</span>
+  </summary>
+  <div class="suspect-body">
+    <p>{description}</p>
+    <span class="suspect-evidence mono">Bewijsstuk — {evidence}</span>
+  </div>
+</details>
+
+<script>
+  document.querySelectorAll<HTMLDetailsElement>(".suspect").forEach((el) => {
+    el.addEventListener("toggle", () => {
+      if (el.open) {
+        el.dispatchEvent(new CustomEvent("dossier:discovered", { bubbles: true, detail: "identiteit" }));
+      }
+    });
+  });
+</script>
+
+<style>
+  .suspect {
+    border: 3px solid var(--ink);
+    background: var(--paper);
+    padding: 0;
+  }
+  .suspect + .suspect {
+    margin-top: 18px;
+  }
+  .suspect summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+  }
+  .suspect summary::-webkit-details-marker {
+    display: none;
+  }
+  .suspect-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .suspect-number {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mustard-deep);
+  }
+  .suspect-title {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2.4vw, 26px);
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .suspect-summary {
+    font-size: 15px;
+    line-height: 1.55;
+    max-width: 62ch;
+  }
+  .suspect-toggle {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy);
+    opacity: 0.7;
+  }
+  .suspect[open] .suspect-toggle {
+    opacity: 0;
+    height: 0;
+  }
+  .suspect-body {
+    padding: 0 24px 26px;
+    border-top: 2px dashed var(--ink);
+    margin-top: 2px;
+    padding-top: 18px;
+  }
+  .suspect-body p {
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 64ch;
+    margin-bottom: 14px;
+  }
+  .suspect-evidence {
+    display: inline-block;
+    font-size: 12px;
+    color: var(--rust);
+    border: 1.5px solid var(--rust);
+    padding: 6px 12px;
+  }
+  .suspect summary:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: -3px;
+  }
+</style>

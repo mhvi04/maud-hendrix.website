@@ -1,0 +1,174 @@
+---
+---
+
+<details class="dossier-folder" data-discover="onderneming">
+  <summary>
+    <span class="folder-tab mono">Case 001</span>
+    <span class="folder-title-row">
+      <h3>Studio Maud</h3>
+      <span class="folder-status mono">Actief</span>
+    </span>
+    <span class="folder-toggle mono" aria-hidden="true">Map openen</span>
+  </summary>
+
+  <div class="folder-contents">
+    <div class="folder-col">
+      <span class="folder-label mono">Objectief</span>
+      <p>Data-gedreven tweedehands e-commerce op Vinted: sourcing, prijszetting, kwaliteitscontrole, verkoop en logistiek, allemaal in eigen beheer.</p>
+
+      <span class="folder-label mono">Rol</span>
+      <p>Zelfstandig gerund sinds februari 2025, voortbouwend op handel sinds haar veertiende. Ralph Lauren als hoofdcategorie, met eigen authenticiteits- en kwaliteitscontrole.</p>
+
+      <span class="folder-label mono">Connectie</span>
+      <p>Voortzetting van het geblokkeerde account @maud.hendrix. Opvolger van VintieBulk, de B2B-groothandel die eraan voorafging.</p>
+    </div>
+
+    <div class="folder-col folder-evidence">
+      <span class="folder-label mono">Bewijsstukken</span>
+      <ul class="evidence-list">
+        <li><span class="evidence-value mono">2.500+</span>transacties sinds de start</li>
+        <li><span class="evidence-value mono">774</span>orders in 2025</li>
+        <li><span class="evidence-value mono">56%</span>brutomarge</li>
+        <li><span class="evidence-value mono">4,81 / 5</span>verkopersbeoordeling</li>
+      </ul>
+      <a class="folder-link mono" href="https://www.vinted.be/member/306398525-studiomaud" target="_blank" rel="noopener">
+        Bekijk het Vinted-profiel →
+      </a>
+    </div>
+  </div>
+</details>
+
+<script>
+  document.querySelectorAll<HTMLDetailsElement>(".dossier-folder").forEach((el) => {
+    el.addEventListener("toggle", () => {
+      if (el.open) {
+        el.dispatchEvent(new CustomEvent("dossier:discovered", { bubbles: true, detail: "onderneming" }));
+      }
+    });
+  });
+</script>
+
+<style>
+  .dossier-folder {
+    border: 3px solid var(--ink);
+    background: var(--paper);
+  }
+  .dossier-folder summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 24px 26px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .dossier-folder summary::-webkit-details-marker {
+    display: none;
+  }
+  .folder-tab {
+    align-self: flex-start;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--paper);
+    background: var(--navy);
+    padding: 5px 12px;
+  }
+  .folder-title-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .folder-title-row h3 {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 600;
+  }
+  .folder-status {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mustard-deep);
+  }
+  .folder-toggle {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy);
+    opacity: 0.7;
+  }
+  .dossier-folder[open] .folder-toggle {
+    opacity: 0;
+    height: 0;
+  }
+
+  .folder-contents {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 32px;
+    padding: 4px 26px 30px;
+    border-top: 2px dashed var(--ink);
+    margin: 0 0 0;
+    padding-top: 22px;
+  }
+  .folder-label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mustard-deep);
+    margin-bottom: 8px;
+    margin-top: 18px;
+  }
+  .folder-label:first-child {
+    margin-top: 0;
+  }
+  .folder-col p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .evidence-list {
+    list-style: none;
+    margin: 0 0 20px;
+    padding: 0;
+    border-top: 2px solid var(--ink);
+  }
+  .evidence-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding-block: 10px;
+    border-bottom: 2px solid var(--ink);
+    font-size: 14px;
+  }
+  .evidence-value {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--navy);
+    min-width: 4.5ch;
+  }
+  .folder-link {
+    display: inline-block;
+    font-size: 13px;
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--navy);
+  }
+  .folder-link:hover {
+    color: var(--rust);
+    border-color: var(--rust);
+  }
+
+  .dossier-folder summary:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: -3px;
+  }
+
+  @media (max-width: 680px) {
+    .folder-contents {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+  }
+</style>

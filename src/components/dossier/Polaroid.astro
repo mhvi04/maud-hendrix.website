@@ -1,0 +1,105 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  caption: string;
+  note: string;
+  rotate?: number;
+}
+const { src, alt, caption, note, rotate = -3 } = Astro.props;
+---
+
+<button type="button" class="polaroid" style={`--rotate:${rotate}deg`} data-discover="identiteit" aria-expanded="false">
+  <span class="polaroid-inner">
+    <span class="polaroid-face polaroid-front">
+      <Image src={src} alt={alt} loading="lazy" widths={[240, 360, 480]} sizes="(max-width: 640px) 45vw, 220px" />
+      <span class="polaroid-caption mono">{caption}</span>
+    </span>
+    <span class="polaroid-face polaroid-back">
+      <span class="polaroid-note">{note}</span>
+    </span>
+  </span>
+</button>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>(".polaroid").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const isOpen = btn.classList.toggle("is-flipped");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      if (isOpen) {
+        btn.dispatchEvent(new CustomEvent("dossier:discovered", { bubbles: true, detail: "identiteit" }));
+      }
+    });
+  });
+</script>
+
+<style>
+  .polaroid {
+    display: block;
+    width: 100%;
+    max-width: 220px;
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    transform: rotate(var(--rotate));
+    perspective: 1200px;
+  }
+  .polaroid-inner {
+    position: relative;
+    display: block;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+  }
+  .polaroid.is-flipped .polaroid-inner {
+    transform: rotateY(180deg);
+  }
+  .polaroid-face {
+    backface-visibility: hidden;
+    background: var(--paper);
+    border: 8px solid var(--paper);
+    border-bottom-width: 34px;
+    box-shadow: 4px 6px 0 rgba(26, 22, 15, 0.35);
+    display: block;
+  }
+  .polaroid-front :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+  .polaroid-caption {
+    display: block;
+    margin-top: 6px;
+    font-size: 11px;
+    color: var(--ink);
+    opacity: 0.75;
+    text-align: left;
+  }
+  .polaroid-back {
+    position: absolute;
+    inset: 0;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    padding: 18px 16px 34px;
+  }
+  .polaroid-note {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--navy);
+    text-align: left;
+  }
+  .polaroid:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 4px;
+  }
+</style>

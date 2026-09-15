@@ -1,0 +1,165 @@
+---
+interface Entry {
+  period: string;
+  title: string;
+  body: string;
+  kind: "verkoop" | "studie" | "onderneming";
+}
+
+const entries: Entry[] = [
+  {
+    period: "14 jaar",
+    title: "Eerste verkoop",
+    body: "Een Tupperware-potje, ingekocht voor twee euro en doorverkocht voor vijf. Het begin van een fascinatie voor vraag, aanbod en timing.",
+    kind: "verkoop",
+  },
+  {
+    period: "Sneakers-jaren",
+    title: "Restocks en het omslaan van een markt",
+    body: "Exclusieve sneakers via online raffles, ingekocht voor 120 tot 220 euro. Flinterdunne marges, groter risico dan het toen leek — tot Restocks failliet ging.",
+    kind: "verkoop",
+  },
+  {
+    period: "2020",
+    title: "Humane Wetenschappen — GO! Atheneum Voskenslaan, Gent",
+    body: "Afgestudeerd met cum laude.",
+    kind: "studie",
+  },
+  {
+    period: "2021 — verwacht 2026",
+    title: "Bachelor Criminologische Wetenschappen — UGent",
+    body: "Onderzoek naar gedrag en systemen, naast het runnen van een eigen onderneming.",
+    kind: "studie",
+  },
+  {
+    period: "Afgerond",
+    title: "VintieBulk",
+    body: "B2B-groothandel in gecureerde Ralph Lauren-partijen: webshop, branding en klantencommunicatie zelf opgebouwd.",
+    kind: "onderneming",
+  },
+  {
+    period: "Februari 2025 — heden",
+    title: "Studio Maud",
+    body: "Officieel zelfstandige, data-gedreven reselling op Vinted: van sourcing tot logistiek, gebouwd op inmiddels meer dan 2.500 transacties.",
+    kind: "onderneming",
+  },
+];
+---
+
+<div class="tl-wrap" data-discover="tijdlijn">
+  <p class="tl-hint mono">Reconstructie van het traject →</p>
+  <div class="tl-scroll">
+    <div class="tl-track">
+      <div class="tl-line" aria-hidden="true"></div>
+      {
+        entries.map((e) => (
+          <article class={`tl-entry tl-${e.kind}`}>
+            <span class="tl-dot" aria-hidden="true" />
+            <span class="tl-period mono">{e.period}</span>
+            <h3>{e.title}</h3>
+            <p>{e.body}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<script>
+  const wrap = document.querySelector(".tl-wrap");
+  if (wrap && "IntersectionObserver" in window) {
+    const items = wrap.querySelectorAll(".tl-entry");
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            wrap.dispatchEvent(new CustomEvent("dossier:discovered", { bubbles: true, detail: "tijdlijn" }));
+            obs.disconnect();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    items.forEach((i) => observer.observe(i));
+  }
+</script>
+
+<style>
+  .tl-hint {
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--navy);
+    opacity: 0.75;
+    margin-bottom: 18px;
+  }
+  .tl-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 16px;
+    scroll-snap-type: x proximity;
+    scrollbar-color: var(--navy) var(--cream);
+    scrollbar-width: thin;
+  }
+  .tl-track {
+    position: relative;
+    display: flex;
+    width: max-content;
+    padding: 40px 12px 4px;
+  }
+  .tl-line {
+    position: absolute;
+    top: 34px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--navy);
+  }
+  .tl-entry {
+    flex: 0 0 auto;
+    width: 270px;
+    position: relative;
+    padding: 0 24px;
+    scroll-snap-align: start;
+  }
+  .tl-dot {
+    position: absolute;
+    top: 26px;
+    left: 24px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--mustard);
+    border: 3px solid var(--ink);
+    z-index: 1;
+  }
+  .tl-verkoop .tl-dot {
+    background: var(--rust);
+  }
+  .tl-onderneming .tl-dot {
+    background: var(--olive);
+  }
+  .tl-period {
+    display: block;
+    margin-top: 56px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--mustard-deep);
+  }
+  .tl-entry h3 {
+    font-size: clamp(17px, 2.2vw, 20px);
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+  .tl-entry p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  @media (max-width: 640px) {
+    .tl-entry {
+      width: 230px;
+    }
+  }
+</style>

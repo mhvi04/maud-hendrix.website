@@ -4,5 +4,9 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://maud-hendrix.com',
   trailingSlash: 'never',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) => !page.includes('/dossier'),
+    }),
+  ],
 });

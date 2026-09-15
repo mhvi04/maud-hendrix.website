@@ -1,0 +1,301 @@
+---
+interface Node {
+  id: string;
+  label: string;
+  x: number;
+  y: number;
+}
+interface Edge {
+  from: string;
+  to: string;
+  note: string;
+}
+
+const nodes: Node[] = [
+  { id: "crim", label: "Criminologie", x: 12, y: 20 },
+  { id: "onderzoek", label: "Onderzoek", x: 34, y: 8 },
+  { id: "systemen", label: "Systemen", x: 58, y: 16 },
+  { id: "data", label: "Data", x: 84, y: 30 },
+  { id: "onderneming", label: "Ondernemerschap", x: 50, y: 48 },
+  { id: "studiomaud", label: "Studio Maud", x: 24, y: 70 },
+  { id: "vintiebulk", label: "VintieBulk", x: 70, y: 74 },
+  { id: "artikelen", label: "Artikelen", x: 90, y: 55 },
+];
+
+const edges: Edge[] = [
+  { from: "crim", to: "onderzoek", note: "Een bachelor Criminologische Wetenschappen draait op onderzoek naar gedrag en systemen." },
+  { from: "onderzoek", to: "systemen", note: "Patronen herkennen vraagt een systeem om ze vast te leggen." },
+  { from: "systemen", to: "data", note: "Het analysekader voor inkoopprijzen, marges en voorraadrotatie draait op data uit 2.500+ transacties." },
+  { from: "data", to: "artikelen", note: "Artikelen als 'Boosten op Vinted' en 'Geografie van Vinted-kopers' zijn die data, leesbaar gemaakt." },
+  { from: "data", to: "onderneming", note: "2.500+ transacties zijn het fundament onder elke beslissing in de onderneming." },
+  { from: "onderneming", to: "studiomaud", note: "Actief: sourcing, prijszetting, kwaliteitscontrole en logistiek, allemaal in eigen beheer." },
+  { from: "onderneming", to: "vintiebulk", note: "Afgerond: B2B-groothandel in gecureerde Ralph Lauren-partijen." },
+  { from: "crim", to: "data", note: "Interesse in waarom mensen doen wat ze doen, toegepast op het koopgedrag van honderden kopers." },
+];
+
+const nodeById = Object.fromEntries(nodes.map((n) => [n.id, n]));
+---
+
+<div class="board" data-discover="connecties">
+  <p class="board-hint mono">Beweeg over een lijn of dossierkaart om het verband te lezen.</p>
+
+  <div class="board-canvas">
+    <svg class="board-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      {
+        edges.map((e, i) => {
+          const a = nodeById[e.from];
+          const b = nodeById[e.to];
+          return (
+            <line
+              class="board-edge"
+              data-edge={i}
+              data-from={e.from}
+              data-to={e.to}
+              x1={a.x}
+              y1={a.y}
+              x2={b.x}
+              y2={b.y}
+              vector-effect="non-scaling-stroke"
+            />
+          );
+        })
+      }
+    </svg>
+
+    {
+      nodes.map((n) => (
+        <button
+          type="button"
+          class="board-node mono"
+          data-node={n.id}
+          style={`left:${n.x}%; top:${n.y}%`}
+        >
+          {n.label}
+        </button>
+      ))
+    }
+  </div>
+
+  <p class="board-note" id="board-note" aria-live="polite">
+    Selecteer een verband op het bord.
+  </p>
+
+  <ul class="board-list">
+    {
+      edges.map((e, i) => (
+        <li class="board-list-item" data-edge-mobile={i}>
+          <span class="board-list-pair mono">
+            {nodeById[e.from].label} — {nodeById[e.to].label}
+          </span>
+          <span class="board-list-note">{e.note}</span>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<script define:vars={{ edges }}>
+  const board = document.querySelector(".board");
+  const noteEl = document.getElementById("board-note");
+  const svg = document.querySelector(".board-svg");
+  const nodeButtons = Array.from(document.querySelectorAll(".board-node"));
+  const edgeLines = Array.from(document.querySelectorAll(".board-edge"));
+
+  function clearHighlights() {
+    nodeButtons.forEach((n) => n.classList.remove("is-active"));
+    edgeLines.forEach((l) => l.classList.remove("is-active"));
+  }
+
+  function markDiscovered() {
+    board?.dispatchEvent(new CustomEvent("dossier:discovered", { bubbles: true, detail: "connecties" }));
+  }
+
+  function highlightEdge(index) {
+    clearHighlights();
+    const edge = edges[index];
+    if (!edge) return;
+    edgeLines[index]?.classList.add("is-active");
+    nodeButtons.forEach((n) => {
+      if (n.dataset.node === edge.from || n.dataset.node === edge.to) {
+        n.classList.add("is-active");
+      }
+    });
+    if (noteEl) noteEl.textContent = edge.note;
+    markDiscovered();
+  }
+
+  edgeLines.forEach((line, i) => {
+    line.addEventListener("mouseenter", () => highlightEdge(i));
+    line.addEventListener("focus", () => highlightEdge(i));
+  });
+
+  nodeButtons.forEach((btn) => {
+    btn.addEventListener("mouseenter", () => {
+      clearHighlights();
+      btn.classList.add("is-active");
+      const id = btn.dataset.node;
+      const connected = edges
+        .map((e, i) => ({ e, i }))
+        .filter(({ e }) => e.from === id || e.to === id);
+      connected.forEach(({ i }) => edgeLines[i]?.classList.add("is-active"));
+      connected.forEach(({ e }) => {
+        const otherId = e.from === id ? e.to : e.from;
+        nodeButtons.find((n) => n.dataset.node === otherId)?.classList.add("is-active");
+      });
+      if (noteEl && connected.length) {
+        noteEl.textContent = connected.map(({ e }) => e.note).join(" ");
+      }
+      markDiscovered();
+    });
+    btn.addEventListener("click", () => {
+      btn.dispatchEvent(new CustomEvent("dossier:discovered", { bubbles: true, detail: "connecties" }));
+    });
+  });
+
+  board?.addEventListener("mouseleave", clearHighlights);
+
+  document.querySelectorAll("[data-edge-mobile]").forEach((li) => {
+    li.addEventListener("click", () => {
+      li.classList.toggle("is-open");
+      markDiscovered();
+    });
+  });
+</script>
+
+<style>
+  .board {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .board-hint {
+    font-size: 12px;
+    color: var(--navy);
+    opacity: 0.75;
+  }
+
+  .board-canvas {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    width: 100%;
+    background:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px),
+      var(--paper);
+    background-size: 32px 32px, 32px 32px, auto;
+    background-color: var(--paper);
+    opacity: 1;
+    border: 3px solid var(--ink);
+  }
+  .board-canvas {
+    background-blend-mode: normal;
+  }
+  .board-canvas::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(37, 56, 99, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(37, 56, 99, 0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+
+  .board-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .board-edge {
+    stroke: var(--rust);
+    stroke-width: 1.5;
+    opacity: 0.4;
+    transition: opacity 0.15s ease, stroke-width 0.15s ease;
+    cursor: pointer;
+    pointer-events: stroke;
+  }
+  .board-edge.is-active {
+    opacity: 1;
+    stroke-width: 2.5;
+  }
+
+  .board-node {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 9px 14px;
+    background: var(--cream);
+    border: 2px solid var(--ink);
+    color: var(--ink);
+    white-space: nowrap;
+    box-shadow: 3px 3px 0 var(--ink);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+  .board-node:hover,
+  .board-node:focus-visible,
+  .board-node.is-active {
+    background: var(--mustard);
+    transform: translate(-50%, -50%) translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--ink);
+  }
+  .board-node:focus-visible {
+    outline: 3px solid var(--navy);
+    outline-offset: 2px;
+  }
+
+  .board-note {
+    min-height: 42px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--navy);
+    max-width: 70ch;
+  }
+
+  .board-list {
+    display: none;
+  }
+
+  @media (max-width: 780px) {
+    .board-canvas {
+      display: none;
+    }
+    .board-note {
+      display: none;
+    }
+    .board-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 2px solid var(--ink);
+    }
+    .board-list-item {
+      padding: 14px 4px;
+      border-bottom: 2px solid var(--ink);
+      cursor: pointer;
+    }
+    .board-list-pair {
+      display: block;
+      font-size: 12px;
+      color: var(--mustard-deep);
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+    .board-list-note {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .board-list-item.is-open .board-list-note {
+      -webkit-line-clamp: unset;
+    }
+  }
+</style>

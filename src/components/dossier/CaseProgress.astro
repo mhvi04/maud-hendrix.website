@@ -1,0 +1,48 @@
+---
+const categories = ["identiteit", "connecties", "onderneming", "tijdlijn", "dossiers"];
+---
+
+<div class="case-progress mono" id="case-progress" aria-live="polite">
+  <span id="case-progress-count">0</span>/{categories.length} dossierdelen verkend
+</div>
+
+<script define:vars={{ categories }}>
+  const discovered = new Set();
+  const countEl = document.getElementById("case-progress-count");
+
+  function render() {
+    if (countEl) countEl.textContent = String(discovered.size);
+  }
+
+  document.addEventListener("dossier:discovered", (e) => {
+    const detail = e.detail;
+    if (typeof detail === "string" && categories.includes(detail)) {
+      discovered.add(detail);
+      render();
+    }
+  });
+</script>
+
+<style>
+  .case-progress {
+    position: fixed;
+    left: 16px;
+    bottom: calc(var(--footer-bar-h) + 14px);
+    z-index: 30;
+    background: var(--cream);
+    border: 2px solid var(--ink);
+    padding: 8px 14px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--navy);
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+  @media (max-width: 640px) {
+    .case-progress {
+      left: 12px;
+      font-size: 10px;
+      padding: 6px 10px;
+    }
+  }
+</style>

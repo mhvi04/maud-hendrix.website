@@ -1,0 +1,468 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import StickyFooterBar from "../../components/StickyFooterBar.astro";
+import CaseStamp from "../../components/dossier/CaseStamp.astro";
+import Polaroid from "../../components/dossier/Polaroid.astro";
+import SuspectCard from "../../components/dossier/SuspectCard.astro";
+import InvestigationBoard from "../../components/dossier/InvestigationBoard.astro";
+import ProjectDossier from "../../components/dossier/ProjectDossier.astro";
+import TimelineEvidence from "../../components/dossier/TimelineEvidence.astro";
+import ResearchLibrary from "../../components/dossier/ResearchLibrary.astro";
+import CaseProgress from "../../components/dossier/CaseProgress.astro";
+import duneDuo from "../../assets/gallery/dune-duo.jpg";
+import catDoorway from "../../assets/gallery/cat-doorway.jpg";
+import coastalCliff from "../../assets/gallery/coastal-cliff.jpg";
+
+const suspects = [
+  {
+    number: "01",
+    title: "De criminoloog",
+    summary: "Laatstejaars Criminologische Wetenschappen aan de UGent.",
+    evidence: "Bachelor Criminologische Wetenschappen, UGent, 2021–2026",
+    description:
+      "Onderzoekt gedrag, patronen en systemen — niet als abstractie, maar als iets dat zich elke dag in de praktijk laat zien. Criminologie leert stilstaan bij waarom mensen doen wat ze doen.",
+  },
+  {
+    number: "02",
+    title: "De ondernemer",
+    summary: "Student-zelfstandige in tweedehands e-commerce sinds februari 2025.",
+    evidence: "Studio Maud, officieel zelfstandige sinds 02/2025",
+    description:
+      "Actief in de handel sinds haar veertiende, officieel zelfstandige sinds februari 2025. Studio Maud draait op meer dan 2.500 transacties, 774 orders in 2025 en 56% brutomarge.",
+  },
+  {
+    number: "03",
+    title: "De systeemdenker",
+    summary: "Bouwde een eigen analysekader voor elke inkoop- en prijsbeslissing.",
+    evidence: "Analysekader voor inkoopprijzen, marges en voorraadrotatie",
+    description:
+      "Prijszetting, voorraadrotatie, categorieprestaties en seizoenseffecten worden gestuurd door een zelf gebouwd analysekader — geen onderbuikgevoel, maar een systeem dat op data draait.",
+  },
+  {
+    number: "04",
+    title: "De reseller",
+    summary: "Van @maud.hendrix naar Studio Maud.",
+    evidence: "1881 verkopen (oud account) → 4,81/5 (Studio Maud)",
+    description:
+      "Bouwde een reputatie op via @maud.hendrix op Vinted: 1881 verkopen, 5 sterren, 3233 volgers, tot het account geblokkeerd werd. Studio Maud is het vervolg, met Ralph Lauren als hoofdcategorie.",
+  },
+  {
+    number: "05",
+    title: "De bouwer",
+    summary: "Zette VintieBulk op — en dit dossier is het nieuwste bewijsstuk.",
+    evidence: "VintieBulk (afgerond), Studio Maud (actief)",
+    description:
+      "Bouwde bij VintieBulk zelf de webshop, branding, content en klantencommunicatie op. Dezelfde bouwersreflex zit achter Studio Maud — en achter dit experiment.",
+  },
+];
+---
+
+<BaseLayout
+  title="Dossier — Maud Hendrix"
+  description="Experimenteel prototype: het profiel van Maud Hendrix als een lopend onderzoek."
+  noindex
+>
+  <a class="back-link mono" href="/">← terug naar maud-hendrix.com</a>
+
+  <main class="dossier">
+    <!-- COVER -->
+    <section class="cover">
+      <div class="wrap cover-grid">
+        <div class="cover-meta">
+          <span class="eyebrow-index mono">MH — GENT, BE — PROTOTYPE</span>
+          <CaseStamp text="Onder onderzoek" tone="rust" rotate={-6} />
+        </div>
+        <h1 class="cover-title">
+          Dossier<br />Maud Hendrix
+        </h1>
+        <p class="cover-lede">
+          Geen gewone Over-mij-pagina. Een lopend onderzoek naar wie Maud
+          Hendrix is, opgebouwd uit dezelfde feiten als de rest van deze
+          site — studie, onderneming, artikelen, traject — maar nu als
+          bewijsmateriaal dat je zelf doorzoekt.
+        </p>
+        <p class="cover-case-number mono">Dossier nr. MH-01 — Status: open</p>
+      </div>
+    </section>
+
+    <!-- DESK / EVIDENCE INTRO -->
+    <section class="desk wrap">
+      <span class="row-label label">Op het bureau</span>
+      <div class="desk-body">
+        <p class="desk-intro">
+          Vijf hypotheses over wie Maud Hendrix is liggen op tafel. Geen
+          daarvan verklaart haar volledig — dat is precies het punt van dit
+          dossier.
+        </p>
+        <div class="desk-photos">
+          <Polaroid
+            src={duneDuo}
+            alt="Twee silhouetten op een duin bij zonsondergang, met de zee op de achtergrond"
+            caption="Kustlijn"
+            note="Fotografie: details vastleggen die anders onopgemerkt blijven. Uit de galerij op /prive."
+            rotate={-4}
+          />
+          <Polaroid
+            src={catDoorway}
+            alt="Rode kat met gps-halsband in een deuropening"
+            caption="Deuropening"
+            note="Onderdeel van de fotografiegalerij op /prive."
+            rotate={3}
+          />
+          <Polaroid
+            src={coastalCliff}
+            alt="Uitzicht over zee en krijtrotsen aan de kust"
+            caption="Krijtrotsen"
+            note="Onderdeel van de fotografiegalerij op /prive."
+            rotate={-2}
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- SUSPECTS -->
+    <section class="row wrap">
+      <span class="row-label label">Vijf hypotheses</span>
+      <div class="row-body suspects-list">
+        {suspects.map((s) => <SuspectCard {...s} />)}
+      </div>
+    </section>
+
+    <!-- INVESTIGATION BOARD -->
+    <section class="row wrap">
+      <span class="row-label label">Het bord</span>
+      <div class="row-body">
+        <p class="section-intro">
+          Wat op het eerste gezicht losse interesses lijken, blijkt bij nader
+          inzien met elkaar verbonden.
+        </p>
+        <InvestigationBoard />
+      </div>
+    </section>
+
+    <!-- CASE FILE / PROJECT -->
+    <section class="row wrap">
+      <span class="row-label label">Eén zaak, uitgelicht</span>
+      <div class="row-body">
+        <ProjectDossier />
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="row wrap">
+      <span class="row-label label">Reconstructie</span>
+      <div class="row-body">
+        <TimelineEvidence />
+      </div>
+    </section>
+
+    <!-- RESEARCH LIBRARY -->
+    <section class="row wrap">
+      <span class="row-label label">Geraadpleegd materiaal</span>
+      <div class="row-body">
+        <ResearchLibrary />
+      </div>
+    </section>
+
+    <!-- TWO DOSSIERS -->
+    <section class="dossiers-split wrap" data-discover="dossiers">
+      <a class="dossier-entry dossier-entry--pro" href="/professioneel">
+        <span class="label label--on-dark">Dossier A</span>
+        <h2>Professioneel</h2>
+        <p>Studie, ondernemerschap, projecten en artikelen.</p>
+        <span class="dossier-entry-cta mono">Open dossier →</span>
+      </a>
+      <a class="dossier-entry dossier-entry--prive" href="/prive">
+        <span class="label label--on-dark">Dossier B</span>
+        <h2>Privé</h2>
+        <p>Interesses, inspiratie en sociale kanalen. Code vereist.</p>
+        <span class="dossier-entry-cta mono">Open dossier →</span>
+      </a>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="conclusion">
+      <div class="wrap conclusion-grid">
+        <div>
+          <span class="label label--on-dark">Conclusie</span>
+          <h2>Geen enkel profiel verklaart het onderwerp volledig.</h2>
+          <p>
+            Criminologie, ondernemerschap, systemen en data blijken
+            hetzelfde onderliggende patroon te delen: aandacht voor waarom
+            mensen doen wat ze doen, en de discipline om daar iets mee te
+            bouwen.
+          </p>
+          <div class="conclusion-actions">
+            <a class="btn btn--mustard" href="mailto:StudioMaud@outlook.com">Mail sturen</a>
+          </div>
+        </div>
+        <div class="conclusion-meta">
+          <p class="mono"><span>Mail</span>StudioMaud@outlook.com</p>
+          <p class="mono">
+            <span>LinkedIn</span>
+            <a href="https://www.linkedin.com/in/maud-hendrix-522245374" target="_blank" rel="noopener"
+              >maud-hendrix-522245374</a
+            >
+          </p>
+          <p class="mono"><span>Locatie</span>Gent, België</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <CaseProgress />
+  <StickyFooterBar subtitle="Experimenteel prototype" />
+
+  <script>
+    document.querySelectorAll<HTMLElement>('[data-discover="dossiers"] a').forEach((a) => {
+      a.addEventListener("click", () => {
+        a.dispatchEvent(new CustomEvent("dossier:discovered", { bubbles: true, detail: "dossiers" }));
+      });
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  .back-link {
+    position: fixed;
+    top: 14px;
+    right: 16px;
+    z-index: 50;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--navy);
+    background: var(--cream);
+    border: 2px solid var(--ink);
+    padding: 7px 12px;
+    text-decoration: none;
+  }
+  .back-link:hover {
+    color: var(--rust);
+  }
+
+  .dossier {
+    background: var(--cream);
+  }
+
+  /* COVER */
+  .cover {
+    border-bottom: 3px solid var(--ink);
+    padding-block: clamp(64px, 10vw, 120px) clamp(48px, 7vw, 80px);
+  }
+  .cover-grid {
+    max-width: 900px;
+  }
+  .cover-meta {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+  .cover-title {
+    font-size: clamp(48px, 9vw, 108px);
+    font-weight: 600;
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    margin-bottom: 26px;
+  }
+  .cover-lede {
+    font-size: 18px;
+    line-height: 1.65;
+    max-width: 62ch;
+    margin-bottom: 20px;
+  }
+  .cover-case-number {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--navy);
+    opacity: 0.75;
+  }
+
+  /* DESK */
+  .desk {
+    padding-block: clamp(36px, 5vw, 56px);
+    border-bottom: 2px solid var(--ink);
+  }
+  .desk-body {
+    margin-top: 18px;
+  }
+  .desk-intro {
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 62ch;
+    margin-bottom: 30px;
+  }
+  .desk-photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px 20px;
+  }
+
+  /* SHARED ROWS */
+  .row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 28px;
+    padding-block: clamp(36px, 5vw, 56px);
+    border-bottom: 2px solid var(--ink);
+  }
+  .row-label {
+    padding-top: 4px;
+  }
+  .row-body {
+    min-width: 0;
+  }
+  .section-intro {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 62ch;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 680px) {
+    .row {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+  }
+
+  .suspects-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* TWO DOSSIERS */
+  .dossiers-split {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: clamp(20px, 3vw, 36px);
+    padding-block: clamp(36px, 5vw, 56px);
+    border-bottom: 3px solid var(--ink);
+  }
+  .dossier-entry {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: clamp(150px, 16vw, 190px);
+    padding: clamp(22px, 2.5vw, 30px);
+    border: 3px solid var(--ink);
+    text-decoration: none;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .dossier-entry:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0 var(--ink);
+  }
+  .dossier-entry--pro {
+    background: var(--mustard);
+    color: var(--ink);
+  }
+  .dossier-entry--prive {
+    background: var(--navy);
+    color: var(--paper);
+  }
+  .dossier-entry--pro .label {
+    color: var(--navy-deep);
+  }
+  .dossier-entry--pro .label::before {
+    background: var(--ink);
+  }
+  .dossier-entry--prive .label {
+    color: var(--mustard);
+  }
+  .dossier-entry--prive .label::before {
+    background: var(--cream);
+  }
+  .dossier-entry h2 {
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 600;
+    color: inherit;
+  }
+  .dossier-entry p {
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.92;
+    max-width: 34ch;
+  }
+  .dossier-entry-cta {
+    margin-top: auto;
+    font-size: 12px;
+  }
+  @media (max-width: 780px) {
+    .dossiers-split {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* CONCLUSION */
+  .conclusion {
+    background: var(--navy);
+    color: var(--paper);
+    padding-block: clamp(48px, 7vw, 88px);
+  }
+  .conclusion-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
+  }
+  .conclusion h2 {
+    color: var(--paper);
+    font-size: clamp(28px, 3.6vw, 42px);
+    font-weight: 600;
+    margin-block: 14px 16px;
+    line-height: 1.15;
+  }
+  .conclusion p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 46ch;
+    opacity: 0.92;
+    margin-bottom: 26px;
+  }
+  .conclusion .btn {
+    border-color: var(--paper);
+    color: var(--paper);
+  }
+  .conclusion .btn:hover {
+    background: var(--paper);
+    color: var(--navy);
+  }
+  .conclusion-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    border-left: 2px solid rgba(250, 246, 234, 0.35);
+    padding-left: 32px;
+  }
+  .conclusion-meta p {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+    margin: 0;
+  }
+  .conclusion-meta span {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mustard);
+  }
+  .conclusion-meta a {
+    text-decoration: none;
+    border-bottom: 1px solid rgba(250, 246, 234, 0.5);
+    width: fit-content;
+  }
+  @media (max-width: 680px) {
+    .conclusion-grid {
+      grid-template-columns: 1fr;
+    }
+    .conclusion-meta {
+      border-left: none;
+      padding-left: 0;
+      border-top: 2px solid rgba(250, 246, 234, 0.35);
+      padding-top: 24px;
+    }
+  }
+</style>
