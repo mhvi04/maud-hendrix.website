@@ -4,6 +4,7 @@ import SiteHeader from "../../components/SiteHeader.astro";
 import StickyFooterBar from "../../components/StickyFooterBar.astro";
 import CountUp from "../../components/CountUp.astro";
 import PhotoGallery from "../../components/PhotoGallery.astro";
+import Gelezen from "../../components/Gelezen.astro";
 import PinGate from "../../components/PinGate.astro";
 
 const socials = [
@@ -95,6 +96,13 @@ const interests = [
             </div>
           ))
         }
+      </div>
+    </section>
+
+    <section class="row wrap">
+      <span class="row-label label">Gelezen</span>
+      <div class="row-body">
+        <Gelezen />
       </div>
     </section>
 

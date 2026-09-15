@@ -1,0 +1,70 @@
+---
+const books = [
+  { title: "De Nieuwe Politie", author: "Steven De Smet", rating: 5, dateRead: "2026-08-20" },
+  { title: "Shoe Dog", author: "Phil Knight", rating: 4, dateRead: "2026-07-02" },
+  { title: "The Sociopath Next Door", author: "Martha Stout", rating: 4, dateRead: "2026-05-14" },
+  { title: "Atomic Habits", author: "James Clear", rating: 3, dateRead: "2026-03-30" },
+  { title: "Homo Deus", author: "Yuval Noah Harari", rating: 5, dateRead: "2025-12-01" },
+];
+
+function renderStars(rating: number) {
+  const star = (filled: boolean) => `<svg viewBox="0 0 24 24" width="13" height="13" fill="${filled ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.7z"/></svg>`;
+  return Array.from({ length: 5 }, (_, i) => star(i < rating)).join("");
+}
+---
+<div class="gelezen-bars">
+  {books.map((book, i) => (
+    <div class={`bar c${(i % 5) + 1}`} data-date={book.dateRead}>
+      <div class="info">
+        <p class="title">{book.title}</p>
+        <p class="author">{book.author}</p>
+      </div>
+      <div class="meta">
+        <div class="stars" set:html={renderStars(book.rating)} />
+        <span class="ago"></span>
+      </div>
+    </div>
+  ))}
+</div>
+
+<script>
+  function timeAgo(dateStr: string) {
+    const days = Math.floor((Date.now() - new Date(dateStr).getTime()) / (1000 * 60 * 60 * 24));
+    if (days < 1) return "vandaag";
+    if (days === 1) return "gisteren";
+    if (days < 14) return `${days} dagen geleden`;
+    if (days < 60) return `${Math.floor(days / 7)} weken geleden`;
+    if (days < 365) return `${Math.floor(days / 30)} maanden geleden`;
+    const years = Math.floor(days / 365);
+    return years === 1 ? "1 jaar geleden" : `${years} jaar geleden`;
+  }
+  document.querySelectorAll<HTMLElement>(".gelezen-bars .bar").forEach((bar) => {
+    const dateStr = bar.dataset.date;
+    const agoEl = bar.querySelector<HTMLElement>(".ago");
+    if (dateStr && agoEl) agoEl.textContent = timeAgo(dateStr);
+  });
+</script>
+
+<style>
+  .gelezen-bars { display: flex; flex-direction: column; gap: 6px; }
+  .bar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 20px; border-radius: 0; box-shadow: none;
+    transition: transform 0.15s ease, filter 0.15s ease;
+  }
+  .bar:hover { transform: translateX(6px); filter: brightness(1.06); }
+  .c1 { background: var(--navy); color: var(--cream); }
+  .c2 { background: var(--mustard); color: #1a160f; }
+  .c3 { background: var(--rust); color: #f2ecdc; }
+  .c4 { background: var(--olive); color: #f2ecdc; }
+  .c5 { background: var(--mustard-deep); color: #1a160f; }
+  .title { font-family: var(--font-display); font-weight: 600; font-size: 16px; margin: 0; }
+  .author { font-family: var(--font-mono); font-size: 11px; opacity: 0.75; margin: 2px 0 0; }
+  .meta { display: flex; align-items: center; gap: 12px; }
+  .stars { display: flex; gap: 2px; }
+  .ago { font-family: var(--font-mono); font-size: 11px; opacity: 0.8; white-space: nowrap; }
+  @media (max-width: 480px) {
+    .bar { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .meta { align-self: flex-end; }
+  }
+</style>
