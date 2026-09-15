@@ -1,15 +1,31 @@
 ---
 const books = [
-  { title: "De Nieuwe Politie", author: "Steven De Smet", rating: 5, dateRead: "2026-08-20" },
-  { title: "Shoe Dog", author: "Phil Knight", rating: 4, dateRead: "2026-07-02" },
-  { title: "The Sociopath Next Door", author: "Martha Stout", rating: 4, dateRead: "2026-05-14" },
-  { title: "Atomic Habits", author: "James Clear", rating: 3, dateRead: "2026-03-30" },
-  { title: "Homo Deus", author: "Yuval Noah Harari", rating: 5, dateRead: "2025-12-01" },
+  { title: "The Boy, the Mole, the Fox and the Horse", author: "Charlie Mackesy", rating: 5, dateRead: "2025-06-08" },
+  { title: "Gedichten", author: "Hugo Claus", rating: 4.3, dateRead: "2025-07-02" },
+  { title: "1984", author: "George Orwell", rating: 4.9, dateRead: "2025-07-28" },
+  { title: "V for Vendetta", author: "Alan Moore & David Lloyd", rating: 4.5, dateRead: "2025-08-20" },
+  { title: "Godverdomse dagen op een godverdomse bol", author: "Dimitri Verhulst", rating: 4.1, dateRead: "2025-09-10" },
+  { title: "Rechts voor de raap", author: "Jean-Marie Dedecker", rating: 3.4, dateRead: "2025-09-25" },
+  { title: "Vrouwen in opstand", author: "Lloyd", rating: 3.8, dateRead: "2025-10-02" },
+  { title: "Fire*", author: "Charlotte Van Brabander", rating: 4, dateRead: "2025-10-20" },
+  { title: "Vele hemels boven de zevende", author: "Griet Op de Beeck", rating: 4.8, dateRead: "2025-11-02" },
+  { title: "Het parfum", author: "Patrick Süskind", rating: 4, dateRead: "2025-11-20" },
+  { title: "Christiane F.", author: "Christiane F.", rating: 4.7, dateRead: "2025-12-05" },
+  { title: "Een schitterend gebrek", author: "Arthur Japin", rating: 4.2, dateRead: "2025-12-22" },
+  { title: "Dossier Dutroux, de waarheid", author: "Jean Lambrecks, Els Schreurs & Jean-Pierre Adam", rating: 3.2, dateRead: "2026-01-15" },
+  { title: "Batman", author: "Frank Miller & David Mazzucchelli", rating: 4, dateRead: "2026-03-15" },
+  { title: "Het einde van de mensheid in 1967", author: "Herman Brusselmans", rating: 3.5, dateRead: "2026-04-15" },
 ];
 
 function renderStars(rating: number) {
-  const star = (filled: boolean) => `<svg viewBox="0 0 24 24" width="13" height="13" fill="${filled ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.7z"/></svg>`;
-  return Array.from({ length: 5 }, (_, i) => star(i < rating)).join("");
+  const outline = `<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.7z"/></svg>`;
+  const filled = `<svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.7z"/></svg>`;
+  return Array.from({ length: 5 }, (_, i) => {
+    const fraction = Math.max(0, Math.min(1, rating - i));
+    if (fraction <= 0) return `<span class="star">${outline}</span>`;
+    if (fraction >= 1) return `<span class="star">${filled}</span>`;
+    return `<span class="star">${outline}<span class="star-fill" style="width:${(fraction * 100).toFixed(0)}%">${filled}</span></span>`;
+  }).join("");
 }
 ---
 <div class="gelezen-bars">
@@ -21,6 +37,7 @@ function renderStars(rating: number) {
       </div>
       <div class="meta">
         <div class="stars" set:html={renderStars(book.rating)} />
+        <span class="rating-value mono">{book.rating.toFixed(1).replace(".", ",")}</span>
         <span class="ago"></span>
       </div>
     </div>
@@ -60,11 +77,19 @@ function renderStars(rating: number) {
   .c5 { background: var(--mustard-deep); color: #1a160f; }
   .title { font-family: var(--font-display); font-weight: 600; font-size: 16px; margin: 0; }
   .author { font-family: var(--font-mono); font-size: 11px; opacity: 0.75; margin: 2px 0 0; }
-  .meta { display: flex; align-items: center; gap: 12px; }
+  .meta { display: flex; align-items: center; gap: 10px; }
   .stars { display: flex; gap: 2px; }
+  .rating-value { font-size: 11px; opacity: 0.85; }
   .ago { font-family: var(--font-mono); font-size: 11px; opacity: 0.8; white-space: nowrap; }
   @media (max-width: 480px) {
     .bar { flex-direction: column; align-items: flex-start; gap: 6px; }
     .meta { align-self: flex-end; }
   }
+</style>
+
+<style is:global>
+  /* set:html injects raw HTML, which bypasses Astro's scoped-style attributes,
+     so the star fill/clip rules must live in a global (but namespaced) block. */
+  .gelezen-bars .star { position: relative; display: inline-flex; width: 13px; height: 13px; }
+  .gelezen-bars .star-fill { position: absolute; inset: 0; overflow: hidden; display: block; }
 </style>
