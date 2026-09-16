@@ -29,7 +29,7 @@ function renderStars(rating: number) {
 }
 ---
 <div class="gelezen-bars">
-  {books.map((book, i) => (
+  {[...books].reverse().map((book, i) => (
     <div class={`bar c${(i % 5) + 1}`} data-date={book.dateRead}>
       <div class="info">
         <p class="title">{book.title}</p>
@@ -63,7 +63,10 @@ function renderStars(rating: number) {
 </script>
 
 <style>
-  .gelezen-bars { display: flex; flex-direction: column; gap: 6px; }
+  .gelezen-bars {
+    display: flex; flex-direction: column; gap: 6px;
+    max-height: 212px; overflow-y: auto;
+  }
   .bar {
     display: flex; align-items: center; justify-content: space-between;
     padding: 12px 20px; border-radius: 0; box-shadow: none;
@@ -88,6 +91,8 @@ function renderStars(rating: number) {
   @media (max-width: 480px) {
     .bar { flex-direction: column; align-items: flex-start; gap: 6px; }
     .meta { align-self: flex-end; }
+    /* Stacked bars run taller than the row layout, so the 3-visible cutoff needs more room. */
+    .gelezen-bars { max-height: 320px; }
   }
 </style>
 
