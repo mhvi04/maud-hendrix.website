@@ -1,0 +1,99 @@
+---
+const books = [
+  { title: "The Boy, the Mole, the Fox and the Horse", author: "Charlie Mackesy", rating: 5, dateRead: "2025-06-08" },
+  { title: "Gedichten", author: "Hugo Claus", rating: 4.3, dateRead: "2025-07-02" },
+  { title: "1984", author: "George Orwell", rating: 4.9, dateRead: "2025-07-28" },
+  { title: "V for Vendetta", author: "Alan Moore & David Lloyd", rating: 4.5, dateRead: "2025-08-20" },
+  { title: "Godverdomse dagen op een godverdomse bol", author: "Dimitri Verhulst", rating: 4.1, dateRead: "2025-09-10" },
+  { title: "Rechts voor de raap", author: "Jean-Marie Dedecker", rating: 3.4, dateRead: "2025-09-25" },
+  { title: "Vrouwen in opstand", author: "Lloyd", rating: 3.8, dateRead: "2025-10-02" },
+  { title: "Fire*", author: "Charlotte Van Brabander", rating: 4, dateRead: "2025-10-20" },
+  { title: "Vele hemels boven de zevende", author: "Griet Op de Beeck", rating: 4.8, dateRead: "2025-11-02" },
+  { title: "Het parfum", author: "Patrick Süskind", rating: 4, dateRead: "2025-11-20" },
+  { title: "Christiane F.", author: "Christiane F.", rating: 4.7, dateRead: "2025-12-05" },
+  { title: "Een schitterend gebrek", author: "Arthur Japin", rating: 4.2, dateRead: "2025-12-22" },
+  { title: "Dossier Dutroux, de waarheid", author: "Jean Lambrecks, Els Schreurs & Jean-Pierre Adam", rating: 3.2, dateRead: "2026-01-15" },
+  { title: "Batman", author: "Frank Miller & David Mazzucchelli", rating: 4, dateRead: "2026-03-15" },
+  { title: "Het einde van de mensheid in 1967", author: "Herman Brusselmans", rating: 3.5, dateRead: "2026-04-15" },
+];
+
+function renderStars(rating: number) {
+  const outline = `<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.7z"/></svg>`;
+  const filled = `<svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.7z"/></svg>`;
+  return Array.from({ length: 5 }, (_, i) => {
+    const fraction = Math.max(0, Math.min(1, rating - i));
+    if (fraction <= 0) return `<span class="star">${outline}</span>`;
+    if (fraction >= 1) return `<span class="star">${filled}</span>`;
+    return `<span class="star">${outline}<span class="star-fill" style="width:${(fraction * 100).toFixed(0)}%">${filled}</span></span>`;
+  }).join("");
+}
+---
+<div class="gelezen-bars">
+  {books.map((book, i) => (
+    <div class={`bar c${(i % 5) + 1}`} data-date={book.dateRead}>
+      <div class="info">
+        <p class="title">{book.title}</p>
+        <p class="author">{book.author}</p>
+      </div>
+      <div class="meta">
+        <div class="stars" set:html={renderStars(book.rating)} />
+        <span class="rating-value mono">{book.rating.toFixed(1).replace(".", ",")}</span>
+        <span class="ago"></span>
+      </div>
+    </div>
+  ))}
+</div>
+
+<script>
+  function timeAgo(dateStr: string) {
+    const days = Math.floor((Date.now() - new Date(dateStr).getTime()) / (1000 * 60 * 60 * 24));
+    if (days < 1) return "vandaag";
+    if (days === 1) return "gisteren";
+    if (days < 14) return `${days} dagen geleden`;
+    if (days < 60) return `${Math.floor(days / 7)} weken geleden`;
+    if (days < 365) return `${Math.floor(days / 30)} maanden geleden`;
+    const years = Math.floor(days / 365);
+    return years === 1 ? "1 jaar geleden" : `${years} jaar geleden`;
+  }
+  document.querySelectorAll<HTMLElement>(".gelezen-bars .bar").forEach((bar) => {
+    const dateStr = bar.dataset.date;
+    const agoEl = bar.querySelector<HTMLElement>(".ago");
+    if (dateStr && agoEl) agoEl.textContent = timeAgo(dateStr);
+  });
+</script>
+
+<style>
+  .gelezen-bars { display: flex; flex-direction: column; gap: 6px; }
+  .bar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 20px; border-radius: 0; box-shadow: none;
+    transition: transform 0.15s ease, filter 0.15s ease;
+  }
+  .bar:hover { transform: translateX(6px); filter: brightness(1.06); }
+  .c1 { background: var(--navy); color: var(--cream); }
+  .c2 { background: var(--mustard); color: #1a160f; }
+  /* var(--rust) only clears ~4:1 against cream, under the 4.5:1 AA floor for
+     16px/11px text; darkened locally (not via the shared token) for contrast. */
+  .c3 { background: color-mix(in srgb, var(--rust) 75%, black); color: #ffffff; }
+  .c4 { background: var(--olive); color: #f2ecdc; }
+  .c5 { background: var(--mustard-deep); color: #1a160f; }
+  .title { font-family: var(--font-display); font-weight: 600; font-size: 16px; margin: 0; }
+  /* Full opacity: dimming toward these backgrounds also drops several
+     variants below the 4.5:1 AA floor. Hierarchy comes from size/weight only. */
+  .author { font-family: var(--font-mono); font-size: 11px; margin: 2px 0 0; }
+  .meta { display: flex; align-items: center; gap: 10px; }
+  .stars { display: flex; gap: 2px; }
+  .rating-value { font-size: 11px; }
+  .ago { font-family: var(--font-mono); font-size: 11px; white-space: nowrap; }
+  @media (max-width: 480px) {
+    .bar { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .meta { align-self: flex-end; }
+  }
+</style>
+
+<style is:global>
+  /* set:html injects raw HTML, which bypasses Astro's scoped-style attributes,
+     so the star fill/clip rules must live in a global (but namespaced) block. */
+  .gelezen-bars .star { position: relative; display: inline-flex; width: 13px; height: 13px; }
+  .gelezen-bars .star-fill { position: absolute; inset: 0; overflow: hidden; display: block; }
+</style>
