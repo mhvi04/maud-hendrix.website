@@ -28,7 +28,7 @@ function renderStars(rating: number) {
   }).join("");
 }
 ---
-<div class="gelezen-bars">
+<div class="gelezen-bars" tabindex="0" role="region" aria-label="Gelezen boeken, scroll voor de volledige lijst">
   {[...books].reverse().map((book, i) => (
     <div class={`bar c${(i % 5) + 1}`} data-date={book.dateRead}>
       <div class="info">
@@ -98,6 +98,7 @@ function renderStars(rating: number) {
        this is only the pre-hydration/no-JS fallback. */
     max-height: 212px; overflow-y: auto; overflow-x: hidden;
   }
+  .gelezen-bars:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
   .bar {
     display: flex; align-items: center; justify-content: space-between;
     padding: 12px 20px; border-radius: 0; box-shadow: none;
