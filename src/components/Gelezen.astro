@@ -60,12 +60,41 @@ function renderStars(rating: number) {
     const agoEl = bar.querySelector<HTMLElement>(".ago");
     if (dateStr && agoEl) agoEl.textContent = timeAgo(dateStr);
   });
+
+  // Fixed pixel heights break as soon as a title wraps differently (narrower
+  // viewport, a longer book title). Measure the real height of the first 3
+  // bars instead, so "3 visible, rest scrolls" holds at any width/content.
+  function sizeVisibleBars() {
+    const container = document.querySelector<HTMLElement>(".gelezen-bars");
+    if (!container) return;
+    const bars = container.querySelectorAll<HTMLElement>(".bar");
+    if (bars.length <= 3) {
+      container.style.maxHeight = "none";
+      return;
+    }
+    const gap = parseFloat(getComputedStyle(container).rowGap) || 0;
+    let height = gap * 2;
+    for (let i = 0; i < 3; i++) height += bars[i].getBoundingClientRect().height;
+    // Still behind the PinGate (display: none) or not yet laid out: keep the
+    // CSS fallback rather than writing a bogus near-zero height.
+    if (height <= gap * 2) return;
+    container.style.maxHeight = `${Math.ceil(height)}px`;
+  }
+  sizeVisibleBars();
+  const firstBar = document.querySelector<HTMLElement>(".gelezen-bars .bar");
+  if (firstBar && "ResizeObserver" in window) {
+    // Fires on window resize (bars re-wrap) and on the PinGate reveal
+    // (bar goes from an unrendered 0×0 box to its real size) alike.
+    new ResizeObserver(() => sizeVisibleBars()).observe(firstBar);
+  }
 </script>
 
 <style>
   .gelezen-bars {
     display: flex; flex-direction: column; gap: 6px;
-    max-height: 212px; overflow-y: auto;
+    /* JS measures the real height of the first 3 bars and overrides this;
+       this is only the pre-hydration/no-JS fallback. */
+    max-height: 212px; overflow-y: auto; overflow-x: hidden;
   }
   .bar {
     display: flex; align-items: center; justify-content: space-between;
