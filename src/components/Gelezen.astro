@@ -81,11 +81,13 @@ function renderStars(rating: number) {
     container.style.maxHeight = `${Math.ceil(height)}px`;
   }
   sizeVisibleBars();
-  const firstBar = document.querySelector<HTMLElement>(".gelezen-bars .bar");
-  if (firstBar && "ResizeObserver" in window) {
-    // Fires on window resize (bars re-wrap) and on the PinGate reveal
-    // (bar goes from an unrendered 0×0 box to its real size) alike.
-    new ResizeObserver(() => sizeVisibleBars()).observe(firstBar);
+  const measuredBars = document.querySelectorAll<HTMLElement>(".gelezen-bars .bar");
+  if (measuredBars.length && "ResizeObserver" in window) {
+    // Fires on window resize (bars re-wrap), on the PinGate reveal (a bar
+    // goes from an unrendered 0×0 box to its real size), and if an
+    // async web font swap changes wrapping in any of the 3 measured bars.
+    const observer = new ResizeObserver(() => sizeVisibleBars());
+    for (let i = 0; i < Math.min(3, measuredBars.length); i++) observer.observe(measuredBars[i]);
   }
 </script>
 
