@@ -28,8 +28,8 @@ function renderStars(rating: number) {
   }).join("");
 }
 ---
-<div class="gelezen-bars">
-  {books.map((book, i) => (
+<div class="gelezen-bars" tabindex="0" role="region" aria-label="Gelezen boeken, scroll voor de volledige lijst">
+  {[...books].reverse().map((book, i) => (
     <div class={`bar c${(i % 5) + 1}`} data-date={book.dateRead}>
       <div class="info">
         <p class="title">{book.title}</p>
@@ -60,10 +60,45 @@ function renderStars(rating: number) {
     const agoEl = bar.querySelector<HTMLElement>(".ago");
     if (dateStr && agoEl) agoEl.textContent = timeAgo(dateStr);
   });
+
+  // Fixed pixel heights break as soon as a title wraps differently (narrower
+  // viewport, a longer book title). Measure the real height of the first 3
+  // bars instead, so "3 visible, rest scrolls" holds at any width/content.
+  function sizeVisibleBars() {
+    const container = document.querySelector<HTMLElement>(".gelezen-bars");
+    if (!container) return;
+    const bars = container.querySelectorAll<HTMLElement>(".bar");
+    if (bars.length <= 3) {
+      container.style.maxHeight = "none";
+      return;
+    }
+    const gap = parseFloat(getComputedStyle(container).rowGap) || 0;
+    let height = gap * 2;
+    for (let i = 0; i < 3; i++) height += bars[i].getBoundingClientRect().height;
+    // Still behind the PinGate (display: none) or not yet laid out: keep the
+    // CSS fallback rather than writing a bogus near-zero height.
+    if (height <= gap * 2) return;
+    container.style.maxHeight = `${Math.ceil(height)}px`;
+  }
+  sizeVisibleBars();
+  const measuredBars = document.querySelectorAll<HTMLElement>(".gelezen-bars .bar");
+  if (measuredBars.length && "ResizeObserver" in window) {
+    // Fires on window resize (bars re-wrap), on the PinGate reveal (a bar
+    // goes from an unrendered 0×0 box to its real size), and if an
+    // async web font swap changes wrapping in any of the 3 measured bars.
+    const observer = new ResizeObserver(() => sizeVisibleBars());
+    for (let i = 0; i < Math.min(3, measuredBars.length); i++) observer.observe(measuredBars[i]);
+  }
 </script>
 
 <style>
-  .gelezen-bars { display: flex; flex-direction: column; gap: 6px; }
+  .gelezen-bars {
+    display: flex; flex-direction: column; gap: 6px;
+    /* JS measures the real height of the first 3 bars and overrides this;
+       this is only the pre-hydration/no-JS fallback. */
+    max-height: 212px; overflow-y: auto; overflow-x: hidden;
+  }
+  .gelezen-bars:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
   .bar {
     display: flex; align-items: center; justify-content: space-between;
     padding: 12px 20px; border-radius: 0; box-shadow: none;
@@ -88,6 +123,8 @@ function renderStars(rating: number) {
   @media (max-width: 480px) {
     .bar { flex-direction: column; align-items: flex-start; gap: 6px; }
     .meta { align-self: flex-end; }
+    /* Stacked bars run taller than the row layout, so the 3-visible cutoff needs more room. */
+    .gelezen-bars { max-height: 320px; }
   }
 </style>
 
