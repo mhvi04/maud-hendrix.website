@@ -9,6 +9,7 @@ interface Props {
   publishedDate?: string;
   noindex?: boolean;
   canonicalPath?: string;
+  image?: string;
 }
 
 const {
@@ -18,9 +19,11 @@ const {
   publishedDate,
   noindex = false,
   canonicalPath,
+  image = "/og-default.png",
 } = Astro.props;
 
 const canonicalURL = new URL(canonicalPath ?? Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(image, Astro.site);
 
 const jsonLd =
   type === "article"
@@ -30,10 +33,20 @@ const jsonLd =
         headline: title,
         description,
         url: canonicalURL.toString(),
+        image: ogImageURL.toString(),
         inLanguage: "nl",
         author: {
           "@type": "Person",
           name: "Maud Hendrix",
+          sameAs: [
+            "https://www.linkedin.com/in/maud-hendrix-522245374",
+            "https://vinted.be/member/306398525-studiomaud",
+          ],
+        },
+        publisher: {
+          "@type": "Person",
+          name: "Maud Hendrix",
+          url: "https://maud-hendrix.com",
         },
         ...(publishedDate ? { datePublished: publishedDate } : {}),
       }
@@ -66,12 +79,14 @@ const jsonLd =
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImageURL} />
     <meta property="og:site_name" content="Maud Hendrix" />
     <meta property="og:locale" content="nl_BE" />
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
 
     {jsonLd && (
       <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
@@ -84,6 +99,16 @@ const jsonLd =
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KX9JBKRQQL"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-KX9JBKRQQL');
+    </script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
