@@ -1,6 +1,6 @@
 # maud-hendrix.com
 
-Persoonlijke CV/portfolio-site van Maud Hendrix. Astro, hosted op Vercel.
+Persoonlijke CV/portfolio-site van Maud Hendrix. Astro, hosted op Netlify.
 
 ## Development
 
@@ -13,7 +13,7 @@ npm run dev
 
 - `/` — startscherm met twee ingangen: Professioneel en Privé
 - `/professioneel` — profiel, studie, onderneming, traject, artikelen, contact
-- `/artikelen` — artikelen op basis van "De Ku(n)s(t) van resellen" (voorheen `/professioneel/artikelen`, nu 301-redirect via `vercel.json`)
+- `/artikelen` — artikelen op basis van "De Ku(n)s(t) van resellen" (voorheen `/professioneel/artikelen`, nu 301-redirect via `public/_redirects`)
 - `/prive` — sociale kanalen, interesses, blog
 - `/prive/blog` — blogposts
 

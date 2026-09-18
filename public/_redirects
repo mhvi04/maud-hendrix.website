@@ -1,0 +1,4 @@
+# Halve verhuizing van /professioneel/artikelen/ naar /artikelen/: oude URL's
+# (o.a. boosten-op-vinted) hebben al Google-vertoningen, dus 301 i.p.v. 404.
+/professioneel/artikelen /artikelen 301
+/professioneel/artikelen/* /artikelen/:splat 301
