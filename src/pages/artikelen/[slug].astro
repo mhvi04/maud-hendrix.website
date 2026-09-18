@@ -3,6 +3,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import StickyFooterBar from "../../components/StickyFooterBar.astro";
 import { getCollection, render } from "astro:content";
+import { existsSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 
 export async function getStaticPaths() {
   const articles = await getCollection("articles");
@@ -15,7 +17,11 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const publishedDate = entry.data.date.startsWith("[") ? undefined : entry.data.date;
-const ogImage = entry.id === "482-euro-vinted-boosts-5-lessen" ? "/og/482-euro-vinted-boosts-5-lessen.png" : undefined;
+
+// Per-artikel og:image, indien aanwezig in public/og/<slug>.png — anders valt
+// BaseLayout terug op de sitewide og-default.png.
+const ownOgImagePath = fileURLToPath(new URL(`../../../public/og/${entry.id}.png`, import.meta.url));
+const ogImage = existsSync(ownOgImagePath) ? `/og/${entry.id}.png` : undefined;
 ---
 
 <BaseLayout
