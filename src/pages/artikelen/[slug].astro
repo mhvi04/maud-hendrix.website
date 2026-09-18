@@ -106,7 +106,7 @@ const publishedDate = entry.data.date.startsWith("[") ? undefined : entry.data.d
   .prose :global(p) {
     margin-bottom: 18px;
   }
-  .prose :global(p:first-of-type) {
+  .prose > :global(p:first-child) {
     font-family: var(--font-display);
     font-size: 21px;
     line-height: 1.6;
