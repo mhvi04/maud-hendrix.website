@@ -85,17 +85,91 @@ const publishedDate = entry.data.date.startsWith("[") ? undefined : entry.data.d
   .prose :global(h2) {
     font-size: 24px;
     font-weight: 600;
-    margin-block: 36px 14px;
+    margin-block: 44px 14px;
+    padding-top: 28px;
+    border-top: 2px solid var(--ink);
+  }
+  .prose :global(h2:first-child) {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+  .prose :global(h3) {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--mustard-deep);
+    font-weight: 600;
+    margin-block: 28px 10px;
   }
   .prose :global(p) {
     margin-bottom: 18px;
   }
+  .prose :global(p:first-of-type) {
+    font-family: var(--font-display);
+    font-size: 21px;
+    line-height: 1.6;
+  }
+  .prose :global(strong) {
+    color: var(--navy);
+    font-weight: 700;
+  }
+  .prose :global(ul),
+  .prose :global(ol) {
+    margin: 4px 0 24px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .prose :global(ul li),
+  .prose :global(ol li) {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+  }
+  .prose :global(ul li)::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background: var(--mustard);
+  }
+  .prose :global(ol) {
+    counter-reset: step;
+  }
+  .prose :global(ol li)::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--cream);
+    background: var(--navy);
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+  }
   .prose :global(blockquote) {
-    margin: 32px 0;
-    padding-left: 22px;
+    margin: 36px 0;
+    padding: 6px 0 6px 22px;
     border-left: 3px solid var(--mustard);
     font-family: var(--font-display);
     font-style: italic;
     font-size: 20px;
+  }
+  .prose :global(blockquote p) {
+    margin-bottom: 0;
+  }
+  .prose :global(hr) {
+    border: none;
+    border-top: 2px solid var(--ink);
+    opacity: 0.15;
+    margin: 40px 0;
   }
 </style>

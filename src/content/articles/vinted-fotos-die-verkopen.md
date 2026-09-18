@@ -6,7 +6,7 @@ tag: "Praktijk"
 draft: false
 ---
 
-Fotografie bij resellen is geen creatief proces. Het is risicoreductie. Een koper op Vinted kan een item niet voelen, niet passen en niet van dichtbij bekijken. Alles wat hij weet, komt uit je foto's. Elke twijfel die een foto niet wegneemt, wordt ofwel een vraag in je berichten, ofwel een reden om verder te scrollen. Dit is geen esthetische keuze, het is een reeks beslissingen die je conversie meetbaar beïnvloeden, en in mijn eigen klachtendata blijkt dat rechtstreeks: conditie en materiaal samen verklaren 35 procent van alle geschillen die ik ooit heb gehad, en beide zijn problemen die goede fotografie grotendeels kan voorkomen.
+Fotografie bij resellen is geen creatief proces. Het is risicoreductie. Een koper op Vinted kan een item niet voelen, niet passen en niet van dichtbij bekijken. Alles wat hij weet, komt uit je foto's. Elke twijfel die een foto niet wegneemt, wordt ofwel een vraag in je berichten, ofwel een reden om verder te scrollen. Dit is geen esthetische keuze, het is een reeks beslissingen die je conversie meetbaar beïnvloeden, en in mijn eigen klachtendata blijkt dat rechtstreeks: conditie en materiaal samen verklaren **35%** van alle geschillen die ik ooit heb gehad, en beide zijn problemen die goede fotografie grotendeels kan voorkomen.
 
 ## Twee seconden om door te klikken
 
@@ -18,13 +18,11 @@ Wat in die eerste foto werkt: het item volledig zichtbaar, plat gelegd op een ne
 
 Elke listing die ik online zet, volgt dezelfde volgorde, en die volgorde is geen toeval maar het resultaat van wat consistent beter converteert.
 
-De eerste foto is de hero-shot, het frontale aanzicht in daglicht dat hierboven al beschreven staat. Na de hoofdfoto laat ik het item vanuit meerdere hoeken zien, en de achterkant hoort daar standaard bij. Bij een hemd, jas of sweater geeft de achterkant belangrijke informatie over pasvorm, lengte, stof en eventuele slijtage die op de voorkant niet zichtbaar is. Een koper die alleen de voorkant ziet, blijft met een onvolledig beeld achter, en dat is precies het soort onzekerheid dat later tot vragen of discussie leidt.
-
-Daarna volgen de detailfoto's van stof en afwerking. Bij een kabeltrui fotografeer ik het breipatroon van dichtbij. Bij een hemd toon ik de weving, de kraag, de manchetten en de knopen. Bij een T-shirt of polo let ik op de halsboord, de zoom en het borduurwerk van het logo. Deze foto's geven de koper een gevoel van textuur, dichtheid en kwaliteit zonder dat hij het item zelf kan aanraken.
-
-De vierde stap is de authenticiteitsstack: een reeks foto's die samen de beoordeling van het item ondersteunen. Minimaal toon ik het neklabel, het waslabel en het logo. Bij nieuwere items voeg ik een foto toe van een digitale tag of QR-code wanneer die aanwezig is. Bij duurdere items of stukken die vaker vervalst worden, maak ik meer detailfoto's dan bij een standaard T-shirt: het motief van dichtbij, de plaatsing van het borduurwerk, de kwaliteit van de naden en relevante labeldetails. Verzamelaars letten vaak precies op die onderdelen, en wie een hogere prijs vraagt, moet ook tonen waarop die prijs gebaseerd is. Bij items boven de 50 euro is deze stack bij mij nooit optioneel.
-
-De vijfde en laatste foto is de transparantiefoto: elk gebrek, scherp en onder goed licht, nooit vanuit een hoek waarin de koper moet zoeken. Een lichte verkleuring aan een manchet, kleine pilling op de mouw of een nauwelijks zichtbare vlek bij de zoom moet op beeld staan en ook expliciet in de beschrijving benoemd worden.
+1. **De hero-shot.** Het frontale aanzicht in daglicht dat hierboven al beschreven staat.
+2. **Andere hoeken, inclusief de achterkant.** Bij een hemd, jas of sweater geeft de achterkant belangrijke informatie over pasvorm, lengte, stof en eventuele slijtage die op de voorkant niet zichtbaar is. Een koper die alleen de voorkant ziet, blijft met een onvolledig beeld achter, en dat is precies het soort onzekerheid dat later tot vragen of discussie leidt.
+3. **Detailfoto's van stof en afwerking.** Bij een kabeltrui fotografeer ik het breipatroon van dichtbij. Bij een hemd toon ik de weving, de kraag, de manchetten en de knopen. Bij een T-shirt of polo let ik op de halsboord, de zoom en het borduurwerk van het logo. Deze foto's geven de koper een gevoel van textuur, dichtheid en kwaliteit zonder dat hij het item zelf kan aanraken.
+4. **De authenticiteitsstack.** Minimaal toon ik het neklabel, het waslabel en het logo. Bij nieuwere items voeg ik een foto toe van een digitale tag of QR-code wanneer die aanwezig is. Bij duurdere items of stukken die vaker vervalst worden, maak ik meer detailfoto's dan bij een standaard T-shirt: het motief van dichtbij, de plaatsing van het borduurwerk, de kwaliteit van de naden en relevante labeldetails. Verzamelaars letten vaak precies op die onderdelen, en wie een hogere prijs vraagt, moet ook tonen waarop die prijs gebaseerd is. Bij items boven de 50 euro is deze stack bij mij nooit optioneel.
+5. **De transparantiefoto.** Elk gebrek, scherp en onder goed licht, nooit vanuit een hoek waarin de koper moet zoeken. Een lichte verkleuring aan een manchet, kleine pilling op de mouw of een nauwelijks zichtbare vlek bij de zoom moet op beeld staan en ook expliciet in de beschrijving benoemd worden.
 
 ## Het logo verdient zijn eigen foto
 
@@ -34,7 +32,7 @@ Bij gebrandeerde kleding, en zeker bij Ralph Lauren, is het logo niet zomaar een
 
 Een meetlintfoto is geen vervanging van de cijfers in je beschrijving, het is een visuele bevestiging ervan. De tekst moet nog steeds duidelijk de exacte centimeters geven, oksel tot oksel, totale lengte, mouwlengte, en bij hemden en jassen de schouderbreedte. Maar een foto waarop het meetlint effectief tegen het kledingstuk ligt, laat zien dat je echt gemeten hebt en dat de informatie niet uit een generieke maattabel komt. Bij hemden, jassen en andere stukken waarbij de pasvorm sterk afhangt van schouders of mouwen, kunnen meerdere meetlintfoto's nuttig zijn. Je hoeft niet elke centimeter van een kledingstuk te fotograferen, wel de metingen die voor dat specifieke model het verschil maken.
 
-Het effect hiervan is niet marginaal. Maatgerelateerde vragen en klachten vormen in mijn eigen data 30 procent van alle interacties in mijn chatgeschiedenis, veruit de grootste enkele oorzaak van frictie. Exacte centimetermaten in plaats van een vage aanduiding als "valt als een M" resulteren in aanzienlijk minder vragen van kopers voorafgaand aan de aankoop. Minder vragen betekent minder tijd per verkocht item en een snellere doorlooptijd, wat rechtstreeks je operationele efficiëntie raakt.
+Het effect hiervan is niet marginaal. Maatgerelateerde vragen en klachten vormen in mijn eigen data **30%** van alle interacties in mijn chatgeschiedenis, veruit de grootste enkele oorzaak van frictie. Exacte centimetermaten in plaats van een vage aanduiding als "valt als een M" resulteren in aanzienlijk minder vragen van kopers voorafgaand aan de aankoop. Minder vragen betekent minder tijd per verkocht item en een snellere doorlooptijd, wat rechtstreeks je operationele efficiëntie raakt.
 
 ## Wat je specifiek moet vastleggen voordat je fotografeert
 
@@ -42,7 +40,7 @@ Niet elk gebrek is een dealbreaker, maar elk onvermeld gebrek is een potentiële
 
 ## Transparantie is een conversie-instrument, geen concessie
 
-De reflex bij een klein gebrek is vaak om het te verzwijgen of onduidelijk te fotograferen. Dat is een vergissing. Kopers die een klein gebrek expliciet benoemd en gefotografeerd zien, vertrouwen de rest van de beschrijving juist meer dan kopers die enkel het woord "perfect" lezen. Transparante documentatie van gebreken, inclusief foto, hangt in mijn ervaring samen met een daling van ongeveer 70 procent in post-verkoop klachten. Minder klachten betekent minder terugbetalingen en minder negatieve reviews, wat op termijn zwaarder weegt dan het kleine risico dat een koper om dat gebrek afhaakt. Mijn eigen gemiddelde beoordeling van 4,81 op 5 is rechtstreeks het resultaat van die aanpak, niet van perfecte kleding maar van eerlijke foto's.
+De reflex bij een klein gebrek is vaak om het te verzwijgen of onduidelijk te fotograferen. Dat is een vergissing. Kopers die een klein gebrek expliciet benoemd en gefotografeerd zien, vertrouwen de rest van de beschrijving juist meer dan kopers die enkel het woord "perfect" lezen. Transparante documentatie van gebreken, inclusief foto, hangt in mijn ervaring samen met een daling van ongeveer **70%** in post-verkoop klachten. Minder klachten betekent minder terugbetalingen en minder negatieve reviews, wat op termijn zwaarder weegt dan het kleine risico dat een koper om dat gebrek afhaakt. Mijn eigen gemiddelde beoordeling van 4,81 op 5 is rechtstreeks het resultaat van die aanpak, niet van perfecte kleding maar van eerlijke foto's.
 
 ## Wat dit uiteindelijk betekent
 

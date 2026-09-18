@@ -22,21 +22,24 @@ Dat onderscheid is belangrijk. Een boost verkoopt geen item. Een boost zorgt erv
 
 ## Het grote verschil dat niemand je vertelt: 3 dagen versus 7 dagen
 
-Van mijn 206 boosts waren er 182 van het 3-daagse type. 24 waren 7-daagse boosts. De resultaten liggen verder uit elkaar dan je zou verwachten.
+Van mijn 206 boosts waren er 182 van het 3-daagse type. 24 waren 7-daagse boosts. De resultaten liggen verder uit elkaar dan je zou verwachten:
 
-De 3-daagse boost eindigde in 93 procent van de gevallen in een verkoop. De 7-daagse boost slechts in 30 procent.
+- **3-daagse boost** — eindigt in **93%** van de gevallen in een verkoop
+- **7-daagse boost** — eindigt in slechts **30%** van de gevallen in een verkoop
 
 Dat lijkt contra-intuïtief. Langer is toch meer? De werkelijkheid is precies omgekeerd. Na 48 uur verliest een item gemiddeld 60 tot 70 procent van zijn organische zichtbaarheid. Een boost geeft dat item een nieuw begin, een soort herstart van dat venster. Maar dat venster duurt niet zeven dagen. Het duurt 48 uur. Daarna begint het verval opnieuw, ook bij een geboost item.
 
 Een 7-daagse boost is te lang voor wat het platform feitelijk doet. Je betaalt voor vijf extra dagen zichtbaarheid die steeds minder renderen. Een 3-daagse boost is een sprint op het moment dat het platform er gevoelig voor is. Kort, gericht, effectief.
 
-De kosten per boost liggen gemiddeld tussen €2 en €3. Dat is minder dan één procent van de gemiddelde transactiewaarde in mijn kast. De omzet die per geïnvesteerde euro terugkomt: €93. Dat is de ROI van een 3-daagse boost wanneer hij verkoop oplevert. Dat maakt het veruit de efficiëntste euro die je in je Vinted-operatie kunt steken, op voorwaarde dat je de juiste items boost op het juiste moment.
+De kosten per boost liggen gemiddeld tussen **€2 en €3**. Dat is minder dan één procent van de gemiddelde transactiewaarde in mijn kast. De omzet die per geïnvesteerde euro terugkomt: **€93**. Dat is de ROI van een 3-daagse boost wanneer hij verkoop oplevert. Dat maakt het veruit de efficiëntste euro die je in je Vinted-operatie kunt steken, op voorwaarde dat je de juiste items boost op het juiste moment.
 
 ## Wanneer het boosteffect echt plaatsvindt
 
 Hier is iets dat de meeste resellers niet weten, inclusief ikzelf in het begin. Het boosteffect is niet lineair.
 
-Na dag 1 van een boost is gemiddeld 10 procent van het uiteindelijke effect gerealiseerd. Dag 2 en 3 brengen samen nog eens 20 à 22 procent. Maar 68 tot 70 procent van het totale boosteffect manifesteert zich in dag 4 tot 7 na de boost, dus ná de zichtbaarheidsperiode zelf.
+- **Dag 1** — gemiddeld **10%** van het uiteindelijke effect
+- **Dag 2 en 3** — samen nog eens **20 à 22%**
+- **Dag 4 tot 7** (dus ná de zichtbaarheidsperiode zelf) — **68 tot 70%** van het totale effect
 
 Wat je ziet is het volgende: de boost genereert views en favorieten. Die favorieten blijven staan. En diezelfde mensen komen in de dagen daarna terug om te kopen, soms pas vijf dagen later wanneer ze toch nog een keer dat item zoeken. De boost heeft een staarteffect dat langer loopt dan de boost zelf.
 
@@ -46,11 +49,9 @@ Dat betekent dat je het succes van een boost niet na twee dagen moet beoordelen.
 
 Niet elk item verdient een boost. Dat is misschien wel de meest waardevolle les uit mijn 206 boosts.
 
-Kabeltruien zijn mijn primaire boostcategorie. Ze hebben een bewezen vraag, een duidelijk zoekveld en een prijs die de boostkosten ruimschoots rechtvaardigt. Als een kabeltrui na vijf à zeven dagen nog niet heeft verkocht maar wel favorieten heeft, is een boost de logische volgende stap. De interesse is er al. De boost zet die interesse in beweging.
-
-T-shirts boost ik bijna nooit. De marge per stuk is lager, en de organische rotatiesnelheid is al hoog genoeg. Een T-shirt dat binnen twee weken niet heeft verkocht, heeft doorgaans een ander probleem — de prijs, de foto of de beschrijving — en dat los je niet op met een boost.
-
-Bij Polo Bear-truien en flag knits is de beslissing anders. Die items hebben een langere levenscyclus van soms 60 tot 238 dagen. Een boost op dag zeven is er te vroeg voor. De koper voor dat soort stukken zoekt actief en doelgericht; die heeft de boost niet nodig om het item te vinden. Ik boost dit type item pas als het al meerdere weken online staat en de views stagneren.
+- **Kabeltruien** — mijn primaire boostcategorie. Ze hebben een bewezen vraag, een duidelijk zoekveld en een prijs die de boostkosten ruimschoots rechtvaardigt. Als een kabeltrui na vijf à zeven dagen nog niet heeft verkocht maar wel favorieten heeft, is een boost de logische volgende stap. De interesse is er al, de boost zet ze in beweging.
+- **T-shirts** — boost ik bijna nooit. De marge per stuk is lager, en de organische rotatiesnelheid is al hoog genoeg. Een T-shirt dat binnen twee weken niet heeft verkocht, heeft doorgaans een ander probleem — de prijs, de foto of de beschrijving — en dat los je niet op met een boost.
+- **Polo Bear-truien en flag knits** — hier ligt de beslissing anders. Die items hebben een langere levenscyclus van soms 60 tot 238 dagen. Een boost op dag zeven is er te vroeg voor: de koper voor dat soort stukken zoekt actief en doelgericht en heeft de boost niet nodig om het item te vinden. Ik boost dit type pas als het al meerdere weken online staat en de views stagneren.
 
 De vuistregel die ik hanteer: boost alleen als er al bewijs is dat mensen geïnteresseerd zijn. Favorieten zijn dat bewijs. Een item met nul favorieten boost je niet, want de boost vergroot de zichtbaarheid maar kan het gebrek aan interesse niet verhelpen. Dat is een listing-probleem, geen zichtbaarheidsprobleem.
 

@@ -10,11 +10,17 @@ draft: false
 
 ## Wat 30% van alle problemen veroorzaakt
 
-Over mijn volledige transactiehistorie concentreren klachten en vragen zich consistent rond vijf factoren. Dertig procent gaat over maatvoering en pasvorm. Vijfentwintig procent over de staat of conditie van het item. Twintig procent over verzendtijd. Vijftien procent over authenticiteit bij premium items. Tien procent over materiaal of wasadvies.
+Over mijn volledige transactiehistorie concentreren klachten en vragen zich consistent rond vijf factoren:
+
+- **Maatvoering en pasvorm** — 30%
+- **Staat of conditie van het item** — 25%
+- **Verzendtijd** — 20%
+- **Authenticiteit bij premium items** — 15%
+- **Materiaal of wasadvies** — 10%
 
 Die vijf factoren samen vertegenwoordigen nagenoeg alle vragen die een koper kan stellen. Ze zijn voorspelbaar. En ze zijn bijna allemaal te voorkomen door ze proactief in de beschrijving te beantwoorden.
 
-Wie al die vijf factoren consequent afdekt in elke listing, verlaagt het totale vraagvolume in de chat met 67%. Dat is geen kleine verbetering. Elke vraag die niet gesteld wordt is een koper die sneller beslist, minder twijfelt en minder kans heeft om halverwege af te haken. Minder vragen is geen gemakzucht. Het is conversie-optimalisatie.
+Wie al die vijf factoren consequent afdekt in elke listing, verlaagt het totale vraagvolume in de chat met **67%**. Dat is geen kleine verbetering. Elke vraag die niet gesteld wordt is een koper die sneller beslist, minder twijfelt en minder kans heeft om halverwege af te haken. Minder vragen is geen gemakzucht. Het is conversie-optimalisatie.
 
 ## Maten zijn de enige universele taal
 
@@ -22,13 +28,13 @@ Een kledingmaat is een label. Geen belofte. Een maat M bij Ralph Lauren valt and
 
 Centimeters zijn de enige objectieve informatie. Ik meet elk item plat en noteer vier maten. Oksel tot oksel geeft de breedte. Totale lengte geeft de val. Mouwlengte geeft de pasvorm in de arm. Schouderbreedte bevestigt of het item recht hangt. Die vier getallen zetten de verantwoordelijkheid voor een juiste inschatting bij de koper.
 
-Het systematisch toevoegen van exacte afmetingen heeft bij mij geleid tot 38% minder maatvragen in de chat. Dat getal zit consistent in de data over meerdere jaren. De investering per listing is twee minuten meten. De opbrengst is minder communicatietijd, minder incomplete transacties en een lagere kans op negatieve beoordelingen.
+Het systematisch toevoegen van exacte afmetingen heeft bij mij geleid tot **38% minder maatvragen** in de chat. Dat getal zit consistent in de data over meerdere jaren. De investering per listing is twee minuten meten. De opbrengst is minder communicatietijd, minder incomplete transacties en een lagere kans op negatieve beoordelingen.
 
 ## Conditie vereist hyperactieve eerlijkheid
 
 > Een item met een klein vlekje op de binnenkant van de kraag dat niet in de beschrijving staat, is een retourrisico. Hetzelfde item met die vermelding erbij, aangevuld met een close-upfoto, is een verkoop met een koper die exact weet wat hij krijgt.
 
-De neiging om gebreken te minimaliseren of te verzwijgen is begrijpelijk maar werkt averechts. Kopers die achteraf iets ontdekken dat er niet in stond, zijn ontevreden over de verkoper, niet over het item. Kopers die een gebrek kennen voor de aankoop en toch kopen, zijn bewust en tevreden als alles klopt zoals beschreven. Transparantie over gebreken verhoogt de kans op een vijfsterrenbeoordeling bij items met gebruikssporen met 25%.
+De neiging om gebreken te minimaliseren of te verzwijgen is begrijpelijk maar werkt averechts. Kopers die achteraf iets ontdekken dat er niet in stond, zijn ontevreden over de verkoper, niet over het item. Kopers die een gebrek kennen voor de aankoop en toch kopen, zijn bewust en tevreden als alles klopt zoals beschreven. Transparantie over gebreken verhoogt de kans op een vijfsterrenbeoordeling bij items met gebruikssporen met **25%**.
 
 De toon doet er daarbij toe. "Klein vlekje op binnenkant kraag, zie foto 5, valt nauwelijks op" is eerlijk zonder het item te ondermijnen. "Heeft wat gebruikssporen" zonder specificatie is vaag en lokt vragen uit. Specifiek en zacht werkt beter dan algemeen en neutraal.
 
@@ -36,7 +42,14 @@ De toon doet er daarbij toe. "Klein vlekje op binnenkant kraag, zie foto 5, valt
 
 Bij items boven €50 is authenticiteit de grootste twijfelfactor voor kopers. Vijftien procent van alle interacties bij Polo Bear-truien en vlag-sweaters gaat over echtheid. Collectors stellen gerichte vragen: of het neklabel het juiste font heeft, of de stikselkwaliteit klopt, of het waslabel de juiste RN-code toont. Beginners stellen vagere vragen: "is dit echt?" zonder te weten waar ze naar kijken.
 
-Mijn aanpak bij elk item boven €50 is een vaste reeks foto's die ik de authenticiteitsstack noem: neklabel, waslabel met RN-nummer, detail van het logo en de gele QR-tag in de kraag. Die vier foto's samen beantwoorden 95% van de authenticiteitsklachten voor ze bestaan. Ze tonen technische markers die een koper gerust stellen zonder dat ik zelf hoef te argumenteren.
+Mijn aanpak bij elk item boven €50 is een vaste reeks foto's die ik de **authenticiteitsstack** noem:
+
+1. Het neklabel
+2. Het waslabel met RN-nummer
+3. Een detail van het logo
+4. De gele QR-tag in de kraag
+
+Die vier foto's samen beantwoorden **95%** van de authenticiteitsklachten voor ze bestaan. Ze tonen technische markers die een koper gerust stellen zonder dat ik zelf hoef te argumenteren.
 
 Eén praktische waarschuwing: externe links naar verificatiepagina's mogen niet in de listing zelf staan. Vinted kan listings verwijderen die externe URL's bevatten. Alle aanvullend bewijs stuur ik uitsluitend via de private chat als een koper er specifiek naar vraagt.
 
@@ -44,7 +57,7 @@ Eén praktische waarschuwing: externe links naar verificatiepagina's mogen niet 
 
 Tien procent van de vragen gaat over materiaal en onderhoud. Dat klinkt klein, maar het concentreert zich bij items met een hogere prijs en een specifiek kopersprofiel. Wie een merino kabeltrui koopt, wil weten of het echt merino is. Wie voor €60 een kasjmier stuk koopt, wil het goed kunnen onderhouden.
 
-Het woord "merino" in de beschrijving verhoogt de conversie bij kwaliteitskopers met 15%. Niet omdat het een magisch woord is, maar omdat het specifiek is. "100% wol" zegt minder dan "100% merinowol, gewassen op 30 graden wolprogramma, liggend drogen." Die informatie vermindert de kans op een kapot gewassen trui, wat de kans op een klacht vermindert, wat de kans op een vijfsterrenbeoordeling vergroot.
+Het woord "merino" in de beschrijving verhoogt de conversie bij kwaliteitskopers met **15%**. Niet omdat het een magisch woord is, maar omdat het specifiek is. "100% wol" zegt minder dan "100% merinowol, gewassen op 30 graden wolprogramma, liggend drogen." Die informatie vermindert de kans op een kapot gewassen trui, wat de kans op een klacht vermindert, wat de kans op een vijfsterrenbeoordeling vergroot.
 
 ## De fotologica
 
@@ -64,7 +77,7 @@ Een titel op Vinted is ook een zoekopdracht die de koper intypt. Wie zoekt naar 
 
 Mijn titels zijn meertalig omdat mijn kopersbasis meertalig is. Een kabeltrui-listing bevat de Nederlandse en Engelse term, en de Franse voor de 20% Franse kopers. Een titel als "Polo Ralph Lauren kabel trui cable maglione jersey knit, navy donkerblauw bleu, maat M" dekt alle gangbare zoekopdrachten in één regel. Het ziet er overladen uit, maar het is functioneel.
 
-Het woord "wintertrui" in titels van knitwear verhoogt de seizoensgebonden vindbaarheid met 25%. Dat getal reflecteert dat kopers in augustus en september actief beginnen te zoeken naar warme kleding terwijl het aanbod nog niet volledig op dat zoekgedrag is afgesteld. Wie het woord gebruikt terwijl concurrenten nog "kabeltrui" schrijven, is beter vindbaar in de transitieperiode.
+Het woord "wintertrui" in titels van knitwear verhoogt de seizoensgebonden vindbaarheid met **25%**. Dat getal reflecteert dat kopers in augustus en september actief beginnen te zoeken naar warme kleding terwijl het aanbod nog niet volledig op dat zoekgedrag is afgesteld. Wie het woord gebruikt terwijl concurrenten nog "kabeltrui" schrijven, is beter vindbaar in de transitieperiode.
 
 ## De prijs als gevolg van de beschrijving
 
@@ -74,12 +87,12 @@ Bij kabeltruien zit mijn mediaanverkoopprijs op €47,50. Items met volledige be
 
 ## De val
 
-De meest voorkomende fout die beginners maken in listings is het omgekeerde van te weinig schrijven. Het is te schrijven wat ze mooi vinden aan het item in plaats van wat de koper nodig heeft om te beslissen.
+De meest voorkomende fout die beginners maken in listings is het omgekeerde van te weinig schrijven. Het is te schrijven wat ze mooi vinden aan het item in plaats van wat de koper nodig heeft om te beslissen. Drie fouten zie ik het vaakst terugkomen:
 
-"Prachtige vintage Ralph Lauren trui in perfecte staat, geweldige kleur en tijdloos design" bevat nul bruikbare informatie. Geen maten, geen conditiedetails, geen materiaal. De koper weet na die zin niet meer dan voor. De verkoopkans is identiek aan een lege beschrijving.
+1. **Mooie woorden zonder inhoud.** "Prachtige vintage Ralph Lauren trui in perfecte staat, geweldige kleur en tijdloos design" bevat nul bruikbare informatie. Geen maten, geen conditiedetails, geen materiaal. De koper weet na die zin niet meer dan voor. De verkoopkans is identiek aan een lege beschrijving.
+2. **"Valt oversized" zonder centimeters.** Oversized is subjectief. Voor een koper in België is oversized iets anders dan voor een koper in Parijs. Centimeters zijn niet subjectief.
+3. **Gebruikssporen verzwijgen.** Niet uit kwade wil, maar uit de misvatting dat transparantie over gebreken kopers afschrikt. Het tegenovergestelde is waar: een item dat beter aankomt dan beschreven genereert vijf sterren, een item dat slechter aankomt dan beschreven genereert één ster en soms een terugbetaling.
 
-De tweede fout is de term "valt oversized" zonder centimeters. Oversized is subjectief. Voor een koper in België is oversized iets anders dan voor een koper in Parijs. Centimeters zijn niet subjectief.
-
-De derde fout is gebruikssporen verzwijgen. Niet uit kwade wil, maar uit de misvatting dat transparantie over gebreken kopers afschrikt. Het tegenovergestelde is waar. Een item dat beter aankomt dan beschreven genereert vijf sterren. Een item dat slechter aankomt dan beschreven genereert één ster en soms een terugbetaling. Mijn geschatte retourpercentage ligt op 3 tot 5% over het volledige transactievolume. Dat getal hangt direct samen met de kwaliteit van de listing die voorafging aan de aankoop.
+Mijn geschatte retourpercentage ligt op **3 tot 5%** over het volledige transactievolume. Dat getal hangt direct samen met de kwaliteit van de listing die voorafging aan de aankoop.
 
 Een beschrijving schrijf je één keer. De gevolgen draag je tot het item verkocht is.
