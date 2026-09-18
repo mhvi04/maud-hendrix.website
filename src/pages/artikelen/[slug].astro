@@ -15,6 +15,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const publishedDate = entry.data.date.startsWith("[") ? undefined : entry.data.date;
+const ogImage = entry.id === "482-euro-vinted-boosts-5-lessen" ? "/og/482-euro-vinted-boosts-5-lessen.png" : undefined;
 ---
 
 <BaseLayout
@@ -23,6 +24,7 @@ const publishedDate = entry.data.date.startsWith("[") ? undefined : entry.data.d
   type="article"
   publishedDate={publishedDate}
   noindex={entry.data.draft}
+  image={ogImage}
 >
   <SiteHeader world="pro" />
   <main class="article">
@@ -97,5 +99,61 @@ const publishedDate = entry.data.date.startsWith("[") ? undefined : entry.data.d
     font-family: var(--font-display);
     font-style: italic;
     font-size: 20px;
+  }
+  .prose :global(a) {
+    color: var(--navy);
+    text-decoration-color: var(--mustard);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+  .prose :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+    font-family: var(--font-mono);
+    font-size: 14px;
+  }
+  .prose :global(th),
+  .prose :global(td) {
+    border: 3px solid var(--ink);
+    padding: 12px 16px;
+    text-align: left;
+  }
+  .prose :global(th) {
+    background: var(--navy);
+    color: var(--cream);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 12px;
+  }
+  .prose :global(td) {
+    background: var(--paper);
+  }
+  .prose :global(.shape-divider) {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 40px 0;
+  }
+  .prose :global(.shape-divider .shape) {
+    display: block;
+  }
+  .prose :global(.shape-divider .shape--square) {
+    width: 16px;
+    height: 16px;
+    background: var(--mustard);
+  }
+  .prose :global(.shape-divider .shape--circle) {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--navy);
+  }
+  .prose :global(.shape-divider .shape--triangle) {
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 16px solid var(--rust);
   }
 </style>
