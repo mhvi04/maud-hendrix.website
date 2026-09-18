@@ -13,7 +13,7 @@ npm run dev
 
 - `/` — startscherm met twee ingangen: Professioneel en Privé
 - `/professioneel` — profiel, studie, onderneming, traject, artikelen, contact
-- `/professioneel/artikelen` — artikelen op basis van "De Ku(n)s(t) van resellen"
+- `/artikelen` — artikelen op basis van "De Ku(n)s(t) van resellen" (voorheen `/professioneel/artikelen`, nu 301-redirect via `vercel.json`)
 - `/prive` — sociale kanalen, interesses, blog
 - `/prive/blog` — blogposts
 

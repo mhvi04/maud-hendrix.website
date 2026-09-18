@@ -15,6 +15,22 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const publishedDate = entry.data.date.startsWith("[") ? undefined : entry.data.date;
+
+const faqJsonLd =
+  entry.data.faq && entry.data.faq.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: entry.data.faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
 ---
 
 <BaseLayout
@@ -24,6 +40,9 @@ const publishedDate = entry.data.date.startsWith("[") ? undefined : entry.data.d
   publishedDate={publishedDate}
   noindex={entry.data.draft}
 >
+  {faqJsonLd && (
+    <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} is:inline />
+  )}
   <SiteHeader world="pro" />
   <main class="article">
     <div class="wrap">
