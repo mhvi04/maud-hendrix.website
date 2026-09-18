@@ -1,7 +1,7 @@
 ---
 title: "Niet alle Vinted-kopers zijn hetzelfde: ze wonen ook ergens anders"
 excerpt: "Van 250 orders uit acht landen blijkt: waar je koper woont bepaalt niet alleen wat ze bestellen, maar ook hoe ze communiceren, wanneer ze beslissen en of ze achteraf klagen."
-date: "2026-09-13"
+date: "2026-08-05"
 tag: "Praktijk"
 draft: false
 ---
