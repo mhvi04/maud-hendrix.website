@@ -25,29 +25,31 @@ const {
 const canonicalURL = new URL(canonicalPath ?? Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(image, Astro.site);
 
-const jsonLd =
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://maud-hendrix.com/#website",
+  url: "https://maud-hendrix.com/",
+  name: "Maud Hendrix",
+  inLanguage: "nl-BE",
+  author: { "@id": "https://maud-hendrix.com/#person" },
+  publisher: { "@id": "https://maud-hendrix.com/#person" },
+};
+
+const articleSchema =
   type === "article"
     ? {
         "@context": "https://schema.org",
         "@type": "Article",
+        "@id": `${canonicalURL.toString()}#article`,
         headline: title,
         description,
         url: canonicalURL.toString(),
+        mainEntityOfPage: canonicalURL.toString(),
         image: ogImageURL.toString(),
-        inLanguage: "nl",
-        author: {
-          "@type": "Person",
-          name: "Maud Hendrix",
-          sameAs: [
-            "https://www.linkedin.com/in/maud-hendrix-522245374",
-            "https://vinted.be/member/306398525-studiomaud",
-          ],
-        },
-        publisher: {
-          "@type": "Person",
-          name: "Maud Hendrix",
-          url: "https://maud-hendrix.com",
-        },
+        inLanguage: "nl-BE",
+        author: { "@id": "https://maud-hendrix.com/#person" },
+        publisher: { "@id": "https://maud-hendrix.com/#person" },
         ...(publishedDate ? { datePublished: publishedDate } : {}),
       }
     : null;
@@ -88,8 +90,9 @@ const jsonLd =
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL} />
 
-    {jsonLd && (
-      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} is:inline />
+    {articleSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} is:inline />
     )}
     <PersonSchema />
 
