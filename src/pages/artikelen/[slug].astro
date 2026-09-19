@@ -146,7 +146,11 @@ const ogImage = existsSync(ownOgImagePath) ? `/og/${entry.id}.png` : undefined;
   .prose :global(ol) {
     margin: 4px 0 24px;
     padding-left: 0;
-    list-style: none;
+    list-style-position: inside;
+  }
+  .prose :global(ul li)::marker,
+  .prose :global(ol li)::marker {
+    content: "";
   }
   .prose :global(ul li),
   .prose :global(ol li) {
