@@ -1,9 +1,16 @@
 ---
-title: "Boosten op Vinted: wat 206 boosts en €482 mij hebben geleerd"
-excerpt: "206 boosts en €482 aan advertentiebudget: wat de data leert over timing, itemkeuze en wanneer een boost geld weggooien is."
+title: "Wat betekent geboost op Vinted? (en wat kost het)"
+excerpt: "Geboost op Vinted betekent dat een listing tijdelijk extra zichtbaarheid koopt. Op basis van 206 boosts en €482 budget: wat het kost en wanneer het werkt."
 date: "2026-04-02"
 tag: "Praktijk"
 draft: false
+faq:
+  - question: "Wat betekent geboost op Vinted?"
+    answer: "Een item dat 'geboost' is op Vinted, is een listing waarvoor de verkoper heeft betaald om hem tijdelijk extra zichtbaar te maken. Het item wordt drie of zeven dagen lang dagelijks opnieuw bovenaan in de catalogus geplaatst en vaker getoond in de feeds van potentiële kopers."
+  - question: "Wat is boosten op Vinted?"
+    answer: "Boosten op Vinted is de betaalde opvalfunctie waarmee een verkoper een listing tijdelijk extra promoot. Het geeft geen garantie op verkoop, maar zorgt voor extra clicks, favorieten en berichten, wat op zijn beurt de organische positie in de zoekresultaten verbetert."
+  - question: "Wat kost boosten bij Vinted?"
+    answer: "Een boost bij Vinted kost gemiddeld €2 tot €3 per keer, afhankelijk van de duur en de prijs van het item. Op basis van 206 boosts en €482 totaalbudget lag de omzet per geïnvesteerde euro op €93 bij boosts die tot een verkoop leidden."
 ---
 
 Ik heb in totaal €482 uitgegeven aan boosts op Vinted. Dat klinkt als een behoorlijk bedrag voor wat in wezen een knop is die je listing tijdelijk naar boven duwt. Dat bedrag gebruik ik niet om te zeggen dat boosts automatisch winst opleveren. Een boost maakt een zwakke listing niet plots sterk. Maar bij de juiste listing kan het wel extra momentum geven.
@@ -82,3 +89,17 @@ Ik heb dat een keer concreet meegemaakt met een hemd dat al drie weken online st
 Sommige items hadden misschien ook organisch verkocht, alleen later. De directe oorzakelijkheid is moeilijk te isoleren. Wat ik wel zeker weet: de items die ik boostte, verkochten sneller dan de items die ik organisch liet staan, en snelheid is in de resell-economie een financieel voordeel op zichzelf. Kapitaal dat niet vastzit in onverkochte voorraad, kan opnieuw worden ingezet.
 
 > Boosten is geen magie. Het is een kostenpost die zijn rendement bewijst als je hem op het juiste moment, voor het juiste item, voor de juiste duur inzet. Doe je dat systematisch, dan is het de meest efficiënte investering in je Vinted-operatie. Doe je het willekeurig, dan is het gewoon geld weg.
+
+## Veelgestelde vragen
+
+### Wat betekent geboost op Vinted?
+
+Een item dat "geboost" is op Vinted, is een listing waarvoor de verkoper heeft betaald om hem tijdelijk extra zichtbaar te maken. Het item wordt drie of zeven dagen lang dagelijks opnieuw bovenaan in de catalogus geplaatst en vaker getoond in de feeds van potentiële kopers.
+
+### Wat is boosten op Vinted?
+
+Boosten op Vinted is de betaalde opvalfunctie waarmee een verkoper een listing tijdelijk extra promoot. Het geeft geen garantie op verkoop, maar zorgt voor extra clicks, favorieten en berichten, wat op zijn beurt de organische positie in de zoekresultaten verbetert.
+
+### Wat kost boosten bij Vinted?
+
+Een boost bij Vinted kost gemiddeld €2 tot €3 per keer, afhankelijk van de duur en de prijs van het item. Op basis van 206 boosts en €482 totaalbudget lag de omzet per geïnvesteerde euro op €93 bij boosts die tot een verkoop leidden.
