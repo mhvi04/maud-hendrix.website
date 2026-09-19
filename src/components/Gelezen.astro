@@ -17,120 +17,161 @@ const books = [
   { title: "Het einde van de mensheid in 1967", author: "Herman Brusselmans", rating: 3.5, dateRead: "2026-04-15" },
 ];
 
-function renderStars(rating: number) {
-  const outline = `<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.7z"/></svg>`;
-  const filled = `<svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.7z"/></svg>`;
-  return Array.from({ length: 5 }, (_, i) => {
-    const fraction = Math.max(0, Math.min(1, rating - i));
-    if (fraction <= 0) return `<span class="star">${outline}</span>`;
-    if (fraction >= 1) return `<span class="star">${filled}</span>`;
-    return `<span class="star">${outline}<span class="star-fill" style="width:${(fraction * 100).toFixed(0)}%">${filled}</span></span>`;
-  }).join("");
+const shelf = [...books].reverse();
+
+function prettyDate(date: string) {
+  return new Intl.DateTimeFormat("nl-BE", { month: "long", year: "numeric" }).format(new Date(date + "T12:00:00"));
 }
 ---
-<div class="gelezen-bars" tabindex="0" role="region" aria-label="Gelezen boeken, scroll voor de volledige lijst">
-  {[...books].reverse().map((book, i) => (
-    <div class={`bar c${(i % 5) + 1}`} data-date={book.dateRead}>
-      <div class="info">
-        <p class="title">{book.title}</p>
-        <p class="author">{book.author}</p>
-      </div>
-      <div class="meta">
-        <div class="stars" set:html={renderStars(book.rating)} />
-        <span class="rating-value mono">{book.rating.toFixed(1).replace(".", ",")}</span>
-        <span class="ago"></span>
-      </div>
+
+<div class="bookshelf" data-bookshelf>
+  <div class="shelf-head">
+    <div>
+      <p class="shelf-kicker mono">Mijn boekenkast</p>
+      <p class="shelf-intro">Geen recensies. Gewoon wat ik gelezen heb en wat ervan is blijven hangen.</p>
     </div>
-  ))}
+    <p class="shelf-count mono">{books.length} boeken</p>
+  </div>
+
+  <div class="shelf-stage">
+    <div class="books" role="list" aria-label="Gelezen boeken">
+      {shelf.map((book, i) => (
+        <button
+          class={"book c" + ((i % 5) + 1)}
+          type="button"
+          role="listitem"
+          data-book
+          data-title={book.title}
+          data-author={book.author}
+          data-rating={book.rating}
+          data-date={prettyDate(book.dateRead)}
+          aria-label={book.title + " van " + book.author}
+          aria-expanded="false"
+        >
+          <span class="spine-title">{book.title}</span>
+          <span class="spine-author">{book.author}</span>
+        </button>
+      ))}
+    </div>
+    <div class="shelf-board" aria-hidden="true"></div>
+  </div>
+
+  <aside class="book-detail" data-detail hidden aria-live="polite">
+    <button class="detail-close" type="button" data-close aria-label="Sluit boekdetails">×</button>
+    <span class="detail-label mono">Uit de kast</span>
+    <h3 data-detail-title></h3>
+    <p class="detail-author" data-detail-author></p>
+    <div class="detail-meta">
+      <span class="mono" data-detail-date></span>
+      <span class="rating"><strong data-detail-rating></strong><span>/ 5</span></span>
+    </div>
+    <p class="detail-note">Mijn korte notitie bij dit boek komt hier later.</p>
+  </aside>
 </div>
 
 <script>
-  function timeAgo(dateStr: string) {
-    const days = Math.floor((Date.now() - new Date(dateStr).getTime()) / (1000 * 60 * 60 * 24));
-    if (days < 1) return "vandaag";
-    if (days === 1) return "gisteren";
-    if (days < 14) return `${days} dagen geleden`;
-    if (days < 60) return `${Math.floor(days / 7)} weken geleden`;
-    if (days < 365) return `${Math.floor(days / 30)} maanden geleden`;
-    const years = Math.floor(days / 365);
-    return years === 1 ? "1 jaar geleden" : `${years} jaar geleden`;
-  }
-  document.querySelectorAll<HTMLElement>(".gelezen-bars .bar").forEach((bar) => {
-    const dateStr = bar.dataset.date;
-    const agoEl = bar.querySelector<HTMLElement>(".ago");
-    if (dateStr && agoEl) agoEl.textContent = timeAgo(dateStr);
-  });
+  const roots = document.querySelectorAll<HTMLElement>("[data-bookshelf]");
+  roots.forEach((root) => {
+    const detail = root.querySelector<HTMLElement>("[data-detail]");
+    const title = root.querySelector<HTMLElement>("[data-detail-title]");
+    const author = root.querySelector<HTMLElement>("[data-detail-author]");
+    const date = root.querySelector<HTMLElement>("[data-detail-date]");
+    const rating = root.querySelector<HTMLElement>("[data-detail-rating]");
+    const close = root.querySelector<HTMLButtonElement>("[data-close]");
+    const books = root.querySelectorAll<HTMLButtonElement>("[data-book]");
 
-  // Fixed pixel heights break as soon as a title wraps differently (narrower
-  // viewport, a longer book title). Measure the real height of the first 3
-  // bars instead, so "3 visible, rest scrolls" holds at any width/content.
-  function sizeVisibleBars() {
-    const container = document.querySelector<HTMLElement>(".gelezen-bars");
-    if (!container) return;
-    const bars = container.querySelectorAll<HTMLElement>(".bar");
-    if (bars.length <= 3) {
-      container.style.maxHeight = "none";
-      return;
-    }
-    const gap = parseFloat(getComputedStyle(container).rowGap) || 0;
-    let height = gap * 2;
-    for (let i = 0; i < 3; i++) height += bars[i].getBoundingClientRect().height;
-    // Still behind the PinGate (display: none) or not yet laid out: keep the
-    // CSS fallback rather than writing a bogus near-zero height.
-    if (height <= gap * 2) return;
-    container.style.maxHeight = `${Math.ceil(height)}px`;
-  }
-  sizeVisibleBars();
-  const measuredBars = document.querySelectorAll<HTMLElement>(".gelezen-bars .bar");
-  if (measuredBars.length && "ResizeObserver" in window) {
-    // Fires on window resize (bars re-wrap), on the PinGate reveal (a bar
-    // goes from an unrendered 0×0 box to its real size), and if an
-    // async web font swap changes wrapping in any of the 3 measured bars.
-    const observer = new ResizeObserver(() => sizeVisibleBars());
-    for (let i = 0; i < Math.min(3, measuredBars.length); i++) observer.observe(measuredBars[i]);
-  }
+    const shut = () => {
+      if (!detail) return;
+      detail.hidden = true;
+      books.forEach((book) => book.setAttribute("aria-expanded", "false"));
+    };
+
+    books.forEach((book) => {
+      book.addEventListener("click", () => {
+        if (!detail || !title || !author || !date || !rating) return;
+        const wasOpen = book.getAttribute("aria-expanded") === "true";
+        books.forEach((item) => item.setAttribute("aria-expanded", "false"));
+        if (wasOpen) return shut();
+        title.textContent = book.dataset.title ?? "";
+        author.textContent = book.dataset.author ?? "";
+        date.textContent = book.dataset.date ?? "";
+        rating.textContent = (Number(book.dataset.rating ?? 0)).toFixed(1).replace(".", ",");
+        book.setAttribute("aria-expanded", "true");
+        detail.hidden = false;
+      });
+    });
+
+    close?.addEventListener("click", shut);
+    root.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") shut();
+    });
+  });
 </script>
 
 <style>
-  .gelezen-bars {
-    display: flex; flex-direction: column; gap: 6px;
-    /* JS measures the real height of the first 3 bars and overrides this;
-       this is only the pre-hydration/no-JS fallback. */
-    max-height: 212px; overflow-y: auto; overflow-x: hidden;
+  .bookshelf { position: relative; }
+  .shelf-head {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    gap: 24px; margin-bottom: 28px;
   }
-  .gelezen-bars:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
-  .bar {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 12px 20px; border-radius: 0; box-shadow: none;
-    transition: transform 0.15s ease, filter 0.15s ease;
+  .shelf-kicker { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--mustard-deep); margin: 0 0 7px; }
+  .shelf-intro { max-width: 48ch; margin: 0; font-size: 15px; line-height: 1.55; }
+  .shelf-count { margin: 0; font-size: 12px; white-space: nowrap; color: var(--navy); }
+  .shelf-stage { overflow-x: auto; padding: 18px 6px 0; scrollbar-width: thin; }
+  .books { min-width: max-content; height: 300px; display: flex; align-items: flex-end; gap: 5px; padding-inline: 8px; }
+  .book {
+    --w: 54px; width: var(--w); height: 245px; border: 2px solid var(--ink); border-bottom: 0;
+    padding: 15px 8px 12px; display: flex; flex-direction: column; justify-content: space-between;
+    align-items: center; cursor: pointer; color: var(--ink); transform-origin: bottom center;
+    transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
   }
-  .bar:hover { transform: translateX(6px); filter: brightness(1.06); }
+  .book:nth-child(3n) { height: 275px; --w: 61px; }
+  .book:nth-child(4n) { height: 225px; --w: 48px; }
+  .book:nth-child(7n) { height: 260px; --w: 67px; }
+  .book:hover, .book:focus-visible, .book[aria-expanded="true"] {
+    transform: translateY(-14px) rotate(-1deg); z-index: 2; filter: brightness(1.04);
+    box-shadow: 5px 5px 0 var(--ink); outline: none;
+  }
+  .spine-title, .spine-author { writing-mode: vertical-rl; transform: rotate(180deg); }
+  .spine-title { font-family: var(--font-display); font-size: 14px; font-weight: 650; line-height: 1.05; max-height: 175px; overflow: hidden; }
+  .spine-author { font-family: var(--font-mono); font-size: 8px; line-height: 1.1; max-height: 92px; overflow: hidden; }
   .c1 { background: var(--navy); color: var(--cream); }
-  .c2 { background: var(--mustard); color: #1a160f; }
-  /* var(--rust) only clears ~4:1 against cream, under the 4.5:1 AA floor for
-     16px/11px text; darkened locally (not via the shared token) for contrast. */
-  .c3 { background: color-mix(in srgb, var(--rust) 75%, black); color: #ffffff; }
-  .c4 { background: var(--olive); color: #f2ecdc; }
-  .c5 { background: var(--mustard-deep); color: #1a160f; }
-  .title { font-family: var(--font-display); font-weight: 600; font-size: 16px; margin: 0; }
-  /* Full opacity: dimming toward these backgrounds also drops several
-     variants below the 4.5:1 AA floor. Hierarchy comes from size/weight only. */
-  .author { font-family: var(--font-mono); font-size: 11px; margin: 2px 0 0; }
-  .meta { display: flex; align-items: center; gap: 10px; }
-  .stars { display: flex; gap: 2px; }
-  .rating-value { font-size: 11px; }
-  .ago { font-family: var(--font-mono); font-size: 11px; white-space: nowrap; }
-  @media (max-width: 480px) {
-    .bar { flex-direction: column; align-items: flex-start; gap: 6px; }
-    .meta { align-self: flex-end; }
-    /* Stacked bars run taller than the row layout, so the 3-visible cutoff needs more room. */
-    .gelezen-bars { max-height: 320px; }
-  }
-</style>
+  .c2 { background: var(--mustard); }
+  .c3 { background: var(--rust); color: #fff; }
+  .c4 { background: var(--olive); color: #fff; }
+  .c5 { background: var(--paper); }
+  .shelf-board { min-width: 860px; height: 16px; border: 2px solid var(--ink); background: var(--mustard); box-shadow: 0 7px 0 var(--ink); }
 
-<style is:global>
-  /* set:html injects raw HTML, which bypasses Astro's scoped-style attributes,
-     so the star fill/clip rules must live in a global (but namespaced) block. */
-  .gelezen-bars .star { position: relative; display: inline-flex; width: 13px; height: 13px; }
-  .gelezen-bars .star-fill { position: absolute; inset: 0; overflow: hidden; display: block; }
+  .book-detail {
+    position: relative; margin-top: 30px; border: 3px solid var(--ink); background: var(--paper);
+    padding: clamp(24px, 4vw, 38px); box-shadow: 8px 8px 0 var(--mustard);
+  }
+  .book-detail[hidden] { display: none; }
+  .detail-close {
+    position: absolute; right: 14px; top: 10px; width: 36px; height: 36px; border: 0;
+    background: transparent; font-size: 28px; cursor: pointer; color: var(--ink);
+  }
+  .detail-label { display: block; margin-bottom: 12px; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--mustard-deep); }
+  .book-detail h3 { max-width: 18ch; margin: 0; font-size: clamp(26px, 4vw, 42px); line-height: 1.05; }
+  .detail-author { margin: 10px 0 24px; font-family: var(--font-mono); font-size: 13px; }
+  .detail-meta { display: flex; gap: 18px; align-items: center; padding-top: 16px; border-top: 2px solid var(--ink); }
+  .rating { margin-left: auto; font-family: var(--font-mono); font-size: 12px; }
+  .rating strong { font-family: var(--font-display); font-size: 28px; margin-right: 3px; }
+  .detail-note { margin: 24px 0 0; font-size: 14px; font-style: italic; opacity: .7; }
+
+  @media (max-width: 600px) {
+    .shelf-head { align-items: flex-start; flex-direction: column; gap: 10px; }
+    .books { height: 260px; }
+    .book { height: 215px; --w: 48px; }
+    .book:nth-child(3n) { height: 240px; --w: 53px; }
+    .book:nth-child(4n) { height: 198px; --w: 43px; }
+    .book:nth-child(7n) { height: 230px; --w: 58px; }
+    .spine-title { font-size: 12px; max-height: 150px; }
+    .shelf-board { min-width: 760px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .book { transition: none; }
+    .book:hover, .book:focus-visible, .book[aria-expanded="true"] { transform: none; }
+  }
 </style>
