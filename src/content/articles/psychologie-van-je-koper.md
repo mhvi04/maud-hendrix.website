@@ -1,7 +1,7 @@
 ---
 title: "De psychologie van je koper"
 excerpt: "Over meer dan 2900 transacties zag ik vier terugkerende kopersprofielen — Essentialist, Collector, Browser en Minimalist — die elk een andere aanpak vragen."
-date: "2026-09-13"
+date: "2026-05-14"
 tag: "Praktijk"
 draft: false
 ---
@@ -16,7 +16,7 @@ Die vier profielen bepalen samen je omzet, je tijdsbesteding en je reputatie. Ze
 
 ## De Essentialist
 
-Veertig procent van de transacties. De stille motor achter je cashflow.
+**40% van de transacties.** De stille motor achter je cashflow.
 
 Ze weten wat ze zoeken voor ze je listing openen. Een hemd in maat M. Een polo in wit. Een basic kabeltrui. Ze bekijken de foto's, controleren de maten en kopen, of ze kopen niet omdat de informatie ontbrak. Hun beslissing valt binnen één tot twee uur na het eerste contact. Het gemiddelde aantal berichten voor een succesvolle transactie met dit profiel is één tot drie. Ze zijn ook de groep die het vaakst koopt zonder ook maar één bericht te sturen.
 
@@ -28,7 +28,7 @@ Wat ik geleerd heb over de Essentialist: een directe prijsdaling in het eerste b
 
 ## De Collector
 
-Vijftien tot twintig procent van de kopers, maar goed voor zo'n dertig procent van de omzet op premium stukken.
+**15 tot 20% van de kopers**, maar goed voor zo'n **30% van de omzet** op premium stukken.
 
 Ze zoeken specifiek. Een Polo Bear-trui in goede conditie. Een RL92 vlag-sweater met beide labels intact. Een vintage piece uit een bepaalde collectie. Ze zijn er niet toevallig op gekomen. Ze hebben gezocht, soms al weken. Een koper schreef me op een gegeven moment om te vragen of ik haar wilde herinneren als ik een Polo Bear-trui online zette. Ze had een budget van €100 tot €150 in gedachten. De trui die ik uiteindelijk online zette, plaatste ik voor €165. Ze kocht hem.
 
@@ -40,7 +40,7 @@ Wat ik nooit doe bij een Collector: een korting aanbieden als ze twijfelen. Dat 
 
 ## De Browser
 
-Vijfentwintig tot dertig procent van het volume. Twintig procent van de omzet. De meest tijdrovende groep.
+**25 tot 30% van het volume. 20% van de omzet.** De meest tijdrovende groep.
 
 Ze genereren meer berichten dan wie ook maar converteren het minst per gesprek. Ze sturen een bod van 60 tot 75% van de vraagprijs. Ze liken vijf items en kopen er geen. Ze stellen vier vragen en verdwijnen daarna. Een veelgeziene opening is simpelweg: "Beste prijs?" Een andere klassieke start is een bod dat zo ver onder de vraagprijs ligt dat het voelt als een belediging, maar dat is geen intentie. Het is een tactiek.
 
@@ -56,7 +56,7 @@ Wat de data ook toont: het direct accepteren van een eerste bod is minder effect
 
 ## De Minimalist
 
-Tien tot vijftien procent van de kopers. De kleinste groep, maar ook de meest consistente bron van goede reviews.
+**10 tot 15% van de kopers.** De kleinste groep, maar ook de meest consistente bron van goede reviews.
 
 Ze kopen doordacht. Ze stellen vragen die beginners verrassen omdat ze niet over prijs gaan. "Is dit 100% merinowol?" "Zijn er echt geen vlekken die op de foto's minder opvallen?" "Hoe moet ik dit wassen?" Ze lezen de volledige beschrijving voor ze een vraag stellen, en de vraag die ze stellen gaat altijd over iets dat er niet in stond.
 
@@ -68,9 +68,12 @@ Eerlijkheid over kleine gebreken verlaagt het retourrisico bij dit profiel en ve
 
 De vier profielen zijn niet moeilijk te onderscheiden als je weet waar je naar kijkt.
 
-Een Essentialist vraagt niet, of vraagt één gerichte vraag over maten of verzending en niets meer. Een Collector opent met een technische vraag over het item zelf, iets wat alleen iemand met kennis van het merk opvalt. Een Browser opent met een bod of met een vraag die eigenlijk een onderhandeling is. Een Minimalist stelt een vraag over materiaal of onderhoud die niet in de beschrijving stond.
+- **Essentialist** — vraagt niet, of stelt één gerichte vraag over maten of verzending en niets meer. Aanpak: kort en direct, logistieke zekerheid voorop.
+- **Collector** — opent met een technische vraag over het item zelf, iets wat alleen iemand met kennis van het merk opvalt. Aanpak: expert-toon, authenticiteitsbewijzen onmiddellijk beschikbaar.
+- **Browser** — opent met een bod of met een vraag die eigenlijk een onderhandeling is. Aanpak: kalm, tegenbod of bundel, nooit emotioneel.
+- **Minimalist** — stelt een vraag over materiaal of onderhoud die niet in de beschrijving stond. Aanpak: eerlijk, technisch, geen overselling.
 
-In de praktijk betekent dit dat je al na het eerste bericht een aanpak kiest. Voor de Essentialist: kort en direct, logistieke zekerheid voorop. Voor de Collector: expert-toon, authenticiteitsbewijzen onmiddellijk beschikbaar. Voor de Browser: kalm, tegenbod of bundel, nooit emotioneel. Voor de Minimalist: eerlijk, technisch, geen overselling.
+In de praktijk betekent dit dat je al na het eerste bericht een aanpak kiest.
 
 ## Reactietijd is geen service, het is omzet
 
