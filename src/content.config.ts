@@ -9,6 +9,9 @@ const articles = defineCollection({
     date: z.string(),
     tag: z.string(),
     draft: z.boolean().optional().default(false),
+    faq: z
+      .array(z.object({ question: z.string(), answer: z.string() }))
+      .optional(),
   }),
 });
 

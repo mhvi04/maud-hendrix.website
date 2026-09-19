@@ -18,6 +18,22 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 const publishedDate = entry.data.date.startsWith("[") ? undefined : entry.data.date;
 
+const faqJsonLd =
+  entry.data.faq && entry.data.faq.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: entry.data.faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
+
 // Per-artikel og:image, indien aanwezig in public/og/<slug>.png — anders valt
 // BaseLayout terug op de sitewide og-default.png.
 const ownOgImagePath = fileURLToPath(new URL(`../../../public/og/${entry.id}.png`, import.meta.url));
@@ -32,6 +48,9 @@ const ogImage = existsSync(ownOgImagePath) ? `/og/${entry.id}.png` : undefined;
   noindex={entry.data.draft}
   image={ogImage}
 >
+  {faqJsonLd && (
+    <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} is:inline />
+  )}
   <SiteHeader world="pro" />
   <main class="article">
     <div class="wrap">
