@@ -1,7 +1,7 @@
 ---
 title: "Niet alle Vinted-kopers zijn hetzelfde: ze wonen ook ergens anders"
 excerpt: "Van 250 orders uit acht landen blijkt: waar je koper woont bepaalt niet alleen wat ze bestellen, maar ook hoe ze communiceren, wanneer ze beslissen en of ze achteraf klagen."
-date: "2026-09-13"
+date: "2026-08-05"
 tag: "Praktijk"
 draft: false
 ---
@@ -10,13 +10,20 @@ Van de 250 meest recente orders die ik heb doorgenomen, kwamen mijn kopers uit a
 
 Dat is het inzicht dat ik in meer dan 2.500 transacties ben tegengekomen, niet als hypothese maar als terugkerend patroon. De getallen die ik hier bespreek komen uit mijn eigen verkoopexport en reviewanalyse. Ze zijn geen garanties maar ze zijn ook geen toeval.
 
-Wat opvalt als je de data naast elkaar legt: de gemiddelde uitbetaling per order stijgt naarmate de koper verder weg woont. Belgische kopers betalen gemiddeld 47,41 euro per transactie. Nederlandse kopers zitten op 50,20 euro. Fransen op 57,21 euro. Duitsers op 63,20 euro. Italianen op 56,14 euro. Er zijn maar 4 Spaanse orders in de dataset, maar het gemiddelde daar ligt op 81,75 euro.
+Wat opvalt als je de data naast elkaar legt: de gemiddelde uitbetaling per order stijgt naarmate de koper verder weg woont.
+
+- **België** — €47,41 gemiddeld per transactie
+- **Nederland** — €50,20
+- **Frankrijk** — €57,21
+- **Italië** — €56,14
+- **Duitsland** — €63,20
+- **Spanje** — €81,75 (op basis van slechts 4 orders in de dataset)
 
 Dat patroon is geen coincidentie. Verzendkosten werken als een filter. Wie bereid is om meer te betalen voor transport, heeft het item bewust gekozen. Dat heeft gevolgen voor hoe je je duurste en meest gespecialiseerde stukken positioneert.
 
 ## Belgische kopers: meest actief, laagste bestelwaarde
 
-38,8 procent van mijn recente transacties komt uit België. Combineer dat met de bredere data over mijn volledige verkoopgeschiedenis en het beeld is consistent: Belgische kopers zijn mijn meest actieve groep. Ze kopen t-shirts van 18 euro, kabeltruien van 28 euro, hemden van 35 euro. Ze beslissen snel, doorgaans binnen een tot twee dagen nadat een item online staat.
+**38,8%** van mijn recente transacties komt uit België. Combineer dat met de bredere data over mijn volledige verkoopgeschiedenis en het beeld is consistent: Belgische kopers zijn mijn meest actieve groep. Ze kopen t-shirts van 18 euro, kabeltruien van 28 euro, hemden van 35 euro. Ze beslissen snel, doorgaans binnen een tot twee dagen nadat een item online staat.
 
 De gemiddelde uitbetaling per Belgische bestelling bedraagt 47,41 euro. Dat is het laagste van alle landen. Wat dat niet betekent: dat Belgen goedkoop zijn. Wat het wel betekent: de drempel om te kopen is laag. Ze volgen een Vinted-profiel via sociale media, zien een item verschijnen en ronden de aankoop af zonder lang na te denken. De items die ze kopen zijn ook structureel kleiner in prijs: basics, klassieke stukken, seizoensinventaris.
 
@@ -26,7 +33,7 @@ Belgische kopers volgen ook het meest actief via sociale kanalen. Ze zien een it
 
 ## Nederlandse kopers: transactioneel, precies en vergelijkend
 
-26,4 procent van mijn orders, met een gemiddelde uitbetaling van 50,20 euro. Nederlandse kopers zijn iets selectiever dan Belgische. In de items die ze kopen zie je meer rugby shirts, premium denim, Oxford hemden, grotere herenstukken. Ze zijn niet impulsief maar ook niet onbereikbaar.
+**26,4%** van mijn orders, met een gemiddelde uitbetaling van 50,20 euro. Nederlandse kopers zijn iets selectiever dan Belgische. In de items die ze kopen zie je meer rugby shirts, premium denim, Oxford hemden, grotere herenstukken. Ze zijn niet impulsief maar ook niet onbereikbaar.
 
 Het opvallendste gedragsverschil zit in de communicatie voor aankoop. Een Belgische koper accepteert dat een trui mooi oversized past. Een Nederlandse koper vraagt hoeveel centimeter oversized de borstomvang precies is. Ze vergelijken, rekenen en kopen dan pas. Dat transactionele profiel zit ook in hun reviews: functionele taal, korte zinnen, gefocust op feiten. Geen emotionele beschrijvingen, wel directe observaties over verpakking, conditie en snelheid.
 
@@ -36,7 +43,7 @@ Nederlandse kopers reageren ook sterk op bundels. Ze zijn bereid meerdere items 
 
 ## Franse kopers: veeleisend voor aankoop, bijna nooit ontevreden daarna
 
-15,6 procent van de orders in mijn recentste dataset, met een gemiddelde uitbetaling van 57,21 euro. Dat is twaalf euro meer per transactie dan bij Belgische kopers. Wat ze kopen: cashmere truien, vintage knitwear, zeldzame sublabels, Fair Isle-stukken. Ze gaan structureel voor het duurdere en zeldzamere item in het aanbod.
+**15,6%** van de orders in mijn recentste dataset, met een gemiddelde uitbetaling van 57,21 euro. Dat is twaalf euro meer per transactie dan bij Belgische kopers. Wat ze kopen: cashmere truien, vintage knitwear, zeldzame sublabels, Fair Isle-stukken. Ze gaan structureel voor het duurdere en zeldzamere item in het aanbod.
 
 De communicatie voor aankoop is intenser dan bij andere groepen. Franse kopers stellen tot 30 procent meer vragen dan het gemiddelde. Ze willen zekerheid over authenticiteit, staat en detailopnames van labels, naden en specifieke kenmerken. Dat voelt zoals meer werk. De cijfers zeggen iets anders. Van de 978 Franse reviews in mijn data ligt het negatieve percentage op slechts 2,35 procent, tegenover 9,73 procent in het Nederlandstalige segment. Ze controleren alles vooraf en als alles klopt, kopen ze loyaal en geven ze een gemiddelde score van 4,86.
 
@@ -46,7 +53,7 @@ Er is ook een pure opportuniteit in de Franse markt die de meeste resellers acti
 
 ## Duitse kopers: de hoogste gemiddelde orderwaarde van de grote markten
 
-27 orders, gemiddelde uitbetaling 63,20 euro. Dat is het hoogste gemiddelde van de landen die genoeg volume hebben om conclusies uit te trekken. Het gedragspatroon is ook het meest uitgesproken van alle groepen: ze stellen een paar technische vragen over materiaal en productiejaar, en zodra die antwoorden kloppen volgt de aankoop zonder verdere onderhandeling of prijsdiscussie.
+**27 orders**, gemiddelde uitbetaling 63,20 euro. Dat is het hoogste gemiddelde van de landen die genoeg volume hebben om conclusies uit te trekken. Het gedragspatroon is ook het meest uitgesproken van alle groepen: ze stellen een paar technische vragen over materiaal en productiejaar, en zodra die antwoorden kloppen volgt de aankoop zonder verdere onderhandeling of prijsdiscussie.
 
 Wat ze kopen is specifiek: bear sweaters, puffer jackets, kabeltruien in bepaalde kleuren, Polo Sport. Ze zijn niet op zoek naar een goede deal op een basisartikel. Ze weten wat ze willen en betalen ervoor. De hogere verzendkost naar Duitsland werkt als een ingebouwde filter: wie toch bestelt, heeft het item echt gewild.
 
@@ -56,7 +63,7 @@ Meertalige titels doen hier ook hun werk. Een Strickpullover of Pullover als zoe
 
 ## Italië: klein volume, perfecte reviews en een duidelijk esthetisch profiel
 
-14 orders in de dataset, gemiddelde uitbetaling 56,14 euro. Slechts 6 reviews in mijn volledige reviewanalyse, maar die 6 scoren gemiddeld perfect: 5 op 5. De Italiaanse koper heeft een uitgesproken esthetische voorkeur en weinig tolerantie voor visueel rommelige listings. Wat ze kopen past in een duidelijk profiel: kabeltruien in roze of camel, bear knits, zachte kleuren.
+**14 orders** in de dataset, gemiddelde uitbetaling 56,14 euro. Slechts 6 reviews in mijn volledige reviewanalyse, maar die 6 scoren gemiddeld perfect: **5 op 5**. De Italiaanse koper heeft een uitgesproken esthetische voorkeur en weinig tolerantie voor visueel rommelige listings. Wat ze kopen past in een duidelijk profiel: kabeltruien in roze of camel, bear knits, zachte kleuren.
 
 De kans in deze markt is concreet: er zijn nauwelijks Nederlandse of Belgische resellers die actief proberen Italiaanse kopers te bereiken. Engelstalige en Italiaanse zoektermen in de titel zijn genoeg om in de zoekresultaten te verschijnen bij een groep die, als ze koopt, eigenlijk nooit klaagt. De combinatie van perfecte reviews en een specifiek productprofiel maakt Italiaanse kopers tot een stille maar waardevolle groep.
 
@@ -64,13 +71,14 @@ Italiaanse kopers reageren sterk op fotokwaliteit. Zachte belichting, neutrale a
 
 ## Wat de reviewdata zegt over tevredenheid per taalgroep
 
-De 1.296 reviews in mijn dataset verdelen zich ongelijk over taalgroepen. Franstalige reviews domineren met 978 beoordelingen, wat 75,5 procent van het totaal uitmaakt. Dat is logisch: Vinted is groot in Frankrijk en Franstalig België. Hun gemiddelde score bedraagt 4,86 op 5. De typische woordenschat in die reviews: parfait, parfaite, très contente, merci. Kort, positief, weinig ruimte voor nuance.
+De 1.296 reviews in mijn dataset verdelen zich ongelijk over taalgroepen:
 
-Nederlandstalige reviews tellen 185 beoordelingen. Gemiddelde score: 4,50 op 5. Dat is het laagste van alle taalgroepen. De klachttaal is specifiek en consistent: traag en beschadigd zijn de twee woorden die het vaakst opduiken in de negatieve beoordelingen. Wat dat leert: Nederlandstalige kopers kopen sneller maar hun verwachtingen over verpakking en levertijd zijn hoog. Als de realiteit niet aansluit bij die verwachting, zeggen ze dat ook in de review.
+- **Frans** — 978 reviews (75,5% van het totaal), gemiddelde score **4,86/5**. Typische woordenschat: parfait, parfaite, très contente, merci. Kort, positief, weinig ruimte voor nuance.
+- **Nederlands** — 185 reviews, gemiddelde score **4,50/5**, het laagste van alle taalgroepen. De klachttaal is specifiek: traag en beschadigd zijn de twee woorden die het vaakst opduiken in negatieve beoordelingen.
+- **Engels** — 7,3% van de dataset, gemiddelde score **4,98/5**. Perfect en thank you domineren. Deze groep is internationaal, koopt bewust over de grens en geeft zelden negatieve feedback.
+- **Italiaans** — 6 reviews, gemiddelde score **5/5**. Tutto perfetto is de standaardfrase.
 
-Engelstalige reviews vormen 7,3 procent van de dataset met een gemiddelde score van 4,98. Perfect en thank you domineren de woordenschat. Deze groep is internationaal en koopt bewust over de grens. Ze zijn tevreden als het item aankomt zoals beschreven en geven zelden negatieve feedback.
-
-De 6 Italiaanse reviews scoren 5 op 5. Tutto perfetto is de standaardfrase. Die cijfers zijn statistisch te klein voor harde conclusies maar ze bevestigen het bredere patroon: kopers die verder weg wonen en hogere verzendkosten betalen, zijn vaker tevreden omdat ze bewuster hebben gekozen.
+Franstalige reviews domineren dus in aantal, wat logisch is: Vinted is groot in Frankrijk en Franstalig België. Nederlandstalige kopers kopen sneller maar hun verwachtingen over verpakking en levertijd zijn hoog, en als de realiteit niet aansluit, zeggen ze dat ook in de review. De Italiaanse cijfers zijn statistisch te klein voor harde conclusies, maar ze bevestigen het bredere patroon: kopers die verder weg wonen en hogere verzendkosten betalen, zijn vaker tevreden omdat ze bewuster hebben gekozen.
 
 ## Wat dit betekent voor hoe je listings opbouwt
 
