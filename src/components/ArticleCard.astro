@@ -21,7 +21,7 @@ const { href, tag, title, excerpt, date } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    border: 3px solid var(--ink);
+    border: 1px solid var(--ink);
     background: var(--paper);
     padding: 26px;
     text-decoration: none;
@@ -29,8 +29,8 @@ const { href, tag, title, excerpt, date } = Astro.props;
     transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
   }
   .card:hover {
-    transform: translate(-3px, -3px);
-    box-shadow: 6px 6px 0 var(--ink);
+    transform: translateY(-2px);
+    box-shadow: none;
     background: var(--cream);
   }
   .card-tag {

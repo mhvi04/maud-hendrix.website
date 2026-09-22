@@ -1,25 +1,27 @@
 /* ---------------------------------------------------------
    Design tokens
-   Crème + gedempt marineblauw + mosterdgeel/oranje.
-   De Stijl: platte kleurvlakken, geometrische vormen, asymmetrie.
+   Crème + marineblauw + oranje/terracotta accent + periwinkel.
+   Vlakke kleurvlakken, dunne lijnen, geen shadows.
 --------------------------------------------------------- */
 :root {
-  --cream: #f2ecdc;
-  --paper: #faf6ea;
-  --ink: #1a160f;
-  --navy: #253863;
-  --navy-deep: #1a2749;
-  --mustard: #dc9327;
-  --mustard-deep: #b8721c;
-  --rust: #c1502e;
-  --olive: #4b5c34;
-  --line: rgba(26, 22, 15, 0.86);
+  --cream: #faf3e7;
+  --paper: #ffffff;
+  --ink: #172040;
+  --navy: #172040;
+  --navy-deep: #0e1530;
+  --mustard: #e2672c;
+  --mustard-deep: #b8501f;
+  --rust: #172040;
+  --olive: #172040;
+  --periwinkle: #c9d9ec;
+  --line: rgba(23, 32, 64, 0.15);
 
-  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
-  --font-body: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-accent: "Fraunces", Georgia, serif;
   --font-mono: "JetBrains Mono", "Courier New", monospace;
 
-  --edge: 6px;
+  --edge: 0px;
   --container: 1240px;
   /* Hoogte vaste footer-balk, ongeveer 2 tot 3cm, schalend met de viewport. */
   --footer-bar-h: clamp(4.75rem, 9vw, 5.75rem);
@@ -28,20 +30,21 @@
 /* ---------------------------------------------------------
    Dark mode
    Keert het kleurenschema om: crème achtergrond wordt marineblauw,
-   tekst wordt crème, mosterdgeel blijft de accentkleur. Werkt op
+   tekst wordt crème, oranje blijft de accentkleur. Werkt op
    alle bestaande secties omdat die allemaal deze tokens gebruiken.
 --------------------------------------------------------- */
 html.dark-mode {
-  --cream: #253863;
-  --paper: #1a2749;
-  --ink: #f2ecdc;
-  --navy: #f2ecdc;
-  --navy-deep: #d9d0ba;
-  --mustard: #dc9327;
-  --mustard-deep: #b8721c;
-  --rust: #c1502e;
-  --olive: #4b5c34;
-  --line: rgba(242, 236, 220, 0.86);
+  --cream: #172040;
+  --paper: #0e1530;
+  --ink: #faf3e7;
+  --navy: #faf3e7;
+  --navy-deep: #ffffff;
+  --mustard: #e2672c;
+  --mustard-deep: #f0895a;
+  --rust: #faf3e7;
+  --olive: #faf3e7;
+  --periwinkle: #2a3a5c;
+  --line: rgba(250, 243, 231, 0.15);
 }
 
 /* ---------------------------------------------------------
@@ -99,6 +102,7 @@ a {
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
+  font-weight: 800;
   margin: 0;
   color: var(--navy);
 }
@@ -118,38 +122,41 @@ button {
   padding-inline: clamp(20px, 5vw, 56px);
 }
 
-/* Kapitaal-label systeem */
+/* Eyebrow-labelsysteem: klein, vet, letter-spaced, uppercase */
 .label {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.16em;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  opacity: 0.62;
   color: var(--navy);
 }
 
 .label::before {
   content: "";
-  width: 9px;
-  height: 9px;
+  width: 7px;
+  height: 7px;
   background: var(--mustard);
 }
 
 .label--on-dark {
-  color: var(--mustard);
+  color: var(--cream);
+  opacity: 0.62;
 }
 .label--on-dark::before {
-  background: var(--cream);
+  background: var(--mustard);
 }
 
 .label--on-mustard {
-  color: var(--navy-deep);
+  color: var(--navy);
+  opacity: 0.7;
 }
 .label--on-mustard::before {
-  background: var(--ink);
+  background: var(--navy);
 }
 
 /* Cursief accent binnen titels: laatste woord/woorden van een zin. */
@@ -157,8 +164,9 @@ h1 em,
 h2 em,
 h3 em,
 h4 em {
+  font-family: var(--font-accent);
   font-style: italic;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .mono {
@@ -168,66 +176,76 @@ h4 em {
 .eyebrow-index {
   font-family: var(--font-mono);
   font-size: 13px;
+  font-weight: 500;
   color: var(--mustard-deep);
 }
 
-/* Buttons */
+/* Dunne horizontale lijn als sectie-divider */
+.rule {
+  height: 1px;
+  background: currentColor;
+  opacity: 0.15;
+  border: 0;
+  margin: 0;
+}
+
+/* Buttons: rechte hoeken, 2px rand, geen shadow */
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   padding: 15px 26px;
   border: 2px solid var(--ink);
+  border-radius: 0;
   background: transparent;
   color: var(--ink);
   text-decoration: none;
-  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
 .btn:hover {
   background: var(--ink);
-  color: var(--paper);
-  transform: translate(-2px, -2px);
+  color: var(--cream);
 }
 
 .btn--solid {
   background: var(--navy);
   border-color: var(--navy);
-  color: var(--paper);
+  color: var(--cream);
 }
 .btn--solid:hover {
-  background: var(--navy-deep);
-  border-color: var(--navy-deep);
-  color: var(--paper);
+  background: transparent;
+  border-color: var(--navy);
+  color: var(--navy);
 }
 
 .btn--mustard {
   background: var(--mustard);
   border-color: var(--mustard);
-  color: var(--ink);
+  color: var(--cream);
 }
 .btn--mustard:hover {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--mustard);
+  background: transparent;
+  border-color: var(--mustard);
+  color: var(--mustard-deep);
 }
 
 .btn--rust {
-  background: var(--rust);
-  border-color: var(--rust);
-  color: var(--paper);
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--cream);
 }
 .btn--rust:hover {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--rust);
+  background: transparent;
+  border-color: var(--navy);
+  color: var(--navy);
 }
 
-/* Shared geometric primitives, used for De Stijl accents */
+/* Shared geometric primitives, gebruikt binnen artikelcontent */
 .shape {
   position: absolute;
   display: block;
@@ -248,7 +266,7 @@ h4 em {
 
 ::selection {
   background: var(--mustard);
-  color: var(--ink);
+  color: var(--cream);
 }
 
 @media (max-width: 640px) {

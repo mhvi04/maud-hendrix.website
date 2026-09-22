@@ -272,7 +272,7 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
   /* INTRO */
   .intro {
     background: var(--mustard);
-    border-bottom: 3px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
     padding-block: clamp(48px, 7vw, 88px);
     position: relative;
   }
@@ -280,13 +280,7 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
     position: relative;
   }
   .block-mark {
-    position: absolute;
-    top: -12px;
-    right: 8%;
-    width: 90px;
-    height: 90px;
-    background: var(--ink);
-    z-index: 0;
+    display: none;
   }
   .intro-copy {
     position: relative;
@@ -318,7 +312,7 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
     grid-template-columns: 180px 1fr;
     gap: 28px;
     padding-block: clamp(36px, 5vw, 56px);
-    border-bottom: 2px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
   }
   .row-label {
     padding-top: 4px;
@@ -364,7 +358,7 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
 
   /* SKILLS */
   .skills-section {
-    border-bottom: 2px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
     padding-block: clamp(36px, 5vw, 56px) 0;
   }
   .skills-head {
@@ -390,7 +384,7 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
     list-style: none;
     margin: 0;
     padding: 0;
-    border-top: 2px solid var(--ink);
+    border-top: 1px solid var(--ink);
   }
   .lang-row {
     display: flex;
@@ -398,7 +392,7 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
     justify-content: space-between;
     gap: 16px;
     padding-block: 14px;
-    border-bottom: 2px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
   }
   .lang-name {
     font-size: 17px;
@@ -429,7 +423,7 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
     align-items: baseline;
     justify-content: space-between;
     gap: 10px 20px;
-    border-bottom: 2px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
     padding-bottom: 12px;
     margin-bottom: 14px;
   }
@@ -526,7 +520,7 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
   }
   .voorgeschiedenis-proof {
     flex: 0 1 340px;
-    border: 3px solid var(--cream);
+    border: 1px solid var(--cream);
     background: var(--paper);
     padding: 10px;
     min-width: 0;
@@ -583,7 +577,7 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
     display: flex;
     flex-direction: column;
     gap: 10px;
-    border: 3px solid var(--cream);
+    border: 1px solid var(--cream);
     background: var(--paper);
     padding: 26px;
     text-decoration: none;
@@ -591,8 +585,8 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
   a.project:hover {
-    transform: translate(-3px, -3px);
-    box-shadow: 6px 6px 0 var(--cream);
+    transform: translateY(-2px);
+    box-shadow: none;
   }
   .project--closed {
     background: transparent;
@@ -618,7 +612,7 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
     color: var(--mustard-deep);
   }
   .project-status--closed {
-    color: var(--rust);
+    color: var(--periwinkle);
   }
   .project h3 {
     font-size: 21px;
@@ -665,7 +659,7 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
   .contact {
     background: var(--cream);
     color: var(--ink);
-    border-top: 3px solid var(--ink);
+    border-top: 1px solid var(--ink);
     padding-block: clamp(48px, 7vw, 88px);
   }
   .contact-grid {

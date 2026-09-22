@@ -120,7 +120,7 @@ function prettyDate(date: string) {
   .shelf-stage { overflow-x: auto; padding: 18px 6px 0; scrollbar-width: thin; }
   .books { min-width: max-content; height: 300px; display: flex; align-items: flex-end; gap: 5px; padding-inline: 8px; }
   .book {
-    --w: 54px; width: var(--w); height: 245px; border: 2px solid var(--ink); border-bottom: 0;
+    --w: 54px; width: var(--w); height: 245px; border: 1px solid var(--ink); border-bottom: 0;
     padding: 15px 8px 12px; display: flex; flex-direction: column; justify-content: space-between;
     align-items: center; cursor: pointer; color: var(--ink); transform-origin: bottom center;
     transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
@@ -130,21 +130,21 @@ function prettyDate(date: string) {
   .book:nth-child(7n) { height: 260px; --w: 67px; }
   .book:hover, .book:focus-visible, .book[aria-expanded="true"] {
     transform: translateY(-14px) rotate(-1deg); z-index: 2; filter: brightness(1.04);
-    box-shadow: 5px 5px 0 var(--ink); outline: none;
+    box-shadow: none; outline: none;
   }
   .spine-title, .spine-author { writing-mode: vertical-rl; transform: rotate(180deg); }
   .spine-title { font-family: var(--font-display); font-size: 14px; font-weight: 650; line-height: 1.05; max-height: 175px; overflow: hidden; }
   .spine-author { font-family: var(--font-mono); font-size: 8px; line-height: 1.1; max-height: 92px; overflow: hidden; }
   .c1 { background: var(--navy); color: var(--cream); }
   .c2 { background: var(--mustard); }
-  .c3 { background: var(--rust); color: #fff; }
-  .c4 { background: var(--olive); color: #fff; }
+  .c3 { background: var(--periwinkle); color: var(--ink); }
+  .c4 { background: var(--mustard-deep); color: var(--cream); }
   .c5 { background: var(--paper); }
-  .shelf-board { min-width: 860px; height: 16px; border: 2px solid var(--ink); background: var(--mustard); box-shadow: 0 7px 0 var(--ink); }
+  .shelf-board { min-width: 860px; height: 16px; border: 1px solid var(--ink); background: var(--mustard); box-shadow: none; }
 
   .book-detail {
-    position: relative; margin-top: 30px; border: 3px solid var(--ink); background: var(--paper);
-    padding: clamp(24px, 4vw, 38px); box-shadow: 8px 8px 0 var(--mustard);
+    position: relative; margin-top: 30px; border: 1px solid var(--ink); background: var(--paper);
+    padding: clamp(24px, 4vw, 38px); box-shadow: none;
   }
   .book-detail[hidden] { display: none; }
   .detail-close {
@@ -154,7 +154,7 @@ function prettyDate(date: string) {
   .detail-label { display: block; margin-bottom: 12px; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--mustard-deep); }
   .book-detail h3 { max-width: 18ch; margin: 0; font-size: clamp(26px, 4vw, 42px); line-height: 1.05; }
   .detail-author { margin: 10px 0 24px; font-family: var(--font-mono); font-size: 13px; }
-  .detail-meta { display: flex; gap: 18px; align-items: center; padding-top: 16px; border-top: 2px solid var(--ink); }
+  .detail-meta { display: flex; gap: 18px; align-items: center; padding-top: 16px; border-top: 1px solid var(--ink); }
   .rating { margin-left: auto; font-family: var(--font-mono); font-size: 12px; }
   .rating strong { font-family: var(--font-display); font-size: 28px; margin-right: 3px; }
   .detail-note { margin: 24px 0 0; font-size: 14px; font-style: italic; opacity: .7; }

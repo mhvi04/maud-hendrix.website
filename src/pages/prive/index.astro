@@ -124,7 +124,7 @@ const interests = [
   }
 
   .intro {
-    border-bottom: 3px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
     padding-block: clamp(48px, 7vw, 88px);
     position: relative;
   }
@@ -148,14 +148,7 @@ const interests = [
     margin-top: 14px;
   }
   .intro-shape {
-    position: absolute;
-    top: -12px;
-    right: 8%;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background: var(--mustard);
-    z-index: 0;
+    display: none;
   }
 
   .row {
@@ -163,10 +156,10 @@ const interests = [
     grid-template-columns: 180px 1fr;
     gap: 28px;
     padding-block: clamp(36px, 5vw, 56px);
-    border-bottom: 2px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
   }
   .row--last {
-    border-bottom: 3px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
   }
   .row-label {
     padding-top: 4px;
@@ -199,7 +192,7 @@ const interests = [
     gap: 20px;
   }
   .social {
-    border: 3px solid var(--ink);
+    border: 1px solid var(--ink);
     background: var(--paper);
     padding: 24px;
     text-decoration: none;
@@ -207,8 +200,8 @@ const interests = [
     transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
   }
   .social:hover {
-    transform: translate(-3px, -3px);
-    box-shadow: 6px 6px 0 var(--ink);
+    transform: translateY(-2px);
+    box-shadow: none;
     background: var(--cream);
   }
   .social-dot {
@@ -235,7 +228,7 @@ const interests = [
     gap: 20px;
   }
   .interest {
-    border: 3px solid var(--ink);
+    border: 1px solid var(--ink);
     padding: 24px;
     background: var(--paper);
   }
