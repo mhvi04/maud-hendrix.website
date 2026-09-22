@@ -1,0 +1,574 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { DAYS, DAY_LABELS, ENTRY_CATEGORIES } from "../../lib/planner-types";
+import { CATEGORY_COLORS } from "../../lib/planner-constants";
+---
+
+<BaseLayout
+  title="Weekplanner — Maud Hendrix"
+  description="Persoonlijke weekplanner semester 1, AJ26-27."
+  noindex={true}
+>
+  <div class="planner" id="planner-root">
+    <header class="pl-header">
+      <div class="pl-header-bar">
+        <a href="/" class="pl-home">← maud-hendrix.com</a>
+        <div class="pl-header-actions">
+          <button type="button" id="print-week-btn" class="pl-btn pl-btn--ghost">
+            Print deze week
+          </button>
+          <button type="button" id="print-all-btn" class="pl-btn pl-btn--ghost">
+            Print alle 12 weken
+          </button>
+        </div>
+      </div>
+      <h1>Weekplanner</h1>
+
+      <nav class="pl-week-nav" aria-label="Weeknavigatie">
+        <button type="button" id="prev-week-btn" class="pl-btn pl-btn--icon" aria-label="Vorige week">
+          &larr;
+        </button>
+        <div class="pl-week-label">
+          <span id="week-label" class="pl-week-label-main">Week 1 · W39</span>
+          <span id="week-dates" class="pl-week-label-sub">21–25 sep 2026</span>
+        </div>
+        <button type="button" id="next-week-btn" class="pl-btn pl-btn--icon" aria-label="Volgende week">
+          &rarr;
+        </button>
+        <button type="button" id="today-btn" class="pl-btn pl-btn--ghost">Vandaag</button>
+      </nav>
+    </header>
+
+    <p id="planner-status" class="pl-status" role="status" hidden></p>
+
+    <div class="pl-grid-scroll" id="grid-scroll">
+      <div class="pl-grid" id="planner-grid" aria-label="Roosterweek"></div>
+    </div>
+
+    <section class="pl-legend" aria-label="Legende">
+      <span class="pl-legend-item">
+        <span class="pl-swatch" style={`background:${CATEGORY_COLORS.Studie}`}></span>
+        Vaste les- en zelfstudieblokken
+      </span>
+      {
+        ENTRY_CATEGORIES.map((cat) => (
+          <span class="pl-legend-item">
+            <span class="pl-swatch" style={`background:${CATEGORY_COLORS[cat]}`} />
+            {cat}
+          </span>
+        ))
+      }
+      <span class="pl-legend-item pl-legend-item--muted">
+        <span class="pl-swatch pl-swatch--cancelled" />
+        Vervallen / verschoven deze week
+      </span>
+    </section>
+
+    <p class="pl-hint">
+      Tik op een leeg vak om iets toe te voegen. Tik op een les- of zelfstudieblok om het voor
+      deze week te annuleren, te verplaatsen of aan te passen.
+    </p>
+  </div>
+
+  <dialog id="entry-modal" class="pl-modal">
+    <form method="dialog" id="entry-form" class="pl-form">
+      <h2 id="entry-modal-title">Invullen</h2>
+      <input type="hidden" id="entry-id" />
+      <label>
+        Dag
+        <select id="entry-day" required>
+          {DAYS.map((d) => <option value={d}>{DAY_LABELS[d]}</option>)}
+        </select>
+      </label>
+      <div class="pl-form-row">
+        <label>
+          Van
+          <input type="time" id="entry-start" required step="900" />
+        </label>
+        <label>
+          Tot
+          <input type="time" id="entry-end" required step="900" />
+        </label>
+      </div>
+      <label>
+        Titel
+        <input type="text" id="entry-title" required maxlength="120" placeholder="Bv. Kompas — dashboard" />
+      </label>
+      <label>
+        Categorie
+        <select id="entry-category" required>
+          {ENTRY_CATEGORIES.map((c) => <option value={c}>{c}</option>)}
+        </select>
+      </label>
+      <label>
+        Notities
+        <textarea id="entry-notes" rows="2" maxlength="500"></textarea>
+      </label>
+      <p id="entry-error" class="pl-form-error" hidden></p>
+      <div class="pl-form-actions">
+        <button type="button" id="entry-delete" class="pl-btn pl-btn--danger" hidden>Verwijderen</button>
+        <span class="pl-form-spacer"></span>
+        <button type="button" id="entry-cancel" class="pl-btn pl-btn--ghost">Annuleren</button>
+        <button type="submit" id="entry-save" class="pl-btn pl-btn--solid">Opslaan</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="exception-modal" class="pl-modal">
+    <form method="dialog" id="exception-form" class="pl-form">
+      <h2 id="exception-modal-title">Uitzondering voor deze week</h2>
+      <p id="exception-block-info" class="pl-block-info"></p>
+      <input type="hidden" id="exc-week-nr" />
+      <input type="hidden" id="exc-block-id" />
+      <label>
+        Wat wil je doen?
+        <select id="exc-status" required>
+          <option value="geen_les">Annuleren (geen les)</option>
+          <option value="verplaatst">Verplaatsen (ander tijdstip, zelfde dag)</option>
+          <option value="aangepast">Aanpassen (bv. andere invulling, zelfde blok)</option>
+        </select>
+      </label>
+      <div class="pl-form-row" id="exc-time-row">
+        <label>
+          Nieuw van
+          <input type="time" id="exc-start" step="900" />
+        </label>
+        <label>
+          Nieuw tot
+          <input type="time" id="exc-end" step="900" />
+        </label>
+      </div>
+      <label>
+        Reden (optioneel)
+        <input type="text" id="exc-reason" maxlength="200" placeholder="Bv. ziek, verzet naar volgende week" />
+      </label>
+      <p class="pl-form-note">
+        Verplaatsen naar een andere dag kan niet via dit blok zelf: zet dit blok op "Annuleren"
+        en voeg daarna zelf een invulling toe op de gewenste dag/tijd (categorie Studie).
+      </p>
+      <p id="exception-error" class="pl-form-error" hidden></p>
+      <div class="pl-form-actions">
+        <button type="button" id="exception-delete" class="pl-btn pl-btn--danger" hidden>
+          Uitzondering opheffen
+        </button>
+        <span class="pl-form-spacer"></span>
+        <button type="button" id="exception-cancel" class="pl-btn pl-btn--ghost">Annuleren</button>
+        <button type="submit" id="exception-save" class="pl-btn pl-btn--solid">Opslaan</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="print-root" class="pl-print-root" aria-hidden="true"></div>
+</BaseLayout>
+
+<script>
+  import { initPlanner } from "../../scripts/planner-app";
+  initPlanner();
+</script>
+
+<style is:global>
+  /* is:global: de meeste grid-inhoud (cellen, blokken, invullingen) wordt
+     client-side aangemaakt door planner-app.ts, buiten de Astro-template
+     om. Astro's normale scoped styles (data-astro-cid-*) matchen enkel
+     elementen die in dit .astro-bestand zelf staan, dus scoped CSS zou
+     al die dynamische grid-elementen missen.
+
+     Eigen tokens, bewust losstaand van de tokens in global.css:
+     deze app heeft een eigen, bindend kleurenschema (crème/antraciet/
+     gedempt blauw) dat afwijkt van de De Stijl-stijl van de rest van
+     de site. Alles hieronder is bewust binnen .planner geschoold.
+  ----------------------------------------------------------- */
+  .planner {
+    --pl-bg: #faf7f2;
+    --pl-text: #1a1a1a;
+    --pl-accent: #4a6fa5;
+    --pl-line: rgba(26, 26, 26, 0.16);
+    --pl-line-strong: rgba(26, 26, 26, 0.4);
+    --pl-font: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue",
+      Arial, sans-serif;
+
+    background: var(--pl-bg);
+    color: var(--pl-text);
+    font-family: var(--pl-font);
+    min-height: 100vh;
+    padding-bottom: 48px;
+  }
+
+  .pl-header {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px 16px 8px;
+  }
+  .pl-header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .pl-home {
+    font-size: 13px;
+    color: var(--pl-text);
+    opacity: 0.65;
+    text-decoration: none;
+  }
+  .pl-home:hover {
+    opacity: 1;
+  }
+  .pl-header-actions {
+    display: flex;
+    gap: 8px;
+  }
+  .pl-header h1 {
+    font-family: var(--pl-font);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--pl-text);
+    margin: 10px 0 14px;
+  }
+
+  .pl-week-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .pl-week-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 150px;
+  }
+  .pl-week-label-main {
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .pl-week-label-sub {
+    font-size: 12px;
+    opacity: 0.7;
+  }
+
+  .pl-btn {
+    font-family: var(--pl-font);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border: 1px solid var(--pl-text);
+    background: var(--pl-bg);
+    color: var(--pl-text);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.1s ease, color 0.1s ease;
+  }
+  .pl-btn:hover {
+    background: var(--pl-text);
+    color: var(--pl-bg);
+  }
+  .pl-btn--icon {
+    padding: 8px 12px;
+    font-size: 16px;
+    line-height: 1;
+  }
+  .pl-btn--ghost {
+    border-color: var(--pl-line-strong);
+    opacity: 0.85;
+  }
+  .pl-btn--solid {
+    background: var(--pl-accent);
+    border-color: var(--pl-accent);
+    color: #fff;
+  }
+  .pl-btn--solid:hover {
+    background: #3a5a87;
+    border-color: #3a5a87;
+  }
+  .pl-btn--danger {
+    border-color: #a3402c;
+    color: #a3402c;
+    background: transparent;
+  }
+  .pl-btn--danger:hover {
+    background: #a3402c;
+    color: #fff;
+  }
+
+  .pl-status {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px;
+    font-size: 13px;
+    color: var(--pl-accent);
+  }
+
+  .pl-grid-scroll {
+    max-width: 1100px;
+    margin: 8px auto 0;
+    padding: 0 16px;
+    touch-action: pan-y;
+  }
+
+  .pl-grid {
+    position: relative;
+    display: grid;
+    border-top: 1px solid var(--pl-line-strong);
+    border-left: 1px solid var(--pl-line-strong);
+  }
+
+  .pl-cell {
+    border-right: 1px solid var(--pl-line);
+    border-bottom: 1px solid var(--pl-line);
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .pl-cell:hover {
+    background: rgba(74, 111, 165, 0.08);
+  }
+  .pl-cell--hour-start {
+    border-top: 1px solid var(--pl-line-strong);
+  }
+
+  .pl-gutter {
+    border-right: 1px solid var(--pl-line-strong);
+    border-bottom: 1px solid var(--pl-line);
+    font-size: 10px;
+    color: var(--pl-text);
+    opacity: 0.6;
+    text-align: right;
+    padding: 2px 4px 0 0;
+    z-index: 1;
+  }
+
+  .pl-day-header {
+    border-right: 1px solid var(--pl-line-strong);
+    border-bottom: 1px solid var(--pl-line-strong);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 2px;
+    z-index: 1;
+    background: var(--pl-bg);
+  }
+  .pl-day-header .pl-day-date {
+    font-weight: 400;
+    font-size: 10px;
+    opacity: 0.65;
+  }
+  .pl-day-header.is-today {
+    background: rgba(74, 111, 165, 0.14);
+    color: var(--pl-accent);
+  }
+
+  .pl-block {
+    z-index: 2;
+    border: 1px solid var(--pl-text);
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 10px;
+    line-height: 1.25;
+    overflow: hidden;
+    cursor: pointer;
+    color: #fff;
+    text-align: left;
+  }
+  .pl-block-title {
+    display: block;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .pl-block-meta {
+    display: block;
+    font-size: 9px;
+    opacity: 0.9;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .pl-block--cancelled {
+    background: transparent !important;
+    color: var(--pl-text);
+    opacity: 0.55;
+    border-style: dashed;
+    text-decoration: line-through;
+  }
+  .pl-block--changed::after {
+    content: "•";
+    position: absolute;
+    top: 1px;
+    right: 3px;
+  }
+  .pl-block--todo {
+    outline: 2px dashed #a3402c;
+    outline-offset: -1px;
+  }
+  .pl-block-todo-tag {
+    position: absolute;
+    top: 1px;
+    right: 3px;
+    font-size: 8px;
+    font-weight: 700;
+    color: #a3402c;
+    background: #fff;
+    border-radius: 2px;
+    padding: 0 2px;
+  }
+
+  .pl-entry {
+    z-index: 2;
+    border: 1px solid var(--pl-text);
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 10px;
+    line-height: 1.25;
+    overflow: hidden;
+    cursor: pointer;
+    color: var(--pl-text);
+    text-align: left;
+  }
+
+  .pl-legend {
+    max-width: 1100px;
+    margin: 18px auto 0;
+    padding: 0 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+  .pl-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+  }
+  .pl-legend-item--muted {
+    opacity: 0.65;
+  }
+  .pl-swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    border: 1px solid var(--pl-text);
+    display: inline-block;
+  }
+  .pl-swatch--cancelled {
+    background: transparent;
+    border-style: dashed;
+  }
+
+  .pl-hint {
+    max-width: 1100px;
+    margin: 14px auto 0;
+    padding: 0 16px;
+    font-size: 12px;
+    opacity: 0.65;
+  }
+
+  /* Modals */
+  .pl-modal {
+    border: none;
+    border-radius: 8px;
+    padding: 0;
+    max-width: 420px;
+    width: calc(100vw - 32px);
+    color: var(--pl-text);
+    font-family: var(--pl-font);
+  }
+  .pl-modal::backdrop {
+    background: rgba(26, 26, 26, 0.45);
+  }
+  .pl-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+  }
+  .pl-form h2 {
+    font-size: 17px;
+    margin: 0;
+  }
+  .pl-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .pl-form input,
+  .pl-form select,
+  .pl-form textarea {
+    font-family: var(--pl-font);
+    font-size: 14px;
+    padding: 8px 10px;
+    border: 1px solid var(--pl-line-strong);
+    border-radius: 4px;
+    background: var(--pl-bg);
+    color: var(--pl-text);
+  }
+  .pl-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .pl-block-info {
+    font-size: 13px;
+    background: rgba(74, 111, 165, 0.1);
+    border-radius: 4px;
+    padding: 8px 10px;
+    margin: 0;
+  }
+  .pl-form-note {
+    font-size: 11px;
+    opacity: 0.65;
+    margin: 0;
+  }
+  .pl-form-error {
+    font-size: 12px;
+    color: #a3402c;
+    margin: 0;
+  }
+  .pl-form-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .pl-form-spacer {
+    flex: 1;
+  }
+
+  .pl-print-root {
+    display: none;
+  }
+
+  @media (max-width: 520px) {
+    .pl-header h1 {
+      font-size: 19px;
+    }
+    .pl-week-label {
+      min-width: 120px;
+    }
+  }
+
+  /* Print: enkel de print-root tonen, alles andere verbergen */
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+    .pl-print-root,
+    .pl-print-root * {
+      visibility: visible;
+    }
+    .pl-print-root {
+      display: block !important;
+      position: absolute;
+      inset: 0;
+      background: #fff;
+    }
+  }
+</style>
