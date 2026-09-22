@@ -11,8 +11,8 @@
   --navy-deep: #0e1530;
   --mustard: #e2672c;
   --mustard-deep: #b8501f;
-  --rust: #172040;
-  --olive: #172040;
+  --rust: #c1502e;
+  --olive: #4b5c34;
   --periwinkle: #c9d9ec;
   --line: rgba(23, 32, 64, 0.15);
 
@@ -41,8 +41,8 @@ html.dark-mode {
   --navy-deep: #ffffff;
   --mustard: #e2672c;
   --mustard-deep: #f0895a;
-  --rust: #faf3e7;
-  --olive: #faf3e7;
+  --rust: #c1502e;
+  --olive: #4b5c34;
   --periwinkle: #2a3a5c;
   --line: rgba(250, 243, 231, 0.15);
 }

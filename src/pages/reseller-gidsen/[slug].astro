@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 
-const alleGidsen = await getCollection("resellerGidsen");
+const alleGidsen = await getCollection("resellerGidsen", ({ data }) => !data.draft);
 const gerelateerd = alleGidsen
   .filter((g) => g.id !== entry.id)
   .sort((a, b) => a.data.title.localeCompare(b.data.title));
