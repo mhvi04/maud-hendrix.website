@@ -1,0 +1,72 @@
+---
+// LanguagePicker.astro
+// Twee kleine vierkante knopjes (NL/EN), vast rechts boven op de homepage,
+// net naast InteractiePaneel. De actieve taal is een niet-klikbare,
+// gevulde knop; de andere taal is een link naar de vertaalde pagina.
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+interface Props {
+  locale: "nl" | "en";
+  nlPath: string;
+  enPath: string;
+}
+
+const { locale, nlPath, enPath } = Astro.props;
+const nlHref = getRelativeLocaleUrl("nl", nlPath);
+const enHref = getRelativeLocaleUrl("en", enPath);
+---
+
+<div class="lang-picker" role="group" aria-label="Taal / Language">
+  {locale === "nl" ? (
+    <span class="lang-btn lang-btn--active mono" aria-current="true">NL</span>
+  ) : (
+    <a href={nlHref} class="lang-btn mono" hreflang="nl">NL</a>
+  )}
+  {locale === "en" ? (
+    <span class="lang-btn lang-btn--active mono" aria-current="true">EN</span>
+  ) : (
+    <a href={enHref} class="lang-btn mono" hreflang="en">EN</a>
+  )}
+</div>
+
+<style>
+  .lang-picker {
+    position: fixed;
+    top: clamp(14px, 3vw, 24px);
+    right: calc(clamp(14px, 3vw, 24px) + 46px);
+    z-index: 60;
+    display: flex;
+    gap: 6px;
+  }
+  .lang-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: var(--navy);
+    background: var(--cream);
+    border: 2px solid var(--navy);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  a.lang-btn:hover,
+  a.lang-btn:focus-visible {
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0 var(--ink);
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+  a.lang-btn:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
+  .lang-btn--active {
+    background: var(--navy);
+    color: var(--cream);
+    cursor: default;
+  }
+</style>

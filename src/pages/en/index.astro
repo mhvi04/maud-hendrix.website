@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import StickyFooterBar from "../../components/StickyFooterBar.astro";
 import Typewriter from "../../components/Typewriter.astro";
 import InteractiePaneel from "../../components/InteractiePaneel.astro";
-import LanguageSwitch from "../../components/LanguageSwitch.astro";
+import LanguagePicker from "../../components/LanguagePicker.astro";
 
 import { getCollection } from "astro:content";
 
@@ -23,6 +23,7 @@ const formatDate = (iso: string) =>
 <BaseLayout title="Maud Hendrix" locale="en" nlPath="/" enPath="/">
   <main class="home">
     <InteractiePaneel />
+    <LanguagePicker locale="en" nlPath="/" enPath="/" />
 
     <section class="hero">
       <div class="hero-shapes" aria-hidden="true">
@@ -37,7 +38,6 @@ const formatDate = (iso: string) =>
       <div class="wrap hero-grid">
         <div class="hero-meta">
           <span class="eyebrow-index mono">MH — GHENT, BE</span>
-          <LanguageSwitch locale="en" nlPath="/" enPath="/" />
         </div>
 
         <h1 class="hero-title" aria-label="Maud Hendrix">
