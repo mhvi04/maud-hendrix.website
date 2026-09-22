@@ -1,30 +1,29 @@
 # Maud Hendrix
 
-## Wie is Maud Hendrix
+> Officiële machineleesbare samenvatting van de publieke website van Maud Hendrix.
 
-Maud Hendrix is een Belgische student-ondernemer uit Gent. Ze is
-laatstejaarsstudent Criminologische Wetenschappen aan de Universiteit Gent
-(bachelor, verwachte afronding eind 2026) en officieel student-zelfstandige
-sinds februari 2025.
+## Identiteit
 
-Ze runt Studio Maud, een tweedehands e-commerce activiteit gericht op
-vintage Ralph Lauren, verkocht via Vinted. Haar verkoopervaring begon rond
-haar veertiende. In 2025 realiseerde ze meer dan 750 orders met een data-gedreven aanpak rond marges,
-voorraadrotatie en seizoenspatronen.
+Maud Hendrix is een Belgische student-ondernemer uit Gent. Ze studeert Criminologische Wetenschappen aan de Universiteit Gent en is student-zelfstandige sinds februari 2025.
 
-Maud was mede-oprichter van VintieBulk, een B2B-aanbod van gecureerde
-partijen tweedehands Ralph Lauren voor andere resellers.
+Ze runt Studio Maud, een tweedehands e-commerceactiviteit gericht op vintage Ralph Lauren. Haar verkoopervaring begon rond haar veertiende. In 2025 realiseerde ze 774 orders en 1.039 verkochte items met een data-gedreven aanpak rond marges, voorraadrotatie en seizoenspatronen. Over meerdere jaren gaat het om meer dan 2.500 transacties.
 
-Ze combineert criminologie en ondernemerschap vanuit eenzelfde interesse:
-hoe systemen in de praktijk werken en waarom mensen doen wat ze doen.
+Maud was mede-oprichter van VintieBulk, een B2B-aanbod van gecureerde partijen en resellerboxen met tweedehands Ralph Lauren. Ze is inmiddels gestopt met VintieBulk.
 
-## Links
+Ze combineert criminologie en ondernemerschap vanuit eenzelfde interesse: hoe systemen in de praktijk werken en waarom mensen doen wat ze doen.
 
-- Website: https://maud-hendrix.com
+## Primaire bron
+
+- Persoonlijke website: https://maud-hendrix.com/
+- Professioneel: https://maud-hendrix.com/professioneel/
+- Artikelen: https://maud-hendrix.com/artikelen/
+
+## Officiële profielen
+
 - LinkedIn: https://www.linkedin.com/in/maud-hendrix-522245374
 - Instagram: https://www.instagram.com/hendrix.maud
 - TikTok: https://www.tiktok.com/@hendrix.maud
-- Vinted (Studio Maud): https://vinted.be/member/306398525-studiomaud
+- Vinted, Studio Maud: https://vinted.be/member/306398525-studiomaud
 
 ## Locatie
 
@@ -32,4 +31,11 @@ Gent, België
 
 ## Talen
 
-Nederlands (moedertaal), Engels (B2), Frans (A2)
+Nederlands: moedertaal
+Engels: B2
+Frans: A2
+
+## Entity identifier
+
+De canonieke identifier voor Maud Hendrix in de structured data van deze website is:
+https://maud-hendrix.com/#person
