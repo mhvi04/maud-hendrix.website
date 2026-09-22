@@ -4,6 +4,11 @@ import StickyFooterBar from "../../components/StickyFooterBar.astro";
 import Typewriter from "../../components/Typewriter.astro";
 import InteractiePaneel from "../../components/InteractiePaneel.astro";
 import LanguagePicker from "../../components/LanguagePicker.astro";
+import Timeline from "../../components/Timeline.astro";
+import SkillsMarquee from "../../components/SkillsMarquee.astro";
+import ToolsPattern from "../../components/ToolsPattern.astro";
+import { Image } from "astro:assets";
+import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
 
 import { getCollection } from "astro:content";
 
@@ -25,16 +30,18 @@ const formatDate = (iso: string) =>
     <InteractiePaneel />
     <LanguagePicker locale="en" nlPath="/" enPath="/" />
 
-    <section class="hero">
-      <div class="hero-shapes" aria-hidden="true">
-        <span class="ring ring-a"></span>
-        <span class="square sq-a"></span>
-        <span class="triangle tri-a"></span>
-        <span class="dot dot-a"></span>
-        <span class="rule rule-a"></span>
-        <span class="rule rule-b"></span>
+    <nav class="site-nav" id="top">
+      <div class="wrap nav-bar">
+        <a href="#top" class="nav-mark">mh<span class="nav-dot">.</span></a>
+        <div class="nav-links mono">
+          <a href="#professional">Professional</a>
+          <a href="/en/articles">Articles</a>
+          <a href="#contact">Contact</a>
+        </div>
       </div>
+    </nav>
 
+    <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-meta">
           <span class="eyebrow-index mono">MH — GHENT, BE</span>
@@ -52,28 +59,198 @@ const formatDate = (iso: string) =>
             that kept growing.
           </p>
         </div>
+
+        <div class="hero-cta">
+          <a class="btn btn--solid" href="#professional">Professional ↓</a>
+        </div>
       </div>
     </section>
 
-    <section class="entries wrap" aria-label="Explore">
-      <a href="/en/professional" class="entry entry--pro">
-        <div class="entry-body">
-          <span class="label label--on-dark">Explore</span>
-          <h2>Professional</h2>
-          <p>Studies, entrepreneurship and projects.</p>
+    <!-- PROFESSIONAL -->
+    <section class="world-section" id="professional">
+      <div class="wrap world-intro">
+        <span class="label">Profile</span>
+        <h2>I'm Maud Hendrix</h2>
+        <p class="world-lede">
+          I'm a Criminological Sciences student at Ghent University and a
+          self-employed student in second-hand e-commerce. Criminology
+          teaches me to analyse behaviour and systems. In my business, I
+          apply that same way of thinking every day to data, pricing,
+          buying behaviour and operational decisions. That's how I combine
+          my academic background with hands-on experience from more than
+          2,500 transactions.
+        </p>
+        <div class="world-links">
+          <a
+            class="btn btn--solid"
+            href="https://www.linkedin.com/in/maud-hendrix-522245374"
+            target="_blank"
+            rel="noopener">LinkedIn</a
+          >
+          <a class="btn" href="/en/professional">Full page →</a>
         </div>
-        <span class="entry-arrow" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path d="M3 15L15 3M15 3H6M15 3V12" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
-          </svg>
-        </span>
-      </a>
+      </div>
+
+      <div class="row wrap">
+        <span class="row-label label">Education</span>
+        <div class="row-body education">
+          <div class="edu">
+            <span class="edu-period mono">2021 — expected 2026</span>
+            <h3>Bachelor's in Criminological Sciences — Ghent University</h3>
+          </div>
+          <div class="edu">
+            <span class="edu-period mono">Graduated 2022</span>
+            <h3>Humanities — GO! Atheneum Voskenslaan, Ghent</h3>
+            <p>Graduated with great distinction (cum laude).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-section">
+        <div class="wrap skills-head">
+          <span class="row-label label">Skills</span>
+        </div>
+        <SkillsMarquee locale="en" />
+      </div>
+
+      <div class="row wrap">
+        <span class="row-label label">Languages & Tools</span>
+        <div class="row-body langs-tools">
+          <div class="langs">
+            <span class="subhead label">Languages</span>
+            <ul class="lang-list">
+              <li class="lang-row">
+                <span class="lang-name">Dutch</span>
+                <span class="lang-level mono">C2 · native</span>
+              </li>
+              <li class="lang-row">
+                <span class="lang-name">English</span>
+                <span class="lang-level mono">B2</span>
+              </li>
+              <li class="lang-row">
+                <span class="lang-name">French</span>
+                <span class="lang-level mono">A2</span>
+              </li>
+            </ul>
+          </div>
+          <div class="tools">
+            <span class="subhead label">Software &amp; tools</span>
+            <ToolsPattern locale="en" />
+          </div>
+        </div>
+      </div>
+
+      <div class="row wrap">
+        <span class="row-label label">Experience</span>
+        <div class="row-body experience">
+          <article class="exp">
+            <div class="exp-head">
+              <h3>Self-employed student — second-hand e-commerce</h3>
+              <span class="exp-period mono">February 2025 — present</span>
+            </div>
+            <p class="exp-context">
+              Ghent and surrounding area. Officially self-employed since
+              February 2025, active in trading since I was fourteen.
+            </p>
+            <ul>
+              <li>
+                More than 2,500 transactions, from sourcing and pricing to
+                quality control, sales and logistics, all handled in-house.
+              </li>
+              <li>
+                A custom analytics framework for purchase prices, margins,
+                inventory turnover, category performance and seasonal effects
+                drives every buying and pricing decision.
+              </li>
+              <li>
+                Authenticity and quality control on branded clothing, with
+                Ralph Lauren as the main category.
+              </li>
+            </ul>
+          </article>
+
+          <article class="exp exp--closed">
+            <div class="exp-head">
+              <h3>Co-founder — VintieBulk</h3>
+              <span class="exp-period mono">Wound down</span>
+            </div>
+            <p class="exp-context">
+              B2B offering of curated lots and reseller boxes of second-hand
+              Ralph Lauren.
+            </p>
+            <ul>
+              <li>
+                Built the offering on my own transaction data and sales
+                experience: curated lots assembled around what actually sells.
+              </li>
+              <li>Built the webshop, branding, content and customer communication.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+
+      <div class="row wrap">
+        <span class="row-label label">Backstory</span>
+        <div class="row-body voorgeschiedenis-body">
+          <p>
+            I built my reputation through
+            <a
+              class="inline-link"
+              href="https://www.vinted.be/member/38856549-maudhendrix"
+              target="_blank"
+              rel="noopener">@maud.hendrix</a
+            >
+            on Vinted: <span class="mono">1,881</span> sales,
+            <span class="mono">5</span> stars, <span class="mono">3,233</span>
+            followers, until the account got banned. Studio Maud is the
+            sequel.
+          </p>
+          <div class="voorgeschiedenis-proof">
+            <Image
+              src={vintedProfielOud}
+              alt="Screenshot of the banned Vinted profile @maud.hendrix: 5 stars, 1,881 sales, Ghent, 3,233 followers"
+              loading="lazy"
+              widths={[380, 600, 900]}
+              sizes="(max-width: 680px) 90vw, 340px"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="row wrap">
+        <span class="row-label label">Business</span>
+        <div class="row-body projects">
+          <a
+            class="project"
+            href="https://www.vinted.be/member/306398525-studiomaud"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="project-status mono">Active</span>
+            <h3>Studio Maud</h3>
+            <p>
+              Data-driven second-hand e-commerce on Vinted: 2,500+
+              transactions, 774 orders in 2025 at a 56% gross margin, seller
+              rating 4.81/5. Sourcing, pricing, quality control and logistics,
+              all handled in-house.
+            </p>
+            <span class="project-cta mono">View profile →</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="row wrap traject">
+        <span class="row-label label">Journey</span>
+        <div class="row-body">
+          <Timeline locale="en" />
+        </div>
+      </div>
     </section>
 
     <section class="articles wrap" aria-labelledby="articles-title">
       <div class="articles-head">
         <span class="label">Articles</span>
-        <h2 id="articles-title" class="articles-title">From the field</h2>
+        <h2 id="articles-title" class="articles-title">From the <em>field</em></h2>
       </div>
       <ol class="article-list">
         {
@@ -96,7 +273,7 @@ const formatDate = (iso: string) =>
       </ol>
     </section>
 
-    <section class="home-contact wrap">
+    <section class="home-contact wrap" id="contact">
       <span class="label">Contact</span>
       <div class="home-contact-row">
         <div class="mail-btn-wrap">
@@ -161,88 +338,60 @@ const formatDate = (iso: string) =>
     background: var(--cream);
   }
 
+  /* ---------- NAV ---------- */
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: var(--cream);
+    border-bottom: 1px solid var(--ink);
+  }
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 18px;
+  }
+  .nav-mark {
+    font-size: 19px;
+    font-weight: 900;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .nav-dot {
+    color: var(--mustard);
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 3vw, 28px);
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--navy);
+    opacity: 0.75;
+  }
+  .nav-links a:hover {
+    opacity: 1;
+  }
+  @media (max-width: 560px) {
+    .nav-links {
+      gap: 14px;
+      font-size: 11px;
+    }
+  }
+
   /* ---------- HERO ---------- */
   .hero {
     position: relative;
+    background: var(--mustard);
     padding-block: clamp(48px, 8vw, 96px) clamp(56px, 9vw, 108px);
-    overflow: hidden;
-    border-bottom: 3px solid var(--ink);
-  }
-
-  .hero-shapes {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-  .ring {
-    position: absolute;
-    border-radius: 50%;
-    border: 3px solid var(--navy);
-  }
-  .ring-a {
-    width: 230px;
-    height: 230px;
-    top: -70px;
-    right: 6%;
-    border-color: var(--mustard);
-    opacity: 0.9;
-  }
-  .square {
-    position: absolute;
-    background: var(--rust);
-  }
-  .sq-a {
-    width: 70px;
-    height: 70px;
-    top: 14%;
-    right: 30%;
-    transform: rotate(8deg);
-  }
-  .triangle {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 34px solid transparent;
-    border-right: 34px solid transparent;
-    border-bottom: 58px solid var(--navy);
-  }
-  .tri-a {
-    top: 4%;
-    right: 5%;
-  }
-  .dot {
-    position: absolute;
-    border-radius: 50%;
-    background: var(--ink);
-  }
-  .dot-a {
-    width: 14px;
-    height: 14px;
-    bottom: 10%;
-    right: 24%;
-  }
-  .rule {
-    position: absolute;
-    background: var(--ink);
-  }
-  .rule-a {
-    width: 2px;
-    height: 130px;
-    top: 8%;
-    right: 22%;
-    opacity: 0.5;
-  }
-  .rule-b {
-    width: 90px;
-    height: 2px;
-    bottom: 14%;
-    right: 4%;
-    background: var(--mustard-deep);
+    border-bottom: 1px solid var(--ink);
   }
 
   .hero-grid {
-    position: relative;
-    z-index: 1;
     display: grid;
     grid-template-columns: 7fr 5fr;
     column-gap: clamp(24px, 4vw, 64px);
@@ -256,26 +405,39 @@ const formatDate = (iso: string) =>
     gap: 18px;
     flex-wrap: wrap;
   }
+  .hero .eyebrow-index {
+    color: var(--navy);
+    opacity: 0.7;
+  }
 
   .hero-title {
     grid-column: 1 / 8;
     font-size: clamp(58px, 11vw, 148px);
-    font-weight: 600;
+    font-weight: 900;
     line-height: 0.92;
     letter-spacing: -0.02em;
+    color: var(--ink);
   }
 
   .hero-statement {
     grid-column: 8 / 13;
     align-self: end;
     padding-top: 22px;
-    border-top: 2px solid var(--ink);
+    border-top: 1px solid var(--ink);
     max-width: 40ch;
   }
   .hero-statement p {
     font-size: 17px;
     line-height: 1.6;
     color: var(--ink);
+  }
+
+  .hero-cta {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 8px;
   }
 
   @media (max-width: 860px) {
@@ -289,97 +451,268 @@ const formatDate = (iso: string) =>
     .hero-statement {
       max-width: none;
     }
-    .ring-a {
-      width: 140px;
-      height: 140px;
-      top: -50px;
-      right: -30px;
-    }
-    .tri-a,
-    .rule-a,
-    .rule-b,
-    .dot-a,
-    .sq-a {
-      display: none;
-    }
   }
 
-  /* ---------- ENTRIES ---------- */
-  .entries {
-    flex: 1;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: clamp(20px, 3vw, 36px);
-    padding-block: clamp(28px, 5vw, 48px);
-    align-items: stretch;
+  /* ---------- WORLD SECTION (Professional) ---------- */
+  .world-intro {
+    padding-block: clamp(40px, 6vw, 72px) clamp(28px, 4vw, 40px);
   }
-
-  .entry {
-    position: relative;
+  .world-intro h2 {
+    font-size: clamp(32px, 4.5vw, 52px);
+    font-weight: 800;
+    margin-block: 14px 18px;
+    line-height: 1.05;
+  }
+  .world-lede {
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 62ch;
+    margin-bottom: 24px;
+  }
+  .world-links {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 20px;
-    min-height: clamp(150px, 16vw, 190px);
-    padding: clamp(22px, 2.5vw, 30px);
-    border: 3px solid var(--ink);
-    text-decoration: none;
-    overflow: hidden;
-    transition: transform 0.18s ease, box-shadow 0.18s ease;
-  }
-  .entry:hover {
-    transform: translate(-4px, -4px);
-    box-shadow: 8px 8px 0 var(--ink);
-  }
-  .entry:focus-visible {
-    outline: 3px solid var(--ink);
-    outline-offset: 4px;
+    flex-wrap: wrap;
+    gap: 14px;
   }
 
-  .entry--pro {
-    background: var(--mustard);
-    color: var(--ink);
+  /* ---------- ROWS ---------- */
+  .row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 28px;
+    padding-block: clamp(36px, 5vw, 56px);
+    border-bottom: 1px solid var(--ink);
+  }
+  .row-label {
+    padding-top: 4px;
+  }
+  .row-body {
+    min-width: 0;
+  }
+  .row-body h3 {
+    font-size: clamp(20px, 2.6vw, 26px);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .row-body > p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 60ch;
+  }
+  .traject {
+    border-bottom: 1px solid var(--ink);
   }
 
-  .entry--pro .label {
-    color: var(--navy-deep);
-  }
-  .entry--pro .label::before {
-    background: var(--ink);
+  @media (max-width: 680px) {
+    .row {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
   }
 
-  .entry-body {
-    position: relative;
-    z-index: 1;
+  /* EDUCATION */
+  .education {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    max-width: 34ch;
+    gap: 24px;
   }
-  .entry h2 {
-    font-size: clamp(24px, 3vw, 34px);
-    font-weight: 600;
-    color: inherit;
-    line-height: 1;
+  .edu-period {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--mustard-deep);
+    margin-bottom: 8px;
   }
-  .entry p {
-    font-size: 14px;
-    line-height: 1.5;
-    opacity: 0.92;
+  .edu p {
+    font-size: 15px;
+    opacity: 0.85;
   }
 
-  .entry-arrow {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    border: 2px solid var(--ink);
+  /* SKILLS */
+  .skills-section {
+    border-bottom: 1px solid var(--ink);
+    padding-block: clamp(36px, 5vw, 56px) 0;
   }
-  .entry--pro .entry-arrow {
-    background: var(--navy);
-    color: var(--cream);
+  .skills-head {
+    padding-bottom: 20px;
+  }
+
+  /* LANGUAGES & TOOLS */
+  .langs-tools {
+    display: grid;
+    grid-template-columns: minmax(200px, 300px) 1fr;
+    gap: 44px;
+  }
+  .langs,
+  .tools {
+    min-width: 0;
+  }
+  .subhead {
+    display: flex;
+    margin-bottom: 18px;
+  }
+  .lang-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--ink);
+  }
+  .lang-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 14px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .lang-name {
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .lang-level {
+    font-size: 13px;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+  @media (max-width: 780px) {
+    .langs-tools {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  /* EXPERIENCE */
+  .experience {
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+  }
+  .exp-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px 20px;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+  }
+  .exp-period {
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--navy);
+    opacity: 0.8;
+    white-space: nowrap;
+  }
+  .exp--closed .exp-period {
+    color: var(--rust);
+    opacity: 1;
+  }
+  .exp-context {
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 62ch;
+    margin-bottom: 16px;
+  }
+  .exp ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 68ch;
+  }
+  .exp li {
+    position: relative;
+    padding-left: 22px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .exp li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background: var(--mustard);
+  }
+  .exp--closed li::before {
+    background: var(--rust);
+  }
+
+  .inline-link {
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--navy);
+  }
+  .inline-link:hover {
+    color: var(--rust);
+    border-color: var(--rust);
+  }
+
+  .voorgeschiedenis-body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 28px;
+  }
+  .voorgeschiedenis-body p {
+    flex: 1 1 320px;
+  }
+  .voorgeschiedenis-proof {
+    flex: 0 1 340px;
+    border: 1px solid var(--ink);
+    background: var(--paper);
+    padding: 10px;
+    min-width: 0;
+  }
+  .voorgeschiedenis-proof :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* PROJECTS */
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+  }
+  .project {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid var(--ink);
+    background: var(--paper);
+    padding: 26px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform 0.15s ease;
+  }
+  a.project:hover {
+    transform: translateY(-2px);
+  }
+  .project-status {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mustard-deep);
+  }
+  .project h3 {
+    font-size: 21px;
+    font-weight: 700;
+  }
+  .project p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .project-cta {
+    margin-top: auto;
+    font-size: 12px;
+    padding-top: 8px;
+    color: var(--navy);
   }
 
   /* ---------- ARTICLES ---------- */
@@ -388,7 +721,8 @@ const formatDate = (iso: string) =>
     display: grid;
     grid-template-columns: 3fr 9fr;
     gap: clamp(20px, 3vw, 36px);
-    padding-block: clamp(8px, 2vw, 16px) clamp(40px, 6vw, 64px);
+    padding-block: clamp(40px, 6vw, 64px);
+    border-bottom: 1px solid var(--ink);
   }
   .articles-head {
     display: flex;
@@ -397,17 +731,17 @@ const formatDate = (iso: string) =>
   }
   .articles-title {
     font-size: clamp(22px, 2.6vw, 30px);
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.05;
   }
   .article-list {
     list-style: none;
     margin: 0;
     padding: 0;
-    border-top: 3px solid var(--ink);
+    border-top: 1px solid var(--ink);
   }
   .article-list li {
-    border-bottom: 2px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
   }
   .article-row {
     display: grid;
@@ -423,10 +757,6 @@ const formatDate = (iso: string) =>
   .article-row:focus-visible {
     background: var(--paper);
     padding-left: 12px;
-  }
-  .article-row:focus-visible {
-    outline: 3px solid var(--ink);
-    outline-offset: 2px;
   }
   .article-date {
     font-size: 12px;
@@ -446,7 +776,7 @@ const formatDate = (iso: string) =>
   }
   .article-text h3 {
     font-size: clamp(17px, 1.8vw, 20px);
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.25;
   }
   .article-text p {
@@ -464,7 +794,6 @@ const formatDate = (iso: string) =>
   .article-row:hover .article-arrow {
     color: var(--rust);
   }
-
   @media (max-width: 780px) {
     .articles {
       grid-template-columns: 1fr;
@@ -483,7 +812,7 @@ const formatDate = (iso: string) =>
     display: flex;
     flex-direction: column;
     gap: 14px;
-    padding-block: 4px clamp(32px, 5vw, 48px);
+    padding-block: clamp(40px, 6vw, 64px) clamp(32px, 5vw, 48px);
   }
   .home-contact-row {
     display: flex;
@@ -501,7 +830,6 @@ const formatDate = (iso: string) =>
     transform: rotate(-6deg);
     pointer-events: none;
   }
-
   .email-reveal {
     max-width: 0;
     overflow: hidden;
@@ -516,7 +844,7 @@ const formatDate = (iso: string) =>
     gap: 10px;
     white-space: nowrap;
     width: max-content;
-    border: 2px solid var(--ink);
+    border: 1px solid var(--ink);
     padding: 13px 16px;
   }
   .email-link {
@@ -547,5 +875,4 @@ const formatDate = (iso: string) =>
   .copy-btn.copied {
     color: var(--mustard-deep);
   }
-
 </style>

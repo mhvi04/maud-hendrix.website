@@ -15,7 +15,7 @@ const { world, locale = "nl", nlPath, enPath } = Astro.props;
 
 const worlds: Record<World, { href: string; label: string; accent: string }> = {
   pro: { href: "/professioneel", label: "Professioneel", accent: "var(--mustard)" },
-  prive: { href: "/prive", label: "Privé", accent: "var(--rust)" },
+  prive: { href: "/prive", label: "Privé", accent: "var(--periwinkle)" },
   artikelen: { href: "/artikelen", label: "Artikelen", accent: "var(--navy)" },
 };
 const others = (Object.keys(worlds) as World[]).filter((w) => w !== world);
@@ -52,7 +52,7 @@ const t = useTranslations(locale).nav;
 
 <style>
   .site-header {
-    border-bottom: 3px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
     background: var(--cream);
     position: sticky;
     top: 0;
@@ -99,7 +99,7 @@ const t = useTranslations(locale).nav;
   }
   .switch {
     color: var(--ink);
-    border-bottom: 2px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
     padding-bottom: 3px;
     font-weight: 500;
   }
