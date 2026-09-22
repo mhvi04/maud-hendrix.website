@@ -52,7 +52,7 @@ const ogImage = existsSync(ownOgImagePath) ? `/og/${entry.id}.png` : undefined;
   {faqJsonLd && (
     <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} is:inline />
   )}
-  <SiteHeader world="pro" />
+  <SiteHeader world="artikelen" />
   <main class="article">
     <div class="wrap">
       <a href="/artikelen" class="back mono">← Alle artikelen</a>

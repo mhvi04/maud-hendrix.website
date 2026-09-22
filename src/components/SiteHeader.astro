@@ -1,11 +1,18 @@
 ---
+type World = "pro" | "prive" | "artikelen";
+
 interface Props {
-  world: "pro" | "prive";
+  world: World;
 }
 const { world } = Astro.props;
-const otherHref = world === "pro" ? "/prive" : "/professioneel";
-const otherLabel = world === "pro" ? "Privé" : "Professioneel";
-const accent = world === "pro" ? "var(--mustard)" : "var(--rust)";
+
+const worlds: Record<World, { href: string; label: string; accent: string }> = {
+  pro: { href: "/professioneel", label: "Professioneel", accent: "var(--mustard)" },
+  prive: { href: "/prive", label: "Privé", accent: "var(--rust)" },
+  artikelen: { href: "/artikelen", label: "Artikelen", accent: "var(--navy)" },
+};
+const others = (Object.keys(worlds) as World[]).filter((w) => w !== world);
+const accent = worlds[world].accent;
 ---
 
 <header class="site-header">
@@ -16,9 +23,11 @@ const accent = world === "pro" ? "var(--mustard)" : "var(--rust)";
     </a>
     <nav class="links">
       <a href="/" class="home-link">Start</a>
-      <a href={otherHref} class="switch">
-        {otherLabel} <span aria-hidden="true">→</span>
-      </a>
+      {others.map((w) => (
+        <a href={worlds[w].href} class="switch">
+          {worlds[w].label} <span aria-hidden="true">→</span>
+        </a>
+      ))}
     </nav>
   </div>
 </header>
@@ -79,5 +88,15 @@ const accent = world === "pro" ? "var(--mustard)" : "var(--rust)";
   .switch:hover {
     color: var(--navy);
     border-color: var(--navy);
+  }
+
+  @media (max-width: 560px) {
+    .links {
+      gap: 16px;
+      font-size: 12px;
+    }
+    .home-link {
+      display: none;
+    }
   }
 </style>

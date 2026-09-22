@@ -11,9 +11,12 @@ npm run dev
 
 ## Structuur
 
-- `/` — startscherm met twee ingangen: Professioneel en Privé
-- `/professioneel` — profiel, studie, onderneming, traject, artikelen, contact
-- `/artikelen` — artikelen op basis van "De Ku(n)s(t) van resellen" (voorheen `/professioneel/artikelen`, nu 301-redirect via `public/_redirects`)
+- `/` — startscherm met drie ingangen: Professioneel, Privé en Artikelen
+  (layout via `ENTRIES_LAYOUT` in `src/pages/index.astro`: `"trio"` = drie
+  gelijkwaardige blokken, `"primair"` = Professioneel/Privé als tweedeling
+  met Artikelen als smallere balk eronder)
+- `/professioneel` — profiel, studie, onderneming, traject, contact
+- `/artikelen` — eigen ingang met artikelen op basis van "De Ku(n)s(t) van resellen" (voorheen `/professioneel/artikelen`, nu 301-redirect via `public/_redirects`)
 - `/prive` — sociale kanalen, interesses, blog
 - `/prive/blog` — blogposts
 - `/planner` — persoonlijke weekplanner semester 1 (AJ26-27), zie hieronder

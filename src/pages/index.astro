@@ -3,6 +3,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import StickyFooterBar from "../components/StickyFooterBar.astro";
 import Typewriter from "../components/Typewriter.astro";
 import InteractiePaneel from "../components/InteractiePaneel.astro";
+
+// Layout van de ingangen op het startscherm:
+// "trio"    — drie gelijkwaardige blokken in één asymmetrisch grid
+// "primair" — Professioneel/Privé blijven de tweedeling, Artikelen als
+//             smallere derde ingang eronder
+const ENTRIES_LAYOUT: "trio" | "primair" = "trio";
 ---
 
 <BaseLayout title="Maud Hendrix">
@@ -39,12 +45,12 @@ import InteractiePaneel from "../components/InteractiePaneel.astro";
       </div>
     </section>
 
-    <section class="entries wrap" aria-label="Kies een ingang">
+    <section class={`entries entries--${ENTRIES_LAYOUT} wrap`} aria-label="Kies een ingang">
       <a href="/professioneel" class="entry entry--pro">
         <div class="entry-body">
           <span class="label label--on-dark">Ingang</span>
           <h2>Professioneel</h2>
-          <p>Studie, ondernemerschap, projecten en artikelen.</p>
+          <p>Studie, ondernemerschap en projecten.</p>
         </div>
         <span class="entry-arrow" aria-hidden="true">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -65,13 +71,18 @@ import InteractiePaneel from "../components/InteractiePaneel.astro";
           </svg>
         </span>
       </a>
-    </section>
 
-    <section class="blog-links wrap" aria-label="Blog">
-      <a href="/artikelen" class="blog-link blog-link--pro">
-        <span class="blog-link-dot" aria-hidden="true"></span>
-        Artikelen
-        <span aria-hidden="true">→</span>
+      <a href="/artikelen" class="entry entry--artikelen">
+        <div class="entry-body">
+          <span class="label label--on-dark">Ingang</span>
+          <h2>Artikelen</h2>
+          <p>Reselling, Vinted en data, geschreven vanuit de praktijk.</p>
+        </div>
+        <span class="entry-arrow" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M3 15L15 3M15 3H6M15 3V12" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
+          </svg>
+        </span>
       </a>
     </section>
 
@@ -286,11 +297,12 @@ import InteractiePaneel from "../components/InteractiePaneel.astro";
   /* ---------- ENTRIES ---------- */
   .entries {
     flex: 1;
+    width: 100%;
     display: grid;
-    grid-template-columns: 3fr 2fr;
     gap: clamp(20px, 3vw, 36px);
     padding-block: clamp(28px, 5vw, 48px);
-    align-items: stretch;
+    align-items: start;
+    align-content: start;
   }
 
   .entry {
@@ -322,7 +334,10 @@ import InteractiePaneel from "../components/InteractiePaneel.astro";
   .entry--prive {
     background: var(--navy);
     color: var(--paper);
-    margin-top: clamp(0px, 4vw, 32px);
+  }
+  .entry--artikelen {
+    background: var(--rust);
+    color: var(--paper);
   }
 
   .entry--pro .label {
@@ -336,6 +351,12 @@ import InteractiePaneel from "../components/InteractiePaneel.astro";
   }
   .entry--prive .label::before {
     background: var(--cream);
+  }
+  .entry--artikelen .label {
+    color: var(--cream);
+  }
+  .entry--artikelen .label::before {
+    background: var(--ink);
   }
 
   .entry-body {
@@ -375,49 +396,67 @@ import InteractiePaneel from "../components/InteractiePaneel.astro";
     background: var(--mustard);
     color: var(--ink);
   }
+  .entry--artikelen .entry-arrow {
+    background: var(--cream);
+    color: var(--ink);
+  }
+
+  /* Optie a — trio: drie gelijke kolommen, verspringend in hoogte */
+  .entries--trio {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .entries--trio .entry {
+    min-height: clamp(170px, 18vw, 220px);
+  }
+  .entries--trio .entry--prive {
+    margin-top: clamp(0px, 4vw, 40px);
+  }
+  .entries--trio .entry--artikelen {
+    margin-top: clamp(0px, 2vw, 20px);
+  }
+
+  /* Optie b — primair: 3fr/2fr-tweedeling, Artikelen als lage balk eronder */
+  .entries--primair {
+    grid-template-columns: 3fr 2fr;
+  }
+  .entries--primair .entry--prive {
+    margin-top: clamp(0px, 4vw, 32px);
+  }
+  .entries--primair .entry--artikelen {
+    grid-column: 1 / -1;
+    width: min(100%, 72%);
+    justify-self: end;
+    align-items: center;
+    min-height: 0;
+    padding-block: clamp(16px, 1.8vw, 22px);
+  }
+  .entries--primair .entry--artikelen .entry-body {
+    flex-direction: row;
+    align-items: baseline;
+    flex-wrap: wrap;
+    column-gap: 18px;
+    max-width: none;
+  }
+  .entries--primair .entry--artikelen .label {
+    display: none;
+  }
+  .entries--primair .entry--artikelen h2 {
+    font-size: clamp(20px, 2.2vw, 26px);
+  }
 
   @media (max-width: 780px) {
-    .entries {
+    .entries--trio,
+    .entries--primair {
       grid-template-columns: 1fr;
     }
-    .entry--prive {
+    .entries .entry {
       margin-top: 0;
+      min-height: clamp(130px, 30vw, 170px);
     }
-  }
-
-  /* ---------- BLOG LINKS ---------- */
-  .blog-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    padding-bottom: clamp(28px, 5vw, 48px);
-  }
-  .blog-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--font-mono);
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    padding: 12px 18px;
-    border: 2px solid var(--ink);
-    background: var(--paper);
-    color: var(--ink);
-    text-decoration: none;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-  .blog-link:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 4px 4px 0 var(--ink);
-  }
-  .blog-link-dot {
-    width: 8px;
-    height: 8px;
-    flex-shrink: 0;
-  }
-  .blog-link--pro .blog-link-dot {
-    background: var(--mustard);
+    .entries--primair .entry--artikelen {
+      width: 100%;
+      min-height: 0;
+    }
   }
 
   /* ---------- CONTACT ---------- */
