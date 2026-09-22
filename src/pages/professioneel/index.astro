@@ -21,7 +21,7 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
       <div class="wrap intro-grid">
         <span class="block-mark" aria-hidden="true"></span>
         <div class="intro-copy">
-          <span class="label">Profiel</span>
+          <span class="label label--on-mustard">01 / Professioneel</span>
           <h1>Ik ben Maud Hendrix</h1>
           <p class="lede">
             Ik ben student Criminologische Wetenschappen aan de UGent en
@@ -126,76 +126,97 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
             </li>
           </ul>
         </article>
+      </div>
+    </section>
 
-        <article class="exp exp--closed">
-          <div class="exp-head">
-            <h2>Mede-oprichter — VintieBulk</h2>
-            <span class="exp-period mono">Afgerond</span>
+    <!-- PROJECTEN & EERBETOON -->
+    <section class="dark-block">
+      <div class="wrap">
+        <!-- VOORGESCHIEDENIS -->
+        <div class="row row--dark">
+          <span class="row-label label label--on-dark">Voorgeschiedenis</span>
+          <div class="row-body voorgeschiedenis-body">
+            <p>
+              Mijn reputatie bouwde ik op via
+              <a
+                class="inline-link inline-link--on-dark"
+                href="https://www.vinted.be/member/38856549-maudhendrix"
+                target="_blank"
+                rel="noopener">@maud.hendrix</a
+              >
+              op Vinted, tot het account geblokkeerd werd. Studio Maud is het
+              vervolg.
+            </p>
+            <div class="stats-box">
+              <div class="stat">
+                <span class="stat-number mono">1.881</span>
+                <span class="stat-label">Verkopen</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number mono">5</span>
+                <span class="stat-label">Sterren</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number mono">3.233</span>
+                <span class="stat-label">Volgers</span>
+              </div>
+            </div>
+            <div class="voorgeschiedenis-proof">
+              <Image
+                src={vintedProfielOud}
+                alt="Screenshot van het geblokkeerde Vinted-profiel @maud.hendrix: 5 sterren, 1881 verkopen, Gent, 3233 volgers"
+                loading="lazy"
+                widths={[380, 600, 900]}
+                sizes="(max-width: 680px) 90vw, 340px"
+              />
+            </div>
           </div>
-          <p class="exp-context">
-            B2B-aanbod van gecureerde partijen en resellerboxen met
-            tweedehands Ralph Lauren.
-          </p>
-          <ul>
-            <li>
-              Bouwde het aanbod op eigen transactiedata en verkoopervaring:
-              gecureerde partijen samengesteld op wat effectief verkoopt.
-            </li>
-            <li>Bouwde de webshop, branding, content en klantencommunicatie op.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- VOORGESCHIEDENIS -->
-    <section class="row wrap">
-      <span class="row-label label">Voorgeschiedenis</span>
-      <div class="row-body voorgeschiedenis-body">
-        <p>
-          Mijn reputatie bouwde ik op via
-          <a
-            class="inline-link"
-            href="https://www.vinted.be/member/38856549-maudhendrix"
-            target="_blank"
-            rel="noopener">@maud.hendrix</a
-          >
-          op Vinted: <span class="mono">1881</span> verkopen,
-          <span class="mono">5</span> sterren, <span class="mono">3233</span>
-          volgers, tot het account geblokkeerd werd. Studio Maud is het
-          vervolg.
-        </p>
-        <div class="voorgeschiedenis-proof">
-          <Image
-            src={vintedProfielOud}
-            alt="Screenshot van het geblokkeerde Vinted-profiel @maud.hendrix: 5 sterren, 1881 verkopen, Gent, 3233 volgers"
-            loading="lazy"
-            widths={[380, 600, 900]}
-            sizes="(max-width: 680px) 90vw, 340px"
-          />
         </div>
-      </div>
-    </section>
 
-    <!-- ONDERNEMING -->
-    <section class="row wrap">
-      <span class="row-label label">Onderneming</span>
-      <div class="row-body projects">
-        <a
-          class="project"
-          href="https://www.vinted.be/member/306398525-studiomaud"
-          target="_blank"
-          rel="noopener"
-        >
-          <span class="project-status mono">Actief</span>
-          <h3>Studio Maud</h3>
-          <p>
-            Data-gedreven tweedehands e-commerce op Vinted: 2.500+ transacties,
-            774 orders in 2025 aan 56% brutomarge, verkopersbeoordeling
-            4,81/5. Sourcing, prijszetting, kwaliteitscontrole en logistiek
-            allemaal in eigen beheer.
-          </p>
-          <span class="project-cta mono">Bekijk profiel →</span>
-        </a>
+        <!-- ONDERNEMING -->
+        <div class="row row--dark">
+          <span class="row-label label label--on-dark">Onderneming</span>
+          <div class="row-body projects">
+            <a
+              class="project"
+              href="https://www.vinted.be/member/306398525-studiomaud"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="project-number mono">01</span>
+              <h3>Studio Maud</h3>
+              <span class="project-status mono">Actief</span>
+              <p>
+                Data-gedreven tweedehands e-commerce op Vinted: 2.500+
+                transacties, 774 orders in 2025 aan 56% brutomarge,
+                verkopersbeoordeling 4,81/5. Sourcing, prijszetting,
+                kwaliteitscontrole en logistiek allemaal in eigen beheer.
+              </p>
+              <span class="project-cta mono">Bekijk profiel →</span>
+            </a>
+
+            <div class="project project--closed">
+              <span class="project-number mono">02</span>
+              <h3>VintieBulk</h3>
+              <span class="project-status project-status--closed mono">Afgerond</span>
+              <p class="project-desc">
+                B2B-aanbod van gecureerde partijen en resellerboxen met
+                tweedehands Ralph Lauren.
+              </p>
+              <ul class="project-list">
+                <li>
+                  Bouwde het aanbod op eigen transactiedata en
+                  verkoopervaring: gecureerde partijen samengesteld op wat
+                  effectief verkoopt.
+                </li>
+                <li>
+                  Bouwde de webshop, branding, content en klantencommunicatie
+                  op.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -211,8 +232,8 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
     <section class="contact">
       <div class="wrap contact-grid">
         <div>
-          <span class="label label--on-dark">Contact</span>
-          <h2>Laten we praten.</h2>
+          <span class="label">Contact</span>
+          <h2>Laten we <em>praten</em>.</h2>
           <p>
             Open voor stages, studentenjobs en samenwerkingen rond
             reselling, e-commerce of data — en voor gesprekken die criminologie
@@ -248,6 +269,7 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
 
   /* INTRO */
   .intro {
+    background: var(--mustard);
     border-bottom: 3px solid var(--ink);
     padding-block: clamp(48px, 7vw, 88px);
     position: relative;
@@ -261,7 +283,7 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
     right: 8%;
     width: 90px;
     height: 90px;
-    background: var(--mustard);
+    background: var(--ink);
     z-index: 0;
   }
   .intro-copy {
@@ -272,6 +294,7 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
   .intro-copy h1 {
     font-size: clamp(36px, 5.5vw, 60px);
     font-weight: 600;
+    color: var(--ink);
     margin-block: 16px 20px;
     line-height: 1.05;
   }
@@ -465,6 +488,30 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
     color: var(--rust);
     border-color: var(--rust);
   }
+  .inline-link--on-dark {
+    color: var(--mustard);
+    border-bottom-color: var(--mustard);
+  }
+  .inline-link--on-dark:hover {
+    color: var(--cream);
+    border-color: var(--cream);
+  }
+
+  /* PROJECTEN & EERBETOON — marineblauw blok */
+  .dark-block {
+    background: var(--navy);
+    padding-block: clamp(12px, 2vw, 20px);
+  }
+  .row--dark {
+    border-bottom: none;
+  }
+  .row--dark + .row--dark {
+    border-top: 2px solid rgba(250, 246, 234, 0.2);
+  }
+  .row--dark .row-body > p,
+  .row--dark .voorgeschiedenis-body p {
+    color: var(--paper);
+  }
 
   .voorgeschiedenis-body {
     display: flex;
@@ -477,15 +524,51 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
   }
   .voorgeschiedenis-proof {
     flex: 0 1 340px;
-    border: 3px solid var(--ink);
+    border: 3px solid var(--cream);
     background: var(--paper);
     padding: 10px;
     min-width: 0;
+    align-self: flex-start;
   }
   .voorgeschiedenis-proof :global(img) {
     display: block;
     width: 100%;
     height: auto;
+  }
+
+  /* STATISTIEKEN */
+  .stats-box {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: clamp(24px, 4vw, 48px);
+    border: 2px solid var(--mustard);
+    padding: clamp(18px, 3vw, 28px) clamp(24px, 4vw, 40px);
+    margin-block: 22px;
+    width: fit-content;
+  }
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .stat-number {
+    font-size: clamp(32px, 4.5vw, 46px);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--paper);
+  }
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mustard);
+  }
+
+  @media (max-width: 560px) {
+    .stats-box {
+      grid-template-columns: 1fr;
+      width: 100%;
+    }
   }
 
   /* PROJECTS */
@@ -498,7 +581,7 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
     display: flex;
     flex-direction: column;
     gap: 10px;
-    border: 3px solid var(--ink);
+    border: 3px solid var(--cream);
     background: var(--paper);
     padding: 26px;
     text-decoration: none;
@@ -507,11 +590,24 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
   }
   a.project:hover {
     transform: translate(-3px, -3px);
-    box-shadow: 6px 6px 0 var(--ink);
+    box-shadow: 6px 6px 0 var(--cream);
   }
   .project--closed {
     background: transparent;
-    opacity: 0.85;
+    border-color: transparent;
+    color: var(--paper);
+    padding: 0;
+    opacity: 0.9;
+  }
+  .project-number {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--navy);
+    opacity: 0.55;
+  }
+  .project--closed .project-number {
+    color: var(--mustard);
+    opacity: 1;
   }
   .project-status {
     font-size: 11px;
@@ -519,9 +615,15 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
     text-transform: uppercase;
     color: var(--mustard-deep);
   }
+  .project-status--closed {
+    color: var(--rust);
+  }
   .project h3 {
     font-size: 21px;
     font-weight: 600;
+  }
+  .project--closed h3 {
+    color: var(--paper);
   }
   .project p {
     font-size: 14px;
@@ -533,11 +635,35 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
     padding-top: 8px;
     color: var(--navy);
   }
+  .project-list {
+    margin: 4px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .project-list li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .project-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    background: var(--mustard);
+  }
 
   /* CONTACT */
   .contact {
-    background: var(--navy);
-    color: var(--paper);
+    background: var(--cream);
+    color: var(--ink);
+    border-top: 3px solid var(--ink);
     padding-block: clamp(48px, 7vw, 88px);
   }
   .contact-grid {
@@ -546,7 +672,6 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
     gap: 40px;
   }
   .contact h2 {
-    color: var(--paper);
     font-size: clamp(30px, 4vw, 44px);
     font-weight: 600;
     margin-block: 14px 16px;
@@ -555,7 +680,7 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
     font-size: 16px;
     line-height: 1.6;
     max-width: 46ch;
-    opacity: 0.92;
+    opacity: 0.85;
     margin-bottom: 26px;
   }
   .contact-actions {
@@ -563,20 +688,12 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
     flex-wrap: wrap;
     gap: 14px;
   }
-  .contact .btn {
-    border-color: var(--paper);
-    color: var(--paper);
-  }
-  .contact .btn:hover {
-    background: var(--paper);
-    color: var(--navy);
-  }
   .contact-meta {
     display: flex;
     flex-direction: column;
     gap: 16px;
     justify-content: center;
-    border-left: 2px solid rgba(250, 246, 234, 0.35);
+    border-left: 2px solid rgba(26, 22, 15, 0.2);
     padding-left: 32px;
   }
   .contact-meta p {
@@ -590,11 +707,11 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
     font-size: 11px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--mustard);
+    color: var(--mustard-deep);
   }
   .contact-meta a {
     text-decoration: none;
-    border-bottom: 1px solid rgba(250, 246, 234, 0.5);
+    border-bottom: 1px solid rgba(26, 22, 15, 0.4);
     width: fit-content;
   }
 
@@ -605,7 +722,7 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
     .contact-meta {
       border-left: none;
       padding-left: 0;
-      border-top: 2px solid rgba(250, 246, 234, 0.35);
+      border-top: 2px solid rgba(26, 22, 15, 0.2);
       padding-top: 24px;
     }
   }
