@@ -5,19 +5,13 @@ import StickyFooterBar from "../../../components/StickyFooterBar.astro";
 import Timeline from "../../../components/Timeline.astro";
 import SkillsMarquee from "../../../components/SkillsMarquee.astro";
 import ToolsPattern from "../../../components/ToolsPattern.astro";
-import ArticleCard from "../../../components/ArticleCard.astro";
 import { Image } from "astro:assets";
 import vintedProfielOud from "../../../assets/proof/vinted-profiel-oud.jpg";
-import { getCollection } from "astro:content";
-
-const articles = (await getCollection("articlesEn")).sort((a, b) =>
-  a.data.title.localeCompare(b.data.title)
-);
 ---
 
 <BaseLayout
   title="Professional — Maud Hendrix"
-  description="Criminology, entrepreneurship, projects and articles by Maud Hendrix."
+  description="Criminology, entrepreneurship and projects by Maud Hendrix."
   locale="en"
   nlPath="/professioneel"
   enPath="/professional"
@@ -212,26 +206,6 @@ const articles = (await getCollection("articlesEn")).sort((a, b) =>
       <span class="row-label label">Journey</span>
       <div class="row-body">
         <Timeline locale="en" />
-      </div>
-    </section>
-
-    <!-- ARTICLES -->
-    <section class="row wrap">
-      <span class="row-label label">Articles</span>
-      <div class="row-body">
-        <div class="article-grid">
-          {
-            articles.map((a) => (
-              <ArticleCard
-                href={`/en/articles/${a.id}`}
-                tag={a.data.tag}
-                title={a.data.title}
-                excerpt={a.data.excerpt}
-                date={a.data.date}
-              />
-            ))
-          }
-        </div>
       </div>
     </section>
 
@@ -560,13 +534,6 @@ const articles = (await getCollection("articlesEn")).sort((a, b) =>
     font-size: 12px;
     padding-top: 8px;
     color: var(--navy);
-  }
-
-  /* ARTICLES */
-  .article-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 22px;
   }
 
   /* CONTACT */
