@@ -1,14 +1,29 @@
 ---
-slug: "ralph-lauren-labels-uitgelegd"
 title: "Elke Ralph Lauren komt met een ander label. Dit is wat ze allemaal betekenen"
 excerpt: "Eén naam, ongeveer twintig verschillende lijnen, en een prijsverschil dat van vijf euro tot meer dan duizend euro loopt. Leer het neklabel lezen en je weet binnen drie seconden wat een stuk waard is."
 date: "2026-09-22"
+tag: "Praktijk"
 draft: false
+faq:
+  - question: "Wat is Purple Label van Ralph Lauren?"
+    answer: "Purple Label is de duurste herenlijn van Ralph Lauren, gelanceerd in 1994 als premium collectie geïnspireerd op de tailoring van Savile Row. Stukken worden vaak in Italië gemaakt in kleine oplages. Het neklabel is paars met goudkleurige tekst, en in de wederverkoop houdt deze lijn regelmatig meer dan zestig procent van de nieuwprijs vast."
+  - question: "Wat is het verschil tussen Black Label en Blue Label bij Ralph Lauren?"
+    answer: "Black Label was een moderne luxelijn tussen Polo en Purple in, gelanceerd in 2005 en gestopt rond 2014, met een zwart neklabel met witte of zilveren tekst. Blue Label is dubbelzinnig: meestal de bijnaam voor het gewone blauwe Polo-label, maar er bestond ook een aparte, zeldzame Japanse Blue Label-lijn met een kwaliteitsniveau dat Purple Label benaderde."
+  - question: "Wat betekent RRL bij Ralph Lauren?"
+    answer: "RRL, ook Double RL, is Ralph Laurens persoonlijke passieproject sinds 1993, geïnspireerd op zijn ranch in Colorado en op Amerikaanse werkkleding uit de negentiende eeuw. Het neklabel is ivoorkleurig of bruin met 'Double RL' of 'RRL'. In de wederverkoop houdt RRL veertig tot zestig procent van de nieuwprijs vast, met een kleine maar toegewijde doelgroep."
+  - question: "Hoe herken je een outlet-item van Ralph Lauren?"
+    answer: "Een neklabel met enkel 'Ralph Lauren' en de pony, zonder 'Polo', werd lange tijd geassocieerd met outlet- en fabrieksvoorraad, al duikt het ook op bij oudere basisvoorraad. Een kleine gouden stip op een Polo-label wijst eveneens op een outletexemplaar."
 ---
 
 Eén naam, ongeveer twintig verschillende lijnen, en een prijsverschil dat van vijf euro tot meer dan duizend euro loopt voor stukken die op het eerste gezicht hetzelfde merk dragen. Ralph Lauren is geen merk in de gewone zin van het woord. Het is een gelaagd systeem van sublijnen dat over bijna zestig jaar is opgebouwd, en wie tweedehands inkoopt zonder dat systeem te kennen, betaalt te veel of laat geld liggen. Het label aan de nek vertelt je in welke laag je zit. Leer dat label lezen en je weet binnen drie seconden of je naar een item van tien euro kijkt of naar een item van tweehonderd.
 
 Dit artikel loopt elke lijn af die je realistisch op Vinted, in een kringloopwinkel of bij een bulkleverancier tegenkomt. Niet als geschiedenisles maar als gereedschap. Bij elke lijn staat wat het is, hoe je het herkent en wat het waard is in de wederverkoop.
+
+<div class="shape-divider" aria-hidden="true">
+  <span class="shape shape--square"></span>
+  <span class="shape shape--triangle"></span>
+  <span class="shape shape--circle"></span>
+</div>
 
 ## Hoe één tassenontwerper een imperium met twintig labels bouwde
 
@@ -35,6 +50,12 @@ Black Label kwam in 2005 als moderne luxelijn tussen Polo en Purple in. Strakker
 ### Blue Label
 
 Blue Label is verwarrend omdat de term twee dingen betekent. In de mond van de meeste kopers is "Blue Label" gewoon de bijnaam voor het blauwe neklabel van Polo Ralph Lauren, de hoofdlijn. Daarnaast bestond er een aparte Blue Label-lijn die vooral op de Japanse markt werd verkocht, een luxe dameslijn met een kwaliteitsniveau dat Purple Label benaderde en vaak Made in Japan op het label droeg. Die Japanse versie is zeldzaam buiten Azië en interessant voor verzamelaars, maar moeilijk verkoopbaar als jouw kopers het merk niet kennen. Controleer altijd of je met de Japanse luxelijn te maken hebt en niet gewoon met een standaard Polo-item dat iemand "blue label" noemt.
+
+<div class="shape-divider" aria-hidden="true">
+  <span class="shape shape--circle"></span>
+  <span class="shape shape--triangle"></span>
+  <span class="shape shape--square"></span>
+</div>
 
 ## Polo Ralph Lauren: de motor van je voorraad
 
@@ -68,6 +89,12 @@ RLX ontstond rond 1998 als technische diffusie van Polo Sport, gericht op hardlo
 
 Ten slotte bestaat er ook gewoon Polo Ralph Lauren Children, met dezelfde kwaliteit als de volwassenlijn. Kindermaten van iconische stukken zoals cashmere cable sweaters worden soms door volwassenen met kleine maten gekocht, dus onderschat die niet automatisch.
 
+<div class="shape-divider" aria-hidden="true">
+  <span class="shape shape--triangle"></span>
+  <span class="shape shape--circle"></span>
+  <span class="shape shape--square"></span>
+</div>
+
 ## RRL: het eerlijkste merk van het hele universum
 
 Double RL, geschreven als RRL, werd in 1993 gelanceerd en draagt de initialen van Ralph en zijn vrouw Ricky. Het is Laurens persoonlijke passieproject, geïnspireerd op zijn ranch in Colorado, op de werkkleding van goudzoekers en ranchwerkers uit de late negentiende eeuw en op militaire kledij uit de Amerikaanse burgeroorlog en de wereldoorlogen. Selvedge denim, leren jassen, geruite werkershemden, suède met franjes.
@@ -92,25 +119,17 @@ Lauren Ralph Lauren is de warenhuislijn voor vrouwen, gelanceerd als Lauren for 
 
 Chaps werd in 1978 door Lauren zelf opgericht als goedkoper alternatief tegen de opkomende namaakmarkt, met grote strepen, dikke truien en collegiate spell-out kleding die je nu massaal in vintage winkels terugvindt uit de jaren tachtig en negentig. Chaps is al jaren niet meer direct met Ralph verbonden en zijn naam is van het label verdwenen, het heet nu gewoon Chaps en wordt onder licentie verkocht. Daar zit een valstrik: veel verkopers zetten latere, niet aan RL gelieerde Chaps-stukken te koop als "Chaps Ralph Lauren". De moderne kwaliteit is laag en de resalewaarde navenant. Laat Chaps liggen tenzij je iets echt ouds en bijzonders vindt voor een paar euro.
 
-### Polo Jeans Co.
+### Polo Jeans Co., Denim & Supply, Ralph by Ralph Lauren en Polo University Club
 
-Polo Jeans Co. was een licentielijn die tot 2006 bestond en door een externe fabrikant werd gemaakt. Ralph Lauren kocht de licentie terug om de lijn stop te zetten. Herkenbaar aan het logo van een Amerikaanse vlag met de letters RL op de plek van de sterren. De constructie was meestal redelijk maar de stofkwaliteit zwak. Een enkele vintage denimliefhebber zoekt ze, maar de bredere markt herkent ze amper als waardevol.
+Polo Jeans Co. was een licentielijn die tot 2006 bestond en door een externe fabrikant werd gemaakt, herkenbaar aan het logo van een Amerikaanse vlag met de letters RL op de plek van de sterren. De constructie was meestal redelijk maar de stofkwaliteit zwak. Denim & Supply liep van 2011 tot de stopzetting in 2016: boho, distressed denim en Amerikaanse vlagmotieven aan een schappelijk prijspunt, degelijk maar niet uitzonderlijk. Ralph by Ralph Lauren kwam rond 1994 voor de "hip en jong" markt en werd grotendeels in China gemaakt, geen rommel maar instapniveau. Polo University Club is een vintage instaplijn uit de jaren tachtig, onder licentie gemaakt, hoofdzakelijk tailoring met soms verrassend mooie stoffen maar basale constructie. Voor al deze lijnen geldt: niets om premium voor te vragen, laat ze in de regel liggen tenzij de inkoopprijs zo laag is dat een kleine verkoopprijs nog rendeert.
 
-### Denim & Supply
+Een merk dat erbij hoort maar geen sublijn is: **Club Monaco** werd in 1999 door Ralph Lauren Corporation gekocht en in 2021 weer verkocht. Het is nooit een diffusielijn van Ralph Lauren geweest, het bleef een eigen merk met een eigen identiteit. De best gemaakte stukken stammen volgens kenners uit de periode voor de overname, toen veel in Canada werd geproduceerd. Goed om te weten als je het label tegenkomt, maar reken het niet bij de Ralph Lauren-hiërarchie.
 
-Denim & Supply liep van 2011 tot de stopzetting in 2016. Boho, distressed denim, werkkledingstaples en Amerikaanse vlagmotieven aan een schappelijk prijspunt. Degelijk maar niet uitzonderlijk. De resalewaarde is laag, op een handvol opvallende designs na zoals denim jassen met patches.
-
-### Ralph by Ralph Lauren
-
-Ralph by Ralph Lauren kwam rond 1994 als lijn voor de "hip en jong" markt, uiteindelijk verkocht in onder meer Canadese Dillard's-warenhuizen en grotendeels in China gemaakt. Het is geen rommel maar zit op instapniveau, dus betaal er niet de prijs van een Polo voor.
-
-### Polo University Club
-
-Polo University Club is een vintage instaplijn uit de jaren tachtig, onder licentie gemaakt, hoofdzakelijk tailoring. Je kunt er soms verrassend mooie stoffen vinden voor een prikje, maar de constructie is basaal. Niets om premium voor te vragen.
-
-### Club Monaco: geen sublijn, wel verwarrend
-
-Een merk dat erbij hoort maar geen sublijn is: Club Monaco werd in 1999 door Ralph Lauren Corporation gekocht en in 2021 weer verkocht. Het is nooit een diffusielijn van Ralph Lauren geweest, het bleef een eigen merk met een eigen identiteit, ook tijdens de jaren onder RL. De best gemaakte stukken stammen volgens kenners uit de periode voor de overname, toen veel in Canada werd geproduceerd. Goed om te weten als je het label tegenkomt, maar reken het niet bij de Ralph Lauren-hiërarchie.
+<div class="shape-divider" aria-hidden="true">
+  <span class="shape shape--square"></span>
+  <span class="shape shape--circle"></span>
+  <span class="shape shape--triangle"></span>
+</div>
 
 ## Het label lezen: kleur, tekst en de details die tellen
 
@@ -139,6 +158,22 @@ Kijk eerst naar het label, altijd. Dat is geen routinehandeling maar de beslisse
 
 Purple Label, Ralph Lauren Collection en de hoofdlijn Polo Ralph Lauren zijn je primaire focus, de eerste twee voor marge en de derde voor volume. RRL en Polo Country zijn de niche met hoge waarde voor wie de kopers kent. Vintage Polo Sport, Rugby, de Polo Bear-stukken en de zeldzame Polo Country zijn de wildcards waar je gericht naar zoekt. Black Label en de Japanse Blue Label pak je alleen mee bij echt bijzondere stukken. Alles van Lauren Ralph Lauren, moderne Chaps, Polo Jeans Co., Denim & Supply, Ralph by Ralph Lauren en Polo University Club laat je in de regel liggen, tenzij de inkoopprijs zo laag is dat zelfs vijf tot twintig euro verkoopprijs nog rendeert.
 
-Ralph Lauren heeft in bijna zes decennia een merkstructuur opgebouwd die ondoorzichtig is voor wie ze niet kent. De koper die het verschil ziet tussen een paars en een groen label, tussen een vintage Polo Bear en een moderne reproductie, tussen echte Japanse Blue Label en een item dat iemand zomaar zo noemt, heeft precies de informatievoorsprong die het verschil maakt tussen een stuk van tien euro en een stuk van tweehonderd.
+> Ralph Lauren heeft in bijna zes decennia een merkstructuur opgebouwd die ondoorzichtig is voor wie ze niet kent. De koper die het verschil ziet tussen een paars en een groen label, tussen een vintage Polo Bear en een moderne reproductie, tussen echte Japanse Blue Label en een item dat iemand zomaar zo noemt, heeft precies de informatievoorsprong die het verschil maakt tussen een stuk van tien euro en een stuk van tweehonderd.
 
-*Maud Hendrix is oprichter van VintieBulk en verkoopt al meer dan vier jaar vintage Ralph Lauren op Vinted. Dit artikel is gebaseerd op haar eigen transactiedata van meer dan 2.500 verkooptransacties tussen 2021 en 2025.*
+## Veelgestelde vragen
+
+### Wat is Purple Label van Ralph Lauren?
+
+Purple Label is de duurste herenlijn van Ralph Lauren, gelanceerd in 1994 als premium collectie geïnspireerd op de tailoring van Savile Row. Stukken worden vaak in Italië gemaakt in kleine oplages. Het neklabel is paars met goudkleurige tekst, en in de wederverkoop houdt deze lijn regelmatig meer dan zestig procent van de nieuwprijs vast.
+
+### Wat is het verschil tussen Black Label en Blue Label bij Ralph Lauren?
+
+Black Label was een moderne luxelijn tussen Polo en Purple in, gelanceerd in 2005 en gestopt rond 2014, met een zwart neklabel met witte of zilveren tekst. Blue Label is dubbelzinnig: meestal de bijnaam voor het gewone blauwe Polo-label, maar er bestond ook een aparte, zeldzame Japanse Blue Label-lijn met een kwaliteitsniveau dat Purple Label benaderde.
+
+### Wat betekent RRL bij Ralph Lauren?
+
+RRL, ook Double RL, is Ralph Laurens persoonlijke passieproject sinds 1993, geïnspireerd op zijn ranch in Colorado en op Amerikaanse werkkleding uit de negentiende eeuw. Het neklabel is ivoorkleurig of bruin met "Double RL" of "RRL". In de wederverkoop houdt RRL veertig tot zestig procent van de nieuwprijs vast, met een kleine maar toegewijde doelgroep.
+
+### Hoe herken je een outlet-item van Ralph Lauren?
+
+Een neklabel met enkel "Ralph Lauren" en de pony, zonder "Polo", werd lange tijd geassocieerd met outlet- en fabrieksvoorraad, al duikt het ook op bij oudere basisvoorraad. Een kleine gouden stip op een Polo-label wijst eveneens op een outletexemplaar.
