@@ -33,7 +33,7 @@ De formule is vast: €0,70 + 5% van de artikelprijs. Zet die naast een paar re�
 
 Alleen het vaste stuk (€0,70) al: op een artikel van €5 is dat 14% van de prijs. Op een artikel van €50 amper 1,4%. Dezelfde €0,70, een totaal ander gewicht.
 
-Dat is geen randdetail. Dat is de reden waarom een T-shirt van €8 aan de kassa plots aanvoelt als €8,95, terwijl een sweater van €50 nauwelijks een sprong maakt naar €53,20. De koper ervaart geen vast bedrag, die ervaart een percentage bovenop wat hij al in gedachten had. En bij goedkope items is dat percentage het hoogst, precies waar de koper het minst geduld heeft om dat te accepteren.
+Dat is geen randdetail. Dat is de reden waarom een T-shirt van €8 aan de kassa plots aanvoelt als €9,10, terwijl een sweater van €50 nauwelijks een sprong maakt naar €53,20. De koper ervaart geen vast bedrag, die ervaart een percentage bovenop wat hij al in gedachten had. En bij goedkope items is dat percentage het hoogst, precies waar de koper het minst geduld heeft om dat te accepteren.
 
 <div class="shape-divider" aria-hidden="true">
   <span class="shape shape--circle"></span>

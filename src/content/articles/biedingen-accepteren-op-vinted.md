@@ -8,7 +8,7 @@ draft: false
 
 Een bod binnenkrijgen voelt als opluchting. Zeker als het niet extreem laag is, is de reflex vaak: oké, accepteren en doorgaan. Die reflex begrijp ik. Maar hij kost je geld.
 
-Toen ik mijn eigen verkoopdata begon te analyseren, na meer dan 2.500 transacties op Vinted, viel één patroon meteen op. Listings waarbij ik een bod onmiddellijk accepteerde, kregen zelden nog extra interactie. Geen nieuwe biedingen, weinig extra favorieten, en geen opwaartse prijsdynamiek. De transactie was gesloten, maar niet tegen de beste prijs.
+Toen ik mijn eigen verkoopdata begon te analyseren, na meer dan 2.500 transacties op Vinted, viel één patroon meteen op. Listings waarbij ik een bod onmiddellijk accepteerde, kregen zelden nog extra interactie. Geen nieuwe biedingen, weinig extra favorieten, en geen opwaartse prijsdynamiek. De onderhandeling was afgerond, maar niet tegen de beste prijs.
 
 Dat is niet toevallig. Het sluit aan bij iets fundamenteels in hoe mensen waarde inschatten.
 

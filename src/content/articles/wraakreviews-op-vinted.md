@@ -34,7 +34,7 @@ De eerste is een afgewezen retourvraag. De koper heeft een geschil geopend, bewe
 
 In mijn eigen klachtenarchief is dit gedocumenteerd. Een koper die een frauduleus geschil had geopend, authenticiteit betwistte terwijl het item duidelijk authentiek was, werd door Vinted teruggewezen na overlegging van bewijs. De reactie was een negatieve review die niets met de transactie te maken had maar alles met de uitkomst van het geschil.
 
-De tweede situatie is een afgewezen bod. Een koper biedt ver onder de vraagprijs, de verkoper wijst af of doet een tegenbod, de koper koopt niet, maar de frustratie blijft. In zeldzame gevallen resulteert dit in een negatieve review of een melding aan Vinted, wat administratief werk kost zelfs als er niets van klopt.
+De tweede situatie is een afgewezen bod. Een koper biedt ver onder de vraagprijs, de verkoper wijst af of doet een tegenbod, de koper koopt niet, maar de frustratie blijft. Omdat er geen afgeronde transactie is, kan die koper geen review achterlaten, maar in zeldzame gevallen resulteert dit wel in een melding aan Vinted, wat administratief werk kost zelfs als er niets van klopt.
 
 De derde situatie is een misverstand over de staat dat uitmondt in een geëscaleerd gesprek. De koper is teleurgesteld, de verkoper staat op zijn gelijk, de toon wordt slechter, en de review weerspiegelt de toon van het gesprek eerder dan de kwaliteit van het item.
 
@@ -100,7 +100,7 @@ Die informatie is bruikbaar. Bij Nederlandse kopers zet ik extra specifieke staa
 
 In 2025 was het verschil tussen mijn bruto omzet van €35.102 en de werkelijke uitbetaling van €29.736 ruim €5.366. Een deel van dat verschil zijn platformkosten en verzending. Maar ongeveer €800 is direct toe te schrijven aan geannuleerde orders en refunds, inclusief afgehandelde geschillen.
 
-Dat is geen ramp op een volume van 774 orders. Het is minder dan één procent van de omzet. Maar het is ook een getal dat structureel lager kan door te werken aan het voorkomen van klachten in plaats van alleen het afhandelen ervan.
+Dat is geen ramp op een volume van 774 orders. Het is ruim 2 procent van de omzet. Maar het is ook een getal dat structureel lager kan door te werken aan het voorkomen van klachten in plaats van alleen het afhandelen ervan.
 
 Elke foutief beschreven conditie die een geschil triggert, kost meer dan de terugbetaling alleen. Het kost je ook de tijd van het afhandelen, de potentiële negatieve review, en het kapitaal dat vastzit in een item dat teruggestuurd wordt.
 
