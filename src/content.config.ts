@@ -12,6 +12,10 @@ const articles = defineCollection({
     faq: z
       .array(z.object({ question: z.string(), answer: z.string() }))
       .optional(),
+    // Alleen gezet wanneer dit artikel dezelfde kernthematiek/data behandelt
+    // als een ander artikel op de site — voorkomt keyword-kannibalisatie door
+    // de canonical naar de hoofdversie te laten wijzen.
+    canonicalPath: z.string().optional(),
   }),
 });
 

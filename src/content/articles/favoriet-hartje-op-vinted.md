@@ -35,7 +35,7 @@ Dat is de reden waarom passief afwachten niet de sterkste strategie is, zeker ni
 
 Bij een enkel hartje op een courant item is het meestal voldoende om gewoon bereikbaar en snel te blijven mocht er een vraag of bod volgen. Maar zodra je merkt dat een item binnen korte tijd meerdere hartjes verzamelt zonder dat er contact volgt, is een proactief bericht een sterke zet. Ik doe dat zelf regelmatig bij items die verschillende keren geliket zijn in eenzelfde periode: een kort, vriendelijk berichtje met de vraag of er nog interesse is, eventueel gecombineerd met een klein voorstel zoals een bundelkorting als de koper ook andere items van je geliket heeft.
 
-Dat laatste werkt goed omdat het de passieve interesse van een hartje omzet in een actieve onderhandeling, precies binnen het venster waarin het item nog volledig van zijn freshness-boost profiteert — hetzelfde momentum-effect dat ook [de kern vormt van hoe boosten werkt](/artikelen/482-euro-vinted-boosts-5-lessen). Iemand die meerdere stukken uit je aanbod heeft geliket zonder te kopen, is vaak wel degelijk geïnteresseerd, maar heeft simpelweg nog een duwtje nodig om de knoop door te hakken.
+Dat laatste werkt goed omdat het de passieve interesse van een hartje omzet in een actieve onderhandeling, precies binnen het venster waarin het item nog volledig van zijn freshness-boost profiteert — hetzelfde momentum-effect dat ook [de kern vormt van hoe boosten werkt](/artikelen/boosten-op-vinted). Iemand die meerdere stukken uit je aanbod heeft geliket zonder te kopen, is vaak wel degelijk geïnteresseerd, maar heeft simpelweg nog een duwtje nodig om de knoop door te hakken.
 
 <div class="shape-divider" aria-hidden="true">
   <span class="shape shape--circle"></span>

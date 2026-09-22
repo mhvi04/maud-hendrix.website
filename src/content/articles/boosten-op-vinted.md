@@ -11,6 +11,14 @@ faq:
     answer: "Boosten op Vinted is de betaalde opvalfunctie waarmee een verkoper een listing tijdelijk extra promoot. Het geeft geen garantie op verkoop, maar zorgt voor extra clicks, favorieten en berichten, wat op zijn beurt de organische positie in de zoekresultaten verbetert."
   - question: "Wat kost boosten bij Vinted?"
     answer: "Een boost bij Vinted kost gemiddeld €2 tot €3 per keer, afhankelijk van de duur en de prijs van het item. Op basis van 206 boosts en €482 totaalbudget lag de omzet per geïnvesteerde euro op €93 bij boosts die tot een verkoop leidden."
+  - question: "Is boosten op Vinted de moeite waard?"
+    answer: "Ja, maar alleen als je het gericht inzet: op een item dat al favorieten heeft verzameld zonder te verkopen, en op het juiste moment. Op basis van 206 boosts en €482 budget kwam de omzet per geïnvesteerde euro op €93 bij boosts die tot een verkoop leidden. Zonder die voorwaarden is een boost geld weggooien."
+  - question: "Is een boost van 3 dagen of 7 dagen beter op Vinted?"
+    answer: "Een boost van 3 dagen werkt beter. Van 206 boosts leidde 93 procent van de 3-daagse boosts tot een verkoop, tegenover slechts 30 procent van de 7-daagse boosts. Het zichtbaarheidsvenster van een boost duurt in de praktijk ongeveer 48 uur, waardoor een 7-daagse boost vooral betaalt voor dagen die weinig extra opleveren."
+  - question: "Wanneer boost je het beste op Vinted?"
+    answer: "Donderdag of vrijdag, zodat de zichtbaarheid twee tot drie dagen kan opbouwen vóór de koopgolf van het weekend, met zondag als piekdag. Boosten op zondag zelf is meestal verspild budget, omdat dat al de dag met het hoogste organische volume is."
+  - question: "Moet je een nieuw item op Vinted meteen boosten?"
+    answer: "Nee. Een nieuw item krijgt van Vinted zelf al een tijdelijke zichtbaarheidsboost, het zogeheten verse-item effect. Betaald boosten daar bovenop is geld uitgeven aan iets dat al gratis gebeurt. Wacht 5 tot 7 dagen en boost pas als er favorieten zijn maar nog geen verkoop."
 ---
 
 Ik heb in totaal €482 uitgegeven aan boosts op Vinted. Dat klinkt als een behoorlijk bedrag voor wat in wezen een knop is die je listing tijdelijk naar boven duwt. Dat bedrag gebruik ik niet om te zeggen dat boosts automatisch winst opleveren. Een boost maakt een zwakke listing niet plots sterk. Maar bij de juiste listing kan het wel extra momentum geven.
@@ -59,7 +67,7 @@ T-shirts boost ik bijna nooit. De marge per stuk is lager, en de organische rota
 
 Bij Polo Bear-truien en flag knits is de beslissing anders. Die items hebben een langere levenscyclus van soms 60 tot 238 dagen. Een boost op dag zeven is er te vroeg voor. De koper voor dat soort stukken zoekt actief en doelgericht; die heeft de boost niet nodig om het item te vinden. Ik boost dit type item pas als het al meerdere weken online staat en de views stagneren.
 
-De vuistregel die ik hanteer: boost alleen als er al bewijs is dat mensen geïnteresseerd zijn. Favorieten zijn dat bewijs. Een item met nul favorieten boost je niet, want de boost vergroot de zichtbaarheid maar kan het gebrek aan interesse niet verhelpen. Dat is een listing-probleem, geen zichtbaarheidsprobleem.
+De vuistregel die ik hanteer: boost alleen als er al bewijs is dat mensen geïnteresseerd zijn. Favorieten zijn dat bewijs, en [wat je met die favorieten doet](/artikelen/favoriet-hartje-op-vinted) bepaalt vaak mee of een boost nog nodig is. Een item met nul favorieten boost je niet, want de boost vergroot de zichtbaarheid maar kan het gebrek aan interesse niet verhelpen. Dat is een listing-probleem, geen zichtbaarheidsprobleem.
 
 ## Op welk moment van de week boost ik
 
@@ -81,7 +89,7 @@ De juiste volgorde is omgekeerd. Laat het item organisch beginnen. Geef het de e
 
 Een boost is geen pleister voor een slecht item.
 
-Als de foto's onduidelijk zijn, als de prijs te hoog zit ten opzichte van vergelijkbare listings, als de beschrijving ontbreekt of de titel geen zoekwoorden bevat die kopers daadwerkelijk gebruiken, dan helpt meer zichtbaarheid niets. Meer mensen zullen het item zien en het alsnog negeren.
+Als de foto's onduidelijk zijn, als de prijs te hoog zit ten opzichte van vergelijkbare listings, als de beschrijving ontbreekt of de titel geen zoekwoorden bevat die kopers daadwerkelijk gebruiken, dan helpt meer zichtbaarheid niets. Meer mensen zullen het item zien en het alsnog negeren. In dat geval helpt [het dag-per-dag pad voor een item dat niet verkoopt](/artikelen/vinted-item-verkoopt-niet-wat-nu) meer dan een boost.
 
 Ik heb dat een keer concreet meegemaakt met een hemd dat al drie weken online stond zonder één favoriet. Ik boostte het. Het werd gezien door meer mensen. Geen enkele klik. Geen enkel bericht. Het item is uiteindelijk opnieuw geplaatst met nieuwe foto's en een aangepaste prijs, en verkocht binnen vier dagen organisch. De boost van €2,50 die ik eerder had uitgegeven, was verloren.
 
@@ -102,3 +110,19 @@ Boosten op Vinted is de betaalde opvalfunctie waarmee een verkoper een listing t
 ### Wat kost boosten bij Vinted?
 
 Een boost bij Vinted kost gemiddeld €2 tot €3 per keer, afhankelijk van de duur en de prijs van het item. Op basis van 206 boosts en €482 totaalbudget lag de omzet per geïnvesteerde euro op €93 bij boosts die tot een verkoop leidden.
+
+### Is boosten op Vinted de moeite waard?
+
+Ja, maar alleen als je het gericht inzet: op een item dat al favorieten heeft verzameld zonder te verkopen, en op het juiste moment. Op basis van 206 boosts en €482 budget kwam de omzet per geïnvesteerde euro op €93 bij boosts die tot een verkoop leidden. Zonder die voorwaarden is een boost geld weggooien.
+
+### Is een boost van 3 dagen of 7 dagen beter op Vinted?
+
+Een boost van 3 dagen werkt beter. Van 206 boosts leidde 93 procent van de 3-daagse boosts tot een verkoop, tegenover slechts 30 procent van de 7-daagse boosts. Het zichtbaarheidsvenster van een boost duurt in de praktijk ongeveer 48 uur, waardoor een 7-daagse boost vooral betaalt voor dagen die weinig extra opleveren.
+
+### Wanneer boost je het beste op Vinted?
+
+Donderdag of vrijdag, zodat de zichtbaarheid twee tot drie dagen kan opbouwen vóór de koopgolf van het weekend, met zondag als piekdag. Boosten op zondag zelf is meestal verspild budget, omdat dat al de dag met het hoogste organische volume is.
+
+### Moet je een nieuw item op Vinted meteen boosten?
+
+Nee. Een nieuw item krijgt van Vinted zelf al een tijdelijke zichtbaarheidsboost, het zogeheten verse-item effect. Betaald boosten daar bovenop is geld uitgeven aan iets dat al gratis gebeurt. Wacht 5 tot 7 dagen en boost pas als er favorieten zijn maar nog geen verkoop.

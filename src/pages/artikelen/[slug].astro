@@ -46,6 +46,7 @@ const ogImage = existsSync(ownOgImagePath) ? `/og/${entry.id}.png` : undefined;
   type="article"
   publishedDate={publishedDate}
   noindex={entry.data.draft}
+  canonicalPath={entry.data.canonicalPath}
   image={ogImage}
 >
   {faqJsonLd && (
