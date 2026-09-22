@@ -27,16 +27,17 @@ const formatDate = (iso: string) =>
 
 <BaseLayout title="Maud Hendrix" locale="en" nlPath="/" enPath="/">
   <main class="home">
-    <InteractiePaneel />
-    <LanguagePicker locale="en" nlPath="/" enPath="/" />
-
     <nav class="site-nav" id="top">
       <div class="wrap nav-bar">
         <a href="#top" class="nav-mark">mh<span class="nav-dot">.</span></a>
-        <div class="nav-links mono">
-          <a href="#professional">Professional</a>
-          <a href="/en/articles">Articles</a>
-          <a href="#contact">Contact</a>
+        <div class="nav-right">
+          <div class="nav-links mono">
+            <a href="#professional">Professional</a>
+            <a href="/en/articles">Articles</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <LanguagePicker locale="en" nlPath="/" enPath="/" inline />
+          <InteractiePaneel inline />
         </div>
       </div>
     </nav>
@@ -199,8 +200,7 @@ const formatDate = (iso: string) =>
               href="https://www.vinted.be/member/38856549-maudhendrix"
               target="_blank"
               rel="noopener">@maud.hendrix</a
-            >
-            on Vinted: <span class="mono">1,881</span> sales,
+            >&nbsp;on Vinted: <span class="mono">1,881</span> sales,
             <span class="mono">5</span> stars, <span class="mono">3,233</span>
             followers, until the account got banned. Studio Maud is the
             sequel.
@@ -361,6 +361,14 @@ const formatDate = (iso: string) =>
   .nav-dot {
     color: var(--mustard);
   }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    row-gap: 10px;
+    gap: clamp(14px, 2.5vw, 24px);
+  }
   .nav-links {
     display: flex;
     align-items: center;
@@ -375,6 +383,16 @@ const formatDate = (iso: string) =>
   }
   .nav-links a:hover {
     opacity: 1;
+  }
+  @media (max-width: 780px) {
+    .nav-bar {
+      flex-wrap: wrap;
+      row-gap: 12px;
+    }
+    .nav-right {
+      width: 100%;
+      justify-content: space-between;
+    }
   }
   @media (max-width: 560px) {
     .nav-links {

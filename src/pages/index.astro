@@ -5,13 +5,8 @@ import Typewriter from "../components/Typewriter.astro";
 import InteractiePaneel from "../components/InteractiePaneel.astro";
 import LanguagePicker from "../components/LanguagePicker.astro";
 import Timeline from "../components/Timeline.astro";
-import SkillsMarquee from "../components/SkillsMarquee.astro";
-import ToolsPattern from "../components/ToolsPattern.astro";
 import CountUp from "../components/CountUp.astro";
 import Gelezen from "../components/Gelezen.astro";
-import PhotoGallery from "../components/PhotoGallery.astro";
-import { Image } from "astro:assets";
-import vintedProfielOud from "../assets/proof/vinted-profiel-oud.jpg";
 
 import { getCollection } from "astro:content";
 
@@ -36,17 +31,18 @@ const interests = [
 
 <BaseLayout title="Maud Hendrix" nlPath="/" enPath="/">
   <main class="home">
-    <InteractiePaneel />
-    <LanguagePicker locale="nl" nlPath="/" enPath="/" />
-
     <nav class="site-nav" id="top">
       <div class="wrap nav-bar">
         <a href="#top" class="nav-mark">mh<span class="nav-dot">.</span></a>
-        <div class="nav-links mono">
-          <a href="#professioneel">Professioneel</a>
-          <a href="#prive">Privé</a>
-          <a href="/artikelen">Artikelen</a>
-          <a href="#contact">Contact</a>
+        <div class="nav-right">
+          <div class="nav-links mono">
+            <a href="#professioneel">Professioneel</a>
+            <a href="#prive">Privé</a>
+            <a href="/artikelen">Artikelen</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <LanguagePicker locale="nl" nlPath="/" enPath="/" inline />
+          <InteractiePaneel inline />
         </div>
       </div>
     </nav>
@@ -102,52 +98,6 @@ const interests = [
         </div>
       </div>
 
-      <div class="skills-section">
-        <div class="wrap skills-head">
-          <span class="row-label label">Vaardigheden</span>
-        </div>
-        <SkillsMarquee />
-      </div>
-
-      <div class="row wrap">
-        <span class="row-label label">Tools</span>
-        <div class="row-body">
-          <span class="subhead label">Software &amp; tools</span>
-          <ToolsPattern />
-        </div>
-      </div>
-
-      <div class="row wrap">
-        <span class="row-label label">Ervaring</span>
-        <div class="row-body experience">
-          <article class="exp">
-            <div class="exp-head">
-              <h3>Student-zelfstandige — tweedehands e-commerce</h3>
-              <span class="exp-period mono">Februari 2025 — heden</span>
-            </div>
-            <p class="exp-context">
-              Gent en omgeving. Officieel zelfstandige sinds februari 2025,
-              actief in de handel sinds mijn veertiende.
-            </p>
-            <ul>
-              <li>
-                Meer dan 2.500 transacties, van sourcing en prijszetting tot
-                kwaliteitscontrole, verkoop en logistiek — allemaal in eigen
-                beheer.
-              </li>
-              <li>
-                Eigen analysekader voor inkoopprijzen, marges, voorraadrotatie,
-                categorieprestaties en seizoenseffecten stuurt elke inkoop- en
-                prijsbeslissing.
-              </li>
-              <li>
-                Authenticiteits- en kwaliteitscontrole op merkkleding, met Ralph
-                Lauren als hoofdcategorie.
-              </li>
-            </ul>
-          </article>
-        </div>
-      </div>
     </section>
 
     <!-- PROJECTEN & EERBETOON -->
@@ -168,32 +118,22 @@ const interests = [
                 href="https://www.vinted.be/member/38856549-maudhendrix"
                 target="_blank"
                 rel="noopener">@maud.hendrix</a
-              >
-              op Vinted, tot het account geblokkeerd werd. Studio Maud is het
+              >&nbsp;op Vinted, tot het account geblokkeerd werd. Studio Maud is het
               vervolg.
             </p>
             <div class="stats-box">
               <div class="stat">
-                <span class="stat-number mono">1.881</span>
-                <span class="stat-label">Verkopen</span>
+                <span class="stat-number mono">2.593</span>
+                <span class="stat-label">Transacties</span>
               </div>
               <div class="stat">
-                <span class="stat-number mono">5</span>
+                <span class="stat-number mono">4,8</span>
                 <span class="stat-label">Sterren</span>
               </div>
               <div class="stat">
                 <span class="stat-number mono">3.233</span>
                 <span class="stat-label">Volgers</span>
               </div>
-            </div>
-            <div class="voorgeschiedenis-proof">
-              <Image
-                src={vintedProfielOud}
-                alt="Screenshot van het geblokkeerde Vinted-profiel @maud.hendrix: 5 sterren, 1881 verkopen, Gent, 3233 volgers"
-                loading="lazy"
-                widths={[380, 600, 900]}
-                sizes="(max-width: 680px) 90vw, 340px"
-              />
             </div>
           </div>
         </div>
@@ -225,7 +165,6 @@ const interests = [
               <p class="project-desc">
                 Als medeoprichter werkte ik aan een B2B-aanbod van gecureerde
                 partijen en resellerboxen met tweedehands Ralph Lauren.
-                Anderen zetten het onder een andere naam voort.
               </p>
             </div>
           </div>
@@ -272,10 +211,6 @@ const interests = [
           <span class="lang-level mono">A2</span>
         </li>
       </ul>
-
-      <hr class="rule" />
-      <h3>Vrijwilligerswerk</h3>
-      <p>Katten socialiseren bij Dierenasiel Gent.</p>
     </section>
 
     <!-- 02 PRIVÉ -->
@@ -350,19 +285,10 @@ const interests = [
         </div>
       </div>
 
-      <div class="row wrap">
+      <div class="row wrap row--last">
         <span class="row-label label">Gelezen</span>
         <div class="row-body">
           <Gelezen />
-        </div>
-      </div>
-
-      <div class="row wrap row--last">
-        <span class="row-label letter accent">C</span>
-        <div class="row-body">
-          <h3>Fotografie</h3>
-          <p class="section-intro">Eigen foto's van dieren en natuur.</p>
-          <PhotoGallery />
         </div>
       </div>
     </section>
@@ -486,6 +412,14 @@ const interests = [
   .nav-dot {
     color: var(--mustard);
   }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    row-gap: 10px;
+    gap: clamp(14px, 2.5vw, 24px);
+  }
   .nav-links {
     display: flex;
     align-items: center;
@@ -500,6 +434,16 @@ const interests = [
   }
   .nav-links a:hover {
     opacity: 1;
+  }
+  @media (max-width: 780px) {
+    .nav-bar {
+      flex-wrap: wrap;
+      row-gap: 12px;
+    }
+    .nav-right {
+      width: 100%;
+      justify-content: space-between;
+    }
   }
   @media (max-width: 560px) {
     .nav-links {
@@ -863,8 +807,8 @@ const interests = [
 
   /* PROJECTS */
   .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 22px;
   }
   .project {

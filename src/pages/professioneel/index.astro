@@ -3,10 +3,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import StickyFooterBar from "../../components/StickyFooterBar.astro";
 import Timeline from "../../components/Timeline.astro";
-import SkillsMarquee from "../../components/SkillsMarquee.astro";
-import ToolsPattern from "../../components/ToolsPattern.astro";
-import { Image } from "astro:assets";
-import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
 ---
 
 <BaseLayout
@@ -46,56 +42,6 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
       </div>
     </section>
 
-    <!-- VAARDIGHEDEN -->
-    <section class="skills-section">
-      <div class="wrap skills-head">
-        <span class="row-label label">Vaardigheden</span>
-      </div>
-      <SkillsMarquee />
-    </section>
-
-    <!-- TOOLS -->
-    <section class="row wrap">
-      <span class="row-label label">Tools</span>
-      <div class="row-body">
-        <span class="subhead label">Software &amp; tools</span>
-        <ToolsPattern />
-      </div>
-    </section>
-
-    <!-- ERVARING -->
-    <section class="row wrap">
-      <span class="row-label label">Ervaring</span>
-      <div class="row-body experience">
-        <article class="exp">
-          <div class="exp-head">
-            <h2>Student-zelfstandige — tweedehands e-commerce</h2>
-            <span class="exp-period mono">Februari 2025 — heden</span>
-          </div>
-          <p class="exp-context">
-            Gent en omgeving. Officieel zelfstandige sinds februari 2025,
-            actief in de handel sinds mijn veertiende.
-          </p>
-          <ul>
-            <li>
-              Meer dan 2.500 transacties, van sourcing en prijszetting tot
-              kwaliteitscontrole, verkoop en logistiek — allemaal in eigen
-              beheer.
-            </li>
-            <li>
-              Eigen analysekader voor inkoopprijzen, marges, voorraadrotatie,
-              categorieprestaties en seizoenseffecten stuurt elke inkoop- en
-              prijsbeslissing.
-            </li>
-            <li>
-              Authenticiteits- en kwaliteitscontrole op merkkleding, met Ralph
-              Lauren als hoofdcategorie.
-            </li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
     <!-- PROJECTEN & EERBETOON -->
     <section class="dark-block">
       <div class="wrap">
@@ -115,32 +61,22 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
                 href="https://www.vinted.be/member/38856549-maudhendrix"
                 target="_blank"
                 rel="noopener">@maud.hendrix</a
-              >
-              op Vinted, tot het account geblokkeerd werd. Studio Maud is het
+              >&nbsp;op Vinted, tot het account geblokkeerd werd. Studio Maud is het
               vervolg.
             </p>
             <div class="stats-box">
               <div class="stat">
-                <span class="stat-number mono">1.881</span>
-                <span class="stat-label">Verkopen</span>
+                <span class="stat-number mono">2.593</span>
+                <span class="stat-label">Transacties</span>
               </div>
               <div class="stat">
-                <span class="stat-number mono">5</span>
+                <span class="stat-number mono">4,8</span>
                 <span class="stat-label">Sterren</span>
               </div>
               <div class="stat">
                 <span class="stat-number mono">3.233</span>
                 <span class="stat-label">Volgers</span>
               </div>
-            </div>
-            <div class="voorgeschiedenis-proof">
-              <Image
-                src={vintedProfielOud}
-                alt="Screenshot van het geblokkeerde Vinted-profiel @maud.hendrix: 5 sterren, 1881 verkopen, Gent, 3233 volgers"
-                loading="lazy"
-                widths={[380, 600, 900]}
-                sizes="(max-width: 680px) 90vw, 340px"
-              />
             </div>
           </div>
         </div>
@@ -173,7 +109,6 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
               <p class="project-desc">
                 Als medeoprichter werkte ik aan een B2B-aanbod van gecureerde
                 partijen en resellerboxen met tweedehands Ralph Lauren.
-                Anderen zetten het onder een andere naam voort.
               </p>
             </div>
           </div>
@@ -221,10 +156,6 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
           <span class="lang-level mono">A2</span>
         </li>
       </ul>
-
-      <hr class="rule" />
-      <h3>Vrijwilligerswerk</h3>
-      <p>Katten socialiseren bij Dierenasiel Gent.</p>
     </section>
 
     <!-- CONTACT -->
@@ -576,8 +507,8 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
 
   /* PROJECTS */
   .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 22px;
   }
   .project {
