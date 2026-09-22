@@ -1,0 +1,212 @@
+---
+// Bouwt de inhoudstafel automatisch op uit de H2/H3-headings die Astro al
+// uit de markdown haalt (met bijhorende id's op de headings zelf) — geen
+// handmatig te onderhouden lijst per artikel. Rendert twee varianten van
+// dezelfde lijst: een sticky sidebar voor desktop en een inklapbaar blok
+// voor mobiel, beide gesynchroniseerd door hetzelfde scrollspy-script.
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  headings: Heading[];
+  locale?: "nl" | "en";
+  // Minimum aantal H2/H3's voor er een TOC verschijnt — bij minder structuur
+  // toont een lege inhoudstafel geen meerwaarde.
+  minHeadings?: number;
+}
+
+const { headings, locale = "nl", minHeadings = 3 } = Astro.props;
+
+const items = headings.filter((h) => h.depth === 2 || h.depth === 3);
+const showToc = items.length >= minHeadings;
+
+let counter = 0;
+const numbered = items.map((heading) => {
+  if (heading.depth === 2) counter += 1;
+  return { ...heading, number: heading.depth === 2 ? String(counter).padStart(2, "0") : null };
+});
+
+const labels = {
+  nl: { heading: "Inhoud", toggle: "Inhoudsopgave" },
+  en: { heading: "Contents", toggle: "Table of contents" },
+};
+const t = labels[locale];
+---
+
+{
+  showToc && (
+    <>
+      <nav class="toc toc--desktop" aria-label={t.heading}>
+        <p class="toc-label mono">{t.heading}</p>
+        <ol>
+          {numbered.map((h) => (
+            <li class={`toc-item depth-${h.depth}`}>
+              <a href={`#${h.slug}`} data-slug={h.slug}>
+                {h.number && <span class="toc-num mono">{h.number}</span>}
+                <span class="toc-text">{h.text}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+
+      <details class="toc toc--mobile">
+        <summary class="mono">
+          <span class="toc-summary-mark" aria-hidden="true" />
+          {t.toggle}
+        </summary>
+        <ol>
+          {numbered.map((h) => (
+            <li class={`toc-item depth-${h.depth}`}>
+              <a href={`#${h.slug}`} data-slug={h.slug}>
+                {h.number && <span class="toc-num mono">{h.number}</span>}
+                <span class="toc-text">{h.text}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </details>
+    </>
+  )
+}
+
+<style>
+  .toc {
+    font-family: var(--font-body);
+  }
+  .toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .toc-item a {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 7px 0 7px 14px;
+    border-left: 2px solid var(--line);
+    text-decoration: none;
+    color: var(--navy);
+    opacity: 0.7;
+    font-size: 14px;
+    line-height: 1.35;
+    transition: opacity 0.15s ease, border-color 0.15s ease;
+  }
+  .toc-item a:hover {
+    opacity: 1;
+  }
+  .toc-item a.is-active {
+    opacity: 1;
+    border-left: 3px solid var(--mustard);
+    padding-left: 13px;
+    font-weight: 600;
+  }
+  .toc-item.depth-3 a {
+    padding-left: 30px;
+    font-size: 13px;
+  }
+  .toc-item.depth-3 a.is-active {
+    padding-left: 29px;
+  }
+  .toc-num {
+    flex-shrink: 0;
+    font-size: 12px;
+    color: var(--mustard-deep);
+  }
+  .toc-text {
+    flex: 1;
+  }
+
+  /* Desktop: sticky naast de artikeltekst */
+  .toc--desktop {
+    display: none;
+  }
+  .toc-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy);
+    opacity: 0.6;
+    margin: 0 0 14px;
+  }
+
+  /* Mobiel: inklapbaar blok bovenaan het artikel, dicht bij default */
+  .toc--mobile {
+    display: block;
+    border: 1px solid var(--ink);
+    margin-bottom: 32px;
+  }
+  .toc--mobile summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--navy);
+    cursor: pointer;
+    list-style: none;
+  }
+  .toc--mobile summary::-webkit-details-marker {
+    display: none;
+  }
+  .toc-summary-mark {
+    width: 9px;
+    height: 9px;
+    background: var(--mustard);
+    flex-shrink: 0;
+  }
+  .toc--mobile[open] summary {
+    border-bottom: 1px solid var(--ink);
+  }
+  .toc--mobile ol {
+    padding: 8px 16px 10px;
+  }
+
+  @media (min-width: 900px) {
+    .toc--desktop {
+      display: block;
+      position: sticky;
+      top: var(--toc-offset, 88px);
+    }
+    .toc--mobile {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const tocLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>(".toc a[data-slug]"));
+
+  if (tocLinks.length) {
+    const headingEls = tocLinks
+      .map((link) => document.getElementById(link.dataset.slug ?? ""))
+      .filter((el): el is HTMLElement => el !== null);
+
+    const setActive = (slug: string) => {
+      for (const link of tocLinks) {
+        link.classList.toggle("is-active", link.dataset.slug === slug);
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible[0]) {
+          setActive(visible[0].target.id);
+        }
+      },
+      { rootMargin: "-96px 0px -70% 0px", threshold: 0 }
+    );
+
+    for (const el of headingEls) observer.observe(el);
+  }
+</script>
