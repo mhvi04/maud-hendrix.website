@@ -1,0 +1,45 @@
+---
+// LanguageSwitch.astro
+// Kleine taalwissel-link: springt van de huidige pagina naar de vertaalde
+// versie van diezelfde pagina. nlPath/enPath zijn de locale-interne paden
+// (dus zonder /en-prefix), omdat getRelativeLocaleUrl die prefix zelf
+// toevoegt voor niet-standaardtalen.
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { useTranslations, type Language } from "../i18n/ui";
+
+interface Props {
+  locale: Language;
+  nlPath: string;
+  enPath: string;
+}
+
+const { locale, nlPath, enPath } = Astro.props;
+const targetLocale: Language = locale === "nl" ? "en" : "nl";
+const targetPath = locale === "nl" ? enPath : nlPath;
+const href = getRelativeLocaleUrl(targetLocale, targetPath);
+const t = useTranslations(locale).nav;
+---
+
+<a href={href} class="lang-switch mono" hreflang={targetLocale} aria-label={t.switchLanguageLabel}>
+  {t.switchLanguage}
+</a>
+
+<style>
+  .lang-switch {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    text-decoration: none;
+    border: 2px solid var(--ink);
+    padding: 5px 10px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .lang-switch:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+</style>

@@ -1,12 +1,12 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import StickyFooterBar from "../components/StickyFooterBar.astro";
-import Typewriter from "../components/Typewriter.astro";
-import InteractiePaneel from "../components/InteractiePaneel.astro";
-import LanguageSwitch from "../components/LanguageSwitch.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import StickyFooterBar from "../../components/StickyFooterBar.astro";
+import Typewriter from "../../components/Typewriter.astro";
+import InteractiePaneel from "../../components/InteractiePaneel.astro";
+import LanguageSwitch from "../../components/LanguageSwitch.astro";
 ---
 
-<BaseLayout title="Maud Hendrix" nlPath="/" enPath="/">
+<BaseLayout title="Maud Hendrix" locale="en" nlPath="/" enPath="/">
   <main class="home">
     <InteractiePaneel />
 
@@ -22,8 +22,8 @@ import LanguageSwitch from "../components/LanguageSwitch.astro";
 
       <div class="wrap hero-grid">
         <div class="hero-meta">
-          <span class="eyebrow-index mono">MH — GENT, BE</span>
-          <LanguageSwitch locale="nl" nlPath="/" enPath="/" />
+          <span class="eyebrow-index mono">MH — GHENT, BE</span>
+          <LanguageSwitch locale="en" nlPath="/" enPath="/" />
         </div>
 
         <h1 class="hero-title" aria-label="Maud Hendrix">
@@ -32,34 +32,21 @@ import LanguageSwitch from "../components/LanguageSwitch.astro";
 
         <div class="hero-statement">
           <p>
-            Criminologie leert me stilstaan bij waarom mensen doen wat ze
-            doen. Mijn onderneming leert me dat in de praktijk brengen, dag na
-            dag, cijfer na cijfer. Het is minder een masterplan dan een
-            gewoonte die is blijven groeien.
+            Criminology teaches me to pause and ask why people do what they
+            do. My business teaches me to put that into practice, day after
+            day, figure after figure. It's less a master plan than a habit
+            that kept growing.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="entries wrap" aria-label="Kies een ingang">
-      <a href="/professioneel" class="entry entry--pro">
+    <section class="entries wrap" aria-label="Explore">
+      <a href="/en/professional" class="entry entry--pro">
         <div class="entry-body">
-          <span class="label label--on-dark">Ingang</span>
-          <h2>Professioneel</h2>
-          <p>Studie, ondernemerschap, projecten en artikelen.</p>
-        </div>
-        <span class="entry-arrow" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path d="M3 15L15 3M15 3H6M15 3V12" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
-          </svg>
-        </span>
-      </a>
-
-      <a href="/prive" class="entry entry--prive">
-        <div class="entry-body">
-          <span class="label label--on-dark">Ingang</span>
-          <h2>Privé</h2>
-          <p>Interesses, inspiratie en sociale kanalen.</p>
+          <span class="label label--on-dark">Explore</span>
+          <h2>Professional</h2>
+          <p>Studies, entrepreneurship, projects and articles.</p>
         </div>
         <span class="entry-arrow" aria-hidden="true">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -70,9 +57,9 @@ import LanguageSwitch from "../components/LanguageSwitch.astro";
     </section>
 
     <section class="blog-links wrap" aria-label="Blog">
-      <a href="/artikelen" class="blog-link blog-link--pro">
+      <a href="/en/articles" class="blog-link blog-link--pro">
         <span class="blog-link-dot" aria-hidden="true"></span>
-        Artikelen
+        Articles
         <span aria-hidden="true">→</span>
       </a>
     </section>
@@ -92,13 +79,13 @@ import LanguageSwitch from "../components/LanguageSwitch.astro";
             </svg>
           </span>
           <button type="button" class="btn btn--solid" id="mail-reveal-btn" aria-expanded="false" aria-controls="email-reveal">
-            Stuur een mail
+            Send an email
           </button>
         </div>
         <div class="email-reveal" id="email-reveal">
           <div class="email-reveal-inner">
             <a href="mailto:StudioMaud@outlook.com" class="mono email-link">StudioMaud@outlook.com</a>
-            <button type="button" class="copy-btn" id="copy-email-btn" aria-label="E-mailadres kopiëren">
+            <button type="button" class="copy-btn" id="copy-email-btn" aria-label="Copy email address">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <rect x="4.5" y="4.5" width="8" height="8" stroke="currentColor" stroke-width="1.4"/>
                 <rect x="1.5" y="1.5" width="8" height="8" stroke="currentColor" stroke-width="1.4"/>
@@ -131,7 +118,7 @@ import LanguageSwitch from "../components/LanguageSwitch.astro";
     </script>
 
   </main>
-  <StickyFooterBar subtitle="Criminologie · Ondernemerschap" />
+  <StickyFooterBar subtitle="Criminology · Entrepreneurship" />
 </BaseLayout>
 
 <style>
@@ -289,7 +276,7 @@ import LanguageSwitch from "../components/LanguageSwitch.astro";
   .entries {
     flex: 1;
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 1fr;
     gap: clamp(20px, 3vw, 36px);
     padding-block: clamp(28px, 5vw, 48px);
     align-items: stretch;
@@ -321,23 +308,12 @@ import LanguageSwitch from "../components/LanguageSwitch.astro";
     background: var(--mustard);
     color: var(--ink);
   }
-  .entry--prive {
-    background: var(--navy);
-    color: var(--paper);
-    margin-top: clamp(0px, 4vw, 32px);
-  }
 
   .entry--pro .label {
     color: var(--navy-deep);
   }
   .entry--pro .label::before {
     background: var(--ink);
-  }
-  .entry--prive .label {
-    color: var(--mustard);
-  }
-  .entry--prive .label::before {
-    background: var(--cream);
   }
 
   .entry-body {
@@ -372,19 +348,6 @@ import LanguageSwitch from "../components/LanguageSwitch.astro";
   .entry--pro .entry-arrow {
     background: var(--navy);
     color: var(--cream);
-  }
-  .entry--prive .entry-arrow {
-    background: var(--mustard);
-    color: var(--ink);
-  }
-
-  @media (max-width: 780px) {
-    .entries {
-      grid-template-columns: 1fr;
-    }
-    .entry--prive {
-      margin-top: 0;
-    }
   }
 
   /* ---------- BLOG LINKS ---------- */

@@ -1,13 +1,13 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import SiteHeader from "../../components/SiteHeader.astro";
-import StickyFooterBar from "../../components/StickyFooterBar.astro";
-import ArticleCard from "../../components/ArticleCard.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
+import StickyFooterBar from "../../../components/StickyFooterBar.astro";
+import ArticleCard from "../../../components/ArticleCard.astro";
 import { getCollection } from "astro:content";
 
 const FEATURED_SLUG = "boosten-op-vinted";
 
-const articles = (await getCollection("articlesNl")).sort((a, b) => {
+const articles = (await getCollection("articlesEn")).sort((a, b) => {
   if (a.id === FEATURED_SLUG) return -1;
   if (b.id === FEATURED_SLUG) return 1;
   return a.data.title.localeCompare(b.data.title);
@@ -15,22 +15,23 @@ const articles = (await getCollection("articlesNl")).sort((a, b) => {
 ---
 
 <BaseLayout
-  title="Artikelen — Maud Hendrix"
-  description="Artikelen over reselling, Vinted en data-gedreven ondernemen, geschreven door Maud Hendrix."
+  title="Articles — Maud Hendrix"
+  description="Articles on reselling, Vinted and data-driven entrepreneurship, written by Maud Hendrix."
+  locale="en"
   nlPath="/artikelen"
   enPath="/articles"
 >
-  <SiteHeader world="pro" nlPath="/artikelen" enPath="/articles" />
+  <SiteHeader world="pro" locale="en" nlPath="/artikelen" enPath="/articles" />
   <main class="listing">
     <section class="wrap head">
       <span class="label">Maud Hendrix</span>
-      <h1>Artikelen</h1>
+      <h1>Articles</h1>
     </section>
     <section class="wrap grid">
       {
         articles.map((a) => (
           <ArticleCard
-            href={`/artikelen/${a.id}`}
+            href={`/en/articles/${a.id}`}
             tag={a.data.tag}
             title={a.data.title}
             excerpt={a.data.excerpt}
@@ -40,7 +41,7 @@ const articles = (await getCollection("articlesNl")).sort((a, b) => {
       }
     </section>
   </main>
-  <StickyFooterBar showVat />
+  <StickyFooterBar showVat subtitle="Ghent, Belgium" />
 </BaseLayout>
 
 <style>

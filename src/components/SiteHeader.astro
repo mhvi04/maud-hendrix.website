@@ -1,24 +1,43 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { useTranslations, type Language } from "../i18n/ui";
+import LanguageSwitch from "./LanguageSwitch.astro";
+
 interface Props {
   world: "pro" | "prive";
+  locale?: Language;
+  nlPath?: string;
+  enPath?: string;
 }
-const { world } = Astro.props;
+const { world, locale = "nl", nlPath, enPath } = Astro.props;
+
+// Privé heeft geen Engelse versie, dus alleen de pro-wereld toont een
+// wissel tussen Professioneel en Privé. De taalwissel wordt alleen getoond
+// als de pagina zijn vertaalde tegenhanger meegeeft, en nooit op /prive.
 const otherHref = world === "pro" ? "/prive" : "/professioneel";
 const otherLabel = world === "pro" ? "Privé" : "Professioneel";
 const accent = world === "pro" ? "var(--mustard)" : "var(--rust)";
+const showLanguageSwitch = world === "pro" && Boolean(nlPath) && Boolean(enPath);
+const homeHref = getRelativeLocaleUrl(locale, "/");
+const t = useTranslations(locale).nav;
 ---
 
 <header class="site-header">
   <div class="wrap bar">
-    <a href="/" class="mark">
+    <a href={homeHref} class="mark">
       <span class="mark-block" style={`background:${accent}`}></span>
       Maud Hendrix
     </a>
     <nav class="links">
-      <a href="/" class="home-link">Start</a>
-      <a href={otherHref} class="switch">
-        {otherLabel} <span aria-hidden="true">→</span>
-      </a>
+      <a href={homeHref} class="home-link">{t.home}</a>
+      {locale === "nl" && (
+        <a href={otherHref} class="switch">
+          {otherLabel} <span aria-hidden="true">→</span>
+        </a>
+      )}
+      {showLanguageSwitch && (
+        <LanguageSwitch locale={locale} nlPath={nlPath!} enPath={enPath!} />
+      )}
     </nav>
   </div>
 </header>

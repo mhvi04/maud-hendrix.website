@@ -1,22 +1,29 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
-const articles = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/articles" }),
-  schema: z.object({
-    title: z.string(),
-    excerpt: z.string(),
-    date: z.string(),
-    tag: z.string(),
-    draft: z.boolean().optional().default(false),
-    faq: z
-      .array(z.object({ question: z.string(), answer: z.string() }))
-      .optional(),
-    // Alleen gezet wanneer dit artikel dezelfde kernthematiek/data behandelt
-    // als een ander artikel op de site — voorkomt keyword-kannibalisatie door
-    // de canonical naar de hoofdversie te laten wijzen.
-    canonicalPath: z.string().optional(),
-  }),
+const articleSchema = z.object({
+  title: z.string(),
+  excerpt: z.string(),
+  date: z.string(),
+  tag: z.string(),
+  draft: z.boolean().optional().default(false),
+  faq: z
+    .array(z.object({ question: z.string(), answer: z.string() }))
+    .optional(),
+  // Alleen gezet wanneer dit artikel dezelfde kernthematiek/data behandelt
+  // als een ander artikel op de site — voorkomt keyword-kannibalisatie door
+  // de canonical naar de hoofdversie te laten wijzen.
+  canonicalPath: z.string().optional(),
+});
+
+const articlesNl = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/artikelen/nl" }),
+  schema: articleSchema,
+});
+
+const articlesEn = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/artikelen/en" }),
+  schema: articleSchema,
 });
 
 const resellerGidsen = defineCollection({
@@ -39,4 +46,4 @@ const resellerGidsen = defineCollection({
   }),
 });
 
-export const collections = { articles, resellerGidsen };
+export const collections = { articlesNl, articlesEn, resellerGidsen };

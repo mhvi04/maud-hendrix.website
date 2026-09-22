@@ -1,13 +1,13 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import SiteHeader from "../../components/SiteHeader.astro";
-import StickyFooterBar from "../../components/StickyFooterBar.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
+import StickyFooterBar from "../../../components/StickyFooterBar.astro";
 import { getCollection, render } from "astro:content";
 import { existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
 export async function getStaticPaths() {
-  const articles = await getCollection("articlesNl");
+  const articles = await getCollection("articlesEn");
   return articles.map((entry) => ({
     params: { slug: entry.id },
     props: { entry },
@@ -18,10 +18,10 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 const publishedDate = entry.data.date.startsWith("[") ? undefined : entry.data.date;
 
-// Alleen een taalwissel/hreflang tonen als er ook echt een Engelse
-// tegenhanger met dezelfde slug bestaat.
-const englishArticles = await getCollection("articlesEn");
-const hasEnglishVersion = englishArticles.some((e) => e.id === entry.id);
+// Only show a language switch/hreflang if the Dutch counterpart with the
+// same slug actually exists.
+const dutchArticles = await getCollection("articlesNl");
+const hasDutchVersion = dutchArticles.some((e) => e.id === entry.id);
 const nlPath = `/artikelen/${entry.id}`;
 const enPath = `/articles/${entry.id}`;
 
@@ -41,9 +41,9 @@ const faqJsonLd =
       }
     : null;
 
-// Per-artikel og:image, indien aanwezig in public/og/<slug>.png — anders valt
-// BaseLayout terug op de sitewide og-default.png.
-const ownOgImagePath = fileURLToPath(new URL(`../../../public/og/${entry.id}.png`, import.meta.url));
+// Per-article og:image, when present in public/og/<slug>.png — same image
+// is shared across locales since it's a graphic, not localized text.
+const ownOgImagePath = fileURLToPath(new URL(`../../../../public/og/${entry.id}.png`, import.meta.url));
 const ogImage = existsSync(ownOgImagePath) ? `/og/${entry.id}.png` : undefined;
 ---
 
@@ -55,20 +55,22 @@ const ogImage = existsSync(ownOgImagePath) ? `/og/${entry.id}.png` : undefined;
   noindex={entry.data.draft}
   canonicalPath={entry.data.canonicalPath}
   image={ogImage}
-  nlPath={hasEnglishVersion ? nlPath : undefined}
-  enPath={hasEnglishVersion ? enPath : undefined}
+  locale="en"
+  nlPath={hasDutchVersion ? nlPath : undefined}
+  enPath={hasDutchVersion ? enPath : undefined}
 >
   {faqJsonLd && (
     <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} is:inline />
   )}
   <SiteHeader
     world="pro"
-    nlPath={hasEnglishVersion ? nlPath : undefined}
-    enPath={hasEnglishVersion ? enPath : undefined}
+    locale="en"
+    nlPath={hasDutchVersion ? nlPath : undefined}
+    enPath={hasDutchVersion ? enPath : undefined}
   />
   <main class="article">
     <div class="wrap">
-      <a href="/artikelen" class="back mono">← Alle artikelen</a>
+      <a href="/en/articles" class="back mono">← All articles</a>
       <span class="tag mono">{entry.data.tag}</span>
       <h1>{entry.data.title}</h1>
       <p class="date mono">{entry.data.date}</p>
@@ -77,7 +79,7 @@ const ogImage = existsSync(ownOgImagePath) ? `/og/${entry.id}.png` : undefined;
       </div>
     </div>
   </main>
-  <StickyFooterBar showVat />
+  <StickyFooterBar showVat subtitle="Ghent, Belgium" />
 </BaseLayout>
 
 <style>
