@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PinGate from "../../components/PinGate.astro";
 import { DAYS, DAY_LABELS, ENTRY_CATEGORIES } from "../../lib/planner-types";
 import { CATEGORY_COLORS } from "../../lib/planner-constants";
 ---
@@ -9,6 +10,7 @@ import { CATEGORY_COLORS } from "../../lib/planner-constants";
   description="Persoonlijke weekplanner semester 1, AJ26-27."
   noindex={true}
 >
+  <PinGate code="2004" storageKey="planner-gate-unlocked">
   <div class="planner" id="planner-root">
     <header class="pl-header">
       <div class="pl-header-bar">
@@ -159,6 +161,7 @@ import { CATEGORY_COLORS } from "../../lib/planner-constants";
   </dialog>
 
   <div id="print-root" class="pl-print-root" aria-hidden="true"></div>
+  </PinGate>
 </BaseLayout>
 
 <script>
