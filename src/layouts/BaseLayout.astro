@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import PersonSchema from "../components/PersonSchema.astro";
+import SmoothScroll from "../components/SmoothScroll.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import type { Language } from "../i18n/ui";
 
@@ -150,6 +151,7 @@ const jsonLd =
       </Fragment>
     )}
 
+    <SmoothScroll />
     <slot />
   </body>
 </html>

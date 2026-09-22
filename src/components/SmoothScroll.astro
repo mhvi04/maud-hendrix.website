@@ -1,0 +1,107 @@
+---
+// SmoothScroll.astro
+// Vangt clicks op interne anchor-links (href="#...") site-wide af en
+// animeert de scroll zelf, in plaats van te vertrouwen op de CSS
+// `scroll-behavior: smooth` uit global.css (die geen controle geeft over
+// duur/easing en geen rekening houdt met de hoogte van de sticky header).
+// Respecteert zowel de OS-voorkeur (prefers-reduced-motion) als de
+// handmatige "Verminder animatie"-toggle (html.reduce-motion) uit
+// InteractiePaneel: in beide gevallen wordt er instant gesprongen.
+---
+
+<script>
+  const DURATION_MS = 500;
+  const HEADER_GAP = 16;
+
+  function prefersReducedMotion(): boolean {
+    return (
+      document.documentElement.classList.contains("reduce-motion") ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    );
+  }
+
+  function getHeaderOffset(): number {
+    const header = document.querySelector<HTMLElement>(".site-header, .site-nav");
+    return header ? header.getBoundingClientRect().height : 0;
+  }
+
+  // Voor position:sticky (of fixed) elementen geven getBoundingClientRect()
+  // én offsetTop de huidige, vastgeplakte schermpositie terug in plaats van
+  // de natuurlijke documentpositie. Dat is precies het geval voor het doel
+  // van href="#top" (de sticky nav zelf). Door tijdelijk naar `static` te
+  // schakelen — synchroon, dus zonder zichtbare flits — meten we de echte
+  // positie in de documentflow.
+  function getDocumentTop(el: HTMLElement): number {
+    const position = getComputedStyle(el).position;
+    if (position !== "sticky" && position !== "fixed") {
+      return el.getBoundingClientRect().top + window.scrollY;
+    }
+    const originalPosition = el.style.position;
+    el.style.position = "static";
+    const top = el.getBoundingClientRect().top + window.scrollY;
+    el.style.position = originalPosition;
+    return top;
+  }
+
+  function easeInOutQuad(t: number): number {
+    return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+  }
+
+  function focusTarget(target: HTMLElement) {
+    const hadTabindex = target.hasAttribute("tabindex");
+    if (!hadTabindex) target.setAttribute("tabindex", "-1");
+    target.focus({ preventScroll: true });
+    if (!hadTabindex) {
+      target.addEventListener("blur", () => target.removeAttribute("tabindex"), { once: true });
+    }
+  }
+
+  // Elke stap gebruikt expliciet behavior:"instant". Zonder dat zou de
+  // bestaande `scroll-behavior: smooth` uit global.css ook déze losse
+  // scrollTo-aanroepen zelf smooth maken (dat geldt ook voor de "auto"
+  // waarde, die letterlijk verwijst naar de CSS-property), waardoor de
+  // eigen rAF-easing hieronder met de browser-animatie zou vechten.
+  function setScrollY(y: number) {
+    window.scrollTo({ top: y, left: 0, behavior: "instant" });
+  }
+
+  function scrollToTarget(target: HTMLElement, instant: boolean) {
+    const startY = window.scrollY;
+    const targetY = Math.max(0, getDocumentTop(target) - getHeaderOffset() - HEADER_GAP);
+
+    if (instant) {
+      setScrollY(targetY);
+      focusTarget(target);
+      return;
+    }
+
+    const distance = targetY - startY;
+    const startTime = performance.now();
+
+    function step(now: number) {
+      const progress = Math.min((now - startTime) / DURATION_MS, 1);
+      setScrollY(startY + distance * easeInOutQuad(progress));
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        focusTarget(target);
+      }
+    }
+    requestAnimationFrame(step);
+  }
+
+  document.addEventListener("click", (event) => {
+    const link = (event.target as HTMLElement).closest<HTMLAnchorElement>("a[href^='#']");
+    if (!link) return;
+
+    const hash = link.getAttribute("href");
+    if (!hash || hash === "#") return;
+
+    const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+    if (!target) return;
+
+    event.preventDefault();
+    scrollToTarget(target, prefersReducedMotion());
+    history.pushState(null, "", hash);
+  });
+</script>
