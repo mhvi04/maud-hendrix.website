@@ -9,14 +9,15 @@ interface Props {
   locale: "nl" | "en";
   nlPath: string;
   enPath: string;
+  inline?: boolean;
 }
 
-const { locale, nlPath, enPath } = Astro.props;
+const { locale, nlPath, enPath, inline = false } = Astro.props;
 const nlHref = getRelativeLocaleUrl("nl", nlPath);
 const enHref = getRelativeLocaleUrl("en", enPath);
 ---
 
-<div class="lang-picker" role="group" aria-label="Taal / Language">
+<div class={`lang-picker ${inline ? "lang-picker--inline" : ""}`} role="group" aria-label="Taal / Language">
   {locale === "nl" ? (
     <span class="lang-btn lang-btn--active mono" aria-current="true">NL</span>
   ) : (
@@ -37,6 +38,9 @@ const enHref = getRelativeLocaleUrl("en", enPath);
     z-index: 60;
     display: flex;
     gap: 6px;
+  }
+  .lang-picker--inline {
+    position: static;
   }
   .lang-btn {
     display: flex;

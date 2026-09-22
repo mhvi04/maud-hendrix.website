@@ -3,7 +3,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import StickyFooterBar from "../../components/StickyFooterBar.astro";
 import CountUp from "../../components/CountUp.astro";
-import PhotoGallery from "../../components/PhotoGallery.astro";
 import Gelezen from "../../components/Gelezen.astro";
 
 const interests = [
@@ -91,19 +90,10 @@ const interests = [
       </div>
     </section>
 
-    <section class="row wrap">
+    <section class="row wrap row--last">
       <span class="row-label label">Gelezen</span>
       <div class="row-body">
         <Gelezen />
-      </div>
-    </section>
-
-    <section class="row wrap row--last">
-      <span class="row-label letter accent">C</span>
-      <div class="row-body">
-        <h3>Fotografie</h3>
-        <p class="section-intro">Eigen foto's van dieren en natuur.</p>
-        <PhotoGallery />
       </div>
     </section>
   </main>

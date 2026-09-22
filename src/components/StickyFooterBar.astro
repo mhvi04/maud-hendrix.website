@@ -20,12 +20,7 @@ const { showVat = false, subtitle = "Gent, België" } = Astro.props;
 </footer>
 
 <style>
-  /* Hoogte ~2 tot 3cm, schaalt mee met de viewport: clamp(4.75rem, 9vw, 5.75rem) ≈ 76–92px. */
   .sticky-footer-bar {
-    position: fixed;
-    inset-block-end: 0;
-    inset-inline: 0;
-    z-index: 40;
     height: var(--footer-bar-h);
     background: var(--cream);
     border-top: 1px solid var(--ink);

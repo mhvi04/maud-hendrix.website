@@ -7,9 +7,13 @@
 // Functioneel: zet echte dark mode + reduced-motion classes op <html>,
 // bewaart de keuze in localStorage. Staat als compact icoon vast in de
 // rechterbovenhoek en vouwt open bij klik.
+interface Props {
+  inline?: boolean;
+}
+const { inline = false } = Astro.props;
 ---
 
-<div class="interactie-paneel" data-panel>
+<div class={`interactie-paneel ${inline ? "interactie-paneel--inline" : ""}`} data-panel>
   <button
     class="paneel-icon"
     data-toggle-panel
@@ -76,6 +80,11 @@
     top: clamp(14px, 3vw, 24px);
     right: clamp(14px, 3vw, 24px);
     z-index: 60;
+  }
+  .interactie-paneel--inline {
+    position: relative;
+    top: auto;
+    right: auto;
   }
 
   .paneel-icon {
