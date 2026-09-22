@@ -145,6 +145,22 @@ button {
   background: var(--cream);
 }
 
+.label--on-mustard {
+  color: var(--navy-deep);
+}
+.label--on-mustard::before {
+  background: var(--ink);
+}
+
+/* Cursief accent binnen titels: laatste woord/woorden van een zin. */
+h1 em,
+h2 em,
+h3 em,
+h4 em {
+  font-style: italic;
+  font-weight: 500;
+}
+
 .mono {
   font-family: var(--font-mono);
 }
