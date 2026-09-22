@@ -2,40 +2,56 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import StickyFooterBar from "../../components/StickyFooterBar.astro";
-import ArticleCard from "../../components/ArticleCard.astro";
 import { getCollection } from "astro:content";
+import { estimateReadingMinutes } from "../../lib/reading-time";
 
-const FEATURED_SLUG = "boosten-op-vinted";
+const entries = (await getCollection("articlesNl", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.localeCompare(a.data.date) || a.data.title.localeCompare(b.data.title)
+);
 
-const articles = (await getCollection("articlesNl")).sort((a, b) => {
-  if (a.id === FEATURED_SLUG) return -1;
-  if (b.id === FEATURED_SLUG) return 1;
-  return a.data.title.localeCompare(b.data.title);
-});
+const articles = entries.map((entry) => ({
+  href: `/artikelen/${entry.id}`,
+  tag: entry.data.tag,
+  title: entry.data.title,
+  excerpt: entry.data.excerpt,
+  readingMinutes: estimateReadingMinutes(entry.body ?? ""),
+}));
+
+// Eyebrow en ondertitel volgen uit de categorieën die echt in de artikelen
+// voorkomen (frontmatter-tag), nooit hardcoded.
+const categories = [...new Set(entries.map((e) => e.data.tag))];
+const eyebrow = categories.join(" / ");
+const subtitle =
+  categories.length > 1
+    ? `Praktijkkennis over ${categories.join(", ").toLowerCase()} op Vinted, gebaseerd op eigen verkoopdata.`
+    : "Praktijkkennis over verkopen op Vinted: cijfers, patronen en lessen uit eigen transacties.";
 ---
 
 <BaseLayout
-  title="Artikelen — Maud Hendrix"
-  description="Artikelen over reselling, Vinted en data-gedreven ondernemen, geschreven door Maud Hendrix."
+  title="De blog van Maud — Maud Hendrix"
+  description="Praktijkkennis over reselling op Vinted, gebaseerd op eigen verkoopdata en transacties."
   nlPath="/artikelen"
   enPath="/articles"
 >
   <SiteHeader world="artikelen" nlPath="/artikelen" enPath="/articles" />
   <main class="listing">
     <section class="wrap head">
-      <span class="label">Maud Hendrix</span>
-      <h1>Artikelen</h1>
+      <span class="label">{eyebrow}</span>
+      <h1>De blog <em>van Maud.</em></h1>
+      <p class="head-sub">{subtitle}</p>
     </section>
+    <hr class="rule" />
+
     <section class="wrap grid">
       {
         articles.map((a) => (
-          <ArticleCard
-            href={`/artikelen/${a.id}`}
-            tag={a.data.tag}
-            title={a.data.title}
-            excerpt={a.data.excerpt}
-            date={a.data.date}
-          />
+          <a href={a.href} class="blog-card">
+            <span class="blog-card-bar" aria-hidden="true"></span>
+            <span class="blog-card-tag mono">{a.tag}</span>
+            <h2 class="blog-card-title">{a.title}</h2>
+            <p class="blog-card-excerpt">{a.excerpt}</p>
+            <span class="blog-card-time mono">{a.readingMinutes} min leestijd</span>
+          </a>
         ))
       }
     </section>
@@ -48,21 +64,96 @@ const articles = (await getCollection("articlesNl")).sort((a, b) => {
     background: var(--cream);
   }
   .head {
-    padding-block: clamp(48px, 7vw, 84px) clamp(32px, 5vw, 48px);
-    border-bottom: 1px solid var(--ink);
+    padding-block: clamp(48px, 7vw, 84px) clamp(28px, 4vw, 40px);
   }
   .head h1 {
-    font-size: clamp(36px, 5vw, 56px);
-    font-weight: 600;
+    font-size: clamp(36px, 5.5vw, 60px);
+    font-weight: 800;
     margin-block: 14px 12px;
+    line-height: 1.05;
   }
-  .head p {
-    font-size: 16px;
+  .head-sub {
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 62ch;
+    opacity: 0.85;
   }
+
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 22px;
-    padding-block: clamp(32px, 5vw, 56px);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding-block: clamp(40px, 6vw, 64px);
+  }
+  @media (max-width: 980px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+  }
+  @media (max-width: 640px) {
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+  }
+
+  .blog-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .blog-card-bar {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: var(--navy);
+    margin-bottom: 18px;
+    transition: background 0.15s ease;
+  }
+  .blog-card:hover .blog-card-bar {
+    background: var(--mustard);
+  }
+  .blog-card-tag {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mustard-deep);
+  }
+  .blog-card-title {
+    font-family: var(--font-display);
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-block: 10px 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .blog-card:hover .blog-card-title {
+    color: var(--navy);
+    text-decoration: underline;
+    text-decoration-color: var(--mustard);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+  .blog-card-excerpt {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink);
+    opacity: 0.8;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex-grow: 1;
+  }
+  .blog-card-time {
+    margin-top: 16px;
+    font-size: 12px;
+    opacity: 0.5;
   }
 </style>
