@@ -6,6 +6,7 @@ import CountUp from "../../components/CountUp.astro";
 import PhotoGallery from "../../components/PhotoGallery.astro";
 import Gelezen from "../../components/Gelezen.astro";
 import PinGate from "../../components/PinGate.astro";
+import ShapeDivider from "../../components/ShapeDivider.astro";
 
 const socials = [
   {
@@ -39,6 +40,7 @@ const interests = [
       <div class="wrap intro-grid">
         <span class="intro-shape" aria-hidden="true"></span>
         <div class="intro-copy">
+          <span class="label">02 / Privé</span>
           <h1>Privé</h1>
           <p class="intro-lede">
             Een verzameling van interesses, kleine ontdekkingen en dingen
@@ -48,9 +50,12 @@ const interests = [
       </div>
     </section>
 
+    <ShapeDivider />
+
     <section class="row wrap">
-      <span class="row-label label">Sociale kanalen</span>
+      <span class="row-letter" aria-hidden="true">A</span>
       <div class="row-body">
+        <h2 class="row-title">Sociale kanalen</h2>
         <p class="section-intro">Waar ik online rondhang, buiten Vinted.</p>
         <div class="socials">
         {
@@ -86,8 +91,10 @@ const interests = [
     </section>
 
     <section class="row wrap">
-      <span class="row-label label">Interesses</span>
-      <div class="row-body interests">
+      <span class="row-letter" aria-hidden="true">B</span>
+      <div class="row-body">
+        <h2 class="row-title">Interesses</h2>
+        <div class="interests">
         {
           interests.map((i) => (
             <div class="interest">
@@ -96,19 +103,22 @@ const interests = [
             </div>
           ))
         }
+        </div>
       </div>
     </section>
 
     <section class="row wrap">
-      <span class="row-label label">Gelezen</span>
+      <span class="row-letter" aria-hidden="true">C</span>
       <div class="row-body">
+        <h2 class="row-title">Gelezen</h2>
         <Gelezen />
       </div>
     </section>
 
     <section class="row wrap row--last">
-      <span class="row-label label">Fotografie</span>
+      <span class="row-letter" aria-hidden="true">D</span>
       <div class="row-body">
+        <h2 class="row-title">Fotografie</h2>
         <PhotoGallery />
       </div>
     </section>
@@ -139,6 +149,7 @@ const interests = [
   .intro-copy h1 {
     font-size: clamp(40px, 6vw, 68px);
     font-weight: 600;
+    margin-top: 16px;
     line-height: 1.05;
   }
   .intro-lede {
@@ -154,7 +165,7 @@ const interests = [
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    background: var(--mustard);
+    background: var(--navy);
     z-index: 0;
   }
 
@@ -168,8 +179,20 @@ const interests = [
   .row--last {
     border-bottom: 3px solid var(--ink);
   }
-  .row-label {
-    padding-top: 4px;
+  .row-letter {
+    display: block;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(40px, 5.5vw, 58px);
+    line-height: 1;
+    color: var(--navy);
+    opacity: 0.45;
+  }
+  .row-title {
+    font-size: clamp(22px, 2.8vw, 30px);
+    font-weight: 600;
+    margin-bottom: 16px;
   }
   .row-body {
     min-width: 0;
@@ -178,6 +201,9 @@ const interests = [
     .row {
       grid-template-columns: 1fr;
       gap: 14px;
+    }
+    .row-letter {
+      font-size: 34px;
     }
   }
 

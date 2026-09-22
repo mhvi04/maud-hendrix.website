@@ -1,0 +1,28 @@
+---
+// Rij afwisselende halve cirkels (marineblauw/mosterd) als geometrisch
+// scheidingselement, in lijn met het De Stijl-vormenpalet van de site.
+const segments = Array.from({ length: 14 });
+---
+
+<div class="shape-strip" aria-hidden="true">
+  {segments.map((_, i) => <span class={`half-circle ${i % 2 === 0 ? "is-navy" : "is-mustard"}`}></span>)}
+</div>
+
+<style>
+  .shape-strip {
+    display: flex;
+    width: 100%;
+    height: clamp(18px, 2.6vw, 30px);
+  }
+  .half-circle {
+    flex: 1 1 0;
+    height: 100%;
+    border-radius: 999px 999px 0 0;
+  }
+  .is-navy {
+    background: var(--navy);
+  }
+  .is-mustard {
+    background: var(--mustard);
+  }
+</style>
