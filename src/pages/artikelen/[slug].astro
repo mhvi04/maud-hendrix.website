@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import StickyFooterBar from "../../components/StickyFooterBar.astro";
+import TableOfContents from "../../components/TableOfContents.astro";
 import { getCollection, render } from "astro:content";
 import { existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -15,7 +16,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 const publishedDate = entry.data.date.startsWith("[") ? undefined : entry.data.date;
 
 // Alleen een taalwissel/hreflang tonen als er ook echt een Engelse
@@ -68,12 +69,17 @@ const ogImage = existsSync(ownOgImagePath) ? `/og/${entry.id}.png` : undefined;
   />
   <main class="article">
     <div class="wrap">
-      <a href="/artikelen" class="back mono">← Alle artikelen</a>
-      <span class="tag mono">{entry.data.tag}</span>
-      <h1>{entry.data.title}</h1>
-      <p class="date mono">{entry.data.date}</p>
-      <div class="prose">
-        <Content />
+      <div class="intro">
+        <a href="/artikelen" class="back mono">← Alle artikelen</a>
+        <span class="tag mono">{entry.data.tag}</span>
+        <h1>{entry.data.title}</h1>
+        <p class="date mono">{entry.data.date}</p>
+      </div>
+      <div class="layout">
+        <TableOfContents headings={headings} locale="nl" />
+        <div class="prose">
+          <Content />
+        </div>
       </div>
     </div>
   </main>
@@ -84,9 +90,33 @@ const ogImage = existsSync(ownOgImagePath) ? `/og/${entry.id}.png` : undefined;
   .article {
     background: var(--cream);
     padding-block: clamp(40px, 6vw, 72px) clamp(56px, 8vw, 96px);
+    --toc-offset: 88px;
   }
   .wrap {
+    max-width: 1016px;
+  }
+  .intro {
     max-width: 720px;
+  }
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  @media (min-width: 900px) {
+    .layout {
+      grid-template-columns: minmax(0, 720px) 240px;
+      gap: 56px;
+    }
+    .layout > .prose {
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .layout > :global(.toc--desktop) {
+      grid-column: 2;
+      grid-row: 1;
+    }
   }
   .back {
     display: inline-block;
@@ -127,6 +157,13 @@ const ogImage = existsSync(ownOgImagePath) ? `/og/${entry.id}.png` : undefined;
     font-size: 24px;
     font-weight: 600;
     margin-block: 36px 14px;
+    scroll-margin-top: var(--toc-offset);
+  }
+  .prose :global(h3) {
+    font-size: 19px;
+    font-weight: 600;
+    margin-block: 24px 10px;
+    scroll-margin-top: var(--toc-offset);
   }
   .prose :global(p) {
     margin-bottom: 18px;
