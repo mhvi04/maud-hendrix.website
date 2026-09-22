@@ -5,13 +5,18 @@ interface Tool {
   accent: "navy" | "mustard";
 }
 
+interface Props {
+  locale?: "nl" | "en";
+}
+const { locale = "nl" } = Astro.props;
+
 const tools: Tool[] = [
   { name: "Word", shape: "square", accent: "navy" },
   { name: "Excel", shape: "ring", accent: "navy" },
   { name: "PowerPoint", shape: "arc", accent: "mustard" },
   { name: "Canva", shape: "dome", accent: "mustard" },
   { name: "CapCut", shape: "triangle", accent: "navy" },
-  { name: "AI-tools", shape: "node", accent: "mustard" },
+  { name: locale === "en" ? "AI tools" : "AI-tools", shape: "node", accent: "mustard" },
 ];
 ---
 

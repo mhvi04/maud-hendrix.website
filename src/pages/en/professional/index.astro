@@ -1,21 +1,22 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import SiteHeader from "../../components/SiteHeader.astro";
-import StickyFooterBar from "../../components/StickyFooterBar.astro";
-import Timeline from "../../components/Timeline.astro";
-import SkillsMarquee from "../../components/SkillsMarquee.astro";
-import ToolsPattern from "../../components/ToolsPattern.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
+import StickyFooterBar from "../../../components/StickyFooterBar.astro";
+import Timeline from "../../../components/Timeline.astro";
+import SkillsMarquee from "../../../components/SkillsMarquee.astro";
+import ToolsPattern from "../../../components/ToolsPattern.astro";
 import { Image } from "astro:assets";
-import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
+import vintedProfielOud from "../../../assets/proof/vinted-profiel-oud.jpg";
 ---
 
 <BaseLayout
-  title="Professioneel — Maud Hendrix"
-  description="Criminologie, ondernemerschap en projecten van Maud Hendrix."
+  title="Professional — Maud Hendrix"
+  description="Criminology, entrepreneurship and projects by Maud Hendrix."
+  locale="en"
   nlPath="/professioneel"
   enPath="/professional"
 >
-  <SiteHeader world="pro" nlPath="/professioneel" enPath="/professional" />
+  <SiteHeader world="pro" locale="en" nlPath="/professioneel" enPath="/professional" />
 
   <main class="pro">
     <!-- INTRO -->
@@ -23,16 +24,16 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
       <div class="wrap intro-grid">
         <span class="block-mark" aria-hidden="true"></span>
         <div class="intro-copy">
-          <span class="label">Profiel</span>
-          <h1>Ik ben Maud Hendrix</h1>
+          <span class="label">Profile</span>
+          <h1>I'm Maud Hendrix</h1>
           <p class="lede">
-            Ik ben student Criminologische Wetenschappen aan de UGent en
-            student-zelfstandige in tweedehands e-commerce. Criminologie leert
-            me gedrag en systemen analyseren. In mijn onderneming pas ik die
-           zelfde manier van denken dagelijks toe op data, prijszetting,
-            koopgedrag en operationele beslissingen. Zo combineer ik mijn
-            academische opleiding met praktijkervaring uit meer dan 2.500
-            transacties.
+            I'm a Criminological Sciences student at Ghent University and a
+            self-employed student in second-hand e-commerce. Criminology
+            teaches me to analyse behaviour and systems. In my business, I
+            apply that same way of thinking every day to data, pricing,
+            buying behaviour and operational decisions. That's how I combine
+            my academic background with hands-on experience from more than
+            2,500 transactions.
           </p>
           <div class="intro-links">
             <a
@@ -46,130 +47,129 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
       </div>
     </section>
 
-    <!-- STUDIE -->
+    <!-- EDUCATION -->
     <section class="row wrap">
-      <span class="row-label label">Studie</span>
+      <span class="row-label label">Education</span>
       <div class="row-body education">
         <div class="edu">
-          <span class="edu-period mono">2021 — verwacht 2026</span>
-          <h2>Bachelor Criminologische Wetenschappen — UGent</h2>
+          <span class="edu-period mono">2021 — expected 2026</span>
+          <h2>Bachelor's in Criminological Sciences — Ghent University</h2>
         </div>
         <div class="edu">
-          <span class="edu-period mono">Afgestudeerd 2022</span>
-          <h2>Humane Wetenschappen — GO! Atheneum Voskenslaan, Gent</h2>
-          <p>Afgestudeerd met cum laude.</p>
+          <span class="edu-period mono">Graduated 2022</span>
+          <h2>Humanities — GO! Atheneum Voskenslaan, Ghent</h2>
+          <p>Graduated with great distinction (cum laude).</p>
         </div>
       </div>
     </section>
 
-    <!-- VAARDIGHEDEN -->
+    <!-- SKILLS -->
     <section class="skills-section">
       <div class="wrap skills-head">
-        <span class="row-label label">Vaardigheden</span>
+        <span class="row-label label">Skills</span>
       </div>
-      <SkillsMarquee />
+      <SkillsMarquee locale="en" />
     </section>
 
-    <!-- TALEN & TOOLS -->
+    <!-- LANGUAGES & TOOLS -->
     <section class="row wrap">
-      <span class="row-label label">Talen & Tools</span>
+      <span class="row-label label">Languages & Tools</span>
       <div class="row-body langs-tools">
         <div class="langs">
-          <span class="subhead label">Talen</span>
+          <span class="subhead label">Languages</span>
           <ul class="lang-list">
             <li class="lang-row">
-              <span class="lang-name">Nederlands</span>
-              <span class="lang-level mono">C2 · moedertaal</span>
+              <span class="lang-name">Dutch</span>
+              <span class="lang-level mono">C2 · native</span>
             </li>
             <li class="lang-row">
-              <span class="lang-name">Engels</span>
+              <span class="lang-name">English</span>
               <span class="lang-level mono">B2</span>
             </li>
             <li class="lang-row">
-              <span class="lang-name">Frans</span>
+              <span class="lang-name">French</span>
               <span class="lang-level mono">A2</span>
             </li>
           </ul>
         </div>
         <div class="tools">
           <span class="subhead label">Software &amp; tools</span>
-          <ToolsPattern />
+          <ToolsPattern locale="en" />
         </div>
       </div>
     </section>
 
-    <!-- ERVARING -->
+    <!-- EXPERIENCE -->
     <section class="row wrap">
-      <span class="row-label label">Ervaring</span>
+      <span class="row-label label">Experience</span>
       <div class="row-body experience">
         <article class="exp">
           <div class="exp-head">
-            <h2>Student-zelfstandige — tweedehands e-commerce</h2>
-            <span class="exp-period mono">Februari 2025 — heden</span>
+            <h2>Self-employed student — second-hand e-commerce</h2>
+            <span class="exp-period mono">February 2025 — present</span>
           </div>
           <p class="exp-context">
-            Gent en omgeving. Officieel zelfstandige sinds februari 2025,
-            actief in de handel sinds mijn veertiende.
+            Ghent and surrounding area. Officially self-employed since
+            February 2025, active in trading since I was fourteen.
           </p>
           <ul>
             <li>
-              Meer dan 2.500 transacties, van sourcing en prijszetting tot
-              kwaliteitscontrole, verkoop en logistiek — allemaal in eigen
-              beheer.
+              More than 2,500 transactions, from sourcing and pricing to
+              quality control, sales and logistics, all handled in-house.
             </li>
             <li>
-              Eigen analysekader voor inkoopprijzen, marges, voorraadrotatie,
-              categorieprestaties en seizoenseffecten stuurt elke inkoop- en
-              prijsbeslissing.
+              A custom analytics framework for purchase prices, margins,
+              inventory turnover, category performance and seasonal effects
+              drives every buying and pricing decision.
             </li>
             <li>
-              Authenticiteits- en kwaliteitscontrole op merkkleding, met Ralph
-              Lauren als hoofdcategorie.
+              Authenticity and quality control on branded clothing, with
+              Ralph Lauren as the main category.
             </li>
           </ul>
         </article>
 
         <article class="exp exp--closed">
           <div class="exp-head">
-            <h2>Mede-oprichter — VintieBulk</h2>
-            <span class="exp-period mono">Afgerond</span>
+            <h2>Co-founder — VintieBulk</h2>
+            <span class="exp-period mono">Wound down</span>
           </div>
           <p class="exp-context">
-            B2B-aanbod van gecureerde partijen en resellerboxen met
-            tweedehands Ralph Lauren.
+            B2B offering of curated lots and reseller boxes of second-hand
+            Ralph Lauren.
           </p>
           <ul>
             <li>
-              Bouwde het aanbod op eigen transactiedata en verkoopervaring:
-              gecureerde partijen samengesteld op wat effectief verkoopt.
+              Built the offering on my own transaction data and sales
+              experience: curated lots assembled around what actually sells.
             </li>
-            <li>Bouwde de webshop, branding, content en klantencommunicatie op.</li>
+            <li>Built the webshop, branding, content and customer communication.</li>
           </ul>
         </article>
       </div>
     </section>
 
-    <!-- VOORGESCHIEDENIS -->
+    <!-- BACKSTORY -->
     <section class="row wrap">
-      <span class="row-label label">Voorgeschiedenis</span>
+      <span class="row-label label">Backstory</span>
       <div class="row-body voorgeschiedenis-body">
         <p>
-          Mijn reputatie bouwde ik op via
+          I built my reputation through
           <a
             class="inline-link"
             href="https://www.vinted.be/member/38856549-maudhendrix"
             target="_blank"
             rel="noopener">@maud.hendrix</a
           >
-          op Vinted: <span class="mono">1881</span> verkopen,
-          <span class="mono">5</span> sterren, <span class="mono">3233</span>
-          volgers, tot het account geblokkeerd werd. Studio Maud is het
-          vervolg.
+          on Vinted: <span class="mono">1,881</span> sales,
+          <span class="mono">5</span> stars, <span class="mono">3,233</span>
+          followers, until the account got banned. Studio Maud is the
+          sequel.
         </p>
         <div class="voorgeschiedenis-proof">
           <Image
             src={vintedProfielOud}
-            alt="Screenshot van het geblokkeerde Vinted-profiel @maud.hendrix: 5 sterren, 1881 verkopen, Gent, 3233 volgers"
+            alt="Screenshot of the banned Vinted profile @maud.hendrix: 5 stars, 1,881 sales, Ghent, 3,233 followers"
             loading="lazy"
             widths={[380, 600, 900]}
             sizes="(max-width: 680px) 90vw, 340px"
@@ -178,9 +178,9 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
       </div>
     </section>
 
-    <!-- ONDERNEMING -->
+    <!-- BUSINESS -->
     <section class="row wrap">
-      <span class="row-label label">Onderneming</span>
+      <span class="row-label label">Business</span>
       <div class="row-body projects">
         <a
           class="project"
@@ -188,24 +188,24 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
           target="_blank"
           rel="noopener"
         >
-          <span class="project-status mono">Actief</span>
+          <span class="project-status mono">Active</span>
           <h3>Studio Maud</h3>
           <p>
-            Data-gedreven tweedehands e-commerce op Vinted: 2.500+ transacties,
-            774 orders in 2025 aan 56% brutomarge, verkopersbeoordeling
-            4,81/5. Sourcing, prijszetting, kwaliteitscontrole en logistiek
-            allemaal in eigen beheer.
+            Data-driven second-hand e-commerce on Vinted: 2,500+
+            transactions, 774 orders in 2025 at a 56% gross margin, seller
+            rating 4.81/5. Sourcing, pricing, quality control and logistics,
+            all handled in-house.
           </p>
-          <span class="project-cta mono">Bekijk profiel →</span>
+          <span class="project-cta mono">View profile →</span>
         </a>
       </div>
     </section>
 
-    <!-- TRAJECT -->
+    <!-- JOURNEY -->
     <section class="row wrap traject">
-      <span class="row-label label">Traject</span>
+      <span class="row-label label">Journey</span>
       <div class="row-body">
-        <Timeline />
+        <Timeline locale="en" />
       </div>
     </section>
 
@@ -214,33 +214,33 @@ import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
       <div class="wrap contact-grid">
         <div>
           <span class="label label--on-dark">Contact</span>
-          <h2>Laten we praten.</h2>
+          <h2>Let's talk.</h2>
           <p>
-            Open voor stages, studentenjobs en samenwerkingen rond
-            reselling, e-commerce of data — en voor gesprekken die criminologie
-            en handel samenbrengen.
+            Open to internships, student jobs and collaborations around
+            reselling, e-commerce or data, and to conversations that bring
+            criminology and trade together.
           </p>
           <div class="contact-actions">
             <a class="btn btn--mustard" href="mailto:StudioMaud@outlook.com"
-              >Mail sturen</a
+              >Send an email</a
             >
           </div>
         </div>
         <div class="contact-meta">
-          <p class="mono"><span>Mail</span>StudioMaud@outlook.com</p>
+          <p class="mono"><span>Email</span>StudioMaud@outlook.com</p>
           <p class="mono">
             <span>LinkedIn</span>
             <a href="https://www.linkedin.com/in/maud-hendrix-522245374" target="_blank" rel="noopener"
               >maud-hendrix-522245374</a
             >
           </p>
-          <p class="mono"><span>Locatie</span>Gent, België</p>
+          <p class="mono"><span>Location</span>Ghent, Belgium</p>
         </div>
       </div>
     </section>
   </main>
 
-  <StickyFooterBar showVat />
+  <StickyFooterBar showVat subtitle="Ghent, Belgium" />
 </BaseLayout>
 
 <style>

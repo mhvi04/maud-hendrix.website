@@ -1,9 +1,23 @@
 ---
-const rows: string[][] = [
-  ["Contentontwikkeling", "Digitale marketing", "Klantenondersteuning", "Bedrijfscommunicatie", "Copywriting"],
-  ["Merkbekendheid", "Content-strategie", "Communicatie van sociale media", "Communicatie"],
-  ["Duurzaamheid", "Klantentevredenheid", "Marketing op social media", "Ondernemerschap"],
-];
+interface Props {
+  locale?: "nl" | "en";
+}
+const { locale = "nl" } = Astro.props;
+
+const rowsByLocale: Record<"nl" | "en", string[][]> = {
+  nl: [
+    ["Contentontwikkeling", "Digitale marketing", "Klantenondersteuning", "Bedrijfscommunicatie", "Copywriting"],
+    ["Merkbekendheid", "Content-strategie", "Communicatie van sociale media", "Communicatie"],
+    ["Duurzaamheid", "Klantentevredenheid", "Marketing op social media", "Ondernemerschap"],
+  ],
+  en: [
+    ["Content development", "Digital marketing", "Customer support", "Business communication", "Copywriting"],
+    ["Brand awareness", "Content strategy", "Social media communication", "Communication"],
+    ["Sustainability", "Customer satisfaction", "Social media marketing", "Entrepreneurship"],
+  ],
+};
+
+const rows = rowsByLocale[locale];
 
 const variants = ["mustard", "navy", "rust", "olive", "paper"];
 ---

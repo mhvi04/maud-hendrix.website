@@ -19,7 +19,22 @@ npm run dev
 - `/prive/blog` — blogposts
 - `/planner` — persoonlijke weekplanner semester 1 (AJ26-27), zie hieronder
 
-Artikelen en blogposts zijn Astro content collections (`src/content/articles`).
+Artikelen en blogposts zijn Astro content collections (`src/content/artikelen/nl`).
+
+### Meertaligheid (`/en`)
+
+De site is tweetalig via Astro's i18n-routing: Nederlands blijft op root,
+Engels staat onder `/en` met eigen routesegmenten (`/en/professional`,
+`/en/articles/slug`). `/prive` en submappen hebben bewust geen Engelse
+versie en tonen geen taalwissel-optie.
+
+- `/en` — Engelse homepage
+- `/en/professional` — Engelse versie van `/professioneel`
+- `/en/articles` en `/en/articles/[slug]` — Engelse artikelen, content in
+  `src/content/artikelen/en` (zelfde slugs als `src/content/artikelen/nl`)
+- `src/i18n/ui.ts` — vaste UI-strings per taal (nav, footer)
+- `src/components/LanguageSwitch.astro` — springt naar de vertaalde
+  tegenhanger van de huidige pagina via `getRelativeLocaleUrl()`
 
 ## Nog te doen
 

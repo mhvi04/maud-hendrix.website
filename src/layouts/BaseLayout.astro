@@ -1,6 +1,8 @@
 ---
 import "../styles/global.css";
 import PersonSchema from "../components/PersonSchema.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import type { Language } from "../i18n/ui";
 
 interface Props {
   title: string;
@@ -10,6 +12,13 @@ interface Props {
   noindex?: boolean;
   canonicalPath?: string;
   image?: string;
+  locale?: Language;
+  // Locale-interne paden (zonder /en-prefix) van de vertaalde tegenhanger
+  // van deze pagina. Alleen meegeven op pagina's die effectief een
+  // vertaling hebben — /prive laat dit leeg, dan verschijnen er geen
+  // hreflang-tags.
+  nlPath?: string;
+  enPath?: string;
 }
 
 const {
@@ -20,10 +29,23 @@ const {
   noindex = false,
   canonicalPath,
   image = "/og-default.png",
+  locale = "nl",
+  nlPath,
+  enPath,
 } = Astro.props;
 
 const canonicalURL = new URL(canonicalPath ?? Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(image, Astro.site);
+const ogLocale = locale === "en" ? "en_US" : "nl_BE";
+
+const hasTranslation = Boolean(nlPath) && Boolean(enPath);
+const hreflangAlternates = hasTranslation
+  ? [
+      { hreflang: "nl", href: new URL(getRelativeLocaleUrl("nl", nlPath!), Astro.site).toString() },
+      { hreflang: "en", href: new URL(getRelativeLocaleUrl("en", enPath!), Astro.site).toString() },
+      { hreflang: "x-default", href: new URL(getRelativeLocaleUrl("nl", nlPath!), Astro.site).toString() },
+    ]
+  : [];
 
 const jsonLd =
   type === "article"
@@ -34,7 +56,7 @@ const jsonLd =
         description,
         url: canonicalURL.toString(),
         image: ogImageURL.toString(),
-        inLanguage: "nl",
+        inLanguage: locale,
         author: {
           "@type": "Person",
           name: "Maud Hendrix",
@@ -54,7 +76,7 @@ const jsonLd =
 ---
 
 <!doctype html>
-<html lang="nl">
+<html lang={locale}>
   <head>
 <!-- Google Tag Manager -->
 <script is:inline>
@@ -74,6 +96,9 @@ const jsonLd =
     <link rel="canonical" href={canonicalURL} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {hreflangAlternates.map((alt) => (
+      <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+    ))}
 
     <meta property="og:type" content={type} />
     <meta property="og:title" content={title} />
@@ -81,7 +106,7 @@ const jsonLd =
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={ogImageURL} />
     <meta property="og:site_name" content="Maud Hendrix" />
-    <meta property="og:locale" content="nl_BE" />
+    <meta property="og:locale" content={ogLocale} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />

@@ -5,43 +5,86 @@ interface Milestone {
   body: string | string[];
 }
 
-const milestones: Milestone[] = [
-  {
-    age: "14 jaar",
-    title: "Eerste verkoop",
-    body: [
-      "Tupperware wordt de eerste keer dat ik geld verdien met verkopen. Het begin van een fascinatie voor vraag, aanbod en timing.",
-      "Mijn allereerste verkoop was een plastic Tupperware potje. Ik was veertien. Ingekocht voor twee euro, doorverkocht voor vijf. Drie euro winst, en het gevoel dat ik iets begreep wat de meeste mensen om me heen niet zagen: dat de waarde van een ding niet vastzit in wat het is, maar in wie het zoekt en waar het aangeboden wordt. Dat klinkt achteraf veel strategischer dan het was.",
-    ],
-  },
-  {
-    age: "Sneakers-jaren",
-    title: "Restocks en het omslaan van een markt",
-    body: [
-      "Na ontelbare verkochte vintage Tupperware-potjes ging ik sneakers doen. Exclusieve Nikes, Jordans, en zo verder. Wekker om 8u50, meedoen aan online raffles om 9u, hopen dat je geselecteerd werd. Het paar inkopen voor 120 tot 220 euro en dan proberen het met een beetje winst door te verkopen. Op papier leek dat slim. In de praktijk waren de marges flinterdun en het risico veel groter dan ik toen besefte.",
-      "En toen ging Restocks failliet.",
-    ],
-  },
-  {
-    age: "Afgerond",
-    title: "VintieBulk",
-    body: "B2B-groothandel in gecureerde Ralph Lauren-partijen, door mij opgezet en opgebouwd.",
-  },
-  {
-    age: "Actief",
-    title: "Studio Maud",
-    body: "Data-gedreven reselling op Vinted: van sourcing tot logistiek, gebouwd op inmiddels meer dan 2.500 transacties.",
-  },
-  {
-    age: "Vandaag",
-    title: "Criminologie & ondernemerschap",
-    body: "Laatstejaars Criminologische Wetenschappen aan de UGent, naast het runnen van Studio Maud. Twee werelden, één blik op patronen en systemen.",
-  },
-];
+interface Props {
+  locale?: "nl" | "en";
+}
+const { locale = "nl" } = Astro.props;
+
+const milestonesByLocale: Record<"nl" | "en", Milestone[]> = {
+  nl: [
+    {
+      age: "14 jaar",
+      title: "Eerste verkoop",
+      body: [
+        "Tupperware wordt de eerste keer dat ik geld verdien met verkopen. Het begin van een fascinatie voor vraag, aanbod en timing.",
+        "Mijn allereerste verkoop was een plastic Tupperware potje. Ik was veertien. Ingekocht voor twee euro, doorverkocht voor vijf. Drie euro winst, en het gevoel dat ik iets begreep wat de meeste mensen om me heen niet zagen: dat de waarde van een ding niet vastzit in wat het is, maar in wie het zoekt en waar het aangeboden wordt. Dat klinkt achteraf veel strategischer dan het was.",
+      ],
+    },
+    {
+      age: "Sneakers-jaren",
+      title: "Restocks en het omslaan van een markt",
+      body: [
+        "Na ontelbare verkochte vintage Tupperware-potjes ging ik sneakers doen. Exclusieve Nikes, Jordans, en zo verder. Wekker om 8u50, meedoen aan online raffles om 9u, hopen dat je geselecteerd werd. Het paar inkopen voor 120 tot 220 euro en dan proberen het met een beetje winst door te verkopen. Op papier leek dat slim. In de praktijk waren de marges flinterdun en het risico veel groter dan ik toen besefte.",
+        "En toen ging Restocks failliet.",
+      ],
+    },
+    {
+      age: "Afgerond",
+      title: "VintieBulk",
+      body: "B2B-groothandel in gecureerde Ralph Lauren-partijen, door mij opgezet en opgebouwd.",
+    },
+    {
+      age: "Actief",
+      title: "Studio Maud",
+      body: "Data-gedreven reselling op Vinted: van sourcing tot logistiek, gebouwd op inmiddels meer dan 2.500 transacties.",
+    },
+    {
+      age: "Vandaag",
+      title: "Criminologie & ondernemerschap",
+      body: "Laatstejaars Criminologische Wetenschappen aan de UGent, naast het runnen van Studio Maud. Twee werelden, één blik op patronen en systemen.",
+    },
+  ],
+  en: [
+    {
+      age: "Age 14",
+      title: "First sale",
+      body: [
+        "Tupperware is where I first made money selling things. The start of a fascination with demand, supply and timing.",
+        "My very first sale was a plastic Tupperware container. I was fourteen. Bought for two euros, resold for five. Three euros profit, and the feeling that I understood something most people around me didn't: that the value of a thing doesn't sit in what it is, but in who's looking for it and where it's offered. That sounds a lot more strategic in hindsight than it actually was.",
+      ],
+    },
+    {
+      age: "The sneaker years",
+      title: "Restocks, and a market flipping overnight",
+      body: [
+        "After countless vintage Tupperware sales, I moved into sneakers. Exclusive Nikes, Jordans, and so on. Alarm at 8:50am, joining online raffles at 9am, hoping you got selected. Buying the pair for €120 to €220 and then trying to resell it for a small profit. On paper that looked smart. In practice the margins were razor-thin and the risk was far bigger than I realised at the time.",
+        "And then Restocks went bankrupt.",
+      ],
+    },
+    {
+      age: "Wound down",
+      title: "VintieBulk",
+      body: "A B2B wholesale operation for curated Ralph Lauren lots, set up and built by me.",
+    },
+    {
+      age: "Active",
+      title: "Studio Maud",
+      body: "Data-driven reselling on Vinted: from sourcing to logistics, built on more than 2,500 transactions by now.",
+    },
+    {
+      age: "Today",
+      title: "Criminology & entrepreneurship",
+      body: "Final-year Criminological Sciences student at Ghent University, alongside running Studio Maud. Two worlds, one eye for patterns and systems.",
+    },
+  ],
+};
+
+const milestones = milestonesByLocale[locale];
+const hintByLocale = { nl: "Scroll voor het volledige traject →", en: "Scroll for the full journey →" };
 ---
 
 <div class="timeline-wrap">
-  <p class="timeline-hint mono">Scroll voor het volledige traject →</p>
+  <p class="timeline-hint mono">{hintByLocale[locale]}</p>
   <div class="timeline-scroll">
     <div class="timeline-track">
       <div class="timeline-line" aria-hidden="true"></div>
