@@ -15,8 +15,7 @@ npm run dev
   de lijst van alle artikelen, nieuwste eerst
 - `/professioneel` — profiel, studie, onderneming, traject, contact
 - `/artikelen` — overzicht van de artikelen op basis van "De Ku(n)s(t) van resellen" (voorheen `/professioneel/artikelen`, nu 301-redirect via `public/_redirects`)
-- `/prive` — sociale kanalen, interesses, blog
-- `/prive/blog` — blogposts
+- `/prive` — sociale kanalen, interesses, blog (publiek, geen pincode)
 - `/planner` — persoonlijke weekplanner semester 1 (AJ26-27), zie hieronder
 
 Artikelen en blogposts zijn Astro content collections (`src/content/artikelen/nl`).
@@ -38,8 +37,6 @@ versie en tonen geen taalwissel-optie.
 
 ## Nog te doen
 
-- `public/cv.pdf` toevoegen (de "CV downloaden"-knop op `/professioneel` linkt hiernaar)
-- Echte tekst voor de twee concept-artikelen invullen (`src/content/articles/*.md`)
 - Jaartallen/periodes in de tijdlijn op `/professioneel` controleren (`src/components/Timeline.astro`)
 
 ## Weekplanner (`/planner`)
@@ -52,9 +49,9 @@ wijzigingen (uitzonderingen, invullingen) worden bewaard in `localStorage`
 van je browser. Geen account, geen configuratie nodig — werkt meteen na
 `npm run dev` of live op Netlify.
 
-Staat achter een pincode (`2004`, via de bestaande `PinGate`-component,
-zelfde als `/prive`) — puur een scherm in de browser, geen echte
-serverbeveiliging.
+Staat achter een pincode (`2004`, via de bestaande `PinGate`-component)
+— puur een scherm in de browser, geen echte serverbeveiliging. `/prive`
+gebruikt deze gate niet (meer): die pagina is publiek.
 
 **Beperking om te weten**: data leeft alleen op het toestel/de browser
 waarin je hem invult. Open je de site op je iPhone én je MacBook, dan zijn
@@ -132,6 +129,7 @@ Waar de opdracht ambigu was, is hieronder de keuze en de reden gedocumenteerd
   overheen liggen. Zulke volledig overlappende ghosts worden niet getekend
   (generieke overlap-check op dag+tijd, geen aparte cascade-tabel).
 - **Route `/planner` heeft `noindex`**, staat niet in de hoofdnavigatie, en
-  staat achter dezelfde soort pincode als `/prive` (code `2004`): puur een
-  scherm in de browser, geen echte serverbeveiliging — logisch genoeg
-  gezien er ook geen server/database meer is om iets op af te schermen.
+  staat achter een pincode (code `2004`, via `PinGate`): puur een scherm in
+  de browser, geen echte serverbeveiliging — logisch genoeg gezien er ook
+  geen server/database meer is om iets op af te schermen. Ook geen Google
+  Tag Manager op deze pagina (`analytics={false}` op `BaseLayout`).

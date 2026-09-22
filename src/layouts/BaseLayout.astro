@@ -19,6 +19,10 @@ interface Props {
   // hreflang-tags.
   nlPath?: string;
   enPath?: string;
+  // Google Tag Manager laden. Standaard aan; uit voor persoonlijke,
+  // pincode-gated pagina's zoals /planner die niets met bezoekersanalyse
+  // te maken hebben.
+  analytics?: boolean;
 }
 
 const {
@@ -32,6 +36,7 @@ const {
   locale = "nl",
   nlPath,
   enPath,
+  analytics = true,
 } = Astro.props;
 
 const canonicalURL = new URL(canonicalPath ?? Astro.url.pathname, Astro.site);
@@ -78,15 +83,19 @@ const jsonLd =
 <!doctype html>
 <html lang={locale}>
   <head>
-<!-- Google Tag Manager -->
-<script is:inline>
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PXTHL5MQ');
-</script>
-<!-- End Google Tag Manager -->
+    {analytics && (
+      <Fragment>
+        <!-- Google Tag Manager -->
+        <script is:inline>
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-PXTHL5MQ');
+        </script>
+        <!-- End Google Tag Manager -->
+      </Fragment>
+    )}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -126,16 +135,20 @@ const jsonLd =
     />
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-PXTHL5MQ"
-        height="0"
-        width="0"
-        style="display:none;visibility:hidden"
-      ></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    {analytics && (
+      <Fragment>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PXTHL5MQ"
+            height="0"
+            width="0"
+            style="display:none;visibility:hidden"
+          ></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+      </Fragment>
+    )}
 
     <slot />
   </body>
