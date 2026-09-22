@@ -6,19 +6,6 @@ import CountUp from "../../components/CountUp.astro";
 import PhotoGallery from "../../components/PhotoGallery.astro";
 import Gelezen from "../../components/Gelezen.astro";
 
-const socials = [
-  {
-    name: "Instagram",
-    handle: "@hendrix.maud",
-    href: "https://www.instagram.com/hendrix.maud",
-  },
-  {
-    name: "LinkedIn",
-    handle: "maud-hendrix-522245374",
-    href: "https://www.linkedin.com/in/maud-hendrix-522245374",
-  },
-];
-
 const interests = [
   { title: "Muurklimmen", desc: "Probleemoplossen, één beweging tegelijk." },
   { title: "Koken", desc: "Recepten als richtlijn, nooit als wet." },
@@ -35,31 +22,28 @@ const interests = [
   <main class="prive">
     <section class="intro">
       <div class="wrap intro-grid">
-        <span class="intro-shape" aria-hidden="true"></span>
         <div class="intro-copy">
-          <h1>Privé</h1>
-          <p class="intro-lede">
-            Een verzameling van interesses, kleine ontdekkingen en dingen
-            waar ik graag tijd voor maak.
-          </p>
+          <h1>Ook <em>Maud.</em></h1>
+          <p class="intro-lede">Kattenmoeder en muurklimmer.</p>
+          <div class="pill-bar" aria-hidden="true">
+            <span class="pill-bar-item pill-bar-item--navy"></span>
+            <span class="pill-bar-item pill-bar-item--mustard"></span>
+            <span class="pill-bar-item pill-bar-item--navy"></span>
+            <span class="pill-bar-item pill-bar-item--mustard"></span>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="row wrap">
-      <span class="row-label label">Sociale kanalen</span>
+      <span class="row-label letter accent">A</span>
       <div class="row-body">
+        <h3>Sociale kanalen</h3>
         <p class="section-intro">Waar ik online rondhang, buiten Vinted.</p>
-        <div class="socials">
-        {
-          socials.map((s) => (
-            <a class="social" href={s.href} target="_blank" rel="noopener">
-              <span class="social-dot" aria-hidden="true" />
-              <h3>{s.name}</h3>
-              <p class="mono">{s.handle}</p>
-            </a>
-          ))
-        }
+        <div class="link-list">
+          <a href="https://www.instagram.com/hendrix.maud" target="_blank" rel="noopener">Instagram · @hendrix.maud</a>
+          <a href="https://www.tiktok.com/@hendrix.maud" target="_blank" rel="noopener">TikTok · @hendrix.maud</a>
+          <a href="https://pin.it/5QS0AwBzB" target="_blank" rel="noopener">Pinterest</a>
         </div>
         <div class="countup-grid">
           <CountUp
@@ -98,6 +82,16 @@ const interests = [
     </section>
 
     <section class="row wrap">
+      <span class="row-label letter accent">B</span>
+      <div class="row-body">
+        <h3>Blog</h3>
+        <div class="link-list">
+          <a href="/artikelen">Naar de blog</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="row wrap">
       <span class="row-label label">Gelezen</span>
       <div class="row-body">
         <Gelezen />
@@ -105,8 +99,10 @@ const interests = [
     </section>
 
     <section class="row wrap row--last">
-      <span class="row-label label">Fotografie</span>
+      <span class="row-label letter accent">C</span>
       <div class="row-body">
+        <h3>Fotografie</h3>
+        <p class="section-intro">Eigen foto's van dieren en natuur.</p>
         <PhotoGallery />
       </div>
     </section>
@@ -135,17 +131,33 @@ const interests = [
   }
   .intro-copy h1 {
     font-size: clamp(40px, 6vw, 68px);
-    font-weight: 600;
+    font-weight: 800;
     line-height: 1.05;
   }
   .intro-lede {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
     color: var(--ink);
     margin-top: 14px;
   }
-  .intro-shape {
-    display: none;
+  .pill-bar {
+    display: flex;
+    height: 64px;
+    margin-top: 28px;
+    max-width: 320px;
+  }
+  .pill-bar-item {
+    width: 60px;
+    height: 100%;
+    margin-left: -1px;
+  }
+  .pill-bar-item--navy {
+    background: var(--navy);
+    border-radius: 0 60px 60px 0;
+  }
+  .pill-bar-item--mustard {
+    background: var(--mustard);
+    border-radius: 60px 0 0 60px;
   }
 
   .row {
@@ -161,8 +173,17 @@ const interests = [
   .row-label {
     padding-top: 4px;
   }
+  .row-label.letter {
+    font-size: 24px;
+    padding-top: 0;
+  }
   .row-body {
     min-width: 0;
+  }
+  .row-body h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
   }
   @media (max-width: 680px) {
     .row {
@@ -176,47 +197,23 @@ const interests = [
     margin-bottom: 22px;
   }
 
-  .socials {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+  .link-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 16px;
     margin-bottom: 20px;
+  }
+  .link-list a {
+    width: fit-content;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
   }
 
   .countup-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
-  }
-  .social {
-    border: 1px solid var(--ink);
-    background: var(--paper);
-    padding: 24px;
-    text-decoration: none;
-    color: var(--ink);
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-  }
-  .social:hover {
-    transform: translateY(-2px);
-    box-shadow: none;
-    background: var(--cream);
-  }
-  .social-dot {
-    display: block;
-    width: 16px;
-    height: 16px;
-    background: var(--rust);
-    margin-bottom: 18px;
-  }
-  .social h3 {
-    font-size: 19px;
-    font-weight: 600;
-    margin-bottom: 6px;
-  }
-  .social p {
-    font-size: 13px;
-    color: var(--navy);
-    opacity: 0.85;
   }
 
   .interests {
@@ -231,12 +228,11 @@ const interests = [
   }
   .interest h3 {
     font-size: 19px;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 8px;
   }
   .interest p {
     font-size: 14px;
     line-height: 1.55;
   }
-
 </style>

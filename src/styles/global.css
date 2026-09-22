@@ -159,7 +159,13 @@ button {
   background: var(--navy);
 }
 
-/* Cursief accent binnen titels: laatste woord/woorden van een zin. */
+/* Cursief accent, ook los inzetbaar via class="accent" (bv. A/B/C-letters) */
+.accent {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+}
+
 h1 em,
 h2 em,
 h3 em,
