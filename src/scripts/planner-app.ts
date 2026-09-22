@@ -1,10 +1,11 @@
-import { supabase } from "../lib/planner-supabase";
 import {
   computeEffectiveBlocks,
   isCancelled,
   timeToMinutes,
   type EffectiveBlock,
 } from "../lib/planner-logic";
+import { SEED_BLOCKS, SEED_WEEKS } from "../lib/planner-seed";
+import { loadEntries, loadOverrides, newId, saveEntries, saveOverrides } from "../lib/planner-storage";
 import {
   CATEGORY_COLORS,
   GRID_START_MINUTES,
@@ -86,35 +87,18 @@ function todayIso(): string {
 }
 
 // -------------------------------------------------------------------
-// Data laden
+// Data laden — geen backend: blocks/weeks liggen vast in de code,
+// overrides/entries leven in localStorage.
 // -------------------------------------------------------------------
 
-async function loadStaticData(): Promise<void> {
-  const [{ data: weeks, error: weeksError }, { data: blocks, error: blocksError }] =
-    await Promise.all([
-      supabase.from("weeks").select("*").order("week_nr"),
-      supabase.from("blocks").select("*"),
-    ]);
-
-  if (weeksError) throw weeksError;
-  if (blocksError) throw blocksError;
-
-  state.weeks = weeks ?? [];
-  state.blocks = blocks ?? [];
+function loadStaticData(): void {
+  state.weeks = SEED_WEEKS;
+  state.blocks = SEED_BLOCKS;
 }
 
-async function loadMutableData(): Promise<void> {
-  const [{ data: overrides, error: overridesError }, { data: entries, error: entriesError }] =
-    await Promise.all([
-      supabase.from("week_overrides").select("*"),
-      supabase.from("user_entries").select("*"),
-    ]);
-
-  if (overridesError) throw overridesError;
-  if (entriesError) throw entriesError;
-
-  state.overrides = overrides ?? [];
-  state.entries = entries ?? [];
+function loadMutableData(): void {
+  state.overrides = loadOverrides();
+  state.entries = loadEntries();
 }
 
 function overridesForWeek(weekNr: number): WeekOverride[] {
@@ -412,7 +396,7 @@ function openEntryModal(opts: EntryModalCreateOptions | EntryModalEditOptions): 
   titleField.focus();
 }
 
-async function saveEntry(): Promise<void> {
+function saveEntry(): void {
   const idField = $<HTMLInputElement>("entry-id");
   const dayField = $<HTMLSelectElement>("entry-day");
   const startField = $<HTMLInputElement>("entry-start");
@@ -433,7 +417,8 @@ async function saveEntry(): Promise<void> {
     return;
   }
 
-  const payload = {
+  const entry: UserEntry = {
+    id: idField.value || newId(),
     week_nr: state.currentWeekNr,
     day: dayField.value as Day,
     start_time: startField.value,
@@ -443,38 +428,29 @@ async function saveEntry(): Promise<void> {
     category: categoryField.value as EntryCategory,
   };
 
-  try {
-    if (idField.value) {
-      const { error } = await supabase.from("user_entries").update(payload).eq("id", idField.value);
-      if (error) throw error;
-    } else {
-      const { error } = await supabase.from("user_entries").insert(payload);
-      if (error) throw error;
-    }
-    $<HTMLDialogElement>("entry-modal").close();
-    await loadMutableData();
-    renderWeek();
-    setStatus("Opgeslagen.");
-  } catch (err) {
-    errorEl.textContent = `Opslaan mislukt: ${(err as Error).message}`;
-    errorEl.hidden = false;
-  }
+  const entries = idField.value
+    ? state.entries.map((e) => (e.id === entry.id ? entry : e))
+    : [...state.entries, entry];
+  saveEntries(entries);
+  state.entries = entries;
+
+  $<HTMLDialogElement>("entry-modal").close();
+  renderWeek();
+  setStatus("Opgeslagen.");
 }
 
-async function deleteEntry(): Promise<void> {
+function deleteEntry(): void {
   const idField = $<HTMLInputElement>("entry-id");
   if (!idField.value) return;
   if (!confirm("Deze invulling verwijderen?")) return;
-  try {
-    const { error } = await supabase.from("user_entries").delete().eq("id", idField.value);
-    if (error) throw error;
-    $<HTMLDialogElement>("entry-modal").close();
-    await loadMutableData();
-    renderWeek();
-    setStatus("Verwijderd.");
-  } catch (err) {
-    setStatus(`Verwijderen mislukt: ${(err as Error).message}`, true);
-  }
+
+  const entries = state.entries.filter((e) => e.id !== idField.value);
+  saveEntries(entries);
+  state.entries = entries;
+
+  $<HTMLDialogElement>("entry-modal").close();
+  renderWeek();
+  setStatus("Verwijderd.");
 }
 
 // -------------------------------------------------------------------
@@ -518,7 +494,7 @@ function toggleExceptionTimeFields(): void {
   row.style.display = statusField.value === "geen_les" ? "none" : "grid";
 }
 
-async function saveException(): Promise<void> {
+function saveException(): void {
   const weekNrField = $<HTMLInputElement>("exc-week-nr");
   const blockIdField = $<HTMLInputElement>("exc-block-id");
   const statusField = $<HTMLSelectElement>("exc-status");
@@ -534,47 +510,43 @@ async function saveException(): Promise<void> {
     return;
   }
 
-  const payload = {
-    week_nr: Number(weekNrField.value),
-    block_id: blockIdField.value,
+  const weekNr = Number(weekNrField.value);
+  const blockId = blockIdField.value;
+  const existing = state.overrides.find((o) => o.week_nr === weekNr && o.block_id === blockId);
+  const override: WeekOverride = {
+    id: existing?.id ?? newId(),
+    week_nr: weekNr,
+    block_id: blockId,
     status,
     reason: reasonField.value.trim() || null,
     new_start: status === "geen_les" ? null : startField.value,
     new_end: status === "geen_les" ? null : endField.value,
   };
 
-  try {
-    const { error } = await supabase
-      .from("week_overrides")
-      .upsert(payload, { onConflict: "week_nr,block_id" });
-    if (error) throw error;
-    $<HTMLDialogElement>("exception-modal").close();
-    await loadMutableData();
-    renderWeek();
-    setStatus("Uitzondering opgeslagen.");
-  } catch (err) {
-    errorEl.textContent = `Opslaan mislukt: ${(err as Error).message}`;
-    errorEl.hidden = false;
-  }
+  const overrides = existing
+    ? state.overrides.map((o) => (o.id === existing.id ? override : o))
+    : [...state.overrides, override];
+  saveOverrides(overrides);
+  state.overrides = overrides;
+
+  $<HTMLDialogElement>("exception-modal").close();
+  renderWeek();
+  setStatus("Uitzondering opgeslagen.");
 }
 
-async function deleteException(): Promise<void> {
+function deleteException(): void {
   const weekNrField = $<HTMLInputElement>("exc-week-nr");
   const blockIdField = $<HTMLInputElement>("exc-block-id");
-  try {
-    const { error } = await supabase
-      .from("week_overrides")
-      .delete()
-      .eq("week_nr", Number(weekNrField.value))
-      .eq("block_id", blockIdField.value);
-    if (error) throw error;
-    $<HTMLDialogElement>("exception-modal").close();
-    await loadMutableData();
-    renderWeek();
-    setStatus("Uitzondering opgeheven.");
-  } catch (err) {
-    setStatus(`Opheffen mislukt: ${(err as Error).message}`, true);
-  }
+  const weekNr = Number(weekNrField.value);
+  const blockId = blockIdField.value;
+
+  const overrides = state.overrides.filter((o) => !(o.week_nr === weekNr && o.block_id === blockId));
+  saveOverrides(overrides);
+  state.overrides = overrides;
+
+  $<HTMLDialogElement>("exception-modal").close();
+  renderWeek();
+  setStatus("Uitzondering opgeheven.");
 }
 
 // -------------------------------------------------------------------
@@ -734,14 +706,12 @@ function setupSwipe(container: HTMLElement): void {
 // Init
 // -------------------------------------------------------------------
 
-export async function initPlanner(): Promise<void> {
-  setStatus("Laden…");
+export function initPlanner(): void {
   try {
-    await loadStaticData();
-    await loadMutableData();
+    loadStaticData();
+    loadMutableData();
     state.currentWeekNr = determineDefaultWeek();
     renderWeek();
-    setStatus("");
   } catch (err) {
     setStatus(`Kon planner niet laden: ${(err as Error).message}`, true);
     return;
@@ -759,21 +729,21 @@ export async function initPlanner(): Promise<void> {
 
   $<HTMLFormElement>("entry-form").addEventListener("submit", (e) => {
     e.preventDefault();
-    void saveEntry();
+    saveEntry();
   });
   $<HTMLButtonElement>("entry-cancel").addEventListener("click", () =>
     $<HTMLDialogElement>("entry-modal").close()
   );
-  $<HTMLButtonElement>("entry-delete").addEventListener("click", () => void deleteEntry());
+  $<HTMLButtonElement>("entry-delete").addEventListener("click", () => deleteEntry());
 
   $<HTMLFormElement>("exception-form").addEventListener("submit", (e) => {
     e.preventDefault();
-    void saveException();
+    saveException();
   });
   $<HTMLButtonElement>("exception-cancel").addEventListener("click", () =>
     $<HTMLDialogElement>("exception-modal").close()
   );
-  $<HTMLButtonElement>("exception-delete").addEventListener("click", () => void deleteException());
+  $<HTMLButtonElement>("exception-delete").addEventListener("click", () => deleteException());
   $<HTMLSelectElement>("exc-status").addEventListener("change", toggleExceptionTimeFields);
 
   $<HTMLButtonElement>("print-week-btn").addEventListener("click", printCurrentWeek);
