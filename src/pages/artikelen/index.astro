@@ -5,9 +5,13 @@ import StickyFooterBar from "../../components/StickyFooterBar.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
 import { getCollection } from "astro:content";
 
-const articles = (await getCollection("articles")).sort((a, b) =>
-  a.data.title.localeCompare(b.data.title)
-);
+const FEATURED_SLUG = "boosten-op-vinted";
+
+const articles = (await getCollection("articles")).sort((a, b) => {
+  if (a.id === FEATURED_SLUG) return -1;
+  if (b.id === FEATURED_SLUG) return 1;
+  return a.data.title.localeCompare(b.data.title);
+});
 ---
 
 <BaseLayout

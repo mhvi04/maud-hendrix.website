@@ -66,7 +66,7 @@ Hou wel voor ogen dat doorlooptijd sterk verschilt per categorie. Een item na ti
 | Kabeltrui | 14 tot 37 dagen |
 | Iconische stukken (flag knits, bear knits) | Meerdere maanden |
 
-Wie op dag 22 nog geen [boost](/artikelen/482-euro-vinted-boosts-5-lessen) heeft ingezet, doet dat trouwens best pas ná deze her-evaluatie, niet in plaats van ervan: een boost versnelt bestaande interesse, hij creëert ze niet.
+Wie op dag 22 nog geen [boost](/artikelen/boosten-op-vinted) heeft ingezet, doet dat trouwens best pas ná deze her-evaluatie, niet in plaats van ervan: een boost versnelt bestaande interesse, hij creëert ze niet.
 
 ## Wat je nooit moet doen
 
