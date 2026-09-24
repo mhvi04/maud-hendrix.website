@@ -4,6 +4,7 @@ excerpt: "Een prijsverlaging is zelden de juiste eerste stap. Het dag-per-dag ti
 date: "2026-09-18"
 tag: "Praktijk"
 draft: false
+related: ["de-zero-view-trap-op-vinted", "boosten-op-vinted"]
 ---
 
 Je hebt iets online gezet dat je zelf goed vond. De foto's zijn oké, de prijs leek redelijk, en toch gebeurt er niets. Geen hartjes, geen berichten, de dagen tikken weg. De reflex van bijna elke beginner is hetzelfde: de prijs laten zakken. Vaak is dat niet de juiste eerste stap, en soms is het zelfs de stap die je verkoopkans verkleint.

@@ -4,6 +4,7 @@ excerpt: "Over meer dan 2900 transacties zag ik vier terugkerende kopersprofiele
 date: "2026-09-13"
 tag: "Praktijk"
 draft: false
+related: ["biedingen-accepteren-op-vinted", "geografie-van-vinted-kopers"]
 ---
 
 Een koper stuurt een bericht. "Is de blauwe T-shirt er nog, zo ja voor hoeveel?" Vier minuten later is het item verkocht. De koper heeft niet onderhandeld, niet gevraagd naar de staat, niet geaarzeld. Ze heeft bevestigd gekregen dat de prijs net verlaagd was, en dat was genoeg.

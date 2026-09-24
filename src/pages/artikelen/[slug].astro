@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import StickyFooterBar from "../../components/StickyFooterBar.astro";
 import TableOfContents from "../../components/TableOfContents.astro";
+import VerderLezen from "../../components/VerderLezen.astro";
 import { getCollection, render } from "astro:content";
 import { existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -46,6 +47,19 @@ const faqJsonLd =
 // BaseLayout terug op de sitewide og-default.png.
 const ownOgImagePath = fileURLToPath(new URL(`../../../public/og/${entry.id}.png`, import.meta.url));
 const ogImage = existsSync(ownOgImagePath) ? `/og/${entry.id}.png` : undefined;
+
+// "Verder lezen": lost de related-slugs uit de frontmatter op tegen de
+// eigen collectie. Onbestaande of lege related-lijst geeft een leeg blok.
+const nlArticles = await getCollection("articlesNl");
+const relatedArticles = (entry.data.related ?? [])
+  .map((slug) => nlArticles.find((e) => e.id === slug))
+  .filter((e) => e !== undefined)
+  .map((e) => ({
+    href: `/artikelen/${e.id}`,
+    tag: e.data.tag,
+    title: e.data.title,
+    excerpt: e.data.excerpt,
+  }));
 ---
 
 <BaseLayout
@@ -79,6 +93,7 @@ const ogImage = existsSync(ownOgImagePath) ? `/og/${entry.id}.png` : undefined;
         <TableOfContents headings={headings} locale="nl" />
         <div class="prose">
           <Content />
+          <VerderLezen articles={relatedArticles} locale="nl" />
         </div>
       </div>
     </div>

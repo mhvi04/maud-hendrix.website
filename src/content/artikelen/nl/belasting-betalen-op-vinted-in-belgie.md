@@ -4,6 +4,7 @@ excerpt: "Geen omzetdrempel bepaalt of je belasting betaalt op Vinted, wel je ge
 date: "2026-09-18"
 tag: "Praktijk"
 draft: false
+related: ["de-vinted-vrijstelling", "hoeveel-verdien-je-met-vinted-resellen"]
 ---
 
 De vraag komt steevast terug zodra iemand meer dan een paar keer per maand verkoopt op Vinted. Moet ik hier belasting op betalen? Het antwoord dat de meeste mensen willen horen is nee, tot je een bepaald bedrag overschrijdt. Dat antwoord bestaat niet. Er is geen magisch getal waaronder je veilig zit.

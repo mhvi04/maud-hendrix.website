@@ -4,6 +4,7 @@ excerpt: "DAC7 en de fiscale vrijstelling delen toevallig dezelfde grens van €
 date: "2026-09-22"
 tag: "Praktijk"
 draft: false
+related: ["belasting-betalen-op-vinted-in-belgie", "hoeveel-verdien-je-met-vinted-resellen"]
 ---
 
 Je zit boven de 30 verkopen op Vinted dit jaar. Je krijgt een melding dat je gegevens naar de fiscus gaan. En je paniekeert, want je hebt gewoon je kast opgeruimd. Kinderkleding die te klein is geworden, eigen garderobe die je niet meer draagt. Geen winkeltje, geen inkoop, geen winstoogmerk.

@@ -4,6 +4,7 @@ excerpt: "Van 250 orders uit acht landen blijkt: waar je koper woont bepaalt nie
 date: "2026-09-13"
 tag: "Praktijk"
 draft: false
+related: ["psychologie-van-je-koper", "wraakreviews-op-vinted"]
 ---
 
 Van de 250 meest recente orders die ik heb doorgenomen, kwamen mijn kopers uit acht landen. Dat is niet niks voor een tweedehandsaccount dat opereert vanuit Gent. En als je die geografische verdeling naast de bijhorende gedragscijfers legt, zie je iets wat de meeste beginnende resellers missen: het land waar je koper woont bepaalt niet alleen wat ze bestellen, maar ook hoe ze communiceren, wanneer ze beslissen en of ze daarna een klacht indienen.

@@ -4,6 +4,7 @@ excerpt: "Geboost op Vinted betekent dat een listing tijdelijk extra zichtbaarhe
 date: "2026-09-13"
 tag: "Praktijk"
 draft: false
+related: ["hoe-werkt-het-vinted-algoritme", "vinted-item-verkoopt-niet-wat-nu"]
 faq:
   - question: "Wat betekent geboost op Vinted?"
     answer: "Een item dat 'geboost' is op Vinted, is een listing waarvoor de verkoper heeft betaald om hem tijdelijk extra zichtbaar te maken. Het item wordt drie of zeven dagen lang dagelijks opnieuw bovenaan in de catalogus geplaatst en vaker getoond in de feeds van potentiële kopers."
@@ -31,7 +32,7 @@ Dat patroon laat zien dat boosten een precisiemiddel is. Gebruik je het te breed
 
 Vinted biedt verkopers de mogelijkheid om een listing tijdelijk extra zichtbaar te maken via een betaalde opvalfunctie. Een geboost item wordt drie of zeven dagen lang dagelijks opnieuw bovenaan in de catalogus geplaatst en vaker getoond in de feeds van potentiële kopers.
 
-Dat klinkt eenvoudig, maar er zit een mechanisme achter dat verder gaat dan zichtbaarheid alleen. Het Vinted-algoritme, dat draait op een systeem genaamd Vespa Vector Search, koppelt interactie aan zichtbaarheid. Hoe meer mensen op een item klikken, het bewaren als favoriet of een bericht sturen, hoe hoger het item in de organische resultaten terechtkomt. Een boost geeft dat eerste duwtje. Niet de verkoop zelf, maar het momentum dat tot een verkoop leidt.
+Dat klinkt eenvoudig, maar er zit een mechanisme achter dat verder gaat dan zichtbaarheid alleen. Het Vinted-algoritme, dat draait op een systeem genaamd [Vespa Vector Search](/artikelen/hoe-werkt-het-vinted-algoritme), koppelt interactie aan zichtbaarheid. Hoe meer mensen op een item klikken, het bewaren als favoriet of een bericht sturen, hoe hoger het item in de organische resultaten terechtkomt. Een boost geeft dat eerste duwtje. Niet de verkoop zelf, maar het momentum dat tot een verkoop leidt.
 
 Dat onderscheid is belangrijk. Een boost verkoopt geen item. Een boost zorgt ervoor dat het item gezien wordt door de juiste mensen op het juiste moment, en dan doet de listing zelf het werk.
 
@@ -81,7 +82,7 @@ Op zondag boost ik nooit. Zondag is van zichzelf al de dag waarop het volume het
 
 Er is een patroon dat ik ook zelf een tijdje had: items boosten zodra ze online komen.
 
-De logica klinkt redelijk. Je wilt dat je nieuwe item meteen zichtbaar is. Maar het is precies de verkeerde volgorde. Een gloednieuwe listing heeft het voordeel van het "verse-item effect". Het algoritme geeft nieuwe items automatisch een tijdelijke zichtbaarheidsboost. Als je daar bovenop ook nog eens betaald boost, betaal je voor iets wat gratis al plaatsvindt.
+De logica klinkt redelijk. Je wilt dat je nieuwe item meteen zichtbaar is. Maar het is precies de verkeerde volgorde. Een gloednieuwe listing heeft het voordeel van het "[verse-item effect](/artikelen/de-zero-view-trap-op-vinted)". Het algoritme geeft nieuwe items automatisch een tijdelijke zichtbaarheidsboost. Als je daar bovenop ook nog eens betaald boost, betaal je voor iets wat gratis al plaatsvindt.
 
 De juiste volgorde is omgekeerd. Laat het item organisch beginnen. Geef het de eerste vijf à zeven dagen tijd om views en favorieten te verzamelen. Als het item dan niet heeft verkocht maar er wel interesse is geweest, grijp je in met een boost. Op dat moment doet een boost wat het moet doen: bestaande interesse omzetten in actie.
 

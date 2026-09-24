@@ -4,6 +4,7 @@ excerpt: "Over 1296 beoordelingen: hoe wraakreviews ontstaan, wat Vinted wel en 
 date: "2026-09-22"
 tag: "Praktijk"
 draft: false
+related: ["vinted-fotos-die-verkopen", "vertrouwen-opbouwen-nieuw-vinted-profiel"]
 ---
 
 Je hebt alles goed gedaan. Het item was zoals beschreven. Je hebt gefotografeerd wat gefotografeerd moest worden, je hebt de staat eerlijk omschreven, je hebt snel verzonden. Vinted heeft het geschil onderzocht en jou in het gelijk gesteld. En dan, een dag later, staat er een ster op je profiel. Eén ster. Met een commentaar dat nergens op slaat.

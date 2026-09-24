@@ -4,6 +4,7 @@ excerpt: "Van nul naar tien reviews is de langzaamste fase. Vier lagen waarmee j
 date: "2026-09-22"
 tag: "Praktijk"
 draft: false
+related: ["biedingen-accepteren-op-vinted", "ralph-lauren-labels-uitgelegd"]
 faq:
   - question: "Hoe bouw je vertrouwen op als nieuw Vinted-profiel?"
     answer: "In vier lagen: een volledig ingevuld profiel met concrete bio, snelle reactietijd op vragen en biedingen, bewust scherp geprijsde eerste verkopen om snel je eerste reviews te verzamelen, en een verzorgde verpakking die als eerste fysieke bewijs van je betrouwbaarheid dient."

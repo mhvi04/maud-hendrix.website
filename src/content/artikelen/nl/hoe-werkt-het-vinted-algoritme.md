@@ -4,6 +4,7 @@ excerpt: "Vinted toont geen chronologische lijst maar een zoekmachine met een ka
 date: "2026-09-22"
 tag: "Praktijk"
 draft: false
+related: ["boosten-op-vinted", "de-zero-view-trap-op-vinted"]
 faq:
   - question: "Hoe werkt het Vinted algoritme?"
     answer: "Vinted haalt per zoekopdracht eerst een kandidatenpool van tot 200.000 items op, en een tweede laag, de ranker, kiest daaruit de 20 tot 50 items die een koper effectief te zien krijgt. Dat matchen gebeurt via vector search op basis van titel, foto's, prijs, categorie en verkopersreputatie, niet enkel op trefwoorden."

@@ -4,6 +4,7 @@ excerpt: "Nul views na een week is geen pech maar een algoritmisch oordeel. Waar
 date: "2026-09-22"
 tag: "Praktijk"
 draft: false
+related: ["hoe-werkt-het-vinted-algoritme", "vinted-item-verkoopt-niet-wat-nu"]
 faq:
   - question: "Waarom heeft mijn Vinted-item nul views?"
     answer: "Meestal omdat het item de eerste kandidatenselectie van het algoritme nooit haalt. Vinted koppelt items aan kopers via vectorprofielen op basis van merk, prijs, staat en trefwoorden in de titel. Matcht dat profiel met geen enkele actieve koper, dan verschijnt het item letterlijk bij niemand, niet minder dan normaal, nul."

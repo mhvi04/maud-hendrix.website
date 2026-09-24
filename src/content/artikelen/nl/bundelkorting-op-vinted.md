@@ -4,6 +4,7 @@ excerpt: "Tussen de 15 en 25 procent op het totaal is een gezonde bundelkorting.
 date: "2026-09-22"
 tag: "Praktijk"
 draft: false
+related: ["biedingen-accepteren-op-vinted", "favoriet-hartje-op-vinted"]
 faq:
   - question: "Hoeveel bundelkorting geef je op Vinted?"
     answer: "Een gezonde bundelkorting beweegt tussen de 15 en 25 procent onder de som van de losse vraagprijzen. Bij twee tot drie items zit je meestal aan de onderkant van die marge, rond 10 tot 15 procent. Vraagt een koper vier of meer items tegelijk, dan is een korting richting 20 procent gebruikelijker."

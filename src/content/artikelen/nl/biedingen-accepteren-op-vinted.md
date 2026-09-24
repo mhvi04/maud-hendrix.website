@@ -4,6 +4,7 @@ excerpt: "Meer dan 2500 transacties tonen een patroon: een bod direct accepteren
 date: "2026-09-22"
 tag: "Praktijk"
 draft: false
+related: ["favoriet-hartje-op-vinted", "psychologie-van-je-koper"]
 ---
 
 Een bod binnenkrijgen voelt als opluchting. Zeker als het niet extreem laag is, is de reflex vaak: oké, accepteren en doorgaan. Die reflex begrijp ik. Maar hij kost je geld.

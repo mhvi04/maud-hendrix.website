@@ -4,6 +4,7 @@ excerpt: "Tussen een hartje en een aankoop zit gemiddeld 1,8 dag. Wat dat venste
 date: "2026-09-18"
 tag: "Praktijk"
 draft: false
+related: ["boosten-op-vinted", "biedingen-accepteren-op-vinted"]
 ---
 
 Er verschijnt een melding: iemand heeft je item als favoriet gemarkeerd. De meeste verkopers doen op dat moment niets, ze wachten gewoon af of er een bericht of een bod volgt. Dat is niet fout, maar het is ook niet de meest doordachte reactie. Een hartje is meer dan een leuk signaal, het is bruikbare informatie, en wat je ermee doet in de uren erna kan het verschil maken tussen een verkoop en een gemiste kans.
