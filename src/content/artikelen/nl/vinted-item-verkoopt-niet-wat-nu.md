@@ -52,7 +52,7 @@ Als het item na twee weken nog steeds niet beweegt, is de vraag niet langer of d
 
 Deze twee situaties lijken op elkaar maar vragen een tegenovergestelde aanpak. Heb je na een week nul views, dan is er geen zichtbaarheidsprobleem dat om geduld vraagt, er is een matchingprobleem. Je item komt simpelweg niet terecht bij de kopers die ernaar zoeken, meestal door een titel of foto die het algoritme onvoldoende aanknopingspunten geeft. Wachten lost dat niet op. Herlisten, met een scherpere titel en betere foto's, wel.
 
-Heb je daarentegen wel veel views maar geen enkele hartje of bericht, dan ligt het probleem elders. Kopers zien het item, klikken door, en haken af — dezelfde reflex die terugkomt in [de psychologie van je koper](/artikelen/psychologie-van-je-koper): iemand die twijfelt, reageert niet op meer zichtbaarheid maar op meer zekerheid. Dat wijst meestal op een prijs die niet aansluit bij vergelijkbare listings, of op foto's die onvoldoende vertrouwen wekken zodra iemand goed kijkt.
+Heb je daarentegen wel veel views maar geen enkele hartje of bericht, dan ligt het probleem elders. Kopers zien het item, klikken door, en haken af — dezelfde reflex die terugkomt in [de psychologie van je koper](/artikelen/psychologie-van-je-koper/): iemand die twijfelt, reageert niet op meer zichtbaarheid maar op meer zekerheid. Dat wijst meestal op een prijs die niet aansluit bij vergelijkbare listings, of op foto's die onvoldoende vertrouwen wekken zodra iemand goed kijkt.
 
 ## Dag 22 en verder: drie opties, geen wanhoop
 
@@ -66,7 +66,7 @@ Hou wel voor ogen dat doorlooptijd sterk verschilt per categorie. Een item na ti
 | Kabeltrui | 14 tot 37 dagen |
 | Iconische stukken (flag knits, bear knits) | Meerdere maanden |
 
-Wie op dag 22 nog geen [boost](/artikelen/boosten-op-vinted) heeft ingezet, doet dat trouwens best pas ná deze her-evaluatie, niet in plaats van ervan: een boost versnelt bestaande interesse, hij creëert ze niet.
+Wie op dag 22 nog geen [boost](/artikelen/boosten-op-vinted/) heeft ingezet, doet dat trouwens best pas ná deze her-evaluatie, niet in plaats van ervan: een boost versnelt bestaande interesse, hij creëert ze niet.
 
 ## Wat je nooit moet doen
 

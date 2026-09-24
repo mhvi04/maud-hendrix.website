@@ -4,12 +4,12 @@ excerpt: "206 boosts, €482 investering, 5 jaar data: wat écht rendeert bij he
 date: "2026-09-18"
 tag: "Praktijk"
 draft: false
-canonicalPath: "/artikelen/boosten-op-vinted"
+canonicalPath: "/artikelen/boosten-op-vinted/"
 ---
 
 Veel verkopers beschouwen de 'Boost'-knop op Vinted als een blinde gok: je werpt een paar euro in het algoritme en hoopt dat er een verkoop uitrolt. Maar als we kijken naar de harde cijfers, zien we dat succes op Vinted geen kwestie van geluk is, maar van data-analyse en strategische timing.
 
-Om de mythe van de 'magische knop' te ontleden, heb ik de volledige dataset van [Studio Maud](/professioneel) geanalyseerd: 206 boosts over een periode van vijf jaar, met een totale investering van €482,01. De resultaten bevatten een schat aan informatie over zichtbaarheidsverval en conversie-attributie. In dit artikel vertaal ik deze complexe dataset naar vijf direct toepasbare lessen die het verschil maken tussen weggegooid marketingbudget en een schaalbare verkoopstrategie.
+Om de mythe van de 'magische knop' te ontleden, heb ik de volledige dataset van [Studio Maud](/professioneel/) geanalyseerd: 206 boosts over een periode van vijf jaar, met een totale investering van €482,01. De resultaten bevatten een schat aan informatie over zichtbaarheidsverval en conversie-attributie. In dit artikel vertaal ik deze complexe dataset naar vijf direct toepasbare lessen die het verschil maken tussen weggegooid marketingbudget en een schaalbare verkoopstrategie.
 
 <div class="shape-divider" aria-hidden="true">
   <span class="shape shape--square"></span>
@@ -58,7 +58,7 @@ Boosten is geen pleister voor een zwak account of slechte listings. Kijk naar de
 
 De les? Een boost werkt alleen als de basis (foto's, prijs, omschrijving) staat én als er sprake is van een consistent account-ritme. In 2025, het jaar van de grote doorbraak, steeg de frequentie naar gemiddeld 1 boost per 1,7 dagen. De data suggereren dat boosten effectiever wordt naarmate het vaker wordt ingezet; het creëert een constante stroom van data-punten voor het algoritme, wat de algehele account-autoriteit versterkt. Incidentele boosts op een slapend account leiden vaak tot organische saturatie zonder resultaat.
 
-Dat laatste raakt aan iets dat verder gaat dan zichtbaarheid alleen: een boost vergroot bereik, maar overtuigt geen koper die om andere redenen twijfelt. Wie begrijpt hoe een koper daadwerkelijk beslist — zie [de psychologie van je koper](/artikelen/psychologie-van-je-koper) — weet dat een 'Nulzone'-item meestal geen zichtbaarheidsprobleem heeft, maar een vertrouwensprobleem.
+Dat laatste raakt aan iets dat verder gaat dan zichtbaarheid alleen: een boost vergroot bereik, maar overtuigt geen koper die om andere redenen twijfelt. Wie begrijpt hoe een koper daadwerkelijk beslist — zie [de psychologie van je koper](/artikelen/psychologie-van-je-koper/) — weet dat een 'Nulzone'-item meestal geen zichtbaarheidsprobleem heeft, maar een vertrouwensprobleem.
 
 <div class="shape-divider" aria-hidden="true">
   <span class="shape shape--square"></span>

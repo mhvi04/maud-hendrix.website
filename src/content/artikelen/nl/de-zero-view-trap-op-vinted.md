@@ -25,7 +25,7 @@ Dat is geen pech. Dat is een algoritmisch oordeel.
 
 ## Waarom nul views geen toeval is
 
-Vinted gebruikt een zoeksysteem dat items niet willekeurig toont maar koppelt aan kopers op basis van vectorprofielen — hetzelfde onderliggende mechanisme dat ook [de kandidatenpool van 200.000 items](/artikelen/hoe-werkt-het-vinted-algoritme) bepaalt. Dat klinkt ingewikkeld maar het principe is simpel: het platform bouwt een digitaal profiel van elke koper op basis van wat die persoon eerder heeft bekeken, aangeklikt en gekocht. Jouw item krijgt een eigen profiel op basis van merk, prijs, staat en trefwoorden in je titel. Als die twee profielen niet matchen, verschijnt jouw item letterlijk bij niemand. Niet minder dan normaal. Nul.
+Vinted gebruikt een zoeksysteem dat items niet willekeurig toont maar koppelt aan kopers op basis van vectorprofielen — hetzelfde onderliggende mechanisme dat ook [de kandidatenpool van 200.000 items](/artikelen/hoe-werkt-het-vinted-algoritme/) bepaalt. Dat klinkt ingewikkeld maar het principe is simpel: het platform bouwt een digitaal profiel van elke koper op basis van wat die persoon eerder heeft bekeken, aangeklikt en gekocht. Jouw item krijgt een eigen profiel op basis van merk, prijs, staat en trefwoorden in je titel. Als die twee profielen niet matchen, verschijnt jouw item letterlijk bij niemand. Niet minder dan normaal. Nul.
 
 ## Waarom een prijsverlaging het niet oplost
 
@@ -48,7 +48,7 @@ In mijn eigen verkoopdata zie ik dit patroon regelmatig opduiken bij items die i
 
 ## De enige echte oplossing: herlisten, niet aanpassen
 
-Herlisten is de enige echte oplossing. Niet opnieuw dezelfde listing bewaren en de prijs aanpassen, maar het item verwijderen en helemaal opnieuw plaatsen met een nieuwe titel, andere trefwoorden en bij voorkeur een andere primaire foto. Dat geeft het item een schone lei in het algoritme. Het verse-item effect, de boost die elke nieuwe listing de eerste 48 uur krijgt, herstart volledig — precies het venster dat ook [de testfase van het algoritme](/artikelen/hoe-werkt-het-vinted-algoritme) bepaalt.
+Herlisten is de enige echte oplossing. Niet opnieuw dezelfde listing bewaren en de prijs aanpassen, maar het item verwijderen en helemaal opnieuw plaatsen met een nieuwe titel, andere trefwoorden en bij voorkeur een andere primaire foto. Dat geeft het item een schone lei in het algoritme. Het verse-item effect, de boost die elke nieuwe listing de eerste 48 uur krijgt, herstart volledig — precies het venster dat ook [de testfase van het algoritme](/artikelen/hoe-werkt-het-vinted-algoritme/) bepaalt.
 
 ## Preventie: controleer je titel vóór je uploadt
 

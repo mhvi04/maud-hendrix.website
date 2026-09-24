@@ -42,7 +42,7 @@ Die drempel is een rapportagedrempel, geen belastingvrijstelling. Onder de 30 ve
 
 Zodra je geregeld en zelfstandig een winstgevende activiteit uitoefent, ben je voor de wet ondernemer en heb je een ondernemingsnummer nodig via een ondernemingsloket. Er bestaat geen omzetgrens waaronder je automatisch vrijgesteld bent. Het criterium is regelmaat en intentie, en honderden aankopen per jaar met doorverkoopdoel zijn daar een vrij ondubbelzinnig bewijs van.
 
-Voor studenten bestaat het statuut van [student-zelfstandige](/professioneel), met verlaagde sociale bijdragen onder bepaalde inkomensgrenzen. Zelf ben ik zo gestart. De aanvraag loopt via een sociaal verzekeringsfonds en is één namiddag papierwerk. Dat is een lage prijs voor het verschil tussen legaal en niet legaal ondernemen. In 2026 zijn er voor wie geldig als student-zelfstandige is aangesloten geen sociale bijdragen verschuldigd onder een netto beroepsinkomen van €8.687,04. Dat is geen automatische regeling, een sociaal verzekeringsfonds beoordeelt welk statuut op jou van toepassing is.
+Voor studenten bestaat het statuut van [student-zelfstandige](/professioneel/), met verlaagde sociale bijdragen onder bepaalde inkomensgrenzen. Zelf ben ik zo gestart. De aanvraag loopt via een sociaal verzekeringsfonds en is één namiddag papierwerk. Dat is een lage prijs voor het verschil tussen legaal en niet legaal ondernemen. In 2026 zijn er voor wie geldig als student-zelfstandige is aangesloten geen sociale bijdragen verschuldigd onder een netto beroepsinkomen van €8.687,04. Dat is geen automatische regeling, een sociaal verzekeringsfonds beoordeelt welk statuut op jou van toepassing is.
 
 ## BTW: de grens die het meest verkeerd wordt begrepen
 

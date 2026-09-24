@@ -60,7 +60,7 @@ Photograph the item before shipping. Not just for the listing, but also a photo 
 
 Save screenshots of the Vinted conversation. If there's a dispute about an item's condition or authenticity, the full communication sits in the chat thread. Vinted has access to that thread during a dispute, but it's good for you to have an overview of what was said too.
 
-Photograph the wash label and neck label as a standard part of your listing photos, the same principle I lay out in [the photos that sell](/en/articles/vinted-fotos-die-verkopen). That's your authenticity proof. If a buyer later claims the item is fake, those photos are your first and strongest defence. In authenticity disputes, the seller gets 48 hours to submit additional proof through Vinted's support chat. Whoever has that proof ready is in a strong position. Whoever has to go looking for it in the moment loses valuable time.
+Photograph the wash label and neck label as a standard part of your listing photos, the same principle I lay out in [the photos that sell](/en/articles/vinted-fotos-die-verkopen/). That's your authenticity proof. If a buyer later claims the item is fake, those photos are your first and strongest defence. In authenticity disputes, the seller gets 48 hours to submit additional proof through Vinted's support chat. Whoever has that proof ready is in a strong position. Whoever has to go looking for it in the moment loses valuable time.
 
 <div class="shape-divider" aria-hidden="true">
   <span class="shape shape--triangle"></span>
@@ -92,7 +92,7 @@ Across 1,296 ratings in my sales history, 1,235 are positive, between four and f
 
 That buffer protects you. A reseller with 1,000 ratings who gets three negative reviews has a more stable profile than a beginner with twenty ratings who gets one negative review. Volume is your best long-term defence.
 
-The pattern in those negative reviews is also informative, and it lines up with what I saw earlier in how my buyers spread across different countries: see [the geography of Vinted buyers](/en/articles/geografie-van-vinted-kopers). Dutch-language buyers account for 9.73 percent of the negative ratings in my data. French buyers for 2.35 percent. That difference doesn't reflect item quality, it reflects the buyer's communication style and expectations. Dutch-language buyers are transactional and critical of efficiency. A small deviation in delivery time or a slightly less sharp photo can cost a point. French buyers demand more in pre-purchase chat, but once they buy, they're generally more satisfied.
+The pattern in those negative reviews is also informative, and it lines up with what I saw earlier in how my buyers spread across different countries: see [the geography of Vinted buyers](/en/articles/geografie-van-vinted-kopers/). Dutch-language buyers account for 9.73 percent of the negative ratings in my data. French buyers for 2.35 percent. That difference doesn't reflect item quality, it reflects the buyer's communication style and expectations. Dutch-language buyers are transactional and critical of efficiency. A small deviation in delivery time or a slightly less sharp photo can cost a point. French buyers demand more in pre-purchase chat, but once they buy, they're generally more satisfied.
 
 That information is actionable. With Dutch-language buyers, I add extra specific condition information to the description. With French buyers, I answer questions more thoroughly and make sure the authenticity stack is complete.
 

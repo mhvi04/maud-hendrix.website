@@ -10,7 +10,7 @@ const entries = (await getCollection("articlesNl", ({ data }) => !data.draft)).s
 );
 
 const articles = entries.map((entry) => ({
-  href: `/artikelen/${entry.id}`,
+  href: `/artikelen/${entry.id}/`,
   tag: entry.data.tag,
   title: entry.data.title,
   excerpt: entry.data.excerpt,

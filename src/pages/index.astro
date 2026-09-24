@@ -38,7 +38,7 @@ const interests = [
           <div class="nav-links mono">
             <a href="#professioneel">Professioneel</a>
             <a href="#prive">Privé</a>
-            <a href="/artikelen">Artikelen</a>
+            <a href="/artikelen/">Artikelen</a>
             <a href="#contact">Contact</a>
           </div>
           <LanguagePicker locale="nl" nlPath="/" enPath="/" inline />
@@ -94,7 +94,7 @@ const interests = [
             target="_blank"
             rel="noopener">LinkedIn</a
           >
-          <a class="btn" href="/professioneel">Volledige pagina →</a>
+          <a class="btn" href="/professioneel/">Volledige pagina →</a>
         </div>
       </div>
 
@@ -226,7 +226,7 @@ const interests = [
           <span class="pill-bar-item pill-bar-item--mustard"></span>
         </div>
         <div class="world-links">
-          <a class="btn" href="/prive">Volledige pagina →</a>
+          <a class="btn" href="/prive/">Volledige pagina →</a>
         </div>
       </div>
 
@@ -280,7 +280,7 @@ const interests = [
         <div class="row-body">
           <h3>Blog</h3>
           <div class="link-list">
-            <a href="/artikelen">Naar de blog</a>
+            <a href="/artikelen/">Naar de blog</a>
           </div>
         </div>
       </div>
@@ -302,7 +302,7 @@ const interests = [
         {
           articles.map((a) => (
             <li>
-              <a href={`/artikelen/${a.id}`} class="article-row">
+              <a href={`/artikelen/${a.id}/`} class="article-row">
                 <time class="article-date mono" datetime={a.data.date}>
                   {formatDate(a.data.date)}
                 </time>

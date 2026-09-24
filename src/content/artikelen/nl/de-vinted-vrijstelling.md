@@ -60,7 +60,7 @@ Dingen die in jouw voordeel spelen bij die afweging:
 - Je hanteert geen professionele structuur: geen btw-nummer voor deze activiteit, geen actieve marketing, geen ingekochte voorraad die je aanhoudt in afwachting van een goede prijs.
 - Je verkoopt vaak onder of rond je oorspronkelijke aankoopprijs, niet systematisch met winstmarge.
 
-Dingen die tegen je spelen: regelmatig dezelfde soort items opkopen om ze door te verkopen, financiering met vreemd kapitaal, een snelle opeenvolging van aan- en verkoop die wijst op een georganiseerde aanpak. Zodra dat patroon zichtbaar wordt, kan de fiscus de inkomsten herkwalificeren als divers inkomen (art. 90, 1° WIB92) of, bij een echte professionele activiteit, als beroepsinkomen (art. 23, §1, 1° WIB92). Bij beroepsinkomen loopt de progressieve belasting op tot 50%. Ik ga dieper in op die drie fiscale categorieën, DAC7 en de btw-drempels in [belasting betalen op Vinted verkopen in België](/artikelen/belasting-betalen-op-vinted-in-belgie).
+Dingen die tegen je spelen: regelmatig dezelfde soort items opkopen om ze door te verkopen, financiering met vreemd kapitaal, een snelle opeenvolging van aan- en verkoop die wijst op een georganiseerde aanpak. Zodra dat patroon zichtbaar wordt, kan de fiscus de inkomsten herkwalificeren als divers inkomen (art. 90, 1° WIB92) of, bij een echte professionele activiteit, als beroepsinkomen (art. 23, §1, 1° WIB92). Bij beroepsinkomen loopt de progressieve belasting op tot 50%. Ik ga dieper in op die drie fiscale categorieën, DAC7 en de btw-drempels in [belasting betalen op Vinted verkopen in België](/artikelen/belasting-betalen-op-vinted-in-belgie/).
 
 <div class="shape-divider" aria-hidden="true">
   <span class="shape shape--triangle"></span>
@@ -70,7 +70,7 @@ Dingen die tegen je spelen: regelmatig dezelfde soort items opkopen om ze door t
 
 ## Waarom ik zelf wél geregistreerd ben
 
-Ter contrast, en om het onderscheid scherp te maken: ik ben sinds februari 2025 officieel [student-zelfstandige](/professioneel) voor Studio Maud. Niet omdat ik boven een drempel zit, maar omdat mijn activiteit sowieso niet onder normaal beheer valt. Ik koop vintage Ralph Lauren-stukken specifiek aan om ze met winst door te verkopen. Dat is precies de speculatieve, systematische aan- en verkoop die de criteria hierboven als niet-normaal beheer bestempelen, los van hoeveel transacties of omzet ik doe. Bij mij is er geen grijze zone: aankoop met winstoogmerk en regelmaat is per definitie een winstgevende bezigheid.
+Ter contrast, en om het onderscheid scherp te maken: ik ben sinds februari 2025 officieel [student-zelfstandige](/professioneel/) voor Studio Maud. Niet omdat ik boven een drempel zit, maar omdat mijn activiteit sowieso niet onder normaal beheer valt. Ik koop vintage Ralph Lauren-stukken specifiek aan om ze met winst door te verkopen. Dat is precies de speculatieve, systematische aan- en verkoop die de criteria hierboven als niet-normaal beheer bestempelen, los van hoeveel transacties of omzet ik doe. Bij mij is er geen grijze zone: aankoop met winstoogmerk en regelmaat is per definitie een winstgevende bezigheid.
 
 Dat is het verschil met iemand die zijn eigen garderobe of de outgroeide kinderkleding van zijn kinderen verkoopt: bij mij begint het traject bij de aankoop met de bedoeling om te verkopen, bij de occasionele verkoper begint het bij spullen die al in huis waren, aangeschaft voor eigen gebruik, zonder enig verkoopplan op voorhand.
 

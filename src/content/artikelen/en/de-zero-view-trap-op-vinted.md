@@ -25,7 +25,7 @@ That's not bad luck. That's an algorithmic verdict.
 
 ## Why zero views isn't a coincidence
 
-Vinted uses a search system that doesn't show items randomly but matches them to buyers based on vector profiles — the same underlying mechanism that also drives [the 200,000-item candidate pool](/en/articles/hoe-werkt-het-vinted-algoritme). That sounds complicated but the principle is simple: the platform builds a digital profile of every buyer based on what they've previously viewed, clicked and bought. Your item gets its own profile based on brand, price, condition and keywords in the title. If those two profiles don't match, your item literally appears to no one. Not fewer than normal. Zero.
+Vinted uses a search system that doesn't show items randomly but matches them to buyers based on vector profiles — the same underlying mechanism that also drives [the 200,000-item candidate pool](/en/articles/hoe-werkt-het-vinted-algoritme/). That sounds complicated but the principle is simple: the platform builds a digital profile of every buyer based on what they've previously viewed, clicked and bought. Your item gets its own profile based on brand, price, condition and keywords in the title. If those two profiles don't match, your item literally appears to no one. Not fewer than normal. Zero.
 
 ## Why a price drop doesn't fix it
 
@@ -48,7 +48,7 @@ In my own sales data I see this pattern come up regularly on items I overpriced,
 
 ## The only real fix: relist, don't edit
 
-Relisting is the only real fix. Not keeping the same listing and adjusting the price, but deleting the item and posting it again entirely, with a new title, different keywords and preferably a different primary photo. That gives the item a clean slate in the algorithm. The fresh-item effect, the boost every new listing gets in its first 48 hours, fully restarts — exactly the window that also drives [the algorithm's test phase](/en/articles/hoe-werkt-het-vinted-algoritme).
+Relisting is the only real fix. Not keeping the same listing and adjusting the price, but deleting the item and posting it again entirely, with a new title, different keywords and preferably a different primary photo. That gives the item a clean slate in the algorithm. The fresh-item effect, the boost every new listing gets in its first 48 hours, fully restarts — exactly the window that also drives [the algorithm's test phase](/en/articles/hoe-werkt-het-vinted-algoritme/).
 
 ## Prevention: check your title before you upload
 

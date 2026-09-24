@@ -66,7 +66,7 @@ Mijn titels zijn meertalig omdat mijn kopersbasis meertalig is. Een kabeltrui-li
 
 Het woord "wintertrui" in titels van knitwear verhoogt de seizoensgebonden vindbaarheid met 25%. Dat getal reflecteert dat kopers in augustus en september actief beginnen te zoeken naar warme kleding terwijl het aanbod nog niet volledig op dat zoekgedrag is afgesteld. Wie het woord gebruikt terwijl concurrenten nog "kabeltrui" schrijven, is beter vindbaar in de transitieperiode.
 
-Een sterke titel en beschrijving bepalen of een listing organisch gevonden wordt. Staat een item er al een tijdje op zonder verkoop, maar wel met favorieten, dan is [wat boosten op Vinted kost](/artikelen/boosten-op-vinted) en of het die investering waard is de volgende vraag om te beantwoorden.
+Een sterke titel en beschrijving bepalen of een listing organisch gevonden wordt. Staat een item er al een tijdje op zonder verkoop, maar wel met favorieten, dan is [wat boosten op Vinted kost](/artikelen/boosten-op-vinted/) en of het die investering waard is de volgende vraag om te beantwoorden.
 
 ## De prijs als gevolg van de beschrijving
 

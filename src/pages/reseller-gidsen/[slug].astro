@@ -32,7 +32,7 @@ const gerelateerd = alleGidsen
   <SiteHeader world="pro" />
   <main class="article">
     <div class="wrap">
-      <a href="/reseller-gidsen" class="back mono">← Alle reseller gidsen</a>
+      <a href="/reseller-gidsen/" class="back mono">← Alle reseller gidsen</a>
       <span class="tag mono">{entry.data.tag}</span>
       <h1>{entry.data.title}</h1>
       <p class="meta mono">
@@ -59,7 +59,7 @@ const gerelateerd = alleGidsen
             <ul>
               {gerelateerd.map((g) => (
                 <li>
-                  <a href={`/reseller-gidsen/${g.id}`}>{g.data.title}</a>
+                  <a href={`/reseller-gidsen/${g.id}/`}>{g.data.title}</a>
                 </li>
               ))}
             </ul>

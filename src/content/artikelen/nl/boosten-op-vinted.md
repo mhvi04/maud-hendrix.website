@@ -67,7 +67,7 @@ T-shirts boost ik bijna nooit. De marge per stuk is lager, en de organische rota
 
 Bij Polo Bear-truien en flag knits is de beslissing anders. Die items hebben een langere levenscyclus van soms 60 tot 238 dagen. Een boost op dag zeven is er te vroeg voor. De koper voor dat soort stukken zoekt actief en doelgericht; die heeft de boost niet nodig om het item te vinden. Ik boost dit type item pas als het al meerdere weken online staat en de views stagneren.
 
-De vuistregel die ik hanteer: boost alleen als er al bewijs is dat mensen geïnteresseerd zijn. Favorieten zijn dat bewijs, en [wat je met die favorieten doet](/artikelen/favoriet-hartje-op-vinted) bepaalt vaak mee of een boost nog nodig is. Een item met nul favorieten boost je niet, want de boost vergroot de zichtbaarheid maar kan het gebrek aan interesse niet verhelpen. Dat is een listing-probleem, geen zichtbaarheidsprobleem.
+De vuistregel die ik hanteer: boost alleen als er al bewijs is dat mensen geïnteresseerd zijn. Favorieten zijn dat bewijs, en [wat je met die favorieten doet](/artikelen/favoriet-hartje-op-vinted/) bepaalt vaak mee of een boost nog nodig is. Een item met nul favorieten boost je niet, want de boost vergroot de zichtbaarheid maar kan het gebrek aan interesse niet verhelpen. Dat is een listing-probleem, geen zichtbaarheidsprobleem.
 
 ## Op welk moment van de week boost ik
 
@@ -89,7 +89,7 @@ De juiste volgorde is omgekeerd. Laat het item organisch beginnen. Geef het de e
 
 Een boost is geen pleister voor een slecht item.
 
-Als de foto's onduidelijk zijn, als de prijs te hoog zit ten opzichte van vergelijkbare listings, als de beschrijving ontbreekt of de titel geen zoekwoorden bevat die kopers daadwerkelijk gebruiken, dan helpt meer zichtbaarheid niets. Meer mensen zullen het item zien en het alsnog negeren. In dat geval helpt [het dag-per-dag pad voor een item dat niet verkoopt](/artikelen/vinted-item-verkoopt-niet-wat-nu) meer dan een boost.
+Als de foto's onduidelijk zijn, als de prijs te hoog zit ten opzichte van vergelijkbare listings, als de beschrijving ontbreekt of de titel geen zoekwoorden bevat die kopers daadwerkelijk gebruiken, dan helpt meer zichtbaarheid niets. Meer mensen zullen het item zien en het alsnog negeren. In dat geval helpt [het dag-per-dag pad voor een item dat niet verkoopt](/artikelen/vinted-item-verkoopt-niet-wat-nu/) meer dan een boost.
 
 Ik heb dat een keer concreet meegemaakt met een hemd dat al drie weken online stond zonder één favoriet. Ik boostte het. Het werd gezien door meer mensen. Geen enkele klik. Geen enkel bericht. Het item is uiteindelijk opnieuw geplaatst met nieuwe foto's en een aangepaste prijs, en verkocht binnen vier dagen organisch. De boost van €2,50 die ik eerder had uitgegeven, was verloren.
 

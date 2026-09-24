@@ -34,7 +34,7 @@ Wanneer je een bod onmiddellijk accepteert, wordt dat bod de norm. Niet alleen v
 
 Er is ook een rechtstreeks psychologisch effect bij de koper die net heeft geboden. Als dat bod meteen wordt geaccepteerd, denkt een deel van hen: ik had lager kunnen gaan. Die gedachte ondermijnt het vertrouwen in de transactie, niet in de verkoper, maar in zichzelf. En kopers die twijfelen aan hun eigen beslissing, geven lagere reviews en stellen vaker vragen nadien.
 
-Direct accepteren haalt ook de urgentie weg. Urgentie is precies wat mensen aanzet tot handelen. Een item dat er nonchalant bij ligt, wacht op een koper die nooit haast heeft. Wie begrijpt hoe een koper daadwerkelijk beslist — zie [de psychologie van je koper](/artikelen/psychologie-van-je-koper) — herkent dit mechanisme meteen: het gaat zelden om het item zelf, wel om het signaal dat je gedrag geeft.
+Direct accepteren haalt ook de urgentie weg. Urgentie is precies wat mensen aanzet tot handelen. Een item dat er nonchalant bij ligt, wacht op een koper die nooit haast heeft. Wie begrijpt hoe een koper daadwerkelijk beslist — zie [de psychologie van je koper](/artikelen/psychologie-van-je-koper/) — herkent dit mechanisme meteen: het gaat zelden om het item zelf, wel om het signaal dat je gedrag geeft.
 
 <div class="shape-divider" aria-hidden="true">
   <span class="shape shape--circle"></span>

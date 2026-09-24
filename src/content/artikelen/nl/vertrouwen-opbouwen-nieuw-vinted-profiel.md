@@ -29,7 +29,7 @@ De eerste laag is je profiel zelf. Een volledig ingevulde bio, een duidelijke pr
 
 ## Laag 2: reactiesnelheid
 
-De tweede laag is reactiesnelheid. In mijn data over meer dan 2.500 transacties is één patroon consistent: wie binnen het uur reageert op een vraag of bod, heeft 40% meer kans om die transactie daadwerkelijk te closen. Voor een nieuw profiel is dit nog belangrijker omdat snelle communicatie het enige directe signaal is dat een koper heeft van hoe serieus jij bent. Een bevestiging van een koper in je reviewsectie begint bij die eerste interactie — dezelfde reactiesnelheid die ook meespeelt bij [het accepteren van biedingen](/artikelen/biedingen-accepteren-op-vinted).
+De tweede laag is reactiesnelheid. In mijn data over meer dan 2.500 transacties is één patroon consistent: wie binnen het uur reageert op een vraag of bod, heeft 40% meer kans om die transactie daadwerkelijk te closen. Voor een nieuw profiel is dit nog belangrijker omdat snelle communicatie het enige directe signaal is dat een koper heeft van hoe serieus jij bent. Een bevestiging van een koper in je reviewsectie begint bij die eerste interactie — dezelfde reactiesnelheid die ook meespeelt bij [het accepteren van biedingen](/artikelen/biedingen-accepteren-op-vinted/).
 
 <div class="shape-divider" aria-hidden="true">
   <span class="shape shape--circle"></span>

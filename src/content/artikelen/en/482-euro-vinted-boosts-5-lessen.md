@@ -4,12 +4,12 @@ excerpt: "206 boosts, a €482 investment, 5 years of data: what actually pays o
 date: "2026-09-18"
 tag: "Practice"
 draft: false
-canonicalPath: "/en/articles/boosten-op-vinted"
+canonicalPath: "/en/articles/boosten-op-vinted/"
 ---
 
 Most sellers treat the 'Boost' button on Vinted as a blind gamble: throw a few euros at the algorithm and hope a sale falls out. But when you look at the hard numbers, success on Vinted turns out to be less about luck and more about data analysis and strategic timing.
 
-To take apart the myth of the 'magic button', I analysed the full dataset from [Studio Maud](/en/professional): 206 boosts over a five-year period, with a total investment of €482.01. The results hold a wealth of information on visibility decay and conversion attribution. In this article I translate that complex dataset into five directly applicable lessons, the difference between wasted marketing budget and a scalable sales strategy.
+To take apart the myth of the 'magic button', I analysed the full dataset from [Studio Maud](/en/professional/): 206 boosts over a five-year period, with a total investment of €482.01. The results hold a wealth of information on visibility decay and conversion attribution. In this article I translate that complex dataset into five directly applicable lessons, the difference between wasted marketing budget and a scalable sales strategy.
 
 <div class="shape-divider" aria-hidden="true">
   <span class="shape shape--square"></span>
@@ -58,7 +58,7 @@ Boosting is not a band-aid for a weak account or bad listings. Look at the 2022 
 
 The lesson? A boost only works if the fundamentals (photos, price, description) are solid, and if there's a consistent account rhythm. In 2025, the year of the big breakout, boost frequency rose to an average of 1 boost every 1.7 days. The data suggest boosting gets more effective the more consistently it's used; it creates a steady stream of data points for the algorithm, which strengthens overall account authority. Occasional boosts on a dormant account tend to lead to organic saturation with no result.
 
-That last point touches on something beyond visibility alone: a boost widens reach, but it doesn't convince a buyer who's hesitant for other reasons. Anyone who understands how a buyer actually decides, see [the psychology of your buyer](/en/articles/psychologie-van-je-koper), knows that a 'zero zone' item usually doesn't have a visibility problem, it has a trust problem.
+That last point touches on something beyond visibility alone: a boost widens reach, but it doesn't convince a buyer who's hesitant for other reasons. Anyone who understands how a buyer actually decides, see [the psychology of your buyer](/en/articles/psychologie-van-je-koper/), knows that a 'zero zone' item usually doesn't have a visibility problem, it has a trust problem.
 
 <div class="shape-divider" aria-hidden="true">
   <span class="shape shape--square"></span>

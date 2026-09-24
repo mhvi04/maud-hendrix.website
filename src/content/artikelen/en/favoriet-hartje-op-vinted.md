@@ -35,7 +35,7 @@ That's why passively waiting isn't the strongest strategy, especially not on ite
 
 For a single heart on a common item, it's usually enough to just stay reachable and quick in case a question or offer follows. But once you notice an item collecting several hearts in a short time without any contact following, a proactive message is a strong move. I do this myself regularly for items liked multiple times within the same period: a short, friendly message asking if there's still interest, sometimes combined with a small offer like a bundle discount if the buyer has also liked other items of mine.
 
-That last part works well because it turns the passive interest of a heart into an active negotiation, right within the window where the item still benefits fully from its freshness boost, the same momentum effect that also [drives how boosting works](/en/articles/boosten-op-vinted). Someone who's liked multiple pieces from your listings without buying is often genuinely interested, but simply needs a nudge to make the decision.
+That last part works well because it turns the passive interest of a heart into an active negotiation, right within the window where the item still benefits fully from its freshness boost, the same momentum effect that also [drives how boosting works](/en/articles/boosten-op-vinted/). Someone who's liked multiple pieces from your listings without buying is often genuinely interested, but simply needs a nudge to make the decision.
 
 <div class="shape-divider" aria-hidden="true">
   <span class="shape shape--circle"></span>

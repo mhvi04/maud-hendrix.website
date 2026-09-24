@@ -60,7 +60,7 @@ Things that work in your favour in that assessment:
 - You don't run a professional structure: no VAT number for this activity, no active marketing, no purchased stock you hold while waiting for a good price.
 - You often sell at or below your original purchase price, not systematically with a profit margin.
 
-Things that work against you: regularly buying the same type of item to resell, financing with outside capital, a fast buy-and-sell turnaround that points to an organised approach. Once that pattern becomes visible, the tax authority can reclassify the income as miscellaneous income (Art. 90, 1° WIB92) or, for a genuinely professional activity, as professional income (Art. 23, §1, 1° WIB92). Under professional income, progressive tax rates climb up to 50%. I go deeper into those three tax categories, DAC7 and the VAT thresholds in [paying tax on Vinted sales in Belgium](/en/articles/belasting-betalen-op-vinted-in-belgie).
+Things that work against you: regularly buying the same type of item to resell, financing with outside capital, a fast buy-and-sell turnaround that points to an organised approach. Once that pattern becomes visible, the tax authority can reclassify the income as miscellaneous income (Art. 90, 1° WIB92) or, for a genuinely professional activity, as professional income (Art. 23, §1, 1° WIB92). Under professional income, progressive tax rates climb up to 50%. I go deeper into those three tax categories, DAC7 and the VAT thresholds in [paying tax on Vinted sales in Belgium](/en/articles/belasting-betalen-op-vinted-in-belgie/).
 
 <div class="shape-divider" aria-hidden="true">
   <span class="shape shape--triangle"></span>
@@ -70,7 +70,7 @@ Things that work against you: regularly buying the same type of item to resell, 
 
 ## Why I'm registered myself
 
-For contrast, and to sharpen the distinction: I've been officially registered as a [student self-employed](/en/professional) person for Studio Maud since February 2025. Not because I'm above a threshold, but because my activity doesn't fall under normal management in the first place. I buy vintage Ralph Lauren pieces specifically to resell them at a profit. That's exactly the speculative, systematic buying and selling the criteria above classify as not-normal-management, regardless of how many transactions or how much revenue I generate. For me there's no grey zone: buying with profit intent and regularity is a profit-making activity by definition.
+For contrast, and to sharpen the distinction: I've been officially registered as a [student self-employed](/en/professional/) person for Studio Maud since February 2025. Not because I'm above a threshold, but because my activity doesn't fall under normal management in the first place. I buy vintage Ralph Lauren pieces specifically to resell them at a profit. That's exactly the speculative, systematic buying and selling the criteria above classify as not-normal-management, regardless of how many transactions or how much revenue I generate. For me there's no grey zone: buying with profit intent and regularity is a profit-making activity by definition.
 
 That's the difference with someone selling their own wardrobe or their kids' outgrown clothes: for me, the process starts at the purchase, made with the intent to resell. For the occasional seller, it starts with things already at home, bought for personal use, with no sales plan whatsoever beforehand.
 

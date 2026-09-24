@@ -52,7 +52,7 @@ If the item still hasn't moved after two weeks, the question is no longer whethe
 
 These two situations look alike but call for opposite approaches. If you have zero views after a week, that's not a visibility problem that needs patience, it's a matching problem. Your item simply isn't reaching the buyers searching for it, usually because of a title or photo that gives the algorithm too little to work with. Waiting doesn't fix that. Relisting, with a sharper title and better photos, does.
 
-If instead you're getting plenty of views but not a single heart or message, the problem sits elsewhere. Buyers see the item, click through, and bounce, the same reflex that shows up in [the psychology of your buyer](/en/articles/psychologie-van-je-koper): someone who's hesitant doesn't respond to more visibility, they respond to more certainty. That usually points to a price that doesn't match comparable listings, or photos that don't build enough trust once someone looks closely.
+If instead you're getting plenty of views but not a single heart or message, the problem sits elsewhere. Buyers see the item, click through, and bounce, the same reflex that shows up in [the psychology of your buyer](/en/articles/psychologie-van-je-koper/): someone who's hesitant doesn't respond to more visibility, they respond to more certainty. That usually points to a price that doesn't match comparable listings, or photos that don't build enough trust once someone looks closely.
 
 ## Day 22 and beyond: three options, no panic
 
@@ -66,7 +66,7 @@ Keep in mind that turnaround time varies a lot by category. Calling an item a fa
 | Cable knit sweater | 14 to 37 days |
 | Iconic pieces (flag knits, bear knits) | Several months |
 
-If you still haven't used a [boost](/en/articles/boosten-op-vinted) by day 22, it's best to do it after this re-evaluation, not instead of it: a boost accelerates existing interest, it doesn't create it.
+If you still haven't used a [boost](/en/articles/boosten-op-vinted/) by day 22, it's best to do it after this re-evaluation, not instead of it: a boost accelerates existing interest, it doesn't create it.
 
 ## What you should never do
 

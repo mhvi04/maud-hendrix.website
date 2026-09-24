@@ -65,7 +65,7 @@ I almost never boost T-shirts. The margin per piece is lower, and organic turnov
 
 For Polo Bear sweaters and flag knits, the decision is different. Those items have a longer life cycle, sometimes 60 to 238 days. A boost on day seven is too early for them. The buyer for that kind of piece is actively and deliberately searching; they don't need the boost to find it. I only boost this type of item once it's been listed for several weeks and views have stagnated.
 
-The rule of thumb I use: only boost when there's already evidence people are interested. Favourites are that evidence, and [what you do with those favourites](/en/articles/favoriet-hartje-op-vinted) often determines whether a boost is even needed. An item with zero favourites doesn't get boosted, because a boost widens visibility but can't fix a lack of interest. That's a listing problem, not a visibility problem.
+The rule of thumb I use: only boost when there's already evidence people are interested. Favourites are that evidence, and [what you do with those favourites](/en/articles/favoriet-hartje-op-vinted/) often determines whether a boost is even needed. An item with zero favourites doesn't get boosted, because a boost widens visibility but can't fix a lack of interest. That's a listing problem, not a visibility problem.
 
 ## What day of the week I boost on
 
@@ -87,7 +87,7 @@ The right order is the reverse. Let the item start organically. Give it the firs
 
 A boost is not a band-aid for a bad listing.
 
-If the photos are unclear, if the price is too high relative to comparable listings, if the description is missing, or the title doesn't contain the keywords buyers actually use, more visibility won't help. More people will see the item and ignore it anyway. In that case, [the day-by-day path for an item that isn't selling](/en/articles/vinted-item-verkoopt-niet-wat-nu) helps more than a boost.
+If the photos are unclear, if the price is too high relative to comparable listings, if the description is missing, or the title doesn't contain the keywords buyers actually use, more visibility won't help. More people will see the item and ignore it anyway. In that case, [the day-by-day path for an item that isn't selling](/en/articles/vinted-item-verkoopt-niet-wat-nu/) helps more than a boost.
 
 I experienced this concretely once with a shirt that had been listed for three weeks without a single favourite. I boosted it. More people saw it. Not a single click. Not a single message. The item was eventually relisted with new photos and an adjusted price, and sold organically within four days. The €2.50 boost I'd spent earlier was wasted.
 

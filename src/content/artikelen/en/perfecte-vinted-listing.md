@@ -66,7 +66,7 @@ My titles are multilingual because my buyer base is multilingual. A cable knit l
 
 The word "winter sweater" in knitwear titles increases seasonal discoverability by 25%. That figure reflects that buyers start actively searching for warm clothing in August and September while supply hasn't fully caught up with that search behaviour yet. Use the word while competitors are still only writing "cable knit" and you're more discoverable during that transition period.
 
-A strong title and description determine whether a listing gets found organically. If an item has been up for a while without selling, but does have favourites, then [what boosting on Vinted costs](/en/articles/boosten-op-vinted) and whether it's worth that investment is the next question to answer.
+A strong title and description determine whether a listing gets found organically. If an item has been up for a while without selling, but does have favourites, then [what boosting on Vinted costs](/en/articles/boosten-op-vinted/) and whether it's worth that investment is the next question to answer.
 
 ## Price as a consequence of the description
 

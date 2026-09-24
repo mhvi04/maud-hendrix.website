@@ -4,7 +4,7 @@ title: "Bijna nooit meteen een bod accepteren? Wat mijn verkoopdata laat zien ov
 excerpt: "Van meer dan 2.500 Vinted-transacties liep ik de meeste marge mis op de deals die ik het snelst sloot. Wat er gebeurt als je een bod meteen accepteert, en waarom een tegenbod bijna altijd slimmer is."
 date: "2026-06-23"
 draft: false
-canonicalPath: "/artikelen/biedingen-accepteren-op-vinted"
+canonicalPath: "/artikelen/biedingen-accepteren-op-vinted/"
 ---
 
 Een bod binnenkrijgen voelt natuurlijk als een opluchting. Zeker als de koper niet met een extreem laag bedrag komt, is de logische reflex vaak: accepteren en doorgaan. Ik begrijp die reactie volledig, want ik deed het zelf ook. Maar het kost je simpelweg geld.

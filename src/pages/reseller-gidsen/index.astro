@@ -28,7 +28,7 @@ const gidsen = (await getCollection("resellerGidsen", ({ data }) => !data.draft)
       {
         gidsen.map((g) => (
           <ArticleCard
-            href={`/reseller-gidsen/${g.id}`}
+            href={`/reseller-gidsen/${g.id}/`}
             tag={g.data.tag}
             title={g.data.title}
             excerpt={g.data.excerpt}

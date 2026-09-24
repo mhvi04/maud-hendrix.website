@@ -77,7 +77,7 @@ It's also no coincidence that only 9.7% of my sales sit under €20. That segmen
 
 The buyer protection fee doesn't touch your bank account directly. But it does touch the buyer's decision, and that decision determines how fast your stock turns over.
 
-Two mechanisms play out here. **Anchoring at checkout.** The buyer forms their expectation based on the listed item price, the same anchoring effect that also plays into [bidding on Vinted](/en/articles/biedingen-accepteren-op-vinted). At checkout they suddenly see a higher total. On a €50 item, that jump is small enough to ignore. On a €5 item, the jump to €5.95 is relatively large, large enough to trigger hesitation, drop-off, or an attempt to negotiate a lower price to offset the feeling of "loss." You don't feel that as a cost, you feel it as a slower-selling item or a buyer asking for a discount.
+Two mechanisms play out here. **Anchoring at checkout.** The buyer forms their expectation based on the listed item price, the same anchoring effect that also plays into [bidding on Vinted](/en/articles/biedingen-accepteren-op-vinted/). At checkout they suddenly see a higher total. On a €50 item, that jump is small enough to ignore. On a €5 item, the jump to €5.95 is relatively large, large enough to trigger hesitation, drop-off, or an attempt to negotiate a lower price to offset the feeling of "loss." You don't feel that as a cost, you feel it as a slower-selling item or a buyer asking for a discount.
 
 **Diluting the deal.** A buyer hesitating over a cheap standalone item stops hesitating the moment they can combine it with something else. Not because the total price suddenly stops mattering, but because the fixed fee then spreads across more value. Which brings us to the practical rule.
 

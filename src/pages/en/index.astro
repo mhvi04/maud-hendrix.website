@@ -33,7 +33,7 @@ const formatDate = (iso: string) =>
         <div class="nav-right">
           <div class="nav-links mono">
             <a href="#professional">Professional</a>
-            <a href="/en/articles">Articles</a>
+            <a href="/en/articles/">Articles</a>
             <a href="#contact">Contact</a>
           </div>
           <LanguagePicker locale="en" nlPath="/" enPath="/" inline />
@@ -88,7 +88,7 @@ const formatDate = (iso: string) =>
             target="_blank"
             rel="noopener">LinkedIn</a
           >
-          <a class="btn" href="/en/professional">Full page →</a>
+          <a class="btn" href="/en/professional/">Full page →</a>
         </div>
       </div>
 
@@ -256,7 +256,7 @@ const formatDate = (iso: string) =>
         {
           articles.map((a) => (
             <li>
-              <a href={`/en/articles/${a.id}`} class="article-row">
+              <a href={`/en/articles/${a.id}/`} class="article-row">
                 <time class="article-date mono" datetime={a.data.date}>
                   {formatDate(a.data.date)}
                 </time>
