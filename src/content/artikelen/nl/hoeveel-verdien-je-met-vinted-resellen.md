@@ -4,6 +4,7 @@ excerpt: "Van €917 omzet in jaar één tot €35.102 in 2025. Wat er na inkoop
 date: "2026-09-22"
 tag: "Praktijk"
 draft: false
+related: ["verborgen-kosten-van-vinted", "belasting-betalen-op-vinted-in-belgie"]
 faq:
   - question: "Hoeveel verdien je met Vinted resellen?"
     answer: "Dat hangt volledig af van hoeveel tijd en volume je erin steekt. In mijn eigen cijfers ging het van €917 omzet in het eerste jaar naar €35.102 in 2025, over 774 orders. Na inkoop, kosten en Belgische belastingen en sociale bijdragen kwam dat in het beste jaar neer op 21 tot 27 euro netto per uur, over 23 tot 31 gewerkte uren per week."

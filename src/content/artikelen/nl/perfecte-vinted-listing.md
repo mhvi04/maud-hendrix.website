@@ -4,6 +4,7 @@ excerpt: "Een listing is geen samenvatting van een item, maar een antwoord op el
 date: "2026-09-13"
 tag: "Praktijk"
 draft: false
+related: ["ralph-lauren-labels-uitgelegd", "vinted-fotos-die-verkopen"]
 ---
 
 > Een beschrijving is geen samenvatting van een item. Het is een antwoord op de vragen die een koper gaat stellen voor of na de aankoop, en het doel is die vragen te beantwoorden voor ze gesteld worden. Echte waarde zit zelden in het fysieke object zelf, maar in de creatie van context. Een beschrijving fungeert als een filter dat onzekerheid wegneemt voordat het een barrière voor de verkoop wordt. Wie anticipeert op vragen over maat, staat en authenticiteit, bouwt een onzichtbare muur tegen retouren en tijdrovende chat.

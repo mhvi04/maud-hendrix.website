@@ -5,6 +5,7 @@ date: "2026-09-18"
 tag: "Praktijk"
 draft: false
 canonicalPath: "/artikelen/boosten-op-vinted"
+related: ["hoe-werkt-het-vinted-algoritme", "vinted-item-verkoopt-niet-wat-nu"]
 ---
 
 Veel verkopers beschouwen de 'Boost'-knop op Vinted als een blinde gok: je werpt een paar euro in het algoritme en hoopt dat er een verkoop uitrolt. Maar als we kijken naar de harde cijfers, zien we dat succes op Vinted geen kwestie van geluk is, maar van data-analyse en strategische timing.

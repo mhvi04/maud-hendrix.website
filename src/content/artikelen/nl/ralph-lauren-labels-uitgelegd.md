@@ -4,6 +4,7 @@ excerpt: "Eén naam, ongeveer twintig verschillende lijnen, en een prijsverschil
 date: "2026-09-22"
 tag: "Praktijk"
 draft: false
+related: ["perfecte-vinted-listing", "vertrouwen-opbouwen-nieuw-vinted-profiel"]
 faq:
   - question: "Wat is Purple Label van Ralph Lauren?"
     answer: "Purple Label is de duurste herenlijn van Ralph Lauren, gelanceerd in 1994 als premium collectie geïnspireerd op de tailoring van Savile Row. Stukken worden vaak in Italië gemaakt in kleine oplages. Het neklabel is paars met goudkleurige tekst, en in de wederverkoop houdt deze lijn regelmatig meer dan zestig procent van de nieuwprijs vast."
