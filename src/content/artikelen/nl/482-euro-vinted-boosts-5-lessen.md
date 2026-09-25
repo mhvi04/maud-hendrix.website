@@ -4,7 +4,6 @@ excerpt: "206 boosts, €482 investering, 5 jaar data: wat écht rendeert bij he
 date: "2026-09-18"
 tag: "Praktijk"
 draft: false
-canonicalPath: "/artikelen/boosten-op-vinted"
 related: ["hoe-werkt-het-vinted-algoritme", "vinted-item-verkoopt-niet-wat-nu"]
 ---
 

@@ -4,7 +4,6 @@ excerpt: "206 boosts, a €482 investment, 5 years of data: what actually pays o
 date: "2026-09-18"
 tag: "Practice"
 draft: false
-canonicalPath: "/en/articles/boosten-op-vinted"
 ---
 
 Most sellers treat the 'Boost' button on Vinted as a blind gamble: throw a few euros at the algorithm and hope a sale falls out. But when you look at the hard numbers, success on Vinted turns out to be less about luck and more about data analysis and strategic timing.
