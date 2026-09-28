@@ -3,6 +3,7 @@ title: "Every Ralph Lauren comes with a different label. Here's what they all me
 excerpt: "One name, around twenty different lines, and a price gap that runs from five euros to more than a thousand for pieces that look like the same brand at first glance. Learn to read the neck label and you'll know within three seconds what a piece is worth."
 date: "2026-09-22"
 tag: "Practice"
+thema: "ralph-lauren"
 draft: false
 faq:
   - question: "What is Ralph Lauren's Purple Label?"

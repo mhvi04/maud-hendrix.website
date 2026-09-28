@@ -4,6 +4,7 @@ import SiteHeader from "../../../components/SiteHeader.astro";
 import StickyFooterBar from "../../../components/StickyFooterBar.astro";
 import TableOfContents from "../../../components/TableOfContents.astro";
 import { getCollection, render } from "astro:content";
+import { getImage } from "astro:assets";
 import { existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
@@ -42,10 +43,14 @@ const faqJsonLd =
       }
     : null;
 
-// Per-article og:image, when present in public/og/<slug>.png — same image
-// is shared across locales since it's a graphic, not localized text.
+// og:image, in order of preference: the frontmatter cover image, then a
+// manually supplied public/og/<slug>.png, otherwise BaseLayout falls back
+// to the sitewide og-default.png.
 const ownOgImagePath = fileURLToPath(new URL(`../../../../public/og/${entry.id}.png`, import.meta.url));
-const ogImage = existsSync(ownOgImagePath) ? `/og/${entry.id}.png` : undefined;
+const fallbackOgImage = existsSync(ownOgImagePath) ? `/og/${entry.id}.png` : undefined;
+const ogImage = entry.data.image
+  ? (await getImage({ src: entry.data.image, width: 1200, height: 630 })).src
+  : fallbackOgImage;
 ---
 
 <BaseLayout

@@ -3,6 +3,7 @@ title: "De Zero-View Trap: waarom jouw listing niemand bereikt en wat je eraan d
 excerpt: "Nul views na een week is geen pech maar een algoritmisch oordeel. Waarom een prijsverlaging dat niet oplost, en waarom herlisten met een scherpere titel wel werkt."
 date: "2026-09-22"
 tag: "Praktijk"
+thema: "algoritme-zichtbaarheid"
 draft: false
 related: ["hoe-werkt-het-vinted-algoritme", "vinted-item-verkoopt-niet-wat-nu"]
 faq:

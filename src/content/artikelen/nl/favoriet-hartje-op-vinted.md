@@ -3,6 +3,7 @@ title: "Wat moet je doen als iemand je artikel favoriet maakt op Vinted?"
 excerpt: "Tussen een hartje en een aankoop zit gemiddeld 1,8 dag. Wat dat venster betekent en waarom afwachten je vaak een verkoop kost."
 date: "2026-09-18"
 tag: "Praktijk"
+thema: "kopers"
 draft: false
 related: ["boosten-op-vinted", "biedingen-accepteren-op-vinted"]
 ---

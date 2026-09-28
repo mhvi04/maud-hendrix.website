@@ -3,6 +3,7 @@ title: "Hoeveel verdien je echt met Vinted resellen? Mijn cijfers van vier jaar"
 excerpt: "Van €917 omzet in jaar één tot €35.102 in 2025. Wat er na inkoop, kosten en Belgische belastingen overblijft, per gewerkt uur — zonder afronding naar boven."
 date: "2026-09-22"
 tag: "Praktijk"
+thema: "prijs-marge"
 draft: false
 related: ["verborgen-kosten-van-vinted", "belasting-betalen-op-vinted-in-belgie"]
 faq:

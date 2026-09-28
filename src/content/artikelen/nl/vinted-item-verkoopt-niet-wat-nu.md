@@ -3,6 +3,7 @@ title: "Vinted item verkoopt niet? Wat nu, dag per dag"
 excerpt: "Een prijsverlaging is zelden de juiste eerste stap. Het dag-per-dag tijdspad voor een Vinted-item dat niet verkoopt, van dag 1 tot dag 22 en verder."
 date: "2026-09-18"
 tag: "Praktijk"
+thema: "algoritme-zichtbaarheid"
 draft: false
 related: ["de-zero-view-trap-op-vinted", "boosten-op-vinted"]
 ---

@@ -3,6 +3,7 @@ title: "Hoe werkt het Vinted algoritme in 2026?"
 excerpt: "Vinted toont geen chronologische lijst maar een zoekmachine met een kandidatenpool van 200.000 items. Wat de 48-uur testfase, de 3-hartjes drempel en de 60%-prijsregel echt betekenen."
 date: "2026-09-22"
 tag: "Praktijk"
+thema: "algoritme-zichtbaarheid"
 draft: false
 related: ["boosten-op-vinted", "de-zero-view-trap-op-vinted"]
 faq:

@@ -3,6 +3,7 @@ title: "What should you do when someone favourites your item on Vinted?"
 excerpt: "There's an average of 1.8 days between a heart and a purchase. What that window means, and why waiting it out often costs you a sale."
 date: "2026-09-18"
 tag: "Practice"
+thema: "kopers"
 draft: false
 ---
 

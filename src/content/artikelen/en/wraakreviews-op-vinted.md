@@ -3,6 +3,7 @@ title: "Revenge reviews and unjustified complaints on Vinted: what you can do"
 excerpt: "Across 1,296 reviews: how revenge reviews happen, what Vinted will and won't remove, and how a solid paper trail protects your score."
 date: "2026-09-22"
 tag: "Practice"
+thema: "kopers"
 draft: false
 ---
 

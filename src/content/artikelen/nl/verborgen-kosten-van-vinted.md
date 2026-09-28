@@ -3,6 +3,7 @@ title: "De verborgen kosten van Vinted: wat je van 100 euro omzet écht overhoud
 excerpt: "Vinted rekent 0% commissie, maar de kopersbeschermingskost duwt kopers net bij goedkope items weg. Mijn eigen marges volgen exact dezelfde curve."
 date: "2026-09-22"
 tag: "Praktijk"
+thema: "prijs-marge"
 draft: false
 related: ["bundelkorting-op-vinted", "hoeveel-verdien-je-met-vinted-resellen"]
 ---

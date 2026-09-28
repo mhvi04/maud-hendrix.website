@@ -3,6 +3,7 @@ title: "How I spent €482 on Vinted boosts: 5 lessons that changed my selling s
 excerpt: "206 boosts, a €482 investment, 5 years of data: what actually pays off when boosting on Vinted, and what's pure waste."
 date: "2026-09-18"
 tag: "Practice"
+thema: "algoritme-zichtbaarheid"
 draft: false
 canonicalPath: "/en/articles/boosten-op-vinted"
 ---

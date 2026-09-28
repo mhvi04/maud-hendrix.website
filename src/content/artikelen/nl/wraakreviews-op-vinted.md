@@ -3,6 +3,7 @@ title: "Wraakreviews en onterechte klachten op Vinted: wat je kunt doen"
 excerpt: "Over 1296 beoordelingen: hoe wraakreviews ontstaan, wat Vinted wel en niet verwijdert, en hoe een goed dossier je score beschermt."
 date: "2026-09-22"
 tag: "Praktijk"
+thema: "kopers"
 draft: false
 related: ["vinted-fotos-die-verkopen", "vertrouwen-opbouwen-nieuw-vinted-profiel"]
 ---

@@ -3,6 +3,7 @@ title: "Almost never accept immediately: what my sales data shows about bidding 
 excerpt: "More than 2,500 transactions show a pattern: accepting an offer right away closes a sale, but structurally lowers the final price and the offers that follow."
 date: "2026-09-22"
 tag: "Practice"
+thema: "prijs-marge"
 draft: false
 ---
 
