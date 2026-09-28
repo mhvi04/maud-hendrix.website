@@ -1,6 +1,6 @@
 ---
 slug: "vijf-fouten-beginnende-vinted-reseller"
-title: "Vijf fouten die ik maakte als beginnende Vinted-reseller (en wat 2.500 transacties mij leerden)"
+title: "Vijf fouten die ik maakte als beginnende Vinted-reseller (en wat meer dan 2.500 transacties mij leerden)"
 excerpt: "In 2022 verkocht ik zonder systeem en zonder inkooplogica. Drie jaar en meer dan 2.500 transacties later weet ik welke vijf fouten daarvoor verantwoordelijk waren."
 date: "2026-06-23"
 draft: true

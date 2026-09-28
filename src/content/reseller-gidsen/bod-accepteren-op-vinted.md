@@ -13,7 +13,7 @@ Je sluit de transactie op dat moment wel netjes af maar absoluut niet tegen de b
 
 ## Wat de data laat zien
 
-Van mijn ruim 2.500 Vinted transacties liep ik de meeste marge mis op de deals die ik het snelst sloot. Listings waarbij ik een bod onmiddellijk accepteerde kregen daarna namelijk zelden nog extra interactie. Geen nieuwe biedingen, nauwelijks nog extra favorieten en de opwaartse prijsdynamiek was in één klap weg.
+Van mijn meer dan 2.500 Vinted transacties liep ik de meeste marge mis op de deals die ik het snelst sloot. Listings waarbij ik een bod onmiddellijk accepteerde kregen daarna namelijk zelden nog extra interactie. Geen nieuwe biedingen, nauwelijks nog extra favorieten en de opwaartse prijsdynamiek was in één klap weg.
 
 ## Wat deze gids verder behandelt
 
