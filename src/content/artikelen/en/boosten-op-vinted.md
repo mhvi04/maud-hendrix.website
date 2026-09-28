@@ -3,6 +3,8 @@ title: "What does 'boosted' mean on Vinted? (and what it actually costs)"
 excerpt: "Boosted on Vinted means a listing buys temporary extra visibility. Based on 206 boosts and a €482 budget: what it costs and when it actually works."
 date: "2026-09-13"
 tag: "Practice"
+thema: "algoritme-zichtbaarheid"
+featured: true
 draft: false
 faq:
   - question: "What does 'boosted' mean on Vinted?"

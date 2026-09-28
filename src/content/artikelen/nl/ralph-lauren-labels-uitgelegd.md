@@ -3,6 +3,7 @@ title: "Elke Ralph Lauren komt met een ander label. Dit is wat ze allemaal betek
 excerpt: "Eén naam, ongeveer twintig verschillende lijnen, en een prijsverschil dat van vijf euro tot meer dan duizend euro loopt. Leer het neklabel lezen en je weet binnen drie seconden wat een stuk waard is."
 date: "2026-09-22"
 tag: "Praktijk"
+thema: "ralph-lauren"
 draft: false
 related: ["perfecte-vinted-listing", "vertrouwen-opbouwen-nieuw-vinted-profiel"]
 faq:

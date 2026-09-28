@@ -3,6 +3,7 @@ title: "How does the Vinted algorithm work in 2026?"
 excerpt: "Vinted doesn't show a chronological list but a search engine with a candidate pool of 200,000 items. What the 48-hour test phase, the 3-favourite threshold and the 60% price rule actually mean."
 date: "2026-09-22"
 tag: "Practice"
+thema: "algoritme-zichtbaarheid"
 draft: false
 faq:
   - question: "How does the Vinted algorithm work?"

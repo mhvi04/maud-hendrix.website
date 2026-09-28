@@ -3,6 +3,7 @@ title: "The Zero-View Trap: why your listing reaches no one, and what to do abou
 excerpt: "Zero views after a week isn't bad luck, it's an algorithmic verdict. Why a price drop doesn't fix it, and why relisting with a sharper title does."
 date: "2026-09-22"
 tag: "Practice"
+thema: "algoritme-zichtbaarheid"
 draft: false
 faq:
   - question: "Why does my Vinted item have zero views?"

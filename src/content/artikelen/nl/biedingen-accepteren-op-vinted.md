@@ -3,6 +3,7 @@ title: "Bijna nooit meteen accepteren: wat mijn verkoopdata laat zien over biedi
 excerpt: "Meer dan 2500 transacties tonen een patroon: een bod direct accepteren sluit een verkoop, maar drukt structureel de eindprijs en de biedingen die erop volgen."
 date: "2026-09-22"
 tag: "Praktijk"
+thema: "prijs-marge"
 draft: false
 related: ["favoriet-hartje-op-vinted", "psychologie-van-je-koper"]
 ---

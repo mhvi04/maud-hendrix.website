@@ -3,6 +3,8 @@ title: "Wat betekent geboost op Vinted? (en wat kost het)"
 excerpt: "Geboost op Vinted betekent dat een listing tijdelijk extra zichtbaarheid koopt. Op basis van 206 boosts en €482 budget: wat het kost en wanneer het werkt."
 date: "2026-09-13"
 tag: "Praktijk"
+thema: "algoritme-zichtbaarheid"
+featured: true
 draft: false
 related: ["hoe-werkt-het-vinted-algoritme", "vinted-item-verkoopt-niet-wat-nu"]
 faq:

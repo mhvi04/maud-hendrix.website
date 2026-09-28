@@ -3,6 +3,7 @@ title: "Hoe ik €482 uitgaf aan Vinted-boosts: 5 lessen die mijn verkoopstrateg
 excerpt: "206 boosts, €482 investering, 5 jaar data: wat écht rendeert bij het Vinted boosten en wat pure geldverspilling is."
 date: "2026-09-18"
 tag: "Praktijk"
+thema: "algoritme-zichtbaarheid"
 draft: false
 canonicalPath: "/artikelen/boosten-op-vinted"
 related: ["hoe-werkt-het-vinted-algoritme", "vinted-item-verkoopt-niet-wat-nu"]

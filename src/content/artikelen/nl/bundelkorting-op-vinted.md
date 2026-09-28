@@ -3,6 +3,7 @@ title: "Bundelkorting op Vinted: hoeveel korting geef je als verkoper?"
 excerpt: "Tussen de 15 en 25 procent op het totaal is een gezonde bundelkorting. Waar de ondergrens ligt, wat een bundel je écht kost buiten de korting zelf, en hoe je het voorstelt."
 date: "2026-09-22"
 tag: "Praktijk"
+thema: "prijs-marge"
 draft: false
 related: ["biedingen-accepteren-op-vinted", "favoriet-hartje-op-vinted"]
 faq:

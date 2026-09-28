@@ -3,6 +3,7 @@ title: "The perfect Vinted listing"
 excerpt: "A listing isn't a summary of an item, it's an answer to every question before it gets asked: about size, condition, authenticity and material."
 date: "2026-09-13"
 tag: "Practice"
+thema: "kopers"
 draft: false
 ---
 

@@ -7,22 +7,29 @@ import LanguagePicker from "../../components/LanguagePicker.astro";
 import Timeline from "../../components/Timeline.astro";
 import SkillsMarquee from "../../components/SkillsMarquee.astro";
 import ToolsPattern from "../../components/ToolsPattern.astro";
+import ArticlesShowcase from "../../components/ArticlesShowcase.astro";
 import { Image } from "astro:assets";
 import vintedProfielOud from "../../assets/proof/vinted-profiel-oud.jpg";
 
 import { getCollection } from "astro:content";
 
-// Same featured article as on /en/articles: always pinned to the top.
-const FEATURED_SLUG = "boosten-op-vinted";
-
-const articles = (await getCollection("articlesEn", ({ data }) => !data.draft)).sort((a, b) => {
-  if (a.id === FEATURED_SLUG) return -1;
-  if (b.id === FEATURED_SLUG) return 1;
-  return b.data.date.localeCompare(a.data.date) || a.data.title.localeCompare(b.data.title);
-});
-
 const formatDate = (iso: string) =>
   new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+
+const allArticles = (await getCollection("articlesEn", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.localeCompare(a.data.date) || a.data.title.localeCompare(b.data.title)
+);
+const featuredEntry = allArticles.find((a) => a.data.featured) ?? allArticles[0];
+const recentEntries = allArticles.filter((a) => a.id !== featuredEntry?.id).slice(0, 3);
+
+const toShowcaseArticle = (a: (typeof allArticles)[number]) => ({
+  href: `/en/articles/${a.id}`,
+  title: a.data.title,
+  excerpt: a.data.excerpt,
+  date: a.data.date,
+  dateLabel: formatDate(a.data.date),
+  image: a.data.image,
+});
 ---
 
 <BaseLayout title="Maud Hendrix" locale="en" nlPath="/" enPath="/">
@@ -247,31 +254,16 @@ const formatDate = (iso: string) =>
       </div>
     </section>
 
-    <section class="articles wrap" aria-labelledby="articles-title">
-      <div class="articles-head">
-        <span class="label">Articles</span>
-        <h2 id="articles-title" class="articles-title">From the <em>field</em></h2>
-      </div>
-      <ol class="article-list">
-        {
-          articles.map((a) => (
-            <li>
-              <a href={`/en/articles/${a.id}`} class="article-row">
-                <time class="article-date mono" datetime={a.data.date}>
-                  {formatDate(a.data.date)}
-                </time>
-                <div class="article-text">
-                  {a.id === FEATURED_SLUG && <span class="article-featured mono">Featured</span>}
-                  <h3>{a.data.title}</h3>
-                  <p>{a.data.excerpt}</p>
-                </div>
-                <span class="article-arrow" aria-hidden="true">→</span>
-              </a>
-            </li>
-          ))
-        }
-      </ol>
-    </section>
+    <ArticlesShowcase
+      eyebrow="Articles"
+      heading="From the"
+      headingEm="field"
+      featured={toShowcaseArticle(featuredEntry)}
+      featuredLabel="Featured"
+      recent={recentEntries.map(toShowcaseArticle)}
+      allArticlesHref="/en/articles"
+      allArticlesLabel="All articles"
+    />
 
     <section class="home-contact wrap" id="contact">
       <span class="label">Contact</span>
@@ -731,98 +723,6 @@ const formatDate = (iso: string) =>
     font-size: 12px;
     padding-top: 8px;
     color: var(--navy);
-  }
-
-  /* ---------- ARTICLES ---------- */
-  .articles {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 3fr 9fr;
-    gap: clamp(20px, 3vw, 36px);
-    padding-block: clamp(40px, 6vw, 64px);
-    border-bottom: 1px solid var(--ink);
-  }
-  .articles-head {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .articles-title {
-    font-size: clamp(22px, 2.6vw, 30px);
-    font-weight: 700;
-    line-height: 1.05;
-  }
-  .article-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    border-top: 1px solid var(--ink);
-  }
-  .article-list li {
-    border-bottom: 1px solid var(--ink);
-  }
-  .article-row {
-    display: grid;
-    grid-template-columns: 11ch 1fr auto;
-    align-items: baseline;
-    gap: clamp(14px, 2.4vw, 28px);
-    padding: 18px 8px 18px 0;
-    color: var(--ink);
-    text-decoration: none;
-    transition: background 0.15s ease, padding 0.15s ease;
-  }
-  .article-row:hover,
-  .article-row:focus-visible {
-    background: var(--paper);
-    padding-left: 12px;
-  }
-  .article-date {
-    font-size: 12px;
-    letter-spacing: 0.02em;
-    color: var(--rust);
-    white-space: nowrap;
-  }
-  .article-featured {
-    display: inline-block;
-    margin-bottom: 6px;
-    padding: 2px 8px;
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    background: var(--mustard);
-    color: var(--ink);
-  }
-  .article-text h3 {
-    font-size: clamp(17px, 1.8vw, 20px);
-    font-weight: 700;
-    line-height: 1.25;
-  }
-  .article-text p {
-    margin-top: 6px;
-    font-size: 14px;
-    line-height: 1.5;
-    opacity: 0.85;
-    max-width: 68ch;
-  }
-  .article-arrow {
-    font-family: var(--font-mono);
-    font-size: 16px;
-    color: var(--navy);
-  }
-  .article-row:hover .article-arrow {
-    color: var(--rust);
-  }
-  @media (max-width: 780px) {
-    .articles {
-      grid-template-columns: 1fr;
-    }
-    .article-row {
-      grid-template-columns: 1fr auto;
-      row-gap: 6px;
-    }
-    .article-date {
-      grid-column: 1 / -1;
-    }
   }
 
   /* ---------- CONTACT ---------- */

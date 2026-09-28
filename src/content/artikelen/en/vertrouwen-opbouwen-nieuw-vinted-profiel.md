@@ -3,6 +3,7 @@ title: "How do I build trust as a new Vinted profile with no reviews?"
 excerpt: "Going from zero to ten reviews is the slowest phase. Four layers that help a new profile build trust faster: profile, response speed, first reviews and packaging."
 date: "2026-09-22"
 tag: "Practice"
+thema: "kopers"
 draft: false
 faq:
   - question: "How do you build trust as a new Vinted profile?"

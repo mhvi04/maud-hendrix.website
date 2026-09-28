@@ -3,6 +3,7 @@ title: "The Vinted exemption: why being reported isn't the same as owing tax"
 excerpt: "DAC7 and Belgium's tax exemption happen to share the same €2,000 threshold, but legally they're two completely separate things. What the new de-minimis rule changes."
 date: "2026-09-22"
 tag: "Practice"
+thema: "fiscaal"
 draft: false
 ---
 

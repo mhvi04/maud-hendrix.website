@@ -3,6 +3,7 @@ title: "Hoe bouw ik vertrouwen op als nieuw Vinted-profiel zonder reviews?"
 excerpt: "Van nul naar tien reviews is de langzaamste fase. Vier lagen waarmee je als nieuw profiel sneller vertrouwen opbouwt: profiel, reactiesnelheid, eerste reviews en verpakking."
 date: "2026-09-22"
 tag: "Praktijk"
+thema: "kopers"
 draft: false
 related: ["biedingen-accepteren-op-vinted", "ralph-lauren-labels-uitgelegd"]
 faq:

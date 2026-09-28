@@ -3,6 +3,7 @@ title: "Bundle discounts on Vinted: how much discount should you give as a selle
 excerpt: "Between 15 and 25 percent off the total is a healthy bundle discount. Where the floor sits, what a bundle actually costs beyond the discount itself, and how to frame it."
 date: "2026-09-22"
 tag: "Practice"
+thema: "prijs-marge"
 draft: false
 faq:
   - question: "How much bundle discount should you give on Vinted?"

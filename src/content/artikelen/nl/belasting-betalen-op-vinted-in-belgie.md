@@ -3,6 +3,7 @@ title: "Belasting betalen op Vinted verkopen in België: wat je écht moet weten
 excerpt: "Geen omzetdrempel bepaalt of je belasting betaalt op Vinted, wel je gedrag. DAC7, btw-drempels en de rekensom op een rij."
 date: "2026-09-18"
 tag: "Praktijk"
+thema: "fiscaal"
 draft: false
 related: ["de-vinted-vrijstelling", "hoeveel-verdien-je-met-vinted-resellen"]
 ---

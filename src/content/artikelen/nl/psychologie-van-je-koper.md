@@ -3,6 +3,7 @@ title: "De psychologie van je koper"
 excerpt: "Over meer dan 2900 transacties zag ik vier terugkerende kopersprofielen — Essentialist, Collector, Browser en Minimalist — die elk een andere aanpak vragen."
 date: "2026-09-13"
 tag: "Praktijk"
+thema: "kopers"
 draft: false
 related: ["biedingen-accepteren-op-vinted", "geografie-van-vinted-kopers"]
 ---

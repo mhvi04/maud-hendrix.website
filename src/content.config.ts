@@ -1,24 +1,42 @@
 import { defineCollection } from "astro:content";
+import type { SchemaContext } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
-const articleSchema = z.object({
-  title: z.string(),
-  excerpt: z.string(),
-  date: z.string(),
-  tag: z.string(),
-  draft: z.boolean().optional().default(false),
-  faq: z
-    .array(z.object({ question: z.string(), answer: z.string() }))
-    .optional(),
-  // Alleen gezet wanneer dit artikel dezelfde kernthematiek/data behandelt
-  // als een ander artikel op de site — voorkomt keyword-kannibalisatie door
-  // de canonical naar de hoofdversie te laten wijzen.
-  canonicalPath: z.string().optional(),
-  // Slugs (binnen dezelfde collectie) van twee gerelateerde artikelen,
-  // getoond in het "Verder lezen"-blok onderaan het artikel.
-  related: z.array(z.string()).length(2).optional(),
-});
+// Thema's gebruikt voor de filterknoppen op /artikelen.
+export const ARTICLE_THEMES = [
+  "algoritme-zichtbaarheid",
+  "prijs-marge",
+  "kopers",
+  "fiscaal",
+  "ralph-lauren",
+] as const;
+
+const articleSchema = ({ image }: SchemaContext) =>
+  z.object({
+    title: z.string(),
+    excerpt: z.string(),
+    date: z.string(),
+    tag: z.string(),
+    thema: z.enum(ARTICLE_THEMES),
+    // Coverfoto (1200x630), optioneel — lokaal bestand, relatief t.o.v. dit
+    // artikel. Ontbreekt hij, dan toont ArticleImage een placeholder en
+    // valt de og:image terug op public/og/<slug>.png of /og-default.png.
+    image: image().optional(),
+    // Bepaalt de grote uitgelichte kaart bovenaan "Uit de praktijk".
+    featured: z.boolean().optional().default(false),
+    draft: z.boolean().optional().default(false),
+    faq: z
+      .array(z.object({ question: z.string(), answer: z.string() }))
+      .optional(),
+    // Alleen gezet wanneer dit artikel dezelfde kernthematiek/data behandelt
+    // als een ander artikel op de site — voorkomt keyword-kannibalisatie door
+    // de canonical naar de hoofdversie te laten wijzen.
+    canonicalPath: z.string().optional(),
+    // Slugs (binnen dezelfde collectie) van twee gerelateerde artikelen,
+    // getoond in het "Verder lezen"-blok onderaan het artikel.
+    related: z.array(z.string()).length(2).optional(),
+  });
 
 const articlesNl = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/artikelen/nl" }),

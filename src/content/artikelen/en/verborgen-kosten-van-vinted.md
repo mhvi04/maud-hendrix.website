@@ -3,6 +3,7 @@ title: "The hidden cost of Vinted: what you actually keep from €100 in revenue
 excerpt: "Vinted charges 0% commission, but the buyer protection fee pushes buyers away right at the cheap end. My own margins follow exactly the same curve."
 date: "2026-09-22"
 tag: "Practice"
+thema: "prijs-marge"
 draft: false
 ---
 

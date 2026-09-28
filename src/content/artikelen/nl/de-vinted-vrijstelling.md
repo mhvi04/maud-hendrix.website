@@ -3,6 +3,7 @@ title: "De Vinted-vrijstelling: waarom gerapporteerd worden niet gelijk is aan b
 excerpt: "DAC7 en de fiscale vrijstelling delen toevallig dezelfde grens van €2.000, maar zijn juridisch twee compleet losse zaken. Wat de nieuwe de-minimisregel verandert."
 date: "2026-09-22"
 tag: "Praktijk"
+thema: "fiscaal"
 draft: false
 related: ["belasting-betalen-op-vinted-in-belgie", "hoeveel-verdien-je-met-vinted-resellen"]
 ---

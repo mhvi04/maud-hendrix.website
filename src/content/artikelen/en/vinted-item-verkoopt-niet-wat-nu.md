@@ -3,6 +3,7 @@ title: "Vinted item not selling? Here's what to do, day by day"
 excerpt: "A price cut is rarely the right first move. The day-by-day timeline for a Vinted item that isn't selling, from day 1 to day 22 and beyond."
 date: "2026-09-18"
 tag: "Practice"
+thema: "algoritme-zichtbaarheid"
 draft: false
 ---
 

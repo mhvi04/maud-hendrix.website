@@ -3,6 +3,7 @@ title: "How much do you really earn reselling on Vinted? My numbers from four ye
 excerpt: "From €917 revenue in year one to €35,102 in 2025. What's left after buying stock, costs and Belgian taxes — per hour worked, no rounding up."
 date: "2026-09-22"
 tag: "Practice"
+thema: "prijs-marge"
 draft: false
 faq:
   - question: "How much do you earn reselling on Vinted?"
