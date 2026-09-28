@@ -1,0 +1,60 @@
+---
+// Klein zoekicoon dat de commandobalk opent — het bereikbare alternatief
+// voor Cmd/Ctrl+K op mobiel, waar geen toetsenbordsnelkoppeling is.
+import { useTranslations, type Language } from "../i18n/ui";
+
+interface Props {
+  locale?: Language;
+}
+const { locale = "nl" } = Astro.props;
+const t = useTranslations(locale).search;
+---
+
+<button type="button" class="cmdk-trigger" data-cmdk-open aria-label={t.triggerLabel}>
+  <svg viewBox="0 0 18 18" width="16" height="16" fill="none" aria-hidden="true">
+    <circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.6" />
+    <line x1="12.2" y1="12.2" x2="16.5" y2="16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+  </svg>
+  <span class="cmdk-trigger-kbd mono" aria-hidden="true">⌘K</span>
+</button>
+
+<style>
+  .cmdk-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--navy);
+    background: var(--cream);
+    color: var(--navy);
+    padding: 0;
+    flex-shrink: 0;
+    transition: transform 0.15s ease;
+  }
+  .cmdk-trigger:hover {
+    transform: translateY(-2px);
+  }
+  .cmdk-trigger:focus-visible {
+    outline: 1px solid var(--ink);
+    outline-offset: 2px;
+  }
+  .cmdk-trigger-kbd {
+    display: none;
+    font-size: 10px;
+    letter-spacing: 0.02em;
+    opacity: 0.75;
+  }
+
+  /* Op brede schermen krijgt de knop ook de sneltoets-hint, mits er ruimte is */
+  @media (min-width: 860px) {
+    .cmdk-trigger {
+      width: auto;
+      padding-inline: 10px;
+    }
+    .cmdk-trigger-kbd {
+      display: inline;
+    }
+  }
+</style>

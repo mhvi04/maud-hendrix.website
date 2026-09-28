@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import PersonSchema from "../components/PersonSchema.astro";
 import SmoothScroll from "../components/SmoothScroll.astro";
+import CommandPalette from "../components/CommandPalette.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import type { Language } from "../i18n/ui";
 
@@ -24,6 +25,10 @@ interface Props {
   // pincode-gated pagina's zoals /planner die niets met bezoekersanalyse
   // te maken hebben.
   analytics?: boolean;
+  // Commandobalk (Cmd/Ctrl+K). Standaard aan; uit voor /planner, dat zijn
+  // eigen afgeschermde interface heeft en niet tot de doorzoekbare site
+  // behoort.
+  commandPalette?: boolean;
 }
 
 const {
@@ -38,6 +43,7 @@ const {
   nlPath,
   enPath,
   analytics = true,
+  commandPalette = true,
 } = Astro.props;
 
 const canonicalURL = new URL(canonicalPath ?? Astro.url.pathname, Astro.site);
@@ -153,5 +159,6 @@ const jsonLd =
 
     <SmoothScroll />
     <slot />
+    {commandPalette && <CommandPalette locale={locale} />}
   </body>
 </html>
