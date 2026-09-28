@@ -1,6 +1,6 @@
 ---
 title: "The psychology of your buyer"
-excerpt: "Across more than 2,900 transactions I saw four recurring buyer profiles — the Essentialist, the Collector, the Browser and the Minimalist — each demanding a different approach."
+excerpt: "Across more than 2,500 transactions I saw four recurring buyer profiles — the Essentialist, the Collector, the Browser and the Minimalist — each demanding a different approach."
 date: "2026-09-13"
 tag: "Practice"
 thema: "kopers"
@@ -11,7 +11,7 @@ A buyer sends a message. "Is the blue T-shirt still available, and if so, for ho
 
 Two hours earlier, another buyer had sent five messages. Questions about the measurements, about where the piece came from, about the state of the labels. She'd made an offer I thought was too low. I'd countered. She never replied again.
 
-Those two people aren't random cases. They represent two fundamentally different ways of buying, and anyone who doesn't see that wastes time on the second type and loses chances with the first. Across more than 2,900 transactions, I've seen four buyer profiles recur. Not as theory but as a pattern in behaviour: how fast someone decides, what they write before buying, how they react when you counter, how satisfied they are afterwards.
+Those two people aren't random cases. They represent two fundamentally different ways of buying, and anyone who doesn't see that wastes time on the second type and loses chances with the first. Across more than 2,500 transactions, I've seen four buyer profiles recur. Not as theory but as a pattern in behaviour: how fast someone decides, what they write before buying, how they react when you counter, how satisfied they are afterwards.
 
 Those four profiles together drive your revenue, your time spent, and your reputation. Each demands a different response, and treating them all the same costs you in missed conversions.
 
@@ -97,7 +97,7 @@ This behaviour isn't reluctance, it's risk management from the buyer's side. Fre
 
 Systematically applying the "information hierarchy" (exact centimetres and detail photos) has led, in my case, to 30% fewer size-related questions. Transactions with a personal, transparent message also generate 27% higher review scores, essential for offsetting the demanding French threshold.
 
-Across 2,537 sales this pattern has held consistently over multiple years, which shows geography is a hard factor in your risk profile.
+Across more than 2,500 sales this pattern has held consistently over multiple years, which shows geography is a hard factor in your risk profile.
 
 ## What reviews tell you about your buyer mix
 

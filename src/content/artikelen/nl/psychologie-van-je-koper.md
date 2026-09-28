@@ -1,6 +1,6 @@
 ---
 title: "De psychologie van je koper"
-excerpt: "Over meer dan 2900 transacties zag ik vier terugkerende kopersprofielen — Essentialist, Collector, Browser en Minimalist — die elk een andere aanpak vragen."
+excerpt: "Over meer dan 2500 transacties zag ik vier terugkerende kopersprofielen — Essentialist, Collector, Browser en Minimalist — die elk een andere aanpak vragen."
 date: "2026-09-13"
 tag: "Praktijk"
 thema: "kopers"
@@ -12,7 +12,7 @@ Een koper stuurt een bericht. "Is de blauwe T-shirt er nog, zo ja voor hoeveel?"
 
 Twee uur eerder had een andere koper vijf berichten gestuurd. Vragen over de maten, over de herkomst van het stuk, over de staat van de labels. Ze had een bod gedaan dat ik te laag vond. Ik had teruggeboden. Ze had nooit meer gereageerd.
 
-Die twee mensen zijn geen willekeurige gevallen. Ze vertegenwoordigen twee fundamenteel andere manieren van kopen, en wie dat niet ziet, verspilt tijd op het tweede type en verliest kansen bij het eerste. Over meer dan 2900 transacties heb ik vier kopersprofielen zien terugkomen. Niet als theorie maar als patroon in gedrag: hoe snel iemand beslist, wat ze schrijven voor ze kopen, hoe ze reageren als je terugbiedt, hoe tevreden ze zijn achteraf.
+Die twee mensen zijn geen willekeurige gevallen. Ze vertegenwoordigen twee fundamenteel andere manieren van kopen, en wie dat niet ziet, verspilt tijd op het tweede type en verliest kansen bij het eerste. Over meer dan 2500 transacties heb ik vier kopersprofielen zien terugkomen. Niet als theorie maar als patroon in gedrag: hoe snel iemand beslist, wat ze schrijven voor ze kopen, hoe ze reageren als je terugbiedt, hoe tevreden ze zijn achteraf.
 
 Die vier profielen bepalen samen je omzet, je tijdsbesteding en je reputatie. Ze vragen elk een andere reactie, en wie ze door elkaar behandelt, betaalt daarvoor in gemiste conversies.
 
@@ -98,7 +98,7 @@ Dit gedrag is geen onwil, maar risicobeheer vanuit de koper. Franse kopers zijn 
 
 Het systematisch toepassen van de "informatieve hiërarchie" (exacte centimeters en detailfoto's) heeft in mijn geval geleid tot 30% minder maat-gerelateerde vragen. Transacties met een persoonlijke, transparante boodschap genereren bovendien 27% hogere review-scores, wat essentieel is om de kritische Franse drempel te compenseren.
 
-Over 2537 verkopen is dit patroon over meerdere jaren consistent gebleven, wat bewijst dat geografie een harde factor is in je risicoprofiel.
+Over meer dan 2500 verkopen is dit patroon over meerdere jaren consistent gebleven, wat bewijst dat geografie een harde factor is in je risicoprofiel.
 
 ## Wat reviews je vertellen over je kopersmix
 
