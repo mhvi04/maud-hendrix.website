@@ -4,6 +4,8 @@ excerpt: "Vinted doesn't show a chronological list but a search engine with a ca
 date: "2026-09-22"
 tag: "Practice"
 thema: "algoritme-zichtbaarheid"
+image: "../../../assets/articles/hoe-werkt-het-vinted-algoritme.png"
+imageAlt: "Article image: 200K, how the Vinted algorithm works in 2026"
 draft: false
 faq:
   - question: "How does the Vinted algorithm work?"

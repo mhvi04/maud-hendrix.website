@@ -4,6 +4,8 @@ excerpt: "Geen omzetdrempel bepaalt of je belasting betaalt op Vinted, wel je ge
 date: "2026-09-18"
 tag: "Praktijk"
 thema: "fiscaal"
+image: "../../../assets/articles/belasting-betalen-op-vinted-in-belgie.png"
+imageAlt: "Artikelafbeelding: DAC7, belasting betalen op Vinted in België"
 draft: false
 related: ["de-vinted-vrijstelling", "hoeveel-verdien-je-met-vinted-resellen"]
 ---

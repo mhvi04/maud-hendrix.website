@@ -4,6 +4,8 @@ excerpt: "Eén naam, ongeveer twintig verschillende lijnen, en een prijsverschil
 date: "2026-09-22"
 tag: "Praktijk"
 thema: "ralph-lauren"
+image: "../../../assets/articles/ralph-lauren-labels-uitgelegd.png"
+imageAlt: "Artikelafbeelding: 20, Ralph Lauren labels uitgelegd"
 draft: false
 related: ["perfecte-vinted-listing", "vertrouwen-opbouwen-nieuw-vinted-profiel"]
 faq:

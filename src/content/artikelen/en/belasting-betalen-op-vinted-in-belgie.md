@@ -4,6 +4,8 @@ excerpt: "No revenue threshold decides whether you owe tax on Vinted sales, your
 date: "2026-09-18"
 tag: "Practice"
 thema: "fiscaal"
+image: "../../../assets/articles/belasting-betalen-op-vinted-in-belgie.png"
+imageAlt: "Article image: DAC7, paying tax on Vinted in Belgium"
 draft: false
 ---
 

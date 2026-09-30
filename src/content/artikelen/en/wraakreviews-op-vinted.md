@@ -4,6 +4,8 @@ excerpt: "Across 1,296 reviews: how revenge reviews happen, what Vinted will and
 date: "2026-09-22"
 tag: "Practice"
 thema: "kopers"
+image: "../../../assets/articles/wraakreviews-op-vinted.png"
+imageAlt: "Article image: 1296, what to do about revenge reviews on Vinted"
 draft: false
 ---
 

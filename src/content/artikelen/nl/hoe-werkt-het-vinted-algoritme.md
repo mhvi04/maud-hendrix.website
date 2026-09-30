@@ -4,6 +4,8 @@ excerpt: "Vinted toont geen chronologische lijst maar een zoekmachine met een ka
 date: "2026-09-22"
 tag: "Praktijk"
 thema: "algoritme-zichtbaarheid"
+image: "../../../assets/articles/hoe-werkt-het-vinted-algoritme.png"
+imageAlt: "Artikelafbeelding: 200K, hoe werkt het Vinted algoritme in 2026?"
 draft: false
 related: ["boosten-op-vinted", "de-zero-view-trap-op-vinted"]
 faq:
