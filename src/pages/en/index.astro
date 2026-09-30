@@ -4,6 +4,7 @@ import StickyFooterBar from "../../components/StickyFooterBar.astro";
 import Typewriter from "../../components/Typewriter.astro";
 import InteractiePaneel from "../../components/InteractiePaneel.astro";
 import LanguagePicker from "../../components/LanguagePicker.astro";
+import CommandPaletteTrigger from "../../components/CommandPaletteTrigger.astro";
 import Timeline from "../../components/Timeline.astro";
 import SkillsMarquee from "../../components/SkillsMarquee.astro";
 import ToolsPattern from "../../components/ToolsPattern.astro";
@@ -44,6 +45,7 @@ const toShowcaseArticle = (a: (typeof allArticles)[number]) => ({
             <a href="#contact">Contact</a>
           </div>
           <LanguagePicker locale="en" nlPath="/" enPath="/" inline />
+          <CommandPaletteTrigger locale="en" />
           <InteractiePaneel inline />
         </div>
       </div>

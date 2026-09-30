@@ -2,6 +2,7 @@
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { useTranslations, type Language } from "../i18n/ui";
 import LanguageSwitch from "./LanguageSwitch.astro";
+import CommandPaletteTrigger from "./CommandPaletteTrigger.astro";
 
 type World = "pro" | "prive" | "artikelen";
 
@@ -46,6 +47,7 @@ const t = useTranslations(locale).nav;
       {showLanguageSwitch && (
         <LanguageSwitch locale={locale} nlPath={nlPath!} enPath={enPath!} />
       )}
+      <CommandPaletteTrigger locale={locale} />
     </nav>
   </div>
 </header>

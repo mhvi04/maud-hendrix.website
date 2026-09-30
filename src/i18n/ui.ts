@@ -12,6 +12,19 @@ export const ui = {
     footer: {
       location: "Gent, België",
     },
+    search: {
+      triggerLabel: "Zoeken (Cmd+K)",
+      dialogLabel: "Zoeken",
+      placeholder: "Zoek secties of artikelen…",
+      close: "Sluiten",
+      sectionsGroup: "Secties",
+      articlesGroup: "Artikelen",
+      recentGroup: "Meest recent",
+      noResults: "Geen resultaten gevonden.",
+      hintNavigate: "navigeren",
+      hintSelect: "openen",
+      hintClose: "sluiten",
+    },
   },
   en: {
     nav: {
@@ -22,6 +35,19 @@ export const ui = {
     },
     footer: {
       location: "Ghent, Belgium",
+    },
+    search: {
+      triggerLabel: "Search (Cmd+K)",
+      dialogLabel: "Search",
+      placeholder: "Search sections or articles…",
+      close: "Close",
+      sectionsGroup: "Sections",
+      articlesGroup: "Articles",
+      recentGroup: "Most recent",
+      noResults: "No results found.",
+      hintNavigate: "navigate",
+      hintSelect: "select",
+      hintClose: "close",
     },
   },
 } as const;
