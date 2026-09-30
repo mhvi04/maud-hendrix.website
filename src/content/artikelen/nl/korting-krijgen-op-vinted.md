@@ -4,6 +4,8 @@ excerpt: "Een kortingscode voor tweedehands Vinted-listings bestaat niet. Wat we
 date: "2026-09-30"
 tag: "Praktijk"
 thema: "prijs-marge"
+image: "../../../assets/articles/korting-krijgen-op-vinted.png"
+imageAlt: "Artikelafbeelding: 404, zo krijg je korting op Vinted"
 draft: false
 related: ["biedingen-accepteren-op-vinted", "bundelkorting-op-vinted"]
 faq:

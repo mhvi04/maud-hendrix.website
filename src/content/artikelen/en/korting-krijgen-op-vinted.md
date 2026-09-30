@@ -4,6 +4,8 @@ excerpt: "A discount code for second-hand Vinted listings doesn't exist. What do
 date: "2026-09-30"
 tag: "Practice"
 thema: "prijs-marge"
+image: "../../../assets/articles/korting-krijgen-op-vinted.png"
+imageAlt: "Article image: 404, how to get a discount on Vinted"
 draft: false
 related: ["biedingen-accepteren-op-vinted", "bundelkorting-op-vinted"]
 faq:

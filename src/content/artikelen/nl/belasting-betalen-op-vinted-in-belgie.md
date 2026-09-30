@@ -7,7 +7,7 @@ thema: "fiscaal"
 image: "../../../assets/articles/belasting-betalen-op-vinted-in-belgie.png"
 imageAlt: "Artikelafbeelding: DAC7, belasting betalen op Vinted in België"
 draft: false
-related: ["de-vinted-vrijstelling", "hoeveel-verdien-je-met-vinted-resellen"]
+related: ["de-vinted-vrijstelling", "verborgen-kosten-van-vinted"]
 ---
 
 De vraag komt steevast terug zodra iemand meer dan een paar keer per maand verkoopt op Vinted. Moet ik hier belasting op betalen? Het antwoord dat de meeste mensen willen horen is nee, tot je een bepaald bedrag overschrijdt. Dat antwoord bestaat niet. Er is geen magisch getal waaronder je veilig zit.
