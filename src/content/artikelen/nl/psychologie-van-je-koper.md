@@ -4,6 +4,8 @@ excerpt: "Over meer dan 2500 transacties zag ik vier terugkerende kopersprofiele
 date: "2026-09-13"
 tag: "Praktijk"
 thema: "kopers"
+image: "../../../assets/articles/psychologie-van-je-koper.png"
+imageAlt: "Artikelafbeelding: 4, de psychologie van je koper"
 draft: false
 related: ["biedingen-accepteren-op-vinted", "geografie-van-vinted-kopers"]
 ---

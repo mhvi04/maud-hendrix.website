@@ -4,6 +4,8 @@ excerpt: "Tussen de 15 en 25 procent op het totaal is een gezonde bundelkorting.
 date: "2026-09-22"
 tag: "Praktijk"
 thema: "prijs-marge"
+image: "../../../assets/articles/bundelkorting-op-vinted.png"
+imageAlt: "Artikelafbeelding: 15-25%, hoeveel bundelkorting geef je als verkoper?"
 draft: false
 related: ["biedingen-accepteren-op-vinted", "favoriet-hartje-op-vinted"]
 faq:

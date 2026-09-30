@@ -4,6 +4,8 @@ excerpt: "Tussen een hartje en een aankoop zit gemiddeld 1,8 dag. Wat dat venste
 date: "2026-09-18"
 tag: "Praktijk"
 thema: "kopers"
+image: "../../../assets/articles/favoriet-hartje-op-vinted.png"
+imageAlt: "Artikelafbeelding: 1,8, wat doe je als iemand je artikel favoriet maakt?"
 draft: false
 related: ["boosten-op-vinted", "biedingen-accepteren-op-vinted"]
 ---

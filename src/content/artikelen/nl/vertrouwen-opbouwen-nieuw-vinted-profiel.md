@@ -4,6 +4,8 @@ excerpt: "Van nul naar tien reviews is de langzaamste fase. Vier lagen waarmee j
 date: "2026-09-22"
 tag: "Praktijk"
 thema: "kopers"
+image: "../../../assets/articles/vertrouwen-opbouwen-nieuw-vinted-profiel.png"
+imageAlt: "Artikelafbeelding: 0-10, vertrouwen opbouwen als nieuw Vinted-profiel"
 draft: false
 related: ["biedingen-accepteren-op-vinted", "ralph-lauren-labels-uitgelegd"]
 faq:

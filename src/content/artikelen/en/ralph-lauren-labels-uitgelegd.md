@@ -4,6 +4,8 @@ excerpt: "One name, around twenty different lines, and a price gap that runs fro
 date: "2026-09-22"
 tag: "Practice"
 thema: "ralph-lauren"
+image: "../../../assets/articles/ralph-lauren-labels-uitgelegd.png"
+imageAlt: "Article image: 20, Ralph Lauren labels explained"
 draft: false
 faq:
   - question: "What is Ralph Lauren's Purple Label?"

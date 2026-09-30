@@ -4,6 +4,8 @@ excerpt: "Going from zero to ten reviews is the slowest phase. Four layers that 
 date: "2026-09-22"
 tag: "Practice"
 thema: "kopers"
+image: "../../../assets/articles/vertrouwen-opbouwen-nieuw-vinted-profiel.png"
+imageAlt: "Article image: 0-10, building trust with a new Vinted profile"
 draft: false
 faq:
   - question: "How do you build trust as a new Vinted profile?"

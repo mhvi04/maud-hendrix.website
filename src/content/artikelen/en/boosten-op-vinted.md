@@ -4,6 +4,8 @@ excerpt: "Boosted on Vinted means a listing buys temporary extra visibility. Bas
 date: "2026-09-13"
 tag: "Practice"
 thema: "algoritme-zichtbaarheid"
+image: "../../../assets/articles/boosten-op-vinted.png"
+imageAlt: "Article image: 206, what does boosted mean on Vinted?"
 featured: true
 draft: false
 faq:

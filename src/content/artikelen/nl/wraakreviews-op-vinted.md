@@ -4,6 +4,8 @@ excerpt: "Over 1296 beoordelingen: hoe wraakreviews ontstaan, wat Vinted wel en 
 date: "2026-09-22"
 tag: "Praktijk"
 thema: "kopers"
+image: "../../../assets/articles/wraakreviews-op-vinted.png"
+imageAlt: "Artikelafbeelding: 1296, wat doe je bij wraakreviews op Vinted?"
 draft: false
 related: ["vinted-fotos-die-verkopen", "vertrouwen-opbouwen-nieuw-vinted-profiel"]
 ---

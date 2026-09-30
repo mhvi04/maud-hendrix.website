@@ -4,6 +4,8 @@ excerpt: "Zero views after a week isn't bad luck, it's an algorithmic verdict. W
 date: "2026-09-22"
 tag: "Practice"
 thema: "algoritme-zichtbaarheid"
+image: "../../../assets/articles/de-zero-view-trap-op-vinted.png"
+imageAlt: "Article image: The Zero-View Trap"
 draft: false
 faq:
   - question: "Why does my Vinted item have zero views?"

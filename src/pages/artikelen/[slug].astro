@@ -50,7 +50,7 @@ const faqJsonLd =
 const ownOgImagePath = fileURLToPath(new URL(`../../../public/og/${entry.id}.png`, import.meta.url));
 const fallbackOgImage = existsSync(ownOgImagePath) ? `/og/${entry.id}.png` : undefined;
 const ogImage = entry.data.image
-  ? (await getImage({ src: entry.data.image, width: 1200, height: 630 })).src
+  ? (await getImage({ src: entry.data.image, width: 1200, height: 630, format: "png" })).src
   : fallbackOgImage;
 
 // "Verder lezen": lost de related-slugs uit de frontmatter op tegen de

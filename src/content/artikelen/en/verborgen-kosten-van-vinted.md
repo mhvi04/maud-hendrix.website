@@ -4,6 +4,8 @@ excerpt: "Vinted charges 0% commission, but the buyer protection fee pushes buye
 date: "2026-09-22"
 tag: "Practice"
 thema: "prijs-marge"
+image: "../../../assets/articles/verborgen-kosten-van-vinted.png"
+imageAlt: "Article image: €100, the hidden costs of Vinted"
 draft: false
 ---
 

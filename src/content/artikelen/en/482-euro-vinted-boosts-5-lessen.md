@@ -4,6 +4,8 @@ excerpt: "206 boosts, a €482 investment, 5 years of data: what actually pays o
 date: "2026-09-18"
 tag: "Practice"
 thema: "algoritme-zichtbaarheid"
+image: "../../../assets/articles/482-euro-vinted-boosts-5-lessen.png"
+imageAlt: "Article image: €482, 5 lessons from my boosts"
 draft: false
 canonicalPath: "/en/articles/boosten-op-vinted"
 ---

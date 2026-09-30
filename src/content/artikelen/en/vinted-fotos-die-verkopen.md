@@ -4,6 +4,8 @@ excerpt: "Photography in reselling isn't a creative process, it's risk reduction
 date: "2026-09-13"
 tag: "Practice"
 thema: "kopers"
+image: "../../../assets/articles/vinted-fotos-die-verkopen.png"
+imageAlt: "Article image: 5 Vinted photos that sell"
 draft: false
 ---
 

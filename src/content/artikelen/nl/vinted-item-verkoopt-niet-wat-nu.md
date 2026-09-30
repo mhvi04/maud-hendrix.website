@@ -4,6 +4,8 @@ excerpt: "Een prijsverlaging is zelden de juiste eerste stap. Het dag-per-dag ti
 date: "2026-09-18"
 tag: "Praktijk"
 thema: "algoritme-zichtbaarheid"
+image: "../../../assets/articles/vinted-item-verkoopt-niet-wat-nu.png"
+imageAlt: "Artikelafbeelding: 22, item verkoopt niet? Wat nu, dag per dag"
 draft: false
 related: ["de-zero-view-trap-op-vinted", "boosten-op-vinted"]
 ---

@@ -4,6 +4,8 @@ excerpt: "Fotografie bij resellen is geen creatief proces maar risicoreductie. V
 date: "2026-09-13"
 tag: "Praktijk"
 thema: "kopers"
+image: "../../../assets/articles/vinted-fotos-die-verkopen.png"
+imageAlt: "Artikelafbeelding: 5 Vinted-foto's die verkopen"
 draft: false
 related: ["perfecte-vinted-listing", "wraakreviews-op-vinted"]
 ---
