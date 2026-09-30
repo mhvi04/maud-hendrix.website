@@ -57,7 +57,7 @@ If instead you're getting plenty of views but not a single heart or message, the
 
 ## Day 22 and beyond: three options, no panic
 
-If an item still hasn't moved after three weeks, you have three realistic choices. Relist, removing the item and putting it back up with new photos, an adjusted title and a fresh start in the algorithm. Bundle it with another item to make the total order value more attractive. Or accept that this particular piece is a slow seller and leave it up until the season turns.
+If an item still hasn't moved after three weeks, you have three realistic choices. Relist, removing the item and putting it back up with new photos, an adjusted title and a fresh start in the algorithm. Bundle it with another item to make the total order value more attractive. Or accept that this particular piece is a slow seller and leave it up until the season turns. Keep in mind that an item that has been sitting for three to four weeks is exactly the kind buyers start making offers on, as described in [how to get a discount on Vinted](/en/articles/korting-krijgen-op-vinted).
 
 Keep in mind that turnaround time varies a lot by category. Calling an item a failure after ten days works differently depending on the category.
 

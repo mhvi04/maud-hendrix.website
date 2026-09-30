@@ -58,7 +58,7 @@ Heb je daarentegen wel veel views maar geen enkele hartje of bericht, dan ligt h
 
 ## Dag 22 en verder: drie opties, geen wanhoop
 
-Beweegt een item na drie weken nog steeds niet, dan heb je drie realistische keuzes. Herlisten, waarbij je het item verwijdert en met nieuwe foto's, een aangepaste titel en een verse start in het algoritme opnieuw online zet. Bundelen met een ander item om de totale orderwaarde aantrekkelijker te maken. Of accepteren dat dit specifieke stuk een trage verkoper is en het laten staan tot het seizoen keert.
+Beweegt een item na drie weken nog steeds niet, dan heb je drie realistische keuzes. Herlisten, waarbij je het item verwijdert en met nieuwe foto's, een aangepaste titel en een verse start in het algoritme opnieuw online zet. Bundelen met een ander item om de totale orderwaarde aantrekkelijker te maken. Of accepteren dat dit specifieke stuk een trage verkoper is en het laten staan tot het seizoen keert. Houd er rekening mee dat een item dat al drie tot vier weken stilligt, precies het type is waar kopers op gaan bieden, zoals beschreven in [zo krijg je korting op Vinted](/artikelen/korting-krijgen-op-vinted).
 
 Hou wel voor ogen dat doorlooptijd sterk verschilt per categorie. Een item na tien dagen als mislukt bestempelen werkt anders per categorie.
 
