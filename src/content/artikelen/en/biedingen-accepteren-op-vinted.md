@@ -4,6 +4,8 @@ excerpt: "More than 2,500 transactions show a pattern: accepting an offer right 
 date: "2026-09-22"
 tag: "Practice"
 thema: "prijs-marge"
+image: "../../../assets/articles/biedingen-accepteren-op-vinted.png"
+imageAlt: "Article image: 2500, almost never accept right away"
 draft: false
 ---
 

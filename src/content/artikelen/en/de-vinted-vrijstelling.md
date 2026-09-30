@@ -4,6 +4,8 @@ excerpt: "DAC7 and Belgium's tax exemption happen to share the same €2,000 thr
 date: "2026-09-22"
 tag: "Practice"
 thema: "fiscaal"
+image: "../../../assets/articles/de-vinted-vrijstelling.png"
+imageAlt: "Article image: €2000, being reported is not paying tax"
 draft: false
 ---
 

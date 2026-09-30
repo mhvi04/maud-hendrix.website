@@ -23,6 +23,8 @@ const articleSchema = ({ image }: SchemaContext) =>
     // artikel. Ontbreekt hij, dan toont ArticleImage een placeholder en
     // valt de og:image terug op public/og/<slug>.png of /og-default.png.
     image: image().optional(),
+    // Beschrijvende alt-tekst voor de coverfoto, per taal.
+    imageAlt: z.string().optional(),
     // Bepaalt de grote uitgelichte kaart bovenaan "Uit de praktijk".
     featured: z.boolean().optional().default(false),
     draft: z.boolean().optional().default(false),

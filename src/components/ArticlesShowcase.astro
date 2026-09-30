@@ -11,6 +11,7 @@ interface ShowcaseArticle {
   date: string;
   dateLabel: string;
   image?: import("astro").ImageMetadata;
+  imageAlt?: string;
 }
 
 interface Props {
@@ -43,7 +44,7 @@ const {
   </div>
 
   <a href={featured.href} class="featured-card">
-    <ArticleImage image={featured.image} alt={featured.title} sizes="(max-width: 780px) 100vw, 640px" class="featured-image" />
+    <ArticleImage image={featured.image} alt={featured.imageAlt ?? featured.title} sizes="(max-width: 780px) 100vw, 640px" class="featured-image" />
     <div class="featured-body">
       <span class="featured-badge mono">{featuredLabel}</span>
       <time class="featured-date mono" datetime={featured.date}>{featured.dateLabel}</time>
@@ -58,7 +59,7 @@ const {
       recent.map((a) => (
         <li>
           <a href={a.href} class="recent-card">
-            <ArticleImage image={a.image} alt={a.title} sizes="(max-width: 780px) 100vw, 33vw" class="recent-image" />
+            <ArticleImage image={a.image} alt={a.imageAlt ?? a.title} sizes="(max-width: 780px) 100vw, 33vw" class="recent-image" />
             <div class="recent-body">
               <time class="recent-date mono" datetime={a.date}>{a.dateLabel}</time>
               <h3>{a.title}</h3>

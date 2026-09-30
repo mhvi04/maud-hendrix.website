@@ -4,6 +4,8 @@ excerpt: "DAC7 en de fiscale vrijstelling delen toevallig dezelfde grens van €
 date: "2026-09-22"
 tag: "Praktijk"
 thema: "fiscaal"
+image: "../../../assets/articles/de-vinted-vrijstelling.png"
+imageAlt: "Artikelafbeelding: €2000, rapporteren is niet belasting betalen"
 draft: false
 related: ["belasting-betalen-op-vinted-in-belgie", "hoeveel-verdien-je-met-vinted-resellen"]
 ---

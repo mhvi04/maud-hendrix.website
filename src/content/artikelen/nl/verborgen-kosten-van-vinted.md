@@ -4,6 +4,8 @@ excerpt: "Vinted rekent 0% commissie, maar de kopersbeschermingskost duwt kopers
 date: "2026-09-22"
 tag: "Praktijk"
 thema: "prijs-marge"
+image: "../../../assets/articles/verborgen-kosten-van-vinted.png"
+imageAlt: "Artikelafbeelding: €100, de verborgen kosten van Vinted"
 draft: false
 related: ["bundelkorting-op-vinted", "hoeveel-verdien-je-met-vinted-resellen"]
 ---

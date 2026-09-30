@@ -4,6 +4,8 @@ excerpt: "Meer dan 2500 transacties tonen een patroon: een bod direct accepteren
 date: "2026-09-22"
 tag: "Praktijk"
 thema: "prijs-marge"
+image: "../../../assets/articles/biedingen-accepteren-op-vinted.png"
+imageAlt: "Artikelafbeelding: 2500, bijna nooit meteen accepteren"
 draft: false
 related: ["favoriet-hartje-op-vinted", "psychologie-van-je-koper"]
 ---

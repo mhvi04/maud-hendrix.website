@@ -4,6 +4,8 @@ excerpt: "Between 15 and 25 percent off the total is a healthy bundle discount. 
 date: "2026-09-22"
 tag: "Practice"
 thema: "prijs-marge"
+image: "../../../assets/articles/bundelkorting-op-vinted.png"
+imageAlt: "Article image: 15-25%, how much bundle discount should a seller give?"
 draft: false
 faq:
   - question: "How much bundle discount should you give on Vinted?"

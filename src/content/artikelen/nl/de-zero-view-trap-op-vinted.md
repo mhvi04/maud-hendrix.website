@@ -4,6 +4,8 @@ excerpt: "Nul views na een week is geen pech maar een algoritmisch oordeel. Waar
 date: "2026-09-22"
 tag: "Praktijk"
 thema: "algoritme-zichtbaarheid"
+image: "../../../assets/articles/de-zero-view-trap-op-vinted.png"
+imageAlt: "Artikelafbeelding: De Zero-View Trap"
 draft: false
 related: ["hoe-werkt-het-vinted-algoritme", "vinted-item-verkoopt-niet-wat-nu"]
 faq:
