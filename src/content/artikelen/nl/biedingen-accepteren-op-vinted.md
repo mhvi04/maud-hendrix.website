@@ -94,4 +94,4 @@ Leren wie er aan de andere kant zit, op basis van wat ze vragen en hoe snel ze d
 
 ## In één zin
 
-Accepteren sluit een transactie. Reageren houdt een gesprek open. En in dat gesprek ontstaan hogere biedingen, snellere beslissingen en betere eindprijzen. Dat is geen onderhandelingstactiek uit een businessboek. Het is wat mijn data consequent laat zien, transactie na transactie.
+Accepteren sluit een transactie. Reageren houdt een gesprek open. En in dat gesprek ontstaan hogere biedingen, snellere beslissingen en betere eindprijzen. Dat is geen onderhandelingstactiek uit een businessboek. Het is wat mijn data consequent laat zien, transactie na transactie. Wil je het van de andere kant bekijken, als koper die zelf een deal zoekt, lees dan [zo krijg je korting op Vinted](/artikelen/korting-krijgen-op-vinted).

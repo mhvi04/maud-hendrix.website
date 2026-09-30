@@ -93,4 +93,4 @@ Learning who's on the other end, based on what they ask and how fast they ask it
 
 ## In one sentence
 
-Accepting closes a transaction. Responding keeps a conversation open. And in that conversation, higher offers, faster decisions and better final prices emerge. That's not a negotiation tactic from a business book. It's what my data consistently shows, transaction after transaction.
+Accepting closes a transaction. Responding keeps a conversation open. And in that conversation, higher offers, faster decisions and better final prices emerge. That's not a negotiation tactic from a business book. It's what my data consistently shows, transaction after transaction. If you want to see it from the other side, as a buyer looking for a deal yourself, read [how to get a discount on Vinted](/en/articles/korting-krijgen-op-vinted).
