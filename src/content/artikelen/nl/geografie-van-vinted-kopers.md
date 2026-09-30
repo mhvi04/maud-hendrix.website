@@ -4,6 +4,8 @@ excerpt: "Van 250 orders uit acht landen blijkt: waar je koper woont bepaalt nie
 date: "2026-09-13"
 tag: "Praktijk"
 thema: "kopers"
+image: "../../../assets/articles/geografie-van-vinted-kopers.png"
+imageAlt: "Artikelafbeelding: 8, Vinted-kopers wonen ook ergens anders"
 draft: false
 related: ["psychologie-van-je-koper", "wraakreviews-op-vinted"]
 ---

@@ -4,6 +4,8 @@ excerpt: "Geboost op Vinted betekent dat een listing tijdelijk extra zichtbaarhe
 date: "2026-09-13"
 tag: "Praktijk"
 thema: "algoritme-zichtbaarheid"
+image: "../../../assets/articles/boosten-op-vinted.png"
+imageAlt: "Artikelafbeelding: 206, wat betekent geboost op Vinted?"
 featured: true
 draft: false
 related: ["hoe-werkt-het-vinted-algoritme", "vinted-item-verkoopt-niet-wat-nu"]

@@ -4,6 +4,8 @@ excerpt: "From 250 orders across eight countries: where your buyer lives doesn't
 date: "2026-09-13"
 tag: "Practice"
 thema: "kopers"
+image: "../../../assets/articles/geografie-van-vinted-kopers.png"
+imageAlt: "Article image: 8, Vinted buyers live somewhere else too"
 draft: false
 ---
 
