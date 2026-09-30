@@ -4,6 +4,8 @@ excerpt: "There's an average of 1.8 days between a heart and a purchase. What th
 date: "2026-09-18"
 tag: "Practice"
 thema: "kopers"
+image: "../../../assets/articles/favoriet-hartje-op-vinted.png"
+imageAlt: "Article image: 1.8, what to do when someone favourites your item"
 draft: false
 ---
 

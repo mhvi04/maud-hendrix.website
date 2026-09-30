@@ -4,6 +4,8 @@ excerpt: "206 boosts, €482 investering, 5 jaar data: wat écht rendeert bij he
 date: "2026-09-18"
 tag: "Praktijk"
 thema: "algoritme-zichtbaarheid"
+image: "../../../assets/articles/482-euro-vinted-boosts-5-lessen.png"
+imageAlt: "Artikelafbeelding: €482, 5 lessen uit mijn boosts"
 draft: false
 canonicalPath: "/artikelen/boosten-op-vinted"
 related: ["hoe-werkt-het-vinted-algoritme", "vinted-item-verkoopt-niet-wat-nu"]

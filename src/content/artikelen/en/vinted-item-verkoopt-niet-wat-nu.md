@@ -4,6 +4,8 @@ excerpt: "A price cut is rarely the right first move. The day-by-day timeline fo
 date: "2026-09-18"
 tag: "Practice"
 thema: "algoritme-zichtbaarheid"
+image: "../../../assets/articles/vinted-item-verkoopt-niet-wat-nu.png"
+imageAlt: "Article image: 22, item not selling? What to do, day by day"
 draft: false
 ---
 

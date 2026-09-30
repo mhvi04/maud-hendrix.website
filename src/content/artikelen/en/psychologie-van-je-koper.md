@@ -4,6 +4,8 @@ excerpt: "Across more than 2,500 transactions I saw four recurring buyer profile
 date: "2026-09-13"
 tag: "Practice"
 thema: "kopers"
+image: "../../../assets/articles/psychologie-van-je-koper.png"
+imageAlt: "Article image: 4, the psychology of your buyer"
 draft: false
 ---
 

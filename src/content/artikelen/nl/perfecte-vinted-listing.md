@@ -4,6 +4,8 @@ excerpt: "Een listing is geen samenvatting van een item, maar een antwoord op el
 date: "2026-09-13"
 tag: "Praktijk"
 thema: "kopers"
+image: "../../../assets/articles/perfecte-vinted-listing.png"
+imageAlt: "Artikelafbeelding: de perfecte Vinted-listing"
 draft: false
 related: ["ralph-lauren-labels-uitgelegd", "vinted-fotos-die-verkopen"]
 ---

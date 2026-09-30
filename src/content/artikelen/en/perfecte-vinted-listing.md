@@ -4,6 +4,8 @@ excerpt: "A listing isn't a summary of an item, it's an answer to every question
 date: "2026-09-13"
 tag: "Practice"
 thema: "kopers"
+image: "../../../assets/articles/perfecte-vinted-listing.png"
+imageAlt: "Article image: the perfect Vinted listing"
 draft: false
 ---
 
