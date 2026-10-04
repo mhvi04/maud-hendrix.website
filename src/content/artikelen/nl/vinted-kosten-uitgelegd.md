@@ -4,6 +4,8 @@ excerpt: "De Vinted-kosten zijn verplicht op elke aankoop en staan vooraf vermel
 date: "2026-09-30"
 tag: "Praktijk"
 thema: "prijs-marge"
+image: "../../../assets/articles/vinted-kosten-uitgelegd.png"
+imageAlt: "Artikelafbeelding: plusteken, waarom je meer betaalt dan de prijs van het artikel"
 draft: false
 related: ["verborgen-kosten-van-vinted", "valutaconversie-op-vinted"]
 ---

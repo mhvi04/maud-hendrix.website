@@ -4,6 +4,8 @@ excerpt: "Why Vinted can block an account, what that means for your ongoing tran
 date: "2026-09-30"
 tag: "Practice"
 thema: "fiscaal"
+image: "../../../assets/articles/account-geblokkeerd-op-vinted.png"
+imageAlt: "Article image: cross, your Vinted account is blocked, now what"
 draft: false
 related: ["wat-verandert-er-in-de-nieuwe-vinted-voorwaarden", "wraakreviews-op-vinted"]
 ---

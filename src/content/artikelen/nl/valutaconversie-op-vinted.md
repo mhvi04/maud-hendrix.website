@@ -4,6 +4,8 @@ excerpt: "Koop je een artikel in een andere valuta dan de jouwe, dan rekent Vint
 date: "2026-09-30"
 tag: "Praktijk"
 thema: "prijs-marge"
+image: "../../../assets/articles/valutaconversie-op-vinted.png"
+imageAlt: "Artikelafbeelding: 1,2 tot 3%, valutaconversie op Vinted en de verborgen kosten"
 draft: false
 related: ["verborgen-kosten-van-vinted", "geografie-van-vinted-kopers"]
 ---

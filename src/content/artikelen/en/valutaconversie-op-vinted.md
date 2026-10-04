@@ -4,6 +4,8 @@ excerpt: "Buy an item priced in a currency other than your own and Vinted adds 1
 date: "2026-09-30"
 tag: "Practice"
 thema: "prijs-marge"
+image: "../../../assets/articles/valutaconversie-op-vinted.png"
+imageAlt: "Article image: 1.2 to 3%, currency conversion on Vinted and the hidden fees"
 draft: false
 related: ["verborgen-kosten-van-vinted", "geografie-van-vinted-kopers"]
 ---

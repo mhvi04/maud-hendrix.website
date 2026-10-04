@@ -4,6 +4,8 @@ excerpt: "Twee dagen voor de koper om te melden, 48 uur voor jou om authenticite
 date: "2026-09-30"
 tag: "Praktijk"
 thema: "ralph-lauren"
+image: "../../../assets/articles/namaakartikel-verkocht-op-vinted.png"
+imageAlt: "Artikelafbeelding: 48 uur, wat gebeurt er als je een namaakartikel verkoopt"
 draft: false
 related: ["ralph-lauren-labels-uitgelegd", "wat-verandert-er-in-de-nieuwe-vinted-voorwaarden"]
 ---
