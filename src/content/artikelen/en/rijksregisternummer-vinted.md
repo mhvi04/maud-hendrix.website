@@ -4,6 +4,8 @@ excerpt: "Vinted must pass your national register number to the tax office once 
 date: "2026-10-04"
 tag: "Practice"
 thema: "fiscaal"
+image: "../../../assets/articles/rijksregisternummer-vinted-en.png"
+imageAlt: "Article image: €2,000, why Vinted asks for your Belgian national register number"
 draft: false
 related: ["de-vinted-vrijstelling", "belasting-betalen-op-vinted-in-belgie"]
 faq:

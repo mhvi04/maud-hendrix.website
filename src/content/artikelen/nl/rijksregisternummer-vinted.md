@@ -4,6 +4,8 @@ excerpt: "Vinted moet je rijksregisternummer doorgeven aan de fiscus zodra je 30
 date: "2026-10-04"
 tag: "Praktijk"
 thema: "fiscaal"
+image: "../../../assets/articles/rijksregisternummer-vinted.png"
+imageAlt: "Artikelafbeelding: €2.000, waarom vraagt Vinted je rijksregisternummer?"
 draft: false
 related: ["de-vinted-vrijstelling", "belasting-betalen-op-vinted-in-belgie"]
 faq:
