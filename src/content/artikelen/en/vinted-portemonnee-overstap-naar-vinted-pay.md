@@ -4,6 +4,8 @@ excerpt: "Vinted is moving from Mangopay to Vinted Pay UAB. Not phishing, but ma
 date: "2026-09-30"
 tag: "Practice"
 thema: "fiscaal"
+image: "../../../assets/articles/vinted-portemonnee-overstap-naar-vinted-pay.png"
+imageAlt: "Article image: Pay, the switch to Vinted Pay: what it means for you"
 draft: false
 related: ["wat-verandert-er-in-de-nieuwe-vinted-voorwaarden", "de-vinted-vrijstelling"]
 ---

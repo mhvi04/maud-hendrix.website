@@ -4,6 +4,8 @@ excerpt: "Two calendar days to report a problem, photos as proof and the differe
 date: "2026-09-30"
 tag: "Practice"
 thema: "kopers"
+image: "../../../assets/articles/pakketje-kwijt-of-beschadigd-op-vinted.png"
+imageAlt: "Article image: 2 days, your package is lost or damaged, these are your rights"
 draft: false
 related: ["verborgen-kosten-van-vinted", "wraakreviews-op-vinted"]
 ---

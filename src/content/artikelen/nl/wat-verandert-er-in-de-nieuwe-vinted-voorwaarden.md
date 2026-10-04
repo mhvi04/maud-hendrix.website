@@ -4,6 +4,8 @@ excerpt: "Nieuwe beheerder voor je Portemonnee, 48 uur om een namaakclaim te wee
 date: "2026-09-30"
 tag: "Praktijk"
 thema: "fiscaal"
+image: "../../../assets/articles/wat-verandert-er-in-de-nieuwe-vinted-voorwaarden.png"
+imageAlt: "Artikelafbeelding: 5/10 2026, wat verandert er in de nieuwe voorwaarden"
 draft: false
 related: ["vinted-portemonnee-overstap-naar-vinted-pay", "ralph-lauren-labels-uitgelegd"]
 ---

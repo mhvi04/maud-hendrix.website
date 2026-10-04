@@ -4,6 +4,8 @@ excerpt: "Twee kalenderdagen om een probleem te melden, foto's als bewijs en het
 date: "2026-09-30"
 tag: "Praktijk"
 thema: "kopers"
+image: "../../../assets/articles/pakketje-kwijt-of-beschadigd-op-vinted.png"
+imageAlt: "Artikelafbeelding: 2 dagen, je pakketje is kwijt of beschadigd, dit zijn je rechten"
 draft: false
 related: ["verborgen-kosten-van-vinted", "wraakreviews-op-vinted"]
 ---

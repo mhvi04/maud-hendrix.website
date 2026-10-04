@@ -4,6 +4,8 @@ excerpt: "The Vinted fee is mandatory on every purchase and shown upfront. What 
 date: "2026-09-30"
 tag: "Practice"
 thema: "prijs-marge"
+image: "../../../assets/articles/vinted-kosten-uitgelegd.png"
+imageAlt: "Article image: plus sign, why you pay more than the price of the item"
 draft: false
 related: ["verborgen-kosten-van-vinted", "valutaconversie-op-vinted"]
 ---

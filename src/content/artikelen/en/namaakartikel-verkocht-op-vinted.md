@@ -4,6 +4,8 @@ excerpt: "Two days for the buyer to report, 48 hours for you to prove authentici
 date: "2026-09-30"
 tag: "Practice"
 thema: "ralph-lauren"
+image: "../../../assets/articles/namaakartikel-verkocht-op-vinted.png"
+imageAlt: "Article image: 48 hours, what happens if you sell a counterfeit item"
 draft: false
 related: ["ralph-lauren-labels-uitgelegd", "wat-verandert-er-in-de-nieuwe-vinted-voorwaarden"]
 ---

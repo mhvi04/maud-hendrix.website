@@ -4,6 +4,8 @@ excerpt: "Waarom Vinted een account kan blokkeren, wat dat concreet betekent voo
 date: "2026-09-30"
 tag: "Praktijk"
 thema: "fiscaal"
+image: "../../../assets/articles/account-geblokkeerd-op-vinted.png"
+imageAlt: "Artikelafbeelding: kruis, je account is geblokkeerd op Vinted, wat nu"
 draft: false
 related: ["wat-verandert-er-in-de-nieuwe-vinted-voorwaarden", "wraakreviews-op-vinted"]
 ---
