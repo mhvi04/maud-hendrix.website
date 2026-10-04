@@ -2,21 +2,48 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import StickyFooterBar from "../../../components/StickyFooterBar.astro";
-import ArticleCard from "../../../components/ArticleCard.astro";
 import { getCollection } from "astro:content";
+import { estimateReadingMinutes } from "../../../lib/reading-time";
+import { ARTICLE_THEMES } from "../../../content.config";
 
-const FEATURED_SLUG = "boosten-op-vinted";
+const entries = (await getCollection("articlesEn", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.localeCompare(a.data.date) || a.data.title.localeCompare(b.data.title)
+);
 
-const articles = (await getCollection("articlesEn")).sort((a, b) => {
-  if (a.id === FEATURED_SLUG) return -1;
-  if (b.id === FEATURED_SLUG) return 1;
-  return a.data.title.localeCompare(b.data.title);
-});
+const articles = entries.map((entry) => ({
+  href: `/en/articles/${entry.id}`,
+  tag: entry.data.tag,
+  thema: entry.data.thema,
+  title: entry.data.title,
+  excerpt: entry.data.excerpt,
+  readingMinutes: estimateReadingMinutes(entry.body ?? ""),
+}));
+
+// Readable labels for the filter buttons — fixed order, separate from the
+// frontmatter value (kebab-case, used for filtering).
+const themeLabels: Record<(typeof ARTICLE_THEMES)[number], string> = {
+  "algoritme-zichtbaarheid": "Algorithm & visibility",
+  "prijs-marge": "Price & margin",
+  kopers: "Buyers",
+  fiscaal: "Tax",
+  "ralph-lauren": "Ralph Lauren",
+};
+// Only show themes that actually occur in the articles.
+const usedThemes = ARTICLE_THEMES.filter((t) => articles.some((a) => a.thema === t));
+
+// Eyebrow and subtitle follow from the categories that actually occur in the
+// articles (frontmatter tag), never hardcoded.
+const categories = [...new Set(entries.map((e) => e.data.tag))];
+const eyebrow = categories.join(" / ");
+const subtitle =
+  categories.length > 1
+    ? `Practical knowledge on ${categories.join(", ").toLowerCase()} on Vinted, based on my own sales data.`
+    : "Practical knowledge on selling on Vinted: numbers, patterns and lessons from my own transactions.";
 ---
 
 <BaseLayout
-  title="Articles — Maud Hendrix"
-  description="Articles on reselling, Vinted and data-driven entrepreneurship, written by Maud Hendrix."
+  title="Maud's blog — Maud Hendrix"
+  description="Practical knowledge on reselling on Vinted, based on my own sales data and transactions."
   locale="en"
   nlPath="/artikelen"
   enPath="/articles"
@@ -24,46 +51,273 @@ const articles = (await getCollection("articlesEn")).sort((a, b) => {
   <SiteHeader world="artikelen" locale="en" nlPath="/artikelen" enPath="/articles" />
   <main class="listing">
     <section class="wrap head">
-      <span class="label">Maud Hendrix</span>
-      <h1>Articles</h1>
+      <span class="label">{eyebrow}</span>
+      <h1>Maud's <em>blog.</em></h1>
+      <p class="head-sub">{subtitle}</p>
     </section>
-    <section class="wrap grid">
+    <hr class="rule" />
+
+    <section class="wrap filter-bar">
+      <div class="theme-filters" role="group" aria-label="Filter by theme">
+        <button type="button" class="theme-btn is-active" data-theme-filter="all" aria-pressed="true">
+          All
+        </button>
+        {
+          usedThemes.map((t) => (
+            <button type="button" class="theme-btn" data-theme-filter={t} aria-pressed="false">
+              {themeLabels[t]}
+            </button>
+          ))
+        }
+      </div>
+      <label class="search-field">
+        <span class="sr-only">Search by title or intro</span>
+        <input type="search" id="article-search" placeholder="Search by title or intro…" autocomplete="off" />
+      </label>
+    </section>
+
+    <section class="wrap grid" id="article-grid">
       {
         articles.map((a) => (
-          <ArticleCard
-            href={`/en/articles/${a.id}`}
-            tag={a.data.tag}
-            title={a.data.title}
-            excerpt={a.data.excerpt}
-            date={a.data.date}
-          />
+          <a
+            href={a.href}
+            class="blog-card"
+            data-theme={a.thema}
+            data-search={`${a.title} ${a.excerpt}`.toLowerCase()}
+          >
+            <span class="blog-card-bar" aria-hidden="true" />
+            <span class="blog-card-tag mono">{a.tag}</span>
+            <h2 class="blog-card-title">{a.title}</h2>
+            <p class="blog-card-excerpt">{a.excerpt}</p>
+            <span class="blog-card-time mono">{a.readingMinutes} min read</span>
+          </a>
         ))
       }
     </section>
+    <p class="wrap no-results" id="no-results" hidden>
+      No articles found for this combination of theme and search term.
+    </p>
   </main>
   <StickyFooterBar showVat subtitle="Ghent, Belgium" />
 </BaseLayout>
+
+<script>
+  const grid = document.getElementById("article-grid");
+  const noResults = document.getElementById("no-results");
+  const searchInput = document.getElementById("article-search") as HTMLInputElement | null;
+  const themeButtons = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-theme-filter]"));
+  const cards = Array.from(grid?.querySelectorAll<HTMLAnchorElement>(".blog-card") ?? []);
+
+  let activeTheme = "all";
+
+  function applyFilters() {
+    const query = (searchInput?.value ?? "").trim().toLowerCase();
+    let visibleCount = 0;
+
+    for (const card of cards) {
+      const matchesTheme = activeTheme === "all" || card.dataset.theme === activeTheme;
+      const matchesSearch = !query || (card.dataset.search ?? "").includes(query);
+      const visible = matchesTheme && matchesSearch;
+      card.hidden = !visible;
+      if (visible) visibleCount++;
+    }
+
+    if (noResults) noResults.hidden = visibleCount > 0;
+  }
+
+  for (const btn of themeButtons) {
+    btn.addEventListener("click", () => {
+      activeTheme = btn.dataset.themeFilter ?? "all";
+      for (const other of themeButtons) {
+        const isActive = other === btn;
+        other.classList.toggle("is-active", isActive);
+        other.setAttribute("aria-pressed", String(isActive));
+      }
+      applyFilters();
+    });
+  }
+
+  searchInput?.addEventListener("input", applyFilters);
+</script>
 
 <style>
   .listing {
     background: var(--cream);
   }
   .head {
-    padding-block: clamp(48px, 7vw, 84px) clamp(32px, 5vw, 48px);
-    border-bottom: 1px solid var(--ink);
+    padding-block: clamp(48px, 7vw, 84px) clamp(28px, 4vw, 40px);
   }
   .head h1 {
-    font-size: clamp(36px, 5vw, 56px);
-    font-weight: 600;
+    font-size: clamp(36px, 5.5vw, 60px);
+    font-weight: 800;
     margin-block: 14px 12px;
+    line-height: 1.05;
   }
-  .head p {
-    font-size: 16px;
+  .head-sub {
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 62ch;
+    opacity: 0.85;
   }
+
+  /* ---------- FILTER BAR ---------- */
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: clamp(24px, 3vw, 32px) 0;
+  }
+  .theme-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .theme-btn {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    padding: 9px 16px;
+    border: 1px solid var(--ink);
+    background: transparent;
+    color: var(--ink);
+    opacity: 0.7;
+    transition: background 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+  }
+  .theme-btn:hover {
+    opacity: 1;
+  }
+  .theme-btn.is-active {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--cream);
+    opacity: 1;
+  }
+  .search-field {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+  }
+  .search-field input {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 14px;
+    padding: 10px 14px;
+    border: 1px solid var(--ink);
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .search-field input::placeholder {
+    color: var(--ink);
+    opacity: 0.5;
+  }
+  .search-field input:focus-visible {
+    outline: 2px solid var(--mustard);
+    outline-offset: 1px;
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  @media (max-width: 640px) {
+    .search-field {
+      max-width: none;
+    }
+  }
+
+  .no-results {
+    padding-block: 12px clamp(40px, 6vw, 64px);
+    font-size: 15px;
+    opacity: 0.7;
+  }
+
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 22px;
-    padding-block: clamp(32px, 5vw, 56px);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding-block: clamp(40px, 6vw, 64px);
+  }
+  @media (max-width: 980px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+  }
+  @media (max-width: 640px) {
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+  }
+
+  .blog-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .blog-card[hidden] {
+    display: none;
+  }
+  .blog-card-bar {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: var(--navy);
+    margin-bottom: 18px;
+    transition: background 0.15s ease;
+  }
+  .blog-card:hover .blog-card-bar {
+    background: var(--mustard);
+  }
+  .blog-card-tag {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mustard-deep);
+  }
+  .blog-card-title {
+    font-family: var(--font-display);
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-block: 10px 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .blog-card:hover .blog-card-title {
+    color: var(--navy);
+    text-decoration: underline;
+    text-decoration-color: var(--mustard);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+  .blog-card-excerpt {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink);
+    opacity: 0.8;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex-grow: 1;
+  }
+  .blog-card-time {
+    margin-top: 16px;
+    font-size: 12px;
+    opacity: 0.5;
   }
 </style>
