@@ -4,6 +4,8 @@ excerpt: "A new manager for your Wallet, 48 hours to contest a counterfeit claim
 date: "2026-09-30"
 tag: "Practice"
 thema: "fiscaal"
+image: "../../../assets/articles/wat-verandert-er-in-de-nieuwe-vinted-voorwaarden.png"
+imageAlt: "Article image: 5/10 2026, what changes in the new terms"
 draft: false
 related: ["vinted-portemonnee-overstap-naar-vinted-pay", "ralph-lauren-labels-uitgelegd"]
 ---
