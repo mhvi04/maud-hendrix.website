@@ -1,4 +1,5 @@
 ---
+slugEn: "geography-of-vinted-buyers"
 title: "Not all Vinted buyers are the same: they live in different places too"
 excerpt: "From 250 orders across eight countries: where your buyer lives doesn't just shape what they order, but also how they communicate, when they decide, and whether they complain afterwards."
 date: "2026-09-13"

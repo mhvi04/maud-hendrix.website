@@ -1,4 +1,5 @@
 ---
+slugEn: "changes-in-new-vinted-terms"
 title: "What changes in Vinted's new terms from 5 October 2026"
 excerpt: "A new manager for your Wallet, 48 hours to contest a counterfeit claim and a new name for the buyer protection fee. The changes that matter for resellers."
 date: "2026-09-30"
@@ -23,11 +24,11 @@ What that means in practice:
 - Your data (full name, date of birth, nationality, address, email address, IP address, account details, verification documents) is transferred to Vinted Pay.
 - If you don't agree, you can no longer use Vinted. You can still request a payout via your existing Mangopay Wallet until it is eventually closed.
 
-This doesn't apply to Pro sellers with a Wallet, who fall under a separate arrangement. For the full breakdown, see [what the switch to Vinted Pay means for you](/en/articles/vinted-portemonnee-overstap-naar-vinted-pay).
+This doesn't apply to Pro sellers with a Wallet, who fall under a separate arrangement. For the full breakdown, see [what the switch to Vinted Pay means for you](/en/articles/vinted-wallet-switch-to-vinted-pay).
 
 ## The 'Buyer Protection fee' is gone, it's now simply Vinted fees
 
-This isn't stated explicitly in the notice at the top, but it can be found in the terms themselves and is confirmed by several marketplace news sources. What used to be named separately as a buyer protection cost is now simply described as a 'mandatory platform fee' that contributes to the cost of running the site. Your rights as a buyer when something goes wrong haven't disappeared, but they are now described separately under the Refund Policy instead of being tied to a name that explicitly promises protection. In practice nothing changes in what you get back, only in how it is named and framed. If you want to know what that fee does to your margin, read [the hidden costs of Vinted](/en/articles/verborgen-kosten-van-vinted).
+This isn't stated explicitly in the notice at the top, but it can be found in the terms themselves and is confirmed by several marketplace news sources. What used to be named separately as a buyer protection cost is now simply described as a 'mandatory platform fee' that contributes to the cost of running the site. Your rights as a buyer when something goes wrong haven't disappeared, but they are now described separately under the Refund Policy instead of being tied to a name that explicitly promises protection. In practice nothing changes in what you get back, only in how it is named and framed. If you want to know what that fee does to your margin, read [the hidden costs of Vinted](/en/articles/hidden-costs-of-vinted).
 
 ## Sellers get more time to contest a counterfeit claim, but the risk of not responding is bigger
 

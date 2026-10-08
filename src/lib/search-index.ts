@@ -87,7 +87,7 @@ export async function buildSearchIndex(locale: Language): Promise<SearchIndex> {
   const articles: SearchArticle[] = entries.map((entry) => ({
     title: entry.data.title,
     excerpt: entry.data.excerpt,
-    href: `${base}/${entry.id}`,
+    href: `${base}/${entry.data.slugEn ?? entry.id}`,
     date: entry.data.date,
   }));
 

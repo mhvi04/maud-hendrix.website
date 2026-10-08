@@ -1,4 +1,5 @@
 ---
+slugEn: "vinted-wallet-switch-to-vinted-pay"
 title: "Vinted Wallet: what the switch to Vinted Pay means for you"
 excerpt: "Vinted is moving from Mangopay to Vinted Pay UAB. Not phishing, but mandatory. What happens to your balance and data, and what if you don't agree."
 date: "2026-09-30"

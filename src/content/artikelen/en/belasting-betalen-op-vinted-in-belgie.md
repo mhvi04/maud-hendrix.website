@@ -1,4 +1,5 @@
 ---
+slugEn: "paying-tax-on-vinted-in-belgium"
 title: "Paying tax on Vinted sales in Belgium: what you actually need to know"
 excerpt: "No revenue threshold decides whether you owe tax on Vinted sales, your behaviour does. DAC7, VAT thresholds and the maths, laid out."
 date: "2026-09-18"

@@ -1,4 +1,5 @@
 ---
+slugEn: "vinted-package-lost-or-damaged"
 title: "Your Vinted package is lost or damaged: here are your rights"
 excerpt: "Two calendar days to report a problem, photos as proof and the difference between Vinted Go and your own carrier. What you get back and who is responsible."
 date: "2026-09-30"

@@ -11,7 +11,7 @@ const entries = (await getCollection("articlesEn", ({ data }) => !data.draft)).s
 );
 
 const articles = entries.map((entry) => ({
-  href: `/en/articles/${entry.id}`,
+  href: `/en/articles/${entry.data.slugEn ?? entry.id}`,
   tag: entry.data.tag,
   thema: entry.data.thema,
   title: entry.data.title,

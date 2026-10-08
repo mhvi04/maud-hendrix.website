@@ -1,4 +1,5 @@
 ---
+slugEn: "accepting-offers-on-vinted"
 title: "Almost never accept immediately: what my sales data shows about bidding on Vinted"
 excerpt: "More than 2,500 transactions show a pattern: accepting an offer right away closes a sale, but structurally lowers the final price and the offers that follow."
 date: "2026-09-22"
@@ -37,7 +38,7 @@ When you accept an offer immediately, that offer becomes the norm. Not just for 
 
 There's also a direct psychological effect on the buyer who just made the offer. If it's accepted instantly, part of them thinks: I could have gone lower. That thought undermines confidence in the transaction, not in the seller, but in themselves. And buyers who doubt their own decision leave lower reviews and ask more questions afterwards.
 
-Accepting immediately also removes urgency. Urgency is exactly what drives people to act. An item that sits there casually waits for a buyer who's never in a hurry. Anyone who understands how a buyer actually decides, see [the psychology of your buyer](/en/articles/psychologie-van-je-koper), recognises this mechanism instantly: it's rarely about the item itself, it's about the signal your behaviour sends.
+Accepting immediately also removes urgency. Urgency is exactly what drives people to act. An item that sits there casually waits for a buyer who's never in a hurry. Anyone who understands how a buyer actually decides, see [the psychology of your buyer](/en/articles/psychology-of-your-buyer), recognises this mechanism instantly: it's rarely about the item itself, it's about the signal your behaviour sends.
 
 <div class="shape-divider" aria-hidden="true">
   <span class="shape shape--circle"></span>

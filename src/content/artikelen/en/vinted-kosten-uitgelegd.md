@@ -1,4 +1,5 @@
 ---
+slugEn: "vinted-fees-explained"
 title: "Vinted fees explained: why you pay more than the listed price"
 excerpt: "The Vinted fee is mandatory on every purchase and shown upfront. What it is, why the Buyer Protection fee was renamed and what you can do about it."
 date: "2026-09-30"

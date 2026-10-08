@@ -1,4 +1,5 @@
 ---
+slugEn: "when-do-people-buy-on-vinted"
 title: "When do people buy on Vinted? What my sales data shows about day and hour"
 excerpt: "Almost half of my sales came in between 6 pm and midnight. The weekday barely matters. What more than 1,000 completed sales show."
 date: "2026-10-06"
@@ -93,11 +94,11 @@ My conclusion is cautious. One year says little about the next. Only treat a sea
 
 ## What these numbers do not say
 
-The time of ordering is not the time someone found your item. See [what to do when someone likes your item](/en/articles/favoriet-hartje-op-vinted): between a like and a purchase sits 1.8 days on average. A buyer who orders at 7 pm has therefore probably seen the item earlier.
+The time of ordering is not the time someone found your item. See [what to do when someone likes your item](/en/articles/vinted-favourite-heart): between a like and a purchase sits 1.8 days on average. A buyer who orders at 7 pm has therefore probably seen the item earlier.
 
 I have no data on the hour my listings went online. So I cannot say anything about the best hour to upload.
 
-The algorithm plays a part too. If the first test phase lasts about 48 hours, every test window contains at least one evening peak. See [how the Vinted algorithm works](/en/articles/hoe-werkt-het-vinted-algoritme) for that phase. That is reasoning and not a measurement.
+The algorithm plays a part too. If the first test phase lasts about 48 hours, every test window contains at least one evening peak. See [how the Vinted algorithm works](/en/articles/how-the-vinted-algorithm-works) for that phase. That is reasoning and not a measurement.
 
 ## What you do with it
 

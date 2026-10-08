@@ -11,7 +11,7 @@ import { fileURLToPath } from "node:url";
 export async function getStaticPaths() {
   const articles = await getCollection("articlesEn");
   return articles.map((entry) => ({
-    params: { slug: entry.id },
+    params: { slug: entry.data.slugEn ?? entry.id },
     props: { entry },
   }));
 }
@@ -25,7 +25,7 @@ const publishedDate = entry.data.date.startsWith("[") ? undefined : entry.data.d
 const dutchArticles = await getCollection("articlesNl");
 const hasDutchVersion = dutchArticles.some((e) => e.id === entry.id);
 const nlPath = `/artikelen/${entry.id}`;
-const enPath = `/articles/${entry.id}`;
+const enPath = `/articles/${entry.data.slugEn ?? entry.id}`;
 
 const faqJsonLd =
   entry.data.faq && entry.data.faq.length > 0

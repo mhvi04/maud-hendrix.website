@@ -1,4 +1,5 @@
 ---
+slugEn: "returning-buyers-on-vinted"
 title: "How many Vinted buyers come back? What 1,014 buyers show in my data"
 excerpt: "Of 1,014 buyers in my data, 20 ordered more than once. This is how often Vinted buyers come back and what that means for your approach."
 date: "2026-10-08"
@@ -25,7 +26,7 @@ A buyer receives the parcel, is happy and leaves a good review. You assume that 
 
 In my data a buyer almost never comes back. Of 1,014 buyers who completed an order between May 2022 and March 2026, 20 ordered more than once. That changes where you put your energy.
 
-This article counts buyers and not what they buy. The kinds of buyers are covered in [the psychology of your buyer](/articles/psychologie-van-je-koper).
+This article counts buyers and not what they buy. The kinds of buyers are covered in [the psychology of your buyer](/en/articles/psychology-of-your-buyer).
 
 <div class="mc-stats"><div class="mc-stat"><span class="mc-stat__num">2<em>%</em></span><span class="mc-stat__label">of 1,014 buyers ordered more than once, that is 20 buyers</span></div><div class="mc-stat"><span class="mc-stat__num">96<em>%</em></span><span class="mc-stat__label">of orders came from buyers who ordered once</span></div><div class="mc-stat"><span class="mc-stat__num">19</span><span class="mc-stat__label">days median between the first and second order</span></div></div>
 
@@ -79,9 +80,9 @@ Why these buyers came back, I cannot see. Without that answer this stays a count
 
 In my numbers a seller on Vinted gets almost every order from a new buyer. Your listing has to reach that buyer again every time.
 
-**What I take from it:** do not build your planning on buyers who come back. Almost every order comes from a buyer who orders only once. More on reach is in [how the Vinted algorithm works](/articles/hoe-werkt-het-vinted-algoritme).
+**What I take from it:** do not build your planning on buyers who come back. Almost every order comes from a buyer who orders only once. More on reach is in [how the Vinted algorithm works](/en/articles/how-the-vinted-algorithm-works).
 
-If you still want to test repeat buyers, look at the first month after an order. Eleven of the twenty returning buyers ordered again in that period. How a bundle discount fits in is covered in [bundle discounts on Vinted](/articles/bundelkorting-op-vinted).
+If you still want to test repeat buyers, look at the first month after an order. Eleven of the twenty returning buyers ordered again in that period. How a bundle discount fits in is covered in [bundle discounts on Vinted](/en/articles/bundle-discounts-on-vinted).
 
 ## What these numbers do not tell you
 

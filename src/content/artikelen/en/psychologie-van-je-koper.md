@@ -1,4 +1,5 @@
 ---
+slugEn: "psychology-of-your-buyer"
 title: "The psychology of your buyer"
 excerpt: "Across more than 2,500 transactions I saw four recurring buyer profiles — the Essentialist, the Collector, the Browser and the Minimalist — each demanding a different approach."
 date: "2026-09-13"

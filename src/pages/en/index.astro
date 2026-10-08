@@ -24,7 +24,7 @@ const featuredEntry = allArticles.find((a) => a.data.featured) ?? allArticles[0]
 const recentEntries = allArticles.filter((a) => a.id !== featuredEntry?.id).slice(0, 3);
 
 const toShowcaseArticle = (a: (typeof allArticles)[number]) => ({
-  href: `/en/articles/${a.id}`,
+  href: `/en/articles/${a.data.slugEn ?? a.id}`,
   title: a.data.title,
   excerpt: a.data.excerpt,
   date: a.data.date,
