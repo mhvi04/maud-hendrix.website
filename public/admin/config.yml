@@ -1,0 +1,85 @@
+backend:
+  name: github
+  repo: mhvi04/maud-hendrix.website
+  branch: claude/sharp-ride-n8at9r
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+# Opslaan commit rechtstreeks naar de branch, Netlify bouwt opnieuw.
+publish_mode: simple
+
+# Algemene fallback. De artikelcollecties overschrijven dit zelf.
+media_folder: src/assets/articles
+public_folder: ../../../assets/articles
+
+collections:
+  # Velden spiegelen src/content.config.ts (articleSchema). Wijzig je het
+  # schema, pas dan beide collecties hier mee aan.
+  - name: artikelen_nl
+    label: Artikelen (NL)
+    label_singular: Artikel
+    folder: src/content/artikelen/nl
+    extension: md
+    format: frontmatter
+    yaml_quote: true
+    create: true
+    slug: "{{slug}}"
+    media_folder: src/assets/articles
+    public_folder: ../../../assets/articles
+    summary: "{{title}} ({{date}})"
+    sortable_fields: [date, title]
+    fields: &article_fields
+      - { label: Titel, name: title, widget: string }
+      - { label: Beschrijving (meta description), name: excerpt, widget: text }
+      - label: Datum
+        name: date
+        widget: datetime
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        picker_utc: false
+      - { label: Categorie, name: tag, widget: string }
+      - label: Thema
+        name: thema
+        widget: select
+        options:
+          - { label: Algoritme en zichtbaarheid, value: algoritme-zichtbaarheid }
+          - { label: Prijs en marge, value: prijs-marge }
+          - { label: Kopers, value: kopers }
+          - { label: Fiscaal, value: fiscaal }
+          - { label: Ralph Lauren, value: ralph-lauren }
+      - { label: Afbeelding, name: image, widget: image, required: false }
+      - { label: Alt-tekst afbeelding, name: imageAlt, widget: string, required: false }
+      - { label: Uitgelicht op homepage, name: featured, widget: boolean, default: false, required: false }
+      - { label: Concept (noindex), name: draft, widget: boolean, default: false, required: false }
+      - label: FAQ
+        name: faq
+        widget: list
+        required: false
+        fields:
+          - { label: Vraag, name: question, widget: string }
+          - { label: Antwoord, name: answer, widget: text }
+      - label: Verder lezen (precies 2 artikelen)
+        name: related
+        widget: list
+        required: false
+        min: 2
+        max: 2
+        field: { label: Slug, name: slug, widget: string, hint: "Bestandsnaam van het artikel zonder .md" }
+      - { label: Canonical pad, name: canonicalPath, widget: string, required: false }
+      - { label: Tekst, name: body, widget: markdown }
+
+  - name: artikelen_en
+    label: Articles (EN)
+    label_singular: Article
+    folder: src/content/artikelen/en
+    extension: md
+    format: frontmatter
+    yaml_quote: true
+    create: true
+    slug: "{{slug}}"
+    media_folder: src/assets/articles
+    public_folder: ../../../assets/articles
+    summary: "{{title}} ({{date}})"
+    sortable_fields: [date, title]
+    fields: *article_fields
