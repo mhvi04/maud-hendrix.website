@@ -50,7 +50,10 @@ const canonicalURL = new URL(canonicalPath ?? Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(image, Astro.site);
 const ogLocale = locale === "en" ? "en_US" : "nl_BE";
 
-const hasTranslation = Boolean(nlPath) && Boolean(enPath);
+// Een pagina waarvan de canonical naar een andere URL wijst hoort niet in een
+// hreflang-set: hreflang moet naar canonieke URL's verwijzen.
+const isSelfCanonical = !canonicalPath || canonicalPath === Astro.url.pathname;
+const hasTranslation = Boolean(nlPath) && Boolean(enPath) && isSelfCanonical;
 const hreflangAlternates = hasTranslation
   ? [
       { hreflang: "nl", href: new URL(getRelativeLocaleUrl("nl", nlPath!), Astro.site).toString() },
