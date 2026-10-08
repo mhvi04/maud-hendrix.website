@@ -4,6 +4,8 @@ excerpt: "Three years of my own Vinted data: per month, August to October is bus
 date: "2026-10-08"
 tag: "Practice"
 thema: "algoritme-zichtbaarheid"
+image: "../../../assets/articles/verkoop-per-maand-op-vinted.en.png"
+imageAlt: "Article image: August to October, in which months do you sell the most on Vinted?"
 draft: false
 related: ["wanneer-kopen-mensen-op-vinted", "hoe-werkt-het-vinted-algoritme"]
 faq:
