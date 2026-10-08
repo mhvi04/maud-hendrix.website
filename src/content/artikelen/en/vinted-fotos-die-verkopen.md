@@ -1,4 +1,5 @@
 ---
+slugEn: "vinted-photos-that-sell"
 title: "Vinted photos that sell: what the data says, not what looks pretty"
 excerpt: "Photography in reselling isn't a creative process, it's risk reduction. Five fixed photos, in a fixed order, built on what actually produces fewer complaints and more clicks."
 date: "2026-09-13"

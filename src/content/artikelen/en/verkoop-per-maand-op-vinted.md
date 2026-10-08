@@ -1,4 +1,5 @@
 ---
+slugEn: "sales-per-month-on-vinted"
 title: "In which months do you sell the most on Vinted? Three years of my own sales data"
 excerpt: "Three years of my own Vinted data: per month, August to October is busier than March to July every single year. Here are the numbers."
 date: "2026-10-08"
@@ -24,7 +25,7 @@ You put a good batch of stock online and for the first weeks very little happens
 
 I counted my completed orders for 2023, 2024 and 2025 per month. The pattern is not smooth and three years is not a lot. Still, the period from August to October stands out every year.
 
-This article is about the month, not the day or the hour. That part is covered in [when people buy on Vinted](/articles/wanneer-kopen-mensen-op-vinted).
+This article is about the month, not the day or the hour. That part is covered in [when people buy on Vinted](/en/articles/when-do-people-buy-on-vinted).
 
 <div class="mc-stats"><div class="mc-stat"><span class="mc-stat__num">977</span><span class="mc-stat__label">completed orders in three years, 2023 through 2025</span></div><div class="mc-stat"><span class="mc-stat__num">3<em>/3</em></span><span class="mc-stat__label">years in which August to October was busier per month than March through July</span></div><div class="mc-stat"><span class="mc-stat__num">105</span><span class="mc-stat__label">orders in August 2025, the busiest month in my data</span></div></div>
 

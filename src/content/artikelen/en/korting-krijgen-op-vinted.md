@@ -1,4 +1,5 @@
 ---
+slugEn: "getting-a-discount-on-vinted"
 title: "How to get a discount on Vinted: there's no code, there's a system"
 excerpt: "A discount code for second-hand Vinted listings doesn't exist. What does work: a concrete offer, the right timing and a human tone. Based on over 2,500 transactions."
 date: "2026-09-30"
@@ -49,7 +50,7 @@ And bidding on something that was just listed is usually wasted effort. In the f
 
 **Timing.** An item that's been listed for three to four weeks with no interest is far more negotiable than something just posted. Sellers see the declining visibility on a listing that's been sitting, and they're more willing to move on price. It's usually easy to check how long something has been up, it's right there on the listing.
 
-**Bundling.** Ask for a discount on one single item and the margin for the seller is thin. Ask for a discount on two or three items together and it becomes worth it for them, because they can ship once instead of three separate times. That's a real saving they feel, and they'll often pass some of it on. How a seller looks at this from their side is covered in [bundle discounts on Vinted](/en/articles/bundelkorting-op-vinted).
+**Bundling.** Ask for a discount on one single item and the margin for the seller is thin. Ask for a discount on two or three items together and it becomes worth it for them, because they can ship once instead of three separate times. That's a real saving they feel, and they'll often pass some of it on. How a seller looks at this from their side is covered in [bundle discounts on Vinted](/en/articles/bundle-discounts-on-vinted).
 
 **End of month.** Some sellers are doing this as a side income and want to move stock or close out their monthly numbers by month's end. Not everyone, but it's not a bad time to try an offer.
 
@@ -71,7 +72,7 @@ A realistic offer usually sits somewhere between ten and twenty percent below th
 | Item listed for three to four weeks | Ten to twenty percent, closer to the upper end |
 | Bundle of multiple items | Ten to twenty percent off the total, closer to the upper end |
 
-Go systematically lower than that and you risk sellers just ignoring your offer outright. Negotiating works because it gives both sides something. The moment it stops making sense for the seller, the conversation stops too. Why sellers almost never accept a first offer straight away is covered in [what my sales data shows about offers](/en/articles/biedingen-accepteren-op-vinted).
+Go systematically lower than that and you risk sellers just ignoring your offer outright. Negotiating works because it gives both sides something. The moment it stops making sense for the seller, the conversation stops too. Why sellers almost never accept a first offer straight away is covered in [what my sales data shows about offers](/en/articles/accepting-offers-on-vinted).
 
 ## Short example
 

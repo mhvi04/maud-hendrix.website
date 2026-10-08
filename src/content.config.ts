@@ -35,6 +35,9 @@ const articleSchema = ({ image }: SchemaContext) =>
     // als een ander artikel op de site — voorkomt keyword-kannibalisatie door
     // de canonical naar de hoofdversie te laten wijzen.
     canonicalPath: z.string().optional(),
+    // Alleen op Engelse artikels: de Engelstalige URL-slug. Het bestandsnaam/id
+    // blijft de Nederlandse slug en dient als sleutel om NL en EN te koppelen.
+    slugEn: z.string().optional(),
     // Slugs (binnen dezelfde collectie) van twee gerelateerde artikelen,
     // getoond in het "Verder lezen"-blok onderaan het artikel.
     related: z.array(z.string()).length(2).optional(),

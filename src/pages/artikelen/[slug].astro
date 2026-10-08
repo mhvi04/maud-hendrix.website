@@ -24,9 +24,10 @@ const publishedDate = entry.data.date.startsWith("[") ? undefined : entry.data.d
 // Alleen een taalwissel/hreflang tonen als er ook echt een Engelse
 // tegenhanger met dezelfde slug bestaat.
 const englishArticles = await getCollection("articlesEn");
-const hasEnglishVersion = englishArticles.some((e) => e.id === entry.id);
+const englishEntry = englishArticles.find((e) => e.id === entry.id);
+const hasEnglishVersion = Boolean(englishEntry);
 const nlPath = `/artikelen/${entry.id}`;
-const enPath = `/articles/${entry.id}`;
+const enPath = `/articles/${englishEntry?.data.slugEn ?? entry.id}`;
 
 const faqJsonLd =
   entry.data.faq && entry.data.faq.length > 0

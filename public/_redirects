@@ -3,3 +3,34 @@
 /professioneel/artikelen /artikelen/ 301
 /professioneel/artikelen/ /artikelen/ 301
 /professioneel/artikelen/* /artikelen/:splat 301
+
+# Engelse artikels kregen Engelse slugs: oude /en/articles/<nl-slug> 301 naar de nieuwe URL.
+/en/articles/482-euro-vinted-boosts-5-lessen /en/articles/482-euro-vinted-boosts-5-lessons 301
+/en/articles/account-geblokkeerd-op-vinted /en/articles/vinted-account-blocked 301
+/en/articles/belasting-betalen-op-vinted-in-belgie /en/articles/paying-tax-on-vinted-in-belgium 301
+/en/articles/biedingen-accepteren-op-vinted /en/articles/accepting-offers-on-vinted 301
+/en/articles/boosten-op-vinted /en/articles/boosting-on-vinted 301
+/en/articles/bundelkorting-op-vinted /en/articles/bundle-discounts-on-vinted 301
+/en/articles/de-vinted-vrijstelling /en/articles/the-vinted-exemption 301
+/en/articles/de-zero-view-trap-op-vinted /en/articles/the-zero-view-trap-on-vinted 301
+/en/articles/favoriet-hartje-op-vinted /en/articles/vinted-favourite-heart 301
+/en/articles/geografie-van-vinted-kopers /en/articles/geography-of-vinted-buyers 301
+/en/articles/hoe-werkt-het-vinted-algoritme /en/articles/how-the-vinted-algorithm-works 301
+/en/articles/korting-krijgen-op-vinted /en/articles/getting-a-discount-on-vinted 301
+/en/articles/namaakartikel-verkocht-op-vinted /en/articles/counterfeit-item-sold-on-vinted 301
+/en/articles/pakketje-kwijt-of-beschadigd-op-vinted /en/articles/vinted-package-lost-or-damaged 301
+/en/articles/perfecte-vinted-listing /en/articles/perfect-vinted-listing 301
+/en/articles/psychologie-van-je-koper /en/articles/psychology-of-your-buyer 301
+/en/articles/ralph-lauren-labels-uitgelegd /en/articles/ralph-lauren-labels-explained 301
+/en/articles/terugkerende-kopers-op-vinted /en/articles/returning-buyers-on-vinted 301
+/en/articles/valutaconversie-op-vinted /en/articles/vinted-currency-conversion 301
+/en/articles/verborgen-kosten-van-vinted /en/articles/hidden-costs-of-vinted 301
+/en/articles/verkoop-per-maand-op-vinted /en/articles/sales-per-month-on-vinted 301
+/en/articles/vertrouwen-opbouwen-nieuw-vinted-profiel /en/articles/building-trust-new-vinted-profile 301
+/en/articles/vinted-fotos-die-verkopen /en/articles/vinted-photos-that-sell 301
+/en/articles/vinted-item-verkoopt-niet-wat-nu /en/articles/vinted-item-not-selling-what-now 301
+/en/articles/vinted-kosten-uitgelegd /en/articles/vinted-fees-explained 301
+/en/articles/vinted-portemonnee-overstap-naar-vinted-pay /en/articles/vinted-wallet-switch-to-vinted-pay 301
+/en/articles/wanneer-kopen-mensen-op-vinted /en/articles/when-do-people-buy-on-vinted 301
+/en/articles/wat-verandert-er-in-de-nieuwe-vinted-voorwaarden /en/articles/changes-in-new-vinted-terms 301
+/en/articles/wraakreviews-op-vinted /en/articles/revenge-reviews-on-vinted 301

@@ -1,4 +1,5 @@
 ---
+slugEn: "vinted-currency-conversion"
 title: "Currency conversion on Vinted: the hidden 1.2 to 3 percent fee"
 excerpt: "Buy an item priced in a currency other than your own and Vinted adds 1.2 or 3 percent at checkout. When it applies and how to factor it in."
 date: "2026-09-30"

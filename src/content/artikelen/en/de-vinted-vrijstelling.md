@@ -1,4 +1,5 @@
 ---
+slugEn: "the-vinted-exemption"
 title: "The Vinted exemption: why being reported isn't the same as owing tax"
 excerpt: "DAC7 and Belgium's tax exemption happen to share the same €2,000 threshold, but legally they're two completely separate things. What the new de-minimis rule changes."
 date: "2026-09-22"
@@ -63,7 +64,7 @@ Things that work in your favour in that assessment:
 - You don't run a professional structure: no VAT number for this activity, no active marketing, no purchased stock you hold while waiting for a good price.
 - You often sell at or below your original purchase price, not systematically with a profit margin.
 
-Things that work against you: regularly buying the same type of item to resell, financing with outside capital, a fast buy-and-sell turnaround that points to an organised approach. Once that pattern becomes visible, the tax authority can reclassify the income as miscellaneous income (Art. 90, 1° WIB92) or, for a genuinely professional activity, as professional income (Art. 23, §1, 1° WIB92). Under professional income, progressive tax rates climb up to 50%. I go deeper into those three tax categories, DAC7 and the VAT thresholds in [paying tax on Vinted sales in Belgium](/en/articles/belasting-betalen-op-vinted-in-belgie).
+Things that work against you: regularly buying the same type of item to resell, financing with outside capital, a fast buy-and-sell turnaround that points to an organised approach. Once that pattern becomes visible, the tax authority can reclassify the income as miscellaneous income (Art. 90, 1° WIB92) or, for a genuinely professional activity, as professional income (Art. 23, §1, 1° WIB92). Under professional income, progressive tax rates climb up to 50%. I go deeper into those three tax categories, DAC7 and the VAT thresholds in [paying tax on Vinted sales in Belgium](/en/articles/paying-tax-on-vinted-in-belgium).
 
 <div class="shape-divider" aria-hidden="true">
   <span class="shape shape--triangle"></span>

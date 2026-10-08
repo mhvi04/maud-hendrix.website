@@ -1,4 +1,5 @@
 ---
+slugEn: "counterfeit-item-sold-on-vinted"
 title: "What happens if you sell a counterfeit item on Vinted"
 excerpt: "Two days for the buyer to report, 48 hours for you to prove authenticity and six weeks of retention. The procedure and how to cover yourself."
 date: "2026-09-30"

@@ -1,4 +1,5 @@
 ---
+slugEn: "building-trust-new-vinted-profile"
 title: "How do I build trust as a new Vinted profile with no reviews?"
 excerpt: "Going from zero to ten reviews is the slowest phase. Four layers that help a new profile build trust faster: profile, response speed, first reviews and packaging."
 date: "2026-09-22"
@@ -32,7 +33,7 @@ The first layer is your profile itself. A fully filled-out bio, a clear profile 
 
 ## Layer 2: response speed
 
-The second layer is response speed. In my data across more than 2,500 transactions, one pattern is consistent: replying within the hour to a question or offer gives you 40% more chance of actually closing that transaction. For a new profile this matters even more, because fast communication is the only direct signal a buyer has of how serious you are. A buyer's confirmation in your review section starts with that first interaction — the same response speed that also plays into [accepting offers](/en/articles/biedingen-accepteren-op-vinted).
+The second layer is response speed. In my data across more than 2,500 transactions, one pattern is consistent: replying within the hour to a question or offer gives you 40% more chance of actually closing that transaction. For a new profile this matters even more, because fast communication is the only direct signal a buyer has of how serious you are. A buyer's confirmation in your review section starts with that first interaction — the same response speed that also plays into [accepting offers](/en/articles/accepting-offers-on-vinted).
 
 <div class="shape-divider" aria-hidden="true">
   <span class="shape shape--circle"></span>

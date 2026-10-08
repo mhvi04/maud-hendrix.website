@@ -1,4 +1,5 @@
 ---
+slugEn: "vinted-account-blocked"
 title: "Your Vinted account got blocked, now what"
 excerpt: "Why Vinted can block an account, what that means for your ongoing transactions and how to file an objection. Don't create a new account."
 date: "2026-09-30"
