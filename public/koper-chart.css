@@ -1,0 +1,181 @@
+/* Visuals voor het artikel "terugkerende-kopers-op-vinted". Bouwt voort op
+   de tegels en knoppen uit maand-chart.css (mc-stats, mc__group, mc__btn). */
+
+.kc {
+  margin: 32px 0;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  font-family: var(--font-mono);
+  color: var(--ink);
+}
+.kc__head {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--ink);
+}
+.kc__title {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+.kc__btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.kc__btns .mc__btn {
+  border: 1px solid var(--ink);
+  min-height: 40px;
+}
+.kc__btns .mc__btn:last-child {
+  border-right: 1px solid var(--ink);
+}
+
+.kc__dots {
+  display: grid;
+  grid-template-columns: repeat(39, minmax(0, 1fr));
+  gap: 2px;
+  padding: 16px;
+}
+.kc__dot {
+  aspect-ratio: 1;
+  background: var(--ink);
+  opacity: 0.16;
+  transition:
+    opacity 0.25s,
+    background-color 0.25s;
+}
+.kc__dot--on {
+  background: var(--mustard);
+  opacity: 1;
+}
+.kc__dot--base {
+  opacity: 0.16;
+}
+
+.kc__read {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--ink);
+}
+.kc__read > div {
+  padding: 14px 16px;
+  border-right: 1px solid var(--ink);
+}
+.kc__read > div:last-child {
+  border-right: 0;
+}
+.kc__k {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.kc__v {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+}
+.kc__v small {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 12px;
+  opacity: 0.7;
+}
+@media (max-width: 560px) {
+  .kc__read {
+    grid-template-columns: 1fr 1fr;
+  }
+  .kc__read > div:first-child {
+    grid-column: 1 / -1;
+    border-right: 0;
+    border-bottom: 1px solid var(--ink);
+  }
+}
+
+.kc__note {
+  padding: 10px 16px 14px;
+  font-size: 11px;
+  line-height: 1.5;
+  opacity: 0.7;
+  border-top: 1px solid var(--line);
+}
+
+/* Tijdgrafiek */
+.kc__rows {
+  padding: 16px;
+}
+.kc__row {
+  appearance: none;
+  display: grid;
+  grid-template-columns: minmax(110px, 200px) 1fr 40px;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  margin: 0 0 8px;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+}
+.kc__row:last-child {
+  margin-bottom: 0;
+}
+.kc__row:focus-visible {
+  outline: 2px solid var(--mustard);
+  outline-offset: 2px;
+}
+.kc__track {
+  height: 22px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+}
+.kc__fill {
+  display: block;
+  height: 100%;
+  background: var(--ink);
+  opacity: 0.55;
+  transition:
+    width 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+    opacity 0.2s;
+}
+.kc__row:hover .kc__fill {
+  opacity: 0.85;
+}
+.kc__row[aria-pressed="true"] .kc__fill {
+  background: var(--mustard);
+  opacity: 1;
+}
+.kc__row[aria-pressed="true"] .kc__lab {
+  font-weight: 700;
+}
+.kc__num {
+  text-align: right;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 480px) {
+  .kc__row {
+    grid-template-columns: 1fr 40px;
+  }
+  .kc__lab {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kc__dot,
+  .kc__fill {
+    transition: none;
+  }
+}
