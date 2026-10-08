@@ -6,9 +6,26 @@ import { getCollection } from "astro:content";
 import { estimateReadingMinutes } from "../../lib/reading-time";
 import { ARTICLE_THEMES } from "../../content.config";
 
-const entries = (await getCollection("articlesNl", ({ data }) => !data.draft)).sort(
-  (a, b) => b.data.date.localeCompare(a.data.date) || a.data.title.localeCompare(b.data.title)
-);
+// Standaardvolgorde (ook zonder JS): meest recent eerst, gelijke datum op titel,
+// artikelen zonder datum onderaan.
+const entries = (await getCollection("articlesNl", ({ data }) => !data.draft)).sort((a, b) => {
+  const da = a.data.date ?? "";
+  const db = b.data.date ?? "";
+  if (!da !== !db) return da ? -1 : 1;
+  return db.localeCompare(da) || a.data.title.localeCompare(b.data.title, "nl");
+});
+
+const dateFormatter = new Intl.DateTimeFormat("nl-BE", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+  timeZone: "UTC",
+});
+function formatDate(iso?: string) {
+  if (!iso) return null;
+  const d = new Date(`${iso}T00:00:00Z`);
+  return Number.isNaN(d.getTime()) ? null : dateFormatter.format(d);
+}
 
 const articles = entries.map((entry) => ({
   href: `/artikelen/${entry.id}`,
@@ -17,6 +34,8 @@ const articles = entries.map((entry) => ({
   title: entry.data.title,
   excerpt: entry.data.excerpt,
   readingMinutes: estimateReadingMinutes(entry.body ?? ""),
+  isoDate: formatDate(entry.data.date) ? entry.data.date : "",
+  dateLabel: formatDate(entry.data.date),
 }));
 
 // Leesbare labels voor de filterknoppen — vaste volgorde, los van de
@@ -75,6 +94,16 @@ const subtitle =
       </label>
     </section>
 
+    <section class="wrap sort-bar">
+      <label class="sort-field mono" for="article-sort">Sorteer op</label>
+      <select id="article-sort" class="sort-select" name="sort" disabled>
+        <option value="recent" selected>Meest recent</option>
+        <option value="oldest">Oudste eerst</option>
+        <option value="az">A tot Z</option>
+      </select>
+      <p class="sr-only" id="sort-status" role="status" aria-live="polite"></p>
+    </section>
+
     <section class="wrap grid" id="article-grid">
       {
         articles.map((a) => (
@@ -83,12 +112,18 @@ const subtitle =
             class="blog-card"
             data-theme={a.thema}
             data-search={`${a.title} ${a.excerpt}`.toLowerCase()}
+            data-date={a.isoDate}
+            data-title={a.title}
           >
             <span class="blog-card-bar" aria-hidden="true" />
             <span class="blog-card-tag mono">{a.tag}</span>
             <h2 class="blog-card-title">{a.title}</h2>
             <p class="blog-card-excerpt">{a.excerpt}</p>
-            <span class="blog-card-time mono">{a.readingMinutes} min leestijd</span>
+            <span class="blog-card-meta mono">
+              {a.dateLabel && <time datetime={a.isoDate}>{a.dateLabel}</time>}
+              {a.dateLabel && <span aria-hidden="true">·</span>}
+              <span>{a.readingMinutes} min leestijd</span>
+            </span>
           </a>
         ))
       }
@@ -137,6 +172,83 @@ const subtitle =
   }
 
   searchInput?.addEventListener("input", applyFilters);
+
+  // ---------- SORTERING ----------
+  type SortKey = "recent" | "oldest" | "az";
+  const SORT_LABELS: Record<SortKey, string> = {
+    recent: "meest recent",
+    oldest: "oudste eerst",
+    az: "A tot Z",
+  };
+  const STORAGE_KEY = "artikelen-sort";
+  const sortSelect = document.getElementById("article-sort") as HTMLSelectElement | null;
+  const sortStatus = document.getElementById("sort-status");
+
+  const isSortKey = (v: string | null): v is SortKey => v === "recent" || v === "oldest" || v === "az";
+  const byTitle = (a: HTMLElement, b: HTMLElement) =>
+    (a.dataset.title ?? "").localeCompare(b.dataset.title ?? "", "nl");
+
+  // Artikelen zonder datum staan altijd onderaan; gelijke datum valt terug op titel.
+  function compare(key: SortKey, a: HTMLElement, b: HTMLElement) {
+    if (key === "az") return byTitle(a, b);
+    const da = a.dataset.date ?? "";
+    const db = b.dataset.date ?? "";
+    if (!da !== !db) return da ? -1 : 1;
+    const diff = key === "recent" ? db.localeCompare(da) : da.localeCompare(db);
+    return diff || byTitle(a, b);
+  }
+
+  const reduceMotion = () =>
+    document.documentElement.classList.contains("reduce-motion") ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function applySort(key: SortKey, announce: boolean) {
+    if (!grid) return;
+    const reorder = () => {
+      for (const card of [...cards].sort((a, b) => compare(key, a, b))) grid.appendChild(card);
+    };
+    if (announce && !reduceMotion()) {
+      grid.classList.add("is-sorting");
+      window.setTimeout(() => {
+        reorder();
+        grid.classList.remove("is-sorting");
+      }, 120);
+    } else {
+      reorder();
+    }
+    if (announce && sortStatus) {
+      sortStatus.textContent = `Artikelen gesorteerd op ${SORT_LABELS[key]}.`;
+    }
+  }
+
+  function readInitialSort(): SortKey {
+    const fromUrl = new URLSearchParams(location.search).get("sort");
+    if (isSortKey(fromUrl)) return fromUrl;
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (isSortKey(stored)) return stored;
+    } catch {}
+    return "recent";
+  }
+
+  if (sortSelect) {
+    sortSelect.disabled = false;
+    const initial = readInitialSort();
+    sortSelect.value = initial;
+    if (initial !== "recent") applySort(initial, false);
+
+    sortSelect.addEventListener("change", () => {
+      const key = sortSelect.value as SortKey;
+      const url = new URL(location.href);
+      if (key === "recent") url.searchParams.delete("sort");
+      else url.searchParams.set("sort", key);
+      history.replaceState(null, "", url);
+      try {
+        localStorage.setItem(STORAGE_KEY, key);
+      } catch {}
+      applySort(key, true);
+    });
+  }
 </script>
 
 <style>
@@ -233,6 +345,39 @@ const subtitle =
     }
   }
 
+  /* ---------- SORTEERBALK ---------- */
+  .sort-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-block: 20px 0;
+  }
+  .sort-field {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+  .sort-select {
+    font-family: var(--font-body);
+    font-size: 14px;
+    padding: 8px 12px;
+    border: 1px solid var(--ink);
+    border-radius: 0;
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .sort-select:focus-visible {
+    outline: 2px solid var(--mustard);
+    outline-offset: 1px;
+  }
+  .grid {
+    transition: opacity 0.12s ease;
+  }
+  .grid.is-sorting {
+    opacity: 0;
+  }
+
   .no-results {
     padding-block: 12px clamp(40px, 6vw, 64px);
     font-size: 15px;
@@ -314,7 +459,10 @@ const subtitle =
     overflow: hidden;
     flex-grow: 1;
   }
-  .blog-card-time {
+  .blog-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
     margin-top: 16px;
     font-size: 12px;
     opacity: 0.5;
