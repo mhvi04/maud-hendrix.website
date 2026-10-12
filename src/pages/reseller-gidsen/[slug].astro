@@ -5,7 +5,9 @@ import StickyFooterBar from "../../components/StickyFooterBar.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-  const gidsen = await getCollection("resellerGidsen");
+  // Gidsen met een canonicalPath zijn duplicaten van een artikel: die worden
+  // niet gebouwd maar via public/_redirects met een 301 doorgestuurd.
+  const gidsen = await getCollection("resellerGidsen", ({ data }) => !data.canonicalPath);
   return gidsen.map((entry) => ({
     params: { slug: entry.id },
     props: { entry },
