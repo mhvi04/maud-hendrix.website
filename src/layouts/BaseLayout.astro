@@ -46,13 +46,16 @@ const {
   commandPalette = true,
 } = Astro.props;
 
-const canonicalURL = new URL(canonicalPath ?? Astro.url.pathname, Astro.site);
+// Canonical altijd https, zonder slash op het einde (behalve de root).
+const stripSlash = (path: string) => (path.length > 1 ? path.replace(/\/+$/, "") : path);
+const currentPath = stripSlash(Astro.url.pathname);
+const canonicalURL = new URL(stripSlash(canonicalPath ?? currentPath), Astro.site);
 const ogImageURL = new URL(image, Astro.site);
 const ogLocale = locale === "en" ? "en_US" : "nl_BE";
 
 // Een pagina waarvan de canonical naar een andere URL wijst hoort niet in een
 // hreflang-set: hreflang moet naar canonieke URL's verwijzen.
-const isSelfCanonical = !canonicalPath || canonicalPath === Astro.url.pathname;
+const isSelfCanonical = !canonicalPath || stripSlash(canonicalPath) === currentPath;
 const hasTranslation = Boolean(nlPath) && Boolean(enPath) && isSelfCanonical;
 const hreflangAlternates = hasTranslation
   ? [
