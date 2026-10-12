@@ -1,7 +1,7 @@
 ---
 slugEn: "vinted-favourite-heart"
-title: "What should you do when someone favourites your item on Vinted?"
-excerpt: "There's an average of 1.8 days between a heart and a purchase. What that window means, and why waiting it out often costs you a sale."
+title: "What does the heart mean on Vinted? (and what to do about it)"
+excerpt: "A heart means someone saved your item. There's an average of 1.8 days between a heart and a purchase, so the window to act is short."
 date: "2026-09-18"
 tag: "Practice"
 thema: "kopers"
@@ -10,7 +10,9 @@ imageAlt: "Article image: 1.8, what to do when someone favourites your item"
 draft: false
 ---
 
-A notification pops up: someone favourited your item. Most sellers do nothing at that point, they just wait to see if a message or an offer follows. That's not wrong, but it's not the most deliberate response either. A heart is more than a nice signal, it's usable information, and what you do with it in the hours after can be the difference between a sale and a missed opportunity.
+A heart means someone favourited your item. On an entry-price piece like a T-shirt it's usually a direct signal of real interest, on a pricier piece it often works more like a visual bookmark without a concrete purchase intent yet.
+
+Most sellers do nothing when the notification pops up, they just wait to see if a message or an offer follows. A heart is usable information though, and what you do with it in the hours after can be the difference between a sale and a missed opportunity.
 
 ## What a heart actually means
 
