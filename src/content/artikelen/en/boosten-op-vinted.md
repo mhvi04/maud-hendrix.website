@@ -11,18 +11,22 @@ featured: true
 draft: false
 faq:
   - question: "What does 'boosted' mean on Vinted?"
-    answer: "A 'boosted' item on Vinted is a listing the seller paid to make temporarily more visible. It gets pushed back to the top of the catalogue daily for three or seven days, and shown more often in the feeds of potential buyers."
+    answer: "A 'boosted' item on Vinted (also searched as 'what does boosted mean') is a listing the seller paid to make temporarily more visible. It gets pushed back to the top of the catalogue daily for three or seven days, and shown more often in the feeds of potential buyers."
   - question: "What is boosting on Vinted?"
     answer: "Boosting on Vinted is the paid visibility feature that lets a seller temporarily promote a listing. It doesn't guarantee a sale, but it drives extra clicks, favourites and messages, which in turn improves organic ranking in search results."
   - question: "What does boosting cost on Vinted?"
-    answer: "A boost on Vinted costs €2 to €3 on average, depending on duration and item price. Based on 206 boosts and a €482 total budget, revenue per euro invested came out at €93 for boosts that led to a sale."
+    answer: "A boost on Vinted costs [DATA NODIG: prijs per boost] per boost, depending on duration and item price. Based on 206 boosts and a €482 total budget, revenue per euro invested came out at €93 for boosts that led to a sale."
   - question: "Is boosting worth it on Vinted?"
     answer: "Yes, but only if you use it deliberately: on an item that has already collected favourites without selling, and at the right moment. Based on 206 boosts and a €482 budget, revenue per euro invested came out at €93 for boosts that led to a sale. Without those conditions, a boost is money wasted."
   - question: "Is a 3-day or 7-day boost better on Vinted?"
     answer: "A 3-day boost performs better. Of 206 boosts, 93 percent of the 3-day boosts led to a sale, against only 30 percent of the 7-day boosts. A boost's visibility window lasts roughly 48 hours in practice, which means a 7-day boost mostly pays for days that add very little."
   - question: "When is the best time to boost on Vinted?"
     answer: "Thursday or Friday, so visibility has two to three days to build before the weekend buying wave, with Sunday as the peak day. Boosting on Sunday itself is usually wasted budget, since that's already the day with the highest organic volume."
+  - question: "Should you boost a new item on Vinted right away?"
+    answer: "No. Vinted already gives a new item a temporary visibility boost, the so-called fresh item effect. Paying for a boost on top of that is spending money on something that already happens for free. Wait 5 to 7 days and only boost once there are favourites but no sale yet."
 ---
+
+Boosted on Vinted means a listing temporarily buys extra visibility. I spent €482 on 206 boosts. Below is what it costs and when it pays off.
 
 I've spent a total of €482 on boosts on Vinted. That sounds like a fair amount for what's essentially a button that temporarily pushes your listing to the top. I'm not sharing that number to claim boosts automatically pay off. A boost doesn't turn a weak listing into a strong one. But on the right listing, it can add real momentum.
 
@@ -104,7 +108,7 @@ Some items might have sold organically anyway, just later. Direct causality is h
 
 ### What does 'boosted' mean on Vinted?
 
-A 'boosted' item on Vinted is a listing the seller paid to make temporarily more visible. It gets pushed back to the top of the catalogue daily for three or seven days, and shown more often in the feeds of potential buyers.
+A 'boosted' item on Vinted (also searched as 'what does boosted mean') is a listing the seller paid to make temporarily more visible. It gets pushed back to the top of the catalogue daily for three or seven days, and shown more often in the feeds of potential buyers.
 
 ### What is boosting on Vinted?
 
@@ -112,7 +116,7 @@ Boosting on Vinted is the paid visibility feature that lets a seller temporarily
 
 ### What does boosting cost on Vinted?
 
-A boost on Vinted costs €2 to €3 on average, depending on duration and item price. Based on 206 boosts and a €482 total budget, revenue per euro invested came out at €93 for boosts that led to a sale.
+A boost on Vinted costs [DATA NODIG: prijs per boost] per boost, depending on duration and item price. Based on 206 boosts and a €482 total budget, revenue per euro invested came out at €93 for boosts that led to a sale.
 
 ### Is boosting worth it on Vinted?
 
@@ -125,3 +129,7 @@ A 3-day boost performs better. Of 206 boosts, 93 percent of the 3-day boosts led
 ### When is the best time to boost on Vinted?
 
 Thursday or Friday, so visibility has two to three days to build before the weekend buying wave, with Sunday as the peak day. Boosting on Sunday itself is usually wasted budget, since that's already the day with the highest organic volume.
+
+### Should you boost a new item on Vinted right away?
+
+No. Vinted already gives a new item a temporary visibility boost, the so-called fresh item effect. Paying for a boost on top of that is spending money on something that already happens for free. Wait 5 to 7 days and only boost once there are favourites but no sale yet.
