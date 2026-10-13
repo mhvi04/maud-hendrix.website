@@ -69,7 +69,7 @@ const relatedArticles = (entry.data.related ?? [])
 ---
 
 <BaseLayout
-  title={`${entry.data.title} — Maud Hendrix`}
+  title={entry.data.noTitleSuffix ? entry.data.title : `${entry.data.title} — Maud Hendrix`}
   description={entry.data.excerpt}
   type="article"
   publishedDate={publishedDate}

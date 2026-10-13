@@ -1,13 +1,15 @@
 ---
 slugEn: "vinted-favourite-heart"
-title: "What does the heart mean on Vinted? (and what to do about it)"
-excerpt: "A heart means someone saved your item. There's an average of 1.8 days between a heart and a purchase, so the window to act is short."
+title: "What does the heart on Vinted mean? What to do next"
+noTitleSuffix: true
+excerpt: "Most sellers just wait after a heart. In my data from 2,500+ transactions, the buyer decides within 1.8 days. Here is what to do in that window."
 date: "2026-09-18"
 tag: "Practice"
 thema: "kopers"
 image: "../../../assets/articles/favoriet-hartje-op-vinted.png"
 imageAlt: "Article image: 1.8, what to do when someone favourites your item"
 draft: false
+related: ["boosten-op-vinted", "biedingen-accepteren-op-vinted"]
 ---
 
 A heart means someone favourited your item. On an entry-price piece like a T-shirt it's usually a direct signal of real interest, on a pricier piece it often works more like a visual bookmark without a concrete purchase intent yet.
@@ -66,3 +68,5 @@ Also don't forget that a later price drop automatically sends a notification to 
 ## In short
 
 > A heart on a common, affordable item is usually a strong signal of real interest and deserves a quick response from you. A heart on a premium piece belongs to a longer, normal maturation process and calls for patience instead. Remember that most decisions happen within about 1.8 days of the heart, so waiting without action often lets that window pass unused. When an item gets multiple hearts, consider proactive contact, possibly with a bundle offer. Don't reflexively accept an offer right away, and use the pattern of which items attract hearts as input for your next buying round.
+
+What I sell myself is on my Vinted profile: [Studio Maud](https://www.vinted.be/member/306398525-studiomaud).
