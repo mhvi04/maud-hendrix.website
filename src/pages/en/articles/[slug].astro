@@ -3,6 +3,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import StickyFooterBar from "../../../components/StickyFooterBar.astro";
 import TableOfContents from "../../../components/TableOfContents.astro";
+import VerderLezen from "../../../components/VerderLezen.astro";
 import { getCollection, render } from "astro:content";
 import { getImage } from "astro:assets";
 import { existsSync } from "node:fs";
@@ -51,10 +52,23 @@ const fallbackOgImage = existsSync(ownOgImagePath) ? `/og/${entry.id}.png` : und
 const ogImage = entry.data.image
   ? (await getImage({ src: entry.data.image, width: 1200, height: 630, format: "png" })).src
   : fallbackOgImage;
+
+// "Keep reading": resolves the related slugs from the frontmatter against
+// this collection. A missing or empty related list renders nothing.
+const enArticles = await getCollection("articlesEn");
+const relatedArticles = (entry.data.related ?? [])
+  .map((slug) => enArticles.find((e) => e.id === slug))
+  .filter((e) => e !== undefined)
+  .map((e) => ({
+    href: `/en/articles/${e.data.slugEn ?? e.id}`,
+    tag: e.data.tag,
+    title: e.data.title,
+    excerpt: e.data.excerpt,
+  }));
 ---
 
 <BaseLayout
-  title={`${entry.data.title} — Maud Hendrix`}
+  title={entry.data.noTitleSuffix ? entry.data.title : `${entry.data.title} — Maud Hendrix`}
   description={entry.data.excerpt}
   type="article"
   publishedDate={publishedDate}
@@ -86,6 +100,7 @@ const ogImage = entry.data.image
         <TableOfContents headings={headings} locale="en" />
         <div class="prose">
           <Content />
+          <VerderLezen articles={relatedArticles} locale="en" />
         </div>
       </div>
     </div>

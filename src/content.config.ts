@@ -35,6 +35,9 @@ const articleSchema = ({ image }: SchemaContext) =>
     // als een ander artikel op de site — voorkomt keyword-kannibalisatie door
     // de canonical naar de hoofdversie te laten wijzen.
     canonicalPath: z.string().optional(),
+    // Titel zonder " — Maud Hendrix"-suffix in <title>/og:title/twitter:title,
+    // voor titels die anders boven de ~60 tekens uitkomen.
+    noTitleSuffix: z.boolean().optional().default(false),
     // Alleen op Engelse artikels: de Engelstalige URL-slug. Het bestandsnaam/id
     // blijft de Nederlandse slug en dient als sleutel om NL en EN te koppelen.
     slugEn: z.string().optional(),

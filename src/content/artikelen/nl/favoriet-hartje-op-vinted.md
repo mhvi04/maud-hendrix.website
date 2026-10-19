@@ -1,6 +1,7 @@
 ---
-title: "Wat moet je doen als iemand je artikel favoriet maakt op Vinted?"
-excerpt: "Tussen een hartje en een aankoop zit gemiddeld 1,8 dag. Wat dat venster betekent en waarom afwachten je vaak een verkoop kost."
+title: "Wat betekent het hartje op Vinted? En wat doe je ermee?"
+noTitleSuffix: true
+excerpt: "Een hartje betekent dat iemand je item bewaarde. Bij goedkope stukken is dat vaak echte koopinteresse. In mijn data volgt de aankoop gemiddeld na 1,8 dag."
 date: "2026-09-18"
 tag: "Praktijk"
 thema: "kopers"
@@ -10,7 +11,7 @@ draft: false
 related: ["boosten-op-vinted", "biedingen-accepteren-op-vinted"]
 ---
 
-Er verschijnt een melding: iemand heeft je item als favoriet gemarkeerd. De meeste verkopers doen op dat moment niets, ze wachten gewoon af of er een bericht of een bod volgt. Dat is niet fout, maar het is ook niet de meest doordachte reactie. Een hartje is meer dan een leuk signaal, het is bruikbare informatie, en wat je ermee doet in de uren erna kan het verschil maken tussen een verkoop en een gemiste kans.
+Een hartje betekent dat iemand je item als favoriet markeerde. Je krijgt daar een melding van en de meeste verkopers doen op dat moment niets, ze wachten gewoon af of er een bericht of een bod volgt. Dat is niet fout, maar het is ook niet de meest doordachte reactie. Een hartje is meer dan een leuk signaal, het is bruikbare informatie, en wat je ermee doet in de uren erna kan het verschil maken tussen een verkoop en een gemiste kans.
 
 ## Wat een hartje eigenlijk betekent
 
@@ -64,3 +65,5 @@ Vergeet ook niet dat een prijsverlaging op een later moment automatisch een meld
 ## Kort samengevat
 
 > Een hartje op een courant, goedkoop item is meestal een sterk signaal van reële interesse en verdient snelle bereikbaarheid van jouw kant. Een hartje op een premium stuk hoort bij een langer, normaal rijpingsproces en vraagt eerder geduld. Onthoud dat de meeste beslissingen binnen ongeveer 1,8 dag na het hartje vallen, dus wachten zonder actie laat dat venster vaak ongebruikt voorbijgaan. Overweeg bij meerdere hartjes op hetzelfde item proactief contact, eventueel met een bundelvoorstel. Accepteer een bod niet reflexmatig meteen, en gebruik het patroon van welke items hartjes trekken als informatie voor je volgende inkoopronde.
+
+Wat ik zelf verkoop, vind je op mijn Vinted-profiel: [Studio Maud](https://www.vinted.be/member/306398525-studiomaud).
