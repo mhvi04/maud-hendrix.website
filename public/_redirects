@@ -1,8 +1,8 @@
 # Halve verhuizing van /professioneel/artikelen/ naar /artikelen/: oude URL's
 # (o.a. boosten-op-vinted) hebben al Google-vertoningen, dus 301 i.p.v. 404.
-/professioneel/artikelen /artikelen/ 301
-/professioneel/artikelen/ /artikelen/ 301
-/professioneel/artikelen/* /artikelen/:splat 301
+/professioneel/artikelen /artikelen 301
+/professioneel/artikelen/ /artikelen 301
+/professioneel/artikelen/:slug /artikelen/:slug 301
 
 # Engelse artikels kregen Engelse slugs: oude /en/articles/<nl-slug> 301 naar de nieuwe URL.
 /en/articles/482-euro-vinted-boosts-5-lessen /en/articles/482-euro-vinted-boosts-5-lessons 301
@@ -36,3 +36,10 @@
 /en/articles/wanneer-kopen-mensen-op-vinted /en/articles/when-do-people-buy-on-vinted 301
 /en/articles/wat-verandert-er-in-de-nieuwe-vinted-voorwaarden /en/articles/changes-in-new-vinted-terms 301
 /en/articles/wraakreviews-op-vinted /en/articles/revenge-reviews-on-vinted 301
+
+# Reseller-gidsen die dubbel waren met een artikel: 301 naar het artikel.
+/reseller-gidsen/belasting-betalen-op-vinted-in-belgie /artikelen/belasting-betalen-op-vinted-in-belgie 301
+/reseller-gidsen/bod-accepteren-op-vinted /artikelen/biedingen-accepteren-op-vinted 301
+/reseller-gidsen/boosten-op-vinted /artikelen/boosten-op-vinted 301
+/reseller-gidsen/niet-alle-vinted-kopers-zijn-hetzelfde /artikelen/geografie-van-vinted-kopers 301
+/reseller-gidsen/vier-types-vinted-kopers /artikelen/psychologie-van-je-koper 301

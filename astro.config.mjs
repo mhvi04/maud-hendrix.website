@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import { sitemapFilter, sitemapSerialize } from './sitemap-helpers.mjs';
 
 export default defineConfig({
   site: 'https://maud-hendrix.com',
@@ -13,6 +14,8 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
+      filter: sitemapFilter,
+      serialize: sitemapSerialize,
       i18n: {
         defaultLocale: 'nl',
         locales: {
