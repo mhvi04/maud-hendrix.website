@@ -10,6 +10,7 @@ export const ARTICLE_THEMES = [
   "kopers",
   "fiscaal",
   "ralph-lauren",
+  "algemeen",
 ] as const;
 
 const articleSchema = ({ image }: SchemaContext) =>

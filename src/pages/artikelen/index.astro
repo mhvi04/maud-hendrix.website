@@ -46,6 +46,7 @@ const themeLabels: Record<(typeof ARTICLE_THEMES)[number], string> = {
   kopers: "Kopers",
   fiscaal: "Fiscaal",
   "ralph-lauren": "Ralph Lauren",
+  algemeen: "Algemeen",
 };
 // Alleen thema's tonen die effectief voorkomen in de artikelen.
 const usedThemes = ARTICLE_THEMES.filter((t) => articles.some((a) => a.thema === t));

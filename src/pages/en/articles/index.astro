@@ -27,6 +27,7 @@ const themeLabels: Record<(typeof ARTICLE_THEMES)[number], string> = {
   kopers: "Buyers",
   fiscaal: "Tax",
   "ralph-lauren": "Ralph Lauren",
+  algemeen: "General",
 };
 // Only show themes that actually occur in the articles.
 const usedThemes = ARTICLE_THEMES.filter((t) => articles.some((a) => a.thema === t));
