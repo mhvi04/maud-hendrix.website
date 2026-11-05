@@ -279,3 +279,11 @@ h4 em {
     transform: none;
   }
 }
+
+/* Ruimte onder de pagina voor de vaste tabbalk (MobileTabBar, <= 560px).
+   De footer-balk schuift mee omhoog zodat niets achter de tabs verdwijnt. */
+@media (max-width: 560px) {
+  body.has-tabbar {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+  }
+}
