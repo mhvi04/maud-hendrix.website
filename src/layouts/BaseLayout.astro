@@ -3,6 +3,7 @@ import "../styles/global.css";
 import PersonSchema from "../components/PersonSchema.astro";
 import SmoothScroll from "../components/SmoothScroll.astro";
 import CommandPalette from "../components/CommandPalette.astro";
+import MobileTabBar from "../components/MobileTabBar.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import type { Language } from "../i18n/ui";
 
@@ -29,6 +30,9 @@ interface Props {
   // eigen afgeschermde interface heeft en niet tot de doorzoekbare site
   // behoort.
   commandPalette?: boolean;
+  // Tabbalk onderaan op smalle schermen (Home, Pro, Privé, Artikelen).
+  // Alleen voor de Nederlandse hoofdpagina's.
+  tabBar?: boolean;
 }
 
 const {
@@ -44,6 +48,7 @@ const {
   enPath,
   analytics = true,
   commandPalette = true,
+  tabBar = false,
 } = Astro.props;
 
 const canonicalURL = new URL(canonicalPath ?? Astro.url.pathname, Astro.site);
@@ -144,7 +149,7 @@ const jsonLd =
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class:list={{ "has-tabbar": tabBar }}>
     {analytics && (
       <Fragment>
         <!-- Google Tag Manager (noscript) -->
@@ -162,6 +167,7 @@ const jsonLd =
 
     <SmoothScroll />
     <slot />
+    {tabBar && <MobileTabBar />}
     {commandPalette && <CommandPalette locale={locale} />}
   </body>
 </html>
