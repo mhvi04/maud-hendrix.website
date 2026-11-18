@@ -7,6 +7,7 @@ import { getCollection } from "astro:content";
 import SiteHeader from "./SiteHeader.astro";
 import SiteFooter from "./SiteFooter.astro";
 import duneDuo from "../assets/gallery/dune-duo.jpg";
+import catStairs from "../assets/gallery/cat-stairs-bw.jpg";
 import type { Language } from "../i18n/ui";
 
 interface Props {
@@ -29,6 +30,8 @@ const copy = isNl
       all: "Alle artikelen",
       allHref: "/artikelen",
       photoAlt: "Twee silhouetten op een duin bij zonsondergang, met de zee op de achtergrond",
+      heroAlt: "Een kat kijkt tussen de spijlen van een witte trap door",
+      ticker: ["Criminologie", "Ondernemerschap", "Resellen", "Gent"],
       scroll: "Scroll",
     }
   : {
@@ -43,8 +46,14 @@ const copy = isNl
       all: "All articles",
       allHref: "/en/articles",
       photoAlt: "Two silhouettes on a dune at sunset, with the sea in the background",
+      heroAlt: "A cat looks out between the white balusters of a staircase",
+      ticker: ["Criminology", "Entrepreneurship", "Reselling", "Ghent"],
       scroll: "Scroll",
     };
+
+const statementWords = copy.statement.split(" ");
+const nameLines = ["Maud", "Hendrix"].map((w) => w.split(""));
+let charIndex = 0;
 
 const entries = (
   await getCollection(isNl ? "articlesNl" : "articlesEn", ({ data }) => !data.draft)
@@ -70,18 +79,49 @@ const latest = entries.map((e) => ({
 
 <main class="home">
   <section class="hero" data-hero>
-    <h1 class="name" aria-label="Maud Hendrix">
-      <span class="line" aria-hidden="true">Maud</span>
-      <span class="line" aria-hidden="true">Hendrix</span>
-    </h1>
-    <div class="hero-foot">
-      <p>{copy.sub}</p>
-      <p aria-hidden="true">{copy.scroll} ↓</p>
+    <div class="hero-text">
+      <h1 class="name" aria-label="Maud Hendrix">
+        {nameLines.map((chars) => (
+          <span class="line" aria-hidden="true">
+            {chars.map((c) => (
+              <span class="ch" style={`--i:${charIndex++}`}>{c}</span>
+            ))}
+          </span>
+        ))}
+      </h1>
+      <p class="sub">{copy.sub}</p>
+    </div>
+    <div class="hero-photo">
+      <Image
+        src={catStairs}
+        alt={copy.heroAlt}
+        widths={[480, 800, 1100]}
+        sizes="(min-width: 900px) 40vw, 90vw"
+        loading="eager"
+        class="hero-img"
+        data-hero-img
+      />
     </div>
   </section>
 
-  <section class="statement" data-reveal>
-    <p>{copy.statement}</p>
+  <section class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      {[0, 1].map(() => (
+        <ul>
+          {copy.ticker.map((w) => (
+            <li>{w}<span class="dot"></span></li>
+          ))}
+        </ul>
+      ))}
+    </div>
+  </section>
+
+  <section class="statement" data-statement>
+    <p aria-label={copy.statement}>
+      {statementWords.map((w, i) => (
+        <span class="w" aria-hidden="true" style={`--k:${i}`}>{w} </span>
+      ))}
+    </p>
   </section>
 
   <section class="doors" aria-label="Pagina's">
@@ -98,7 +138,7 @@ const latest = entries.map((e) => ({
     </ul>
   </section>
 
-  <section class="band" aria-hidden="false" data-parallax-band>
+  <section class="band" data-parallax-band>
     <Image
       src={duneDuo}
       alt={copy.photoAlt}
@@ -136,29 +176,45 @@ const latest = entries.map((e) => ({
   const media = window.matchMedia("(prefers-reduced-motion: reduce)");
   const reduced = () => root.classList.contains("reduce-motion") || media.matches;
 
+  const heroImg = document.querySelector<HTMLElement>("[data-hero-img]");
   const hero = document.querySelector<HTMLElement>("[data-hero]");
   const band = document.querySelector<HTMLElement>("[data-parallax-band]");
   const bandImg = document.querySelector<HTMLElement>("[data-parallax-img]");
+  const statement = document.querySelector<HTMLElement>("[data-statement]");
+  const words = statement ? Array.from(statement.querySelectorAll<HTMLElement>(".w")) : [];
 
   let ticking = false;
   function update() {
     ticking = false;
+    const vh = window.innerHeight;
     if (reduced()) {
-      hero?.style.removeProperty("--p");
+      heroImg?.style.removeProperty("transform");
       bandImg?.style.removeProperty("transform");
+      band?.style.removeProperty("--clip");
+      words.forEach((w) => w.style.removeProperty("opacity"));
       return;
     }
-    const vh = window.innerHeight;
-    if (hero) {
-      const p = Math.min(1, Math.max(0, window.scrollY / (vh * 0.9)));
-      hero.style.setProperty("--p", p.toFixed(3));
+    if (hero && heroImg) {
+      const p = Math.min(1, Math.max(0, window.scrollY / vh));
+      heroImg.style.transform = `translate3d(0, ${p * 8}%, 0) scale(${1.08 + p * 0.06})`;
     }
     if (band && bandImg) {
       const r = band.getBoundingClientRect();
       if (r.bottom > 0 && r.top < vh) {
-        const progress = (vh - r.top) / (vh + r.height); // 0..1 terwijl het vlak voorbijtrekt
+        const progress = (vh - r.top) / (vh + r.height);
         bandImg.style.transform = `translate3d(0, ${(progress - 0.5) * -12}%, 0) scale(1.15)`;
+        // Het vlak opent van smal naar volle breedte terwijl het in beeld komt.
+        const open = Math.min(1, Math.max(0, (vh - r.top) / (vh * 0.7)));
+        band.style.setProperty("--clip", `${((1 - open) * 12).toFixed(2)}%`);
       }
+    }
+    if (statement && words.length) {
+      const r = statement.getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, (vh * 0.85 - r.top) / (r.height + vh * 0.25)));
+      const lit = p * words.length * 1.15;
+      words.forEach((w, i) => {
+        w.style.opacity = String(Math.min(1, Math.max(0.22, 0.22 + (lit - i) * 0.5)));
+      });
     }
   }
   function onScroll() {
@@ -196,50 +252,133 @@ const latest = entries.map((e) => ({
     padding-inline: clamp(20px, 3vw, 40px);
   }
 
-  /* Eerste scherm: de naam, groot en onmiskenbaar. */
+  /* Eerste scherm: naam in redelijk formaat, naast een foto. */
   .hero {
-    --p: 0;
-    min-height: calc(100svh - var(--header-h));
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-bottom: clamp(20px, 3vw, 36px);
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: clamp(24px, 5vw, 80px);
+    align-items: end;
+    min-height: min(calc(100svh - var(--header-h) - 80px), 760px);
+    padding-block: clamp(24px, 4vw, 56px);
   }
   .name {
     margin: 0;
     font-weight: 900;
-    font-size: clamp(4.5rem, 22vw, 24rem);
-    line-height: 0.82;
-    letter-spacing: -0.065em;
+    font-size: clamp(3.2rem, 8.5vw, 8.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.06em;
     color: var(--ink);
-    transform: translate3d(0, calc(var(--p) * -6vh), 0);
-    opacity: calc(1 - var(--p) * 0.55);
-    will-change: transform;
   }
   .line {
     display: block;
+    overflow: hidden;
+    padding-bottom: 0.08em;
   }
-  .hero-foot {
-    display: flex;
-    justify-content: space-between;
-    margin-top: clamp(24px, 4vw, 48px);
-    padding-top: 16px;
-    border-top: 1px solid var(--line);
-    font-size: 15px;
+  .ch {
+    display: inline-block;
+    animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    animation-delay: calc(var(--i) * 55ms + 120ms);
+  }
+  @keyframes rise {
+    from {
+      transform: translateY(105%);
+    }
+    to {
+      transform: none;
+    }
+  }
+  .sub {
+    margin-top: clamp(16px, 2.4vw, 28px);
+    padding-top: 14px;
+    border-top: 2px solid var(--rust);
+    max-width: 22em;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 500;
+  }
+  .hero-photo {
+    height: clamp(320px, 58svh, 620px);
+    overflow: hidden;
+    background: var(--periwinkle);
+    border-radius: 2px;
+  }
+  .hero-photo :global(.hero-img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 60% 60%;
+    transform: scale(1.08);
+    will-change: transform;
   }
 
+  /* Lopende band met kernwoorden. */
+  .ticker {
+    margin-inline: calc(clamp(20px, 3vw, 40px) * -1);
+    overflow: hidden;
+    border-block: 1px solid var(--line);
+    padding-block: 14px;
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .ticker-track {
+    display: flex;
+    width: max-content;
+    animation: slide 38s linear infinite;
+  }
+  .ticker-track ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .ticker-track li {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(20px, 3vw, 44px);
+    padding-right: clamp(20px, 3vw, 44px);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.6rem, 3.6vw, 3rem);
+    letter-spacing: var(--tracking-display);
+    white-space: nowrap;
+  }
+  .dot {
+    width: 0.4em;
+    height: 0.4em;
+    border-radius: 50%;
+    background: var(--rust);
+    flex: 0 0 auto;
+  }
+  @keyframes slide {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  .ticker:hover .ticker-track {
+    animation-play-state: paused;
+  }
+
+  /* Intro in een gekleurd vlak; woorden lichten op tijdens het scrollen. */
   .statement {
-    padding-block: clamp(80px, 14vw, 200px);
+    margin-inline: calc(clamp(20px, 3vw, 40px) * -1);
+    background: var(--rust);
+    color: #f8f3ea;
+    padding: clamp(72px, 12vw, 180px) clamp(20px, 3vw, 40px);
   }
   .statement p {
-    max-width: 24em;
+    max-width: 26em;
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: clamp(1.7rem, 4.2vw, 3.6rem);
+    font-size: clamp(1.7rem, 4vw, 3.4rem);
     line-height: 1.12;
     letter-spacing: -0.035em;
   }
+  .w {
+    transition: opacity 0.15s linear;
+  }
 
+  .doors {
+    padding-top: clamp(56px, 8vw, 112px);
+  }
   .doors ul,
   .latest ul {
     list-style: none;
@@ -255,13 +394,40 @@ const latest = entries.map((e) => ({
     border-bottom: 1px solid var(--line);
   }
   .door {
+    position: relative;
+    isolation: isolate;
     display: flex;
     align-items: baseline;
     gap: clamp(16px, 3vw, 40px);
     padding-block: clamp(10px, 1.6vw, 22px);
+    padding-inline: 0;
     color: var(--ink);
     text-decoration: none;
-    transition: padding-left 0.3s ease;
+    transition: padding-inline 0.35s ease, color 0.35s ease;
+  }
+  /* Kleurvlak schuift van onder omhoog bij hover. */
+  .door::before,
+  .art::before {
+    content: "";
+    position: absolute;
+    inset: 0 calc(clamp(20px, 3vw, 40px) * -1);
+    background: var(--rust);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: -1;
+  }
+  .door:hover::before,
+  .door:focus-visible::before,
+  .art:hover::before,
+  .art:focus-visible::before {
+    transform: scaleY(1);
+  }
+  .door:hover,
+  .door:focus-visible,
+  .art:hover,
+  .art:focus-visible {
+    color: #f8f3ea;
   }
   .door-n {
     font-size: 14px;
@@ -271,7 +437,7 @@ const latest = entries.map((e) => ({
   .door-label {
     font-family: var(--font-display);
     font-weight: 800;
-    font-size: clamp(2.6rem, 9vw, 8rem);
+    font-size: clamp(2.6rem, 8vw, 7rem);
     line-height: 1.02;
     letter-spacing: var(--tracking-display);
     flex: 1;
@@ -279,23 +445,25 @@ const latest = entries.map((e) => ({
   .door-arrow,
   .art-arrow {
     font-size: clamp(1.4rem, 3vw, 2.6rem);
-    transition: transform 0.25s ease;
+    transition: transform 0.3s ease;
   }
   .door:hover,
   .door:focus-visible {
-    padding-left: clamp(16px, 4vw, 64px);
+    padding-inline: clamp(12px, 2vw, 32px);
   }
   .door:hover .door-arrow,
   .art:hover .art-arrow {
-    transform: translateX(8px);
+    transform: translateX(10px);
   }
 
   .band {
+    --clip: 12%;
     margin-block: clamp(64px, 10vw, 140px);
     margin-inline: calc(clamp(20px, 3vw, 40px) * -1);
     height: clamp(320px, 62vw, 820px);
     overflow: hidden;
     background: var(--periwinkle);
+    clip-path: inset(0 var(--clip) 0 var(--clip));
   }
   .band :global(.band-img) {
     width: 100%;
@@ -313,6 +481,8 @@ const latest = entries.map((e) => ({
     margin-bottom: 28px;
   }
   .art {
+    position: relative;
+    isolation: isolate;
     display: grid;
     grid-template-columns: 9.5em 1fr auto;
     align-items: baseline;
@@ -320,6 +490,7 @@ const latest = entries.map((e) => ({
     padding-block: clamp(16px, 2vw, 26px);
     color: var(--ink);
     text-decoration: none;
+    transition: color 0.3s ease;
   }
   .art time {
     font-size: 14px;
@@ -337,6 +508,7 @@ const latest = entries.map((e) => ({
     font-weight: 700;
     font-size: 18px;
     color: var(--ink);
+    border-bottom: 2px solid var(--rust);
   }
   .door:focus-visible,
   .art:focus-visible,
@@ -355,11 +527,43 @@ const latest = entries.map((e) => ({
     opacity: 1;
     transform: none;
   }
+
+  /* Beweging uit: alles statisch en direct zichtbaar. */
   :global(html.reduce-motion) [data-reveal] {
     opacity: 1 !important;
     transform: none !important;
   }
+  :global(html.reduce-motion) .ch,
+  :global(html.reduce-motion) .ticker-track {
+    animation: none !important;
+  }
+  :global(html.reduce-motion) .band {
+    clip-path: none;
+  }
+  :global(html.reduce-motion) .door::before,
+  :global(html.reduce-motion) .art::before {
+    transition: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ch,
+    .ticker-track {
+      animation: none !important;
+    }
+    .band {
+      clip-path: none;
+    }
+  }
 
+  @media (max-width: 860px) {
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: 0;
+    }
+    .hero-photo {
+      height: clamp(280px, 55svh, 480px);
+      order: -1;
+    }
+  }
   @media (max-width: 640px) {
     .art {
       grid-template-columns: 1fr auto;

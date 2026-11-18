@@ -144,7 +144,7 @@ button {
   content: "";
   width: 7px;
   height: 7px;
-  background: currentColor;
+  background: var(--rust);
 }
 
 .label--on-dark {
@@ -152,7 +152,7 @@ button {
   opacity: 0.62;
 }
 .label--on-dark::before {
-  background: currentColor;
+  background: var(--rust);
 }
 
 .label--on-mustard {
