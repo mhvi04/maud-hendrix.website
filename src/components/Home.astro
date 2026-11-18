@@ -31,7 +31,6 @@ const copy = isNl
       allHref: "/artikelen",
       photoAlt: "Twee silhouetten op een duin bij zonsondergang, met de zee op de achtergrond",
       heroAlt: "Een kat kijkt tussen de spijlen van een witte trap door",
-      ticker: ["Criminologie", "Ondernemerschap", "Resellen", "Gent"],
       scroll: "Scroll",
     }
   : {
@@ -47,7 +46,6 @@ const copy = isNl
       allHref: "/en/articles",
       photoAlt: "Two silhouettes on a dune at sunset, with the sea in the background",
       heroAlt: "A cat looks out between the white balusters of a staircase",
-      ticker: ["Criminology", "Entrepreneurship", "Reselling", "Ghent"],
       scroll: "Scroll",
     };
 
@@ -104,17 +102,6 @@ const latest = entries.map((e) => ({
     </div>
   </section>
 
-  <section class="ticker" aria-hidden="true">
-    <div class="ticker-track">
-      {[0, 1].map(() => (
-        <ul>
-          {copy.ticker.map((w) => (
-            <li>{w}<span class="dot"></span></li>
-          ))}
-        </ul>
-      ))}
-    </div>
-  </section>
 
   <section class="statement" data-statement>
     <p aria-label={copy.statement}>
@@ -310,53 +297,6 @@ const latest = entries.map((e) => ({
     will-change: transform;
   }
 
-  /* Lopende band met kernwoorden. */
-  .ticker {
-    margin-inline: calc(clamp(20px, 3vw, 40px) * -1);
-    overflow: hidden;
-    border-block: 1px solid var(--line);
-    padding-block: 14px;
-    background: var(--ink);
-    color: var(--cream);
-  }
-  .ticker-track {
-    display: flex;
-    width: max-content;
-    animation: slide 38s linear infinite;
-  }
-  .ticker-track ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .ticker-track li {
-    display: inline-flex;
-    align-items: center;
-    gap: clamp(20px, 3vw, 44px);
-    padding-right: clamp(20px, 3vw, 44px);
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: clamp(1.6rem, 3.6vw, 3rem);
-    letter-spacing: var(--tracking-display);
-    white-space: nowrap;
-  }
-  .dot {
-    width: 0.4em;
-    height: 0.4em;
-    border-radius: 50%;
-    background: var(--rust);
-    flex: 0 0 auto;
-  }
-  @keyframes slide {
-    to {
-      transform: translateX(-50%);
-    }
-  }
-  .ticker:hover .ticker-track {
-    animation-play-state: paused;
-  }
-
   /* Intro in een gekleurd vlak; woorden lichten op tijdens het scrollen. */
   .statement {
     margin-inline: calc(clamp(20px, 3vw, 40px) * -1);
@@ -533,8 +473,7 @@ const latest = entries.map((e) => ({
     opacity: 1 !important;
     transform: none !important;
   }
-  :global(html.reduce-motion) .ch,
-  :global(html.reduce-motion) .ticker-track {
+  :global(html.reduce-motion) .ch {
     animation: none !important;
   }
   :global(html.reduce-motion) .band {
@@ -545,8 +484,7 @@ const latest = entries.map((e) => ({
     transition: none;
   }
   @media (prefers-reduced-motion: reduce) {
-    .ch,
-    .ticker-track {
+    .ch {
       animation: none !important;
     }
     .band {
