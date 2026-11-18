@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
-import StickyFooterBar from "../../../components/StickyFooterBar.astro";
+import SiteFooter from "../../../components/SiteFooter.astro";
 import { getCollection } from "astro:content";
 import { estimateReadingMinutes } from "../../../lib/reading-time";
 import { ARTICLE_THEMES } from "../../../content.config";
@@ -98,7 +98,7 @@ const subtitle =
       No articles found for this combination of theme and search term.
     </p>
   </main>
-  <StickyFooterBar showVat subtitle="Ghent, Belgium" />
+  <SiteFooter locale="en" />
 </BaseLayout>
 
 <script>

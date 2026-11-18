@@ -3,7 +3,6 @@ import "../styles/global.css";
 import PersonSchema from "../components/PersonSchema.astro";
 import SmoothScroll from "../components/SmoothScroll.astro";
 import CommandPalette from "../components/CommandPalette.astro";
-import MobileTabBar from "../components/MobileTabBar.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import type { Language } from "../i18n/ui";
 
@@ -30,9 +29,6 @@ interface Props {
   // eigen afgeschermde interface heeft en niet tot de doorzoekbare site
   // behoort.
   commandPalette?: boolean;
-  // Tabbalk onderaan op smalle schermen (Home, Pro, Privé, Artikelen).
-  // Alleen voor de Nederlandse hoofdpagina's.
-  tabBar?: boolean;
 }
 
 const {
@@ -48,7 +44,6 @@ const {
   enPath,
   analytics = true,
   commandPalette = true,
-  tabBar = false,
 } = Astro.props;
 
 const canonicalURL = new URL(canonicalPath ?? Astro.url.pathname, Astro.site);
@@ -112,6 +107,14 @@ const jsonLd =
       </Fragment>
     )}
     <meta charset="UTF-8" />
+    <script is:inline>
+      try {
+        var r = document.documentElement;
+        r.classList.add("js");
+        if (localStorage.getItem("motion") === "true") r.classList.add("reduce-motion");
+        if (localStorage.getItem("dark") === "true") r.classList.add("dark-mode");
+      } catch (e) {}
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -145,11 +148,11 @@ const jsonLd =
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,700;0,800;0,900;1,700&family=Fraunces:ital,opsz@1,9..144&family=JetBrains+Mono:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,700;0,800;0,900;1,700&family=JetBrains+Mono:wght@500;700&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body class:list={{ "has-tabbar": tabBar }}>
+  <body>
     {analytics && (
       <Fragment>
         <!-- Google Tag Manager (noscript) -->
@@ -167,7 +170,6 @@ const jsonLd =
 
     <SmoothScroll />
     <slot />
-    {tabBar && <MobileTabBar />}
     {commandPalette && <CommandPalette locale={locale} />}
   </body>
 </html>

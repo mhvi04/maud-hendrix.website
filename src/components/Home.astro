@@ -1,0 +1,371 @@
+---
+// Home.astro
+// Gedeelde homepage voor NL en EN. Alleen de teksten en de artikelcollectie
+// verschillen per taal. Eerste scherm: de naam, verder niets.
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import SiteHeader from "./SiteHeader.astro";
+import SiteFooter from "./SiteFooter.astro";
+import duneDuo from "../assets/gallery/dune-duo.jpg";
+import type { Language } from "../i18n/ui";
+
+interface Props {
+  locale: Language;
+}
+const { locale } = Astro.props;
+const isNl = locale === "nl";
+
+const copy = isNl
+  ? {
+      sub: "Criminologie & ondernemerschap",
+      statement:
+        "Ik ben Maud. Ik studeer criminologie in Gent en onderneem met Studio Maud. Verkopen doe ik al sinds mijn veertiende. Wat klein begon, is blijven groeien. Net als mijn interesse in de mensen en keuzes achter elke verkoop.",
+      doors: [
+        { n: "01", label: "Profiel", href: "/professioneel" },
+        { n: "02", label: "Artikelen", href: "/artikelen" },
+        { n: "03", label: "Buiten beeld", href: "/prive" },
+      ],
+      latest: "Recente artikelen",
+      all: "Alle artikelen",
+      allHref: "/artikelen",
+      photoAlt: "Twee silhouetten op een duin bij zonsondergang, met de zee op de achtergrond",
+      scroll: "Scroll",
+    }
+  : {
+      sub: "Criminology & entrepreneurship",
+      statement:
+        "Criminology teaches me to pause and ask why people do what they do. My business teaches me to put that into practice, day after day, figure after figure. It's less a master plan than a habit that kept growing.",
+      doors: [
+        { n: "01", label: "Profile", href: "/en/professional" },
+        { n: "02", label: "Articles", href: "/en/articles" },
+      ],
+      latest: "Recent articles",
+      all: "All articles",
+      allHref: "/en/articles",
+      photoAlt: "Two silhouettes on a dune at sunset, with the sea in the background",
+      scroll: "Scroll",
+    };
+
+const entries = (
+  await getCollection(isNl ? "articlesNl" : "articlesEn", ({ data }) => !data.draft)
+)
+  .sort((a, b) => b.data.date.localeCompare(a.data.date) || a.data.title.localeCompare(b.data.title))
+  .slice(0, 8);
+
+const fmt = new Intl.DateTimeFormat(isNl ? "nl-BE" : "en-GB", {
+  day: "numeric",
+  month: "short",
+  year: "numeric",
+  timeZone: "UTC",
+});
+const latest = entries.map((e) => ({
+  href: isNl ? `/artikelen/${e.id}` : `/en/articles/${e.data.slugEn ?? e.id}`,
+  title: e.data.title,
+  iso: e.data.date,
+  date: fmt.format(new Date(`${e.data.date}T00:00:00Z`)),
+}));
+---
+
+<SiteHeader locale={locale} nlPath="/" enPath="/" />
+
+<main class="home">
+  <section class="hero" data-hero>
+    <h1 class="name" aria-label="Maud Hendrix">
+      <span class="line" aria-hidden="true">Maud</span>
+      <span class="line" aria-hidden="true">Hendrix</span>
+    </h1>
+    <div class="hero-foot">
+      <p>{copy.sub}</p>
+      <p aria-hidden="true">{copy.scroll} ↓</p>
+    </div>
+  </section>
+
+  <section class="statement" data-reveal>
+    <p>{copy.statement}</p>
+  </section>
+
+  <section class="doors" aria-label="Pagina's">
+    <ul>
+      {copy.doors.map((d) => (
+        <li data-reveal>
+          <a href={d.href} class="door">
+            <span class="door-n">{d.n}</span>
+            <span class="door-label">{d.label}</span>
+            <span class="door-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="band" aria-hidden="false" data-parallax-band>
+    <Image
+      src={duneDuo}
+      alt={copy.photoAlt}
+      widths={[800, 1400, 2200]}
+      sizes="100vw"
+      loading="lazy"
+      class="band-img"
+      data-parallax-img
+    />
+  </section>
+
+  <section class="latest">
+    <h2 data-reveal>{copy.latest}</h2>
+    <ul>
+      {latest.map((a) => (
+        <li data-reveal>
+          <a href={a.href} class="art">
+            <time datetime={a.iso}>{a.date}</time>
+            <span class="art-title">{a.title}</span>
+            <span class="art-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <a class="all" href={copy.allHref}>{copy.all} →</a>
+  </section>
+</main>
+
+<SiteFooter locale={locale} />
+
+<script>
+  // Scrolleffecten. Alles staat uit bij html.reduce-motion of de
+  // systeeminstelling prefers-reduced-motion (de footer-schakelaar zet die klasse).
+  const root = document.documentElement;
+  const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const reduced = () => root.classList.contains("reduce-motion") || media.matches;
+
+  const hero = document.querySelector<HTMLElement>("[data-hero]");
+  const band = document.querySelector<HTMLElement>("[data-parallax-band]");
+  const bandImg = document.querySelector<HTMLElement>("[data-parallax-img]");
+
+  let ticking = false;
+  function update() {
+    ticking = false;
+    if (reduced()) {
+      hero?.style.removeProperty("--p");
+      bandImg?.style.removeProperty("transform");
+      return;
+    }
+    const vh = window.innerHeight;
+    if (hero) {
+      const p = Math.min(1, Math.max(0, window.scrollY / (vh * 0.9)));
+      hero.style.setProperty("--p", p.toFixed(3));
+    }
+    if (band && bandImg) {
+      const r = band.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < vh) {
+        const progress = (vh - r.top) / (vh + r.height); // 0..1 terwijl het vlak voorbijtrekt
+        bandImg.style.transform = `translate3d(0, ${(progress - 0.5) * -12}%, 0) scale(1.15)`;
+      }
+    }
+  }
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  update();
+
+  // Zachte onthulling bij binnenkomen in beeld.
+  const items = document.querySelectorAll<HTMLElement>("[data-reveal]");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-in");
+            io.unobserve(e.target);
+          }
+        }
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.05 }
+    );
+    items.forEach((el) => io.observe(el));
+  } else {
+    items.forEach((el) => el.classList.add("is-in"));
+  }
+</script>
+
+<style>
+  .home {
+    padding-inline: clamp(20px, 3vw, 40px);
+  }
+
+  /* Eerste scherm: de naam, groot en onmiskenbaar. */
+  .hero {
+    --p: 0;
+    min-height: calc(100svh - var(--header-h));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: clamp(20px, 3vw, 36px);
+  }
+  .name {
+    margin: 0;
+    font-weight: 900;
+    font-size: clamp(4.5rem, 22vw, 24rem);
+    line-height: 0.82;
+    letter-spacing: -0.065em;
+    color: var(--ink);
+    transform: translate3d(0, calc(var(--p) * -6vh), 0);
+    opacity: calc(1 - var(--p) * 0.55);
+    will-change: transform;
+  }
+  .line {
+    display: block;
+  }
+  .hero-foot {
+    display: flex;
+    justify-content: space-between;
+    margin-top: clamp(24px, 4vw, 48px);
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    font-size: 15px;
+  }
+
+  .statement {
+    padding-block: clamp(80px, 14vw, 200px);
+  }
+  .statement p {
+    max-width: 24em;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.7rem, 4.2vw, 3.6rem);
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+  }
+
+  .doors ul,
+  .latest ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .doors li,
+  .latest li {
+    border-top: 1px solid var(--line);
+  }
+  .doors li:last-child,
+  .latest li:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+  .door {
+    display: flex;
+    align-items: baseline;
+    gap: clamp(16px, 3vw, 40px);
+    padding-block: clamp(10px, 1.6vw, 22px);
+    color: var(--ink);
+    text-decoration: none;
+    transition: padding-left 0.3s ease;
+  }
+  .door-n {
+    font-size: 14px;
+    width: 2.2em;
+    flex: 0 0 auto;
+  }
+  .door-label {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.6rem, 9vw, 8rem);
+    line-height: 1.02;
+    letter-spacing: var(--tracking-display);
+    flex: 1;
+  }
+  .door-arrow,
+  .art-arrow {
+    font-size: clamp(1.4rem, 3vw, 2.6rem);
+    transition: transform 0.25s ease;
+  }
+  .door:hover,
+  .door:focus-visible {
+    padding-left: clamp(16px, 4vw, 64px);
+  }
+  .door:hover .door-arrow,
+  .art:hover .art-arrow {
+    transform: translateX(8px);
+  }
+
+  .band {
+    margin-block: clamp(64px, 10vw, 140px);
+    margin-inline: calc(clamp(20px, 3vw, 40px) * -1);
+    height: clamp(320px, 62vw, 820px);
+    overflow: hidden;
+    background: var(--periwinkle);
+  }
+  .band :global(.band-img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: transform;
+    transform: scale(1.15);
+  }
+
+  .latest {
+    padding-bottom: clamp(72px, 10vw, 140px);
+  }
+  .latest h2 {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    margin-bottom: 28px;
+  }
+  .art {
+    display: grid;
+    grid-template-columns: 9.5em 1fr auto;
+    align-items: baseline;
+    gap: 16px;
+    padding-block: clamp(16px, 2vw, 26px);
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .art time {
+    font-size: 14px;
+  }
+  .art-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.25rem, 2.4vw, 2rem);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+  }
+  .all {
+    display: inline-block;
+    margin-top: 32px;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--ink);
+  }
+  .door:focus-visible,
+  .art:focus-visible,
+  .all:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 4px;
+  }
+
+  /* Onthulling: alleen verbergen als JS actief is (html.js). */
+  :global(html.js) [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  :global(html.js) [data-reveal].is-in {
+    opacity: 1;
+    transform: none;
+  }
+  :global(html.reduce-motion) [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  @media (max-width: 640px) {
+    .art {
+      grid-template-columns: 1fr auto;
+    }
+    .art time {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

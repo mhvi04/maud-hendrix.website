@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
-import StickyFooterBar from "../../components/StickyFooterBar.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
 import CountUp from "../../components/CountUp.astro";
 import Gelezen from "../../components/Gelezen.astro";
 
@@ -15,7 +15,6 @@ const interests = [
 <BaseLayout
   title="Privé — Maud Hendrix"
   description="Interesses, sociale kanalen en blog van Maud Hendrix."
-  tabBar
 >
   <SiteHeader world="prive" />
 
@@ -99,7 +98,7 @@ const interests = [
     </section>
   </main>
 
-  <StickyFooterBar />
+  <SiteFooter />
 </BaseLayout>
 
 <style>

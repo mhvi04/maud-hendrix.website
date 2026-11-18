@@ -11,8 +11,9 @@ npm run dev
 
 ## Structuur
 
-- `/` — startscherm met twee ingangen (Professioneel en Privé) en daaronder
-  de lijst van alle artikelen, nieuwste eerst
+- `/` — startscherm: de naam, een korte intro, drie ingangen (Profiel,
+  Artikelen, Buiten beeld) en de recentste artikelen. Gedeeld NL/EN in
+  `src/components/Home.astro`
 - `/professioneel` — profiel, studie, onderneming, traject, contact
 - `/artikelen` — overzicht van de artikelen op basis van "De Ku(n)s(t) van resellen" (voorheen `/professioneel/artikelen`, nu 301-redirect via `public/_redirects`)
 - `/prive` — sociale kanalen, interesses, blog (publiek, geen pincode)
@@ -35,9 +36,15 @@ versie en tonen geen taalwissel-optie.
 - `src/components/LanguageSwitch.astro` — springt naar de vertaalde
   tegenhanger van de huidige pagina via `getRelativeLocaleUrl()`
 
-## Nog te doen
+## Visuele stijl
 
-- Jaartallen/periodes in de tijdlijn op `/professioneel` controleren (`src/components/Timeline.astro`)
+- Kleuren en typografie staan als tokens bovenaan `src/styles/global.css`
+  (achtergrond = `--cream`). Titels: Archivo, zwaar, strak gezet.
+- `src/components/SiteHeader.astro`: mh-logo, "Menu +" en het schermvullende menu.
+- `src/components/SiteFooter.astro`: donkere footer met "Laten we praten" en de
+  schakelaar "Beweging uitzetten" (zelfde opslag als `InteractiePaneel`:
+  localStorage-sleutel `motion`, klasse `html.reduce-motion`).
+- URL's, slugs en `public/_redirects` zijn bij de herontwerp niet aangeraakt.
 
 ## Weekplanner (`/planner`)
 

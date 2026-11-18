@@ -1,50 +1,54 @@
 /* ---------------------------------------------------------
    Design tokens
-   Crème + marineblauw + oranje/terracotta accent + periwinkel.
-   Vlakke kleurvlakken, dunne lijnen, geen shadows.
+   Nieuwe stijl: warm gebroken wit, bijna-zwart, één terracotta accent.
+   Zware, strak gezette grotesk voor titels. Vlakke vlakken, dunne lijnen.
+   De achtergrondkleur (--cream) is bewust één variabele: wijzigen kan hier.
 --------------------------------------------------------- */
 :root {
-  --cream: #faf3e7;
-  --paper: #ffffff;
-  --ink: #172040;
-  --navy: #172040;
-  --navy-deep: #0e1530;
-  --mustard: #e2672c;
-  --mustard-deep: #b8501f;
-  --rust: #c1502e;
-  --olive: #4b5c34;
-  --periwinkle: #c9d9ec;
-  --line: rgba(23, 32, 64, 0.15);
+  --cream: #eeebe3;
+  --paper: #f8f6f1;
+  --ink: #20211d;
+  --navy: #20211d;
+  --navy-deep: #141510;
+  --mustard: #d6d1c4;
+  --mustard-deep: #5c5a52;
+  --rust: #b5472f;
+  --olive: #4a5240;
+  --periwinkle: #dcd8ce;
+  --line: rgba(32, 33, 29, 0.2);
+
+  /* Donkere footer en menu-accenten blijven in beide thema's donker. */
+  --footer-bg: #20211d;
+  --footer-ink: #eeebe3;
 
   --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --font-accent: "Fraunces", Georgia, serif;
+  --font-accent: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --font-mono: "JetBrains Mono", "Courier New", monospace;
 
   --edge: 0px;
   --container: 1240px;
-  /* Hoogte vaste footer-balk, ongeveer 2 tot 3cm, schalend met de viewport. */
-  --footer-bar-h: clamp(4.75rem, 9vw, 5.75rem);
+  --header-h: 84px;
+  --tracking-display: -0.045em;
 }
 
 /* ---------------------------------------------------------
    Dark mode
-   Keert het kleurenschema om: crème achtergrond wordt marineblauw,
-   tekst wordt crème, oranje blijft de accentkleur. Werkt op
-   alle bestaande secties omdat die allemaal deze tokens gebruiken.
+   Keert het kleurenschema om. Werkt op alle bestaande secties
+   omdat die allemaal deze tokens gebruiken.
 --------------------------------------------------------- */
 html.dark-mode {
-  --cream: #172040;
-  --paper: #0e1530;
-  --ink: #faf3e7;
-  --navy: #faf3e7;
+  --cream: #191a16;
+  --paper: #121310;
+  --ink: #eeebe3;
+  --navy: #eeebe3;
   --navy-deep: #ffffff;
-  --mustard: #e2672c;
-  --mustard-deep: #f0895a;
-  --rust: #c1502e;
-  --olive: #4b5c34;
-  --periwinkle: #2a3a5c;
-  --line: rgba(250, 243, 231, 0.15);
+  --mustard: #2f302a;
+  --mustard-deep: #b9b5a8;
+  --rust: #d9674b;
+  --olive: #8a9478;
+  --periwinkle: #2a2b26;
+  --line: rgba(238, 235, 227, 0.2);
 }
 
 /* ---------------------------------------------------------
@@ -102,6 +106,7 @@ a {
 h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-weight: 800;
+  letter-spacing: var(--tracking-display);
   margin: 0;
   color: var(--navy);
 }
@@ -139,7 +144,7 @@ button {
   content: "";
   width: 7px;
   height: 7px;
-  background: var(--mustard);
+  background: currentColor;
 }
 
 .label--on-dark {
@@ -147,7 +152,7 @@ button {
   opacity: 0.62;
 }
 .label--on-dark::before {
-  background: var(--mustard);
+  background: currentColor;
 }
 
 .label--on-mustard {
@@ -160,18 +165,17 @@ button {
 
 /* Cursief accent, ook los inzetbaar via class="accent" (bv. A/B/C-letters) */
 .accent {
-  font-family: var(--font-accent);
-  font-style: italic;
-  font-weight: 400;
+  font-style: normal;
+  font-weight: 800;
 }
 
 h1 em,
 h2 em,
 h3 em,
 h4 em {
-  font-family: var(--font-accent);
-  font-style: italic;
-  font-weight: 400;
+  font-style: normal;
+  font-weight: inherit;
+  opacity: 0.45;
 }
 
 .mono {
@@ -277,13 +281,5 @@ h4 em {
 @media (max-width: 640px) {
   .btn:hover {
     transform: none;
-  }
-}
-
-/* Ruimte onder de pagina voor de vaste tabbalk (MobileTabBar, <= 560px).
-   De footer-balk schuift mee omhoog zodat niets achter de tabs verdwijnt. */
-@media (max-width: 560px) {
-  body.has-tabbar {
-    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
   }
 }

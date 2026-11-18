@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
-import StickyFooterBar from "../../components/StickyFooterBar.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
 import { getCollection } from "astro:content";
 import { estimateReadingMinutes } from "../../lib/reading-time";
 import { ARTICLE_THEMES } from "../../content.config";
@@ -65,7 +65,6 @@ const subtitle =
   description="Praktijkkennis over reselling op Vinted, gebaseerd op eigen verkoopdata en transacties."
   nlPath="/artikelen"
   enPath="/articles"
-  tabBar
 >
   <SiteHeader world="artikelen" nlPath="/artikelen" enPath="/articles" />
   <main class="listing">
@@ -133,7 +132,7 @@ const subtitle =
       Geen artikelen gevonden voor deze combinatie van thema en zoekterm.
     </p>
   </main>
-  <StickyFooterBar showVat />
+  <SiteFooter />
 </BaseLayout>
 
 <script>
