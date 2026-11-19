@@ -120,38 +120,3 @@ In three years of my own data, August to October is busier per month than March 
 > Count your own orders per month over at least two years and compare the share of each period, not the raw numbers.
 
 *Source: own order data Studio Maud (Vinted order export, completed orders only, 2023 through 2025, counted by order date). The annual statement from Vinted works with the completion date. This is my own count and not tax or financial advice.*
-
----
-
-# PRODUCTION DETAILS (do not publish)
-
-## Gemini image prompt
-
-Create an image of 1200 x 630 pixels in flat design with exactly three colours: cream (#FAF3E8) as the background, navy blue (#151F3F) and burnt orange (#E2672F). At the top left is a small monospace label with a small orange square in front of it, with the text "ARTICLE / ALGORITHM & VISIBILITY". On the left in the middle is the text "AUG–OCT" very large in the heavy grotesque Archivo Black in navy blue, with an orange rectangle behind the last character. Below it runs a thin navy blue line across the full width. Below that is the title in bold navy blue: "In which months do you sell the most on Vinted?" with the word "months" in italic serif (Fraunces Italic). No photos, no gradients, no shadow. Copy all text literally and without changes.
-
-## Suggested internal links (existing slugs)
-
-1. wanneer-kopen-mensen-op-vinted
-2. hoe-werkt-het-vinted-algoritme
-3. vinted-item-verkoopt-niet-wat-nu
-
-## Figure list with source
-
-Permission needed = per the style guide you have to say per article whether this own figure may be public. Revenue, profit and purchase price are not in this article.
-
-| Figure in the article | Source | Permission needed |
-|---|---|---|
-| Monthly counts 2023, 2024, 2025 (36 cells) and totals 105, 222, 650 | bestellingen_gestructureerd.csv: seller = maud.hendrix, status "Transactie voltooid", counted on the month of order_purchased | yes |
-| Shares per period (12 percentages) | derived from the same counts, divided by the yearly total | yes |
-| Average share per month (12 percentages) | those shares divided by 2, 5, 3 and 2 months | yes |
-| Second place August next to July in 2023 (14 and 14) | same table | yes |
-| Busiest month: November 2023, September 2024, August 2025 | same table | yes |
-| August in the top 3 of every year | 2023: 18, 14, 14 (Nov, Jul, Aug); 2024: 32, 23, 22 (Sep, May, Aug); 2025: 105, 88, 76 (Aug, Apr, Oct) | yes |
-| December 2025 weakest month of 2025 | same table (14) | yes |
-| Strongest week 12 to 18 August 2025: 50 orders | same file, 7-day window on order_purchased, 2025 | yes |
-| Busiest days 7 May and 23 September 2025: 11 each | same file | yes |
-| The annual statement works with the completion date | checked: transaction date and time in 2025.pdf match last_updated in the CSV (e.g. 04-01-2025 15.17, 58.00 and 31-12-2024 14.21, 19.55) | no |
-
-## Open points for Maud
-
-Same as in the Dutch file. The Dutch file is the master version.

@@ -234,13 +234,13 @@ h4 em {
 
 .btn--mustard {
   background: var(--mustard);
-  border-color: var(--mustard);
-  color: var(--cream);
+  border-color: var(--ink);
+  color: var(--ink);
 }
 .btn--mustard:hover {
-  background: transparent;
-  border-color: var(--mustard);
-  color: var(--mustard-deep);
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--cream);
 }
 
 .btn--rust {
