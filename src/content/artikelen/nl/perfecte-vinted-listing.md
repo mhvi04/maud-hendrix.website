@@ -18,7 +18,7 @@ Over mijn volledige transactiehistorie concentreren klachten en vragen zich cons
 
 Die vijf factoren samen vertegenwoordigen nagenoeg alle vragen die een koper kan stellen. Ze zijn voorspelbaar. En ze zijn bijna allemaal te voorkomen door ze proactief in de beschrijving te beantwoorden.
 
-Wie al die vijf factoren consequent afdekt in elke listing, verlaagt het totale vraagvolume in de chat met 67%. Dat is geen kleine verbetering. Elke vraag die niet gesteld wordt is een koper die sneller beslist, minder twijfelt en minder kans heeft om halverwege af te haken. Minder vragen is geen gemakzucht. Het is conversie-optimalisatie.
+Wie die vijf punten in elke listing vooraf beantwoordt, krijgt minder vragen in de chat. Hoeveel minder, heb ik niet apart gemeten. Elke vraag die niet gesteld wordt is een koper die sneller beslist, minder twijfelt en minder kans heeft om halverwege af te haken. Minder vragen is geen gemakzucht. Het is conversie-optimalisatie.
 
 ## Maten zijn de enige universele taal
 

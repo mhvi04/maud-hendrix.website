@@ -30,9 +30,9 @@ De data laten een rigoureus verschil zien tussen de twee beschikbare boost-duur 
 | 3 dagen | × 97,5 | 7,1% |
 | 7 dagen | × 19,9 | 70,8% |
 
-De 3-dagen boost is op elk vlak superieur. Dit heeft te maken met de technische realiteit van het platform: de organische zichtbaarheid van een item kent een steile curve en vertoont na 48 uur een significant verval. Een 3-daagse boost fungeert als een krachtige 'herstart' van dit venster.
+In mijn dataset scoort de 3-dagen boost op elk cijfer beter dan de 7-dagen boost. Een mogelijke verklaring is dat de organische zichtbaarheid van een item na ongeveer 48 uur snel afneemt en een 3-daagse boost dat venster als het ware herstart. Dat is een hypothese en geen bewezen mechanisme.
 
-Ik moet hierbij opmerken dat de astronomische ROI van ×97,5 in 2025 deels wordt beïnvloed door het 'sneeuwbal-effect' van overlappende boosts (75,6% overlap in de dataset). De ROI van ×15,2 uit de periode 2020-2024 is een zuiverdere weergave van de individuele impact per boost, maar zelfs daar blijft de 3-daagse variant de onbetwiste winnaar.
+Ik moet hierbij opmerken dat de astronomische ROI van ×97,5 in 2025 deels wordt beïnvloed door het 'sneeuwbal-effect' van overlappende boosts (75,6% overlap in de dataset). De ROI van ×15,2 uit de periode 2020-2024 is een zuiverdere weergave van de individuele impact per boost, maar ook daar scoort de 3-daagse variant beter.
 
 Een 7-dagen boost is technisch gezien 'te lang' voor wat het platform feitelijk doet. Je betaalt voor extra dagen zichtbaarheid die door de natuurlijke werking van het algoritme steeds minder renderen, terwijl de piekwaarde in de eerste 48 uur ligt.
 
@@ -46,7 +46,7 @@ Een 7-dagen boost is technisch gezien 'te lang' voor wat het platform feitelijk 
 
 Een van de meest contra-intuïtieve ontdekkingen in de data is het zogenaamde 'Staarteffect'. De verkoop vindt vaak niet plaats tíjdens de piek van de betaalde zichtbaarheid. Slechts 10% van het totale effect is zichtbaar op dag 1.
 
-De echte impact — zo'n 68% tot 70% van de totale conversie — manifesteert zich pas in dag 4 tot 7, nadat de actieve boostperiode al is verstreken. Dit fenomeen is te verklaren door de werking van Vespa Vector Search, de technische engine achter Vinted. De boost genereert in de eerste fase een golf aan interactie (klikken en favorieten). Het algoritme koppelt deze interactie aan relevantie, wat zorgt voor een langdurig Algorithm Momentum.
+De echte impact — zo'n 68% tot 70% van de totale conversie — manifesteert zich pas in dag 4 tot 7, nadat de actieve boostperiode al is verstreken. Een mogelijke verklaring: de boost genereert in de eerste fase een golf aan interactie (klikken en favorieten) en het algoritme zou die interactie aan relevantie koppelen, waardoor de zichtbaarheid langer aanhoudt. Dat is mijn interpretatie van het patroon in de data en geen bewezen werking van het platform.
 
 **Strategisch advies:** beoordeel het succes van een boost nooit direct na afloop. Vanwege deze conversie-vertraging is het essentieel om een item niet direct na de boost te verwijderen en opnieuw te plaatsen. De 'staart' van de boost levert vaak pas de uiteindelijke koper op.
 

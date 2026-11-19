@@ -30,9 +30,9 @@ The data show a stark difference between the two available boost durations. Whil
 | 3 days | × 97.5 | 7.1% |
 | 7 days | × 19.9 | 70.8% |
 
-The 3-day boost wins on every metric. That comes down to the technical reality of the platform: an item's organic visibility follows a steep curve and drops off sharply after 48 hours. A 3-day boost acts as a powerful 'reset' of that window.
+In my dataset the 3-day boost scores better than the 7-day boost on every metric. One possible explanation is that an item's organic visibility drops off quickly after about 48 hours and a 3-day boost effectively resets that window. That is a hypothesis, not a proven mechanism.
 
-I should flag that the astronomical ×97.5 ROI in 2025 is partly inflated by a 'snowball effect' from overlapping boosts (75.6% overlap in the dataset). The ×15.2 ROI from 2020-2024 is a cleaner read on the impact of an individual boost, but even there the 3-day variant is the undisputed winner.
+I should flag that the astronomical ×97.5 ROI in 2025 is partly inflated by a 'snowball effect' from overlapping boosts (75.6% overlap in the dataset). The ×15.2 ROI from 2020-2024 is a cleaner read on the impact of an individual boost, but there too the 3-day variant scores better.
 
 A 7-day boost is technically 'too long' for what the platform actually does. You're paying for extra days of visibility that, by the natural workings of the algorithm, deliver less and less, while peak value sits in the first 48 hours.
 
@@ -46,7 +46,7 @@ A 7-day boost is technically 'too long' for what the platform actually does. You
 
 One of the most counterintuitive findings in the data is what I call the 'tail effect'. The sale often doesn't happen during the peak of paid visibility. Only 10% of the total effect shows up on day 1.
 
-The real impact, roughly 68% to 70% of total conversion, only appears on days 4 to 7, after the active boost period has already ended. This is explained by how Vespa Vector Search, the technical engine behind Vinted, works. In its first phase, the boost generates a wave of interaction (clicks and favourites). The algorithm links that interaction to relevance, which creates lasting algorithm momentum.
+The real impact, roughly 68% to 70% of total conversion, only appears on days 4 to 7, after the active boost period has already ended. One possible explanation: in its first phase the boost generates a wave of interaction (clicks and favourites), and the algorithm may link that interaction to relevance, which keeps visibility up for longer. That is my reading of the pattern in the data, not a proven platform mechanism.
 
 **Strategic advice:** never judge a boost's success right after it ends. Because of this conversion delay, it's essential not to delist and relist an item immediately after the boost. The boost's 'tail' is often where the eventual buyer actually shows up.
 
