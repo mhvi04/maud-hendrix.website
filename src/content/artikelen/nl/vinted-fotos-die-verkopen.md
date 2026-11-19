@@ -10,7 +10,7 @@ draft: false
 related: ["perfecte-vinted-listing", "wraakreviews-op-vinted"]
 ---
 
-Fotografie bij resellen is geen creatief proces. Het is risicoreductie. Een koper op Vinted kan een item niet voelen, niet passen en niet van dichtbij bekijken. Alles wat hij weet, komt uit je foto's. Elke twijfel die een foto niet wegneemt, wordt ofwel een vraag in je berichten, ofwel een reden om verder te scrollen. Dit is geen esthetische keuze, het is een reeks beslissingen die je conversie meetbaar beïnvloeden, en in mijn eigen klachtendata blijkt dat rechtstreeks: conditie en materiaal samen verklaren 35 procent van alle geschillen die ik ooit heb gehad, en beide zijn problemen die goede fotografie grotendeels kan voorkomen.
+Fotografie bij resellen is geen creatief proces. Het is risicoreductie. Een koper op Vinted kan een item niet voelen, niet passen en niet van dichtbij bekijken. Alles wat hij weet, komt uit je foto's. Elke twijfel die een foto niet wegneemt, wordt ofwel een vraag in je berichten, ofwel een reden om verder te scrollen. Dit is geen esthetische keuze, het is een reeks beslissingen die je conversie meetbaar beïnvloeden, en in mijn eigen klachtendata blijkt dat rechtstreeks: conditie en materiaal komen in mijn eigen klachten regelmatig terug, en beide zijn problemen die goede fotografie grotendeels kan voorkomen.
 
 ## Twee seconden om door te klikken
 

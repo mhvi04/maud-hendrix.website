@@ -18,7 +18,7 @@ Across my full transaction history, complaints and questions consistently cluste
 
 Together, those five factors cover nearly every question a buyer can ask. They're predictable. And they're almost all preventable by proactively answering them in the description.
 
-Cover all five factors consistently in every listing and you cut total question volume in chat by 67%. That's not a small improvement. Every question that never gets asked is a buyer who decides faster, hesitates less, and is less likely to drop off halfway. Fewer questions isn't laziness. It's conversion optimisation.
+Answer those five points up front in every listing and you get fewer questions in chat. I haven't measured by how much. Every question that never gets asked is a buyer who decides faster, hesitates less, and is less likely to drop off halfway. Fewer questions isn't laziness. It's conversion optimisation.
 
 ## Sizes are the only universal language
 

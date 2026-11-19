@@ -10,7 +10,7 @@ imageAlt: "Article image: 5 Vinted photos that sell"
 draft: false
 ---
 
-Photography in reselling isn't a creative process. It's risk reduction. A buyer on Vinted can't feel an item, can't try it on, can't inspect it up close. Everything they know comes from your photos. Every doubt a photo fails to remove becomes either a question in your messages, or a reason to keep scrolling. This isn't an aesthetic choice, it's a series of decisions that measurably affect your conversion, and my own complaint data shows it directly: condition and material together explain 35 percent of every dispute I've ever had, and both are problems good photography can largely prevent.
+Photography in reselling isn't a creative process. It's risk reduction. A buyer on Vinted can't feel an item, can't try it on, can't inspect it up close. Everything they know comes from your photos. Every doubt a photo fails to remove becomes either a question in your messages, or a reason to keep scrolling. This isn't an aesthetic choice, it's a series of decisions that measurably affect your conversion, and my own complaint data shows it directly: condition and material come up regularly in my own complaints, and both are problems good photography can largely prevent.
 
 ## Two seconds to get the click
 
