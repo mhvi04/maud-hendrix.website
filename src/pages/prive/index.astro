@@ -1,8 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
-import StickyFooterBar from "../../components/StickyFooterBar.astro";
-import CountUp from "../../components/CountUp.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
 import Gelezen from "../../components/Gelezen.astro";
 
 const interests = [
@@ -15,7 +14,6 @@ const interests = [
 <BaseLayout
   title="Privé — Maud Hendrix"
   description="Interesses, sociale kanalen en blog van Maud Hendrix."
-  tabBar
 >
   <SiteHeader world="prive" />
 
@@ -44,25 +42,6 @@ const interests = [
           <a href="https://www.instagram.com/hendrix.maud" target="_blank" rel="noopener">Instagram · @hendrix.maud</a>
           <a href="https://www.tiktok.com/@hendrix.maud" target="_blank" rel="noopener">TikTok · @hendrix.maud</a>
           <a href="https://pin.it/5QS0AwBzB" target="_blank" rel="noopener">Pinterest</a>
-        </div>
-        <div class="countup-grid">
-          <CountUp
-            title="Pinterest"
-            end={850}
-            suffix="K"
-            label="impressies per maand"
-            href="https://pin.it/5QS0AwBzB"
-            accent="mustard"
-          />
-          <CountUp
-            title="TikTok"
-            end={1.3}
-            suffix="M"
-            decimals={1}
-            label="weergaven afgelopen jaar"
-            href="https://www.tiktok.com/@hendrix.maud"
-            accent="mustard"
-          />
         </div>
       </div>
     </section>
@@ -99,7 +78,7 @@ const interests = [
     </section>
   </main>
 
-  <StickyFooterBar />
+  <SiteFooter />
 </BaseLayout>
 
 <style>
@@ -199,12 +178,6 @@ const interests = [
     width: fit-content;
     text-decoration: none;
     border-bottom: 1px solid currentColor;
-  }
-
-  .countup-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
   }
 
   .interests {

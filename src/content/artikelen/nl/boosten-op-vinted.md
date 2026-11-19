@@ -15,7 +15,7 @@ faq:
   - question: "Wat is boosten op Vinted?"
     answer: "Boosten op Vinted is de betaalde opvalfunctie waarmee een verkoper een listing tijdelijk extra promoot. Het geeft geen garantie op verkoop, maar zorgt voor extra clicks, favorieten en berichten, wat op zijn beurt de organische positie in de zoekresultaten verbetert."
   - question: "Wat kost boosten bij Vinted?"
-    answer: "Een boost bij Vinted kost [DATA NODIG: prijs per boost] per keer, afhankelijk van de duur en de prijs van het item. Op basis van 206 boosts en €482 totaalbudget lag de omzet per geïnvesteerde euro op €93 bij boosts die tot een verkoop leidden."
+    answer: "In mijn eigen data: 206 boosts voor een totaalbudget van €482. De omzet per geïnvesteerde euro lag op €93 bij boosts die tot een verkoop leidden."
   - question: "Is boosten op Vinted de moeite waard?"
     answer: "Ja, maar alleen als je het gericht inzet: op een item dat al favorieten heeft verzameld zonder te verkopen, en op het juiste moment. Op basis van 206 boosts en €482 budget kwam de omzet per geïnvesteerde euro op €93 bij boosts die tot een verkoop leidden. Zonder die voorwaarden is een boost geld weggooien."
   - question: "Is een boost van 3 dagen of 7 dagen beter op Vinted?"
@@ -116,7 +116,7 @@ Boosten op Vinted is de betaalde opvalfunctie waarmee een verkoper een listing t
 
 ### Wat kost boosten bij Vinted?
 
-Een boost bij Vinted kost [DATA NODIG: prijs per boost] per keer, afhankelijk van de duur en de prijs van het item. Op basis van 206 boosts en €482 totaalbudget lag de omzet per geïnvesteerde euro op €93 bij boosts die tot een verkoop leidden.
+In mijn eigen data: 206 boosts voor een totaalbudget van €482. De omzet per geïnvesteerde euro lag op €93 bij boosts die tot een verkoop leidden.
 
 ### Is boosten op Vinted de moeite waard?
 

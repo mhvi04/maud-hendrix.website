@@ -1,119 +1,295 @@
 ---
+// SiteHeader.astro
+// Vaste bovenbalk: mh-logo, korte plaatsaanduiding en een Menu-knop die een
+// schermvullend menu opent. Eén component voor alle pagina's (NL en EN).
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { useTranslations, type Language } from "../i18n/ui";
 import LanguageSwitch from "./LanguageSwitch.astro";
-import CommandPaletteTrigger from "./CommandPaletteTrigger.astro";
-
-type World = "pro" | "prive" | "artikelen";
 
 interface Props {
-  world: World;
   locale?: Language;
   nlPath?: string;
   enPath?: string;
+  // Blijft bestaan zodat pagina's niets hoeven te wijzigen; niet meer gebruikt.
+  world?: "pro" | "prive" | "artikelen";
 }
-const { world, locale = "nl", nlPath, enPath } = Astro.props;
+const { locale = "nl", nlPath, enPath } = Astro.props;
 
-const worlds: Record<World, { href: string; label: string; accent: string }> = {
-  pro: { href: "/professioneel", label: "Professioneel", accent: "var(--mustard)" },
-  prive: { href: "/prive", label: "Privé", accent: "var(--periwinkle)" },
-  artikelen: { href: "/artikelen", label: "Artikelen", accent: "var(--navy)" },
+const t = useTranslations(locale);
+const home = getRelativeLocaleUrl(locale, "/");
+const pro = locale === "nl" ? "/professioneel" : "/en/professional";
+const articles = locale === "nl" ? "/artikelen" : "/en/articles";
+
+const items = [
+  { label: t.menu.home, href: home },
+  { label: t.menu.work, href: `${pro}#werk` },
+  { label: t.menu.articles, href: articles },
+  { label: t.menu.profile, href: pro },
+  // /prive bestaat alleen in het Nederlands.
+  ...(locale === "nl" ? [{ label: t.menu.private, href: "/prive" }] : []),
+  { label: t.menu.contact, href: "#contact" },
+];
+
+const current = Astro.url.pathname.replace(/\/$/, "") || "/";
+const isCurrent = (href: string) => {
+  const path = href.split("#")[0].replace(/\/$/, "") || "/";
+  if (href.startsWith("#")) return false;
+  if (href.includes("#")) return false;
+  return path === "/" ? current === "/" || current === "/en" : current === path || current.startsWith(`${path}/`);
 };
-const others = (Object.keys(worlds) as World[]).filter((w) => w !== world);
-const accent = worlds[world].accent;
-
-// De Professioneel/Privé/Artikelen-switcher bestaat alleen in het NL-domein
-// (geen Engelse /prive). De taalwissel wordt alleen getoond als de pagina
-// zijn vertaalde tegenhanger meegeeft, en nooit op /prive.
-const showWorldSwitch = locale === "nl";
 const showLanguageSwitch = Boolean(nlPath) && Boolean(enPath);
-const homeHref = getRelativeLocaleUrl(locale, "/");
-const t = useTranslations(locale).nav;
 ---
 
-<header class="site-header">
-  <div class="wrap bar">
-    <a href={homeHref} class="mark">
-      <span class="mark-block" style={`background:${accent}`}></span>
-      Maud Hendrix
+<header class="site-header" id="top">
+  <div class="bar">
+    <a href={home} class="mark" aria-label={t.menu.logoLabel}>
+      <span class="mark-letters">mh</span><span class="mark-dot" aria-hidden="true"></span>
     </a>
-    <nav class="links">
-      <a href={homeHref} class="home-link">{t.home}</a>
-      {showWorldSwitch && others.map((w) => (
-        <a href={worlds[w].href} class="switch">
-          {worlds[w].label} <span aria-hidden="true">→</span>
-        </a>
-      ))}
-      {showLanguageSwitch && (
-        <LanguageSwitch locale={locale} nlPath={nlPath!} enPath={enPath!} />
-      )}
-      <CommandPaletteTrigger locale={locale} />
-    </nav>
+    <p class="place">{t.footer.location}.</p>
+    <button type="button" class="search-btn" data-cmdk-open aria-label={useTranslations(locale).search.triggerLabel}>
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <circle cx="9.5" cy="9.5" r="6.5" stroke="currentColor" stroke-width="2.2" />
+        <path d="M14.5 14.5L20 20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+      </svg>
+    </button>
+    <button
+      type="button"
+      class="menu-toggle"
+      id="menu-toggle"
+      aria-expanded="false"
+      aria-controls="site-menu"
+    >
+      <span class="menu-toggle-label" data-open={t.menu.close} data-closed={t.menu.open}>{t.menu.open}</span>
+      <svg class="plus" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <path d="M11 1v20M1 11h20" stroke="currentColor" stroke-width="2.4" />
+      </svg>
+    </button>
   </div>
 </header>
 
+<div class="menu" id="site-menu" hidden>
+  <nav class="menu-inner" aria-label={t.menu.navLabel}>
+    <ul class="menu-list">
+      {items.map((item) => (
+        <li>
+          <a href={item.href} class:list={["menu-link", { "is-current": isCurrent(item.href) }]}>
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <div class="menu-foot">
+      <p>Maud Hendrix · {t.menu.tagline}</p>
+      <div class="menu-tools">
+        {showLanguageSwitch && <LanguageSwitch locale={locale} nlPath={nlPath!} enPath={enPath!} />}
+        <button type="button" class="menu-search" data-cmdk-open>
+          {t.menu.search}
+          <svg width="16" height="16" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <circle cx="9.5" cy="9.5" r="6.5" stroke="currentColor" stroke-width="2.4" />
+            <path d="M14.5 14.5L20 20" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<script>
+  const toggle = document.getElementById("menu-toggle") as HTMLButtonElement | null;
+  const menu = document.getElementById("site-menu") as HTMLElement | null;
+  const label = toggle?.querySelector<HTMLElement>(".menu-toggle-label");
+
+  function setOpen(open: boolean) {
+    if (!toggle || !menu) return;
+    menu.hidden = !open;
+    toggle.setAttribute("aria-expanded", String(open));
+    document.documentElement.classList.toggle("menu-open", open);
+    if (label) label.textContent = open ? label.dataset.open ?? "" : label.dataset.closed ?? "";
+    if (open) menu.querySelector<HTMLElement>(".menu-link")?.focus({ preventScroll: true });
+    else toggle.focus({ preventScroll: true });
+  }
+
+  toggle?.addEventListener("click", () => setOpen(toggle.getAttribute("aria-expanded") !== "true"));
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && toggle?.getAttribute("aria-expanded") === "true") setOpen(false);
+  });
+
+  // Elke link in het menu sluit het menu, ook anker-links naar dezelfde pagina.
+  menu?.addEventListener("click", (e) => {
+    if ((e.target as HTMLElement).closest(".menu-link")) {
+      menu.hidden = true;
+      toggle?.setAttribute("aria-expanded", "false");
+      document.documentElement.classList.remove("menu-open");
+      if (label) label.textContent = label.dataset.closed ?? "";
+    }
+  });
+</script>
+
 <style>
   .site-header {
-    border-bottom: 1px solid var(--ink);
+    position: sticky;
+    top: 0;
+    z-index: 100;
     background: var(--cream);
   }
   .bar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding-block: 18px;
+    gap: clamp(16px, 4vw, 48px);
+    height: var(--header-h);
+    padding-inline: clamp(20px, 3vw, 40px);
   }
   .mark {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    position: relative;
+    display: inline-flex;
+    align-items: flex-start;
+    color: var(--ink);
+    text-decoration: none;
+    line-height: 1;
+  }
+  .mark-letters {
     font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 19px;
-    text-decoration: none;
+    font-weight: 900;
+    font-size: clamp(44px, 5vw, 56px);
+    letter-spacing: -0.09em;
+    line-height: 0.8;
+    padding-top: 6px;
+  }
+  .mark-dot {
+    width: 4px;
+    height: 4px;
+    background: var(--ink);
+    margin: 2px 0 0 6px;
+  }
+  .place {
+    font-size: 14px;
+    line-height: 1.3;
+    margin-right: auto;
     color: var(--ink);
   }
-  .mark-block {
-    width: 14px;
-    height: 14px;
-    flex-shrink: 0;
+  .search-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-right: -8px;
+    background: none;
+    border: 0;
+    padding: 0;
+    color: var(--ink);
   }
-  .links {
+  .menu-search {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: 0;
+    border-bottom: 2px solid var(--rust);
+    padding: 4px 0;
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .search-btn:focus-visible,
+  .menu-search:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 4px;
+  }
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(14px, 2vw, 28px);
+    background: none;
+    border: 0;
+    padding: 12px 0 12px 12px;
+    color: var(--ink);
+    font-size: 18px;
+  }
+  .plus {
+    transition: transform 0.3s ease;
+  }
+  .menu-toggle[aria-expanded="true"] .plus {
+    transform: rotate(45deg);
+  }
+  .menu-toggle:focus-visible,
+  .menu-link:focus-visible,
+  .mark:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 4px;
+  }
+
+  .menu {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    background: var(--cream);
+    overflow-y: auto;
+    padding-top: var(--header-h);
+  }
+  .menu[hidden] {
+    display: none;
+  }
+  .menu-inner {
+    min-height: calc(100dvh - var(--header-h));
+    display: flex;
+    flex-direction: column;
+    padding-inline: clamp(20px, 3vw, 40px);
+  }
+  .menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+  }
+  .menu-list li {
+    border-bottom: 1px solid var(--line);
+  }
+  .menu-list li:first-child {
+    border-top: 1px solid var(--line);
+  }
+  .menu-link {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.6rem, min(10.5vw, 10.5vh), 8rem);
+    line-height: 1.05;
+    letter-spacing: var(--tracking-display);
+    color: var(--ink);
+    text-decoration: none;
+    padding-block: clamp(4px, 1vw, 12px);
+    transition: padding-left 0.3s ease;
+  }
+  .menu-link:hover,
+  .menu-link.is-current {
+    padding-left: clamp(24px, 6vw, 96px);
+  }
+  .menu-foot {
     display: flex;
     align-items: center;
-    gap: 28px;
-    font-family: var(--font-mono);
-    font-size: 13px;
-    letter-spacing: 0.04em;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 20px;
+    font-size: 14px;
   }
-  .links a {
-    text-decoration: none;
+  .menu-tools {
+    display: flex;
+    align-items: center;
+    gap: 16px;
   }
-  .home-link {
-    color: var(--navy);
-    opacity: 0.75;
-  }
-  .home-link:hover {
-    opacity: 1;
-  }
-  .switch {
-    color: var(--ink);
-    border-bottom: 1px solid var(--ink);
-    padding-bottom: 3px;
-    font-weight: 500;
-  }
-  .switch:hover {
-    color: var(--navy);
-    border-color: var(--navy);
+
+  :global(html.menu-open) {
+    overflow: hidden;
   }
 
   @media (max-width: 560px) {
-    .links {
-      gap: 16px;
-      font-size: 12px;
+    .place {
+      font-size: 13px;
     }
-    .home-link {
-      display: none;
+    .menu-foot {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 </style>

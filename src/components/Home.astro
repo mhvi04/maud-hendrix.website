@@ -1,0 +1,513 @@
+---
+// Home.astro
+// Gedeelde homepage voor NL en EN. Alleen de teksten en de artikelcollectie
+// verschillen per taal. Eerste scherm: de naam, verder niets.
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import SiteHeader from "./SiteHeader.astro";
+import SiteFooter from "./SiteFooter.astro";
+import duneDuo from "../assets/gallery/dune-duo.jpg";
+import catStairs from "../assets/gallery/cat-stairs-bw.jpg";
+import type { Language } from "../i18n/ui";
+
+interface Props {
+  locale: Language;
+}
+const { locale } = Astro.props;
+const isNl = locale === "nl";
+
+const copy = isNl
+  ? {
+      sub: "Criminologie & ondernemerschap",
+      statement:
+        "Ik ben Maud. Ik studeer criminologie in Gent en onderneem met Studio Maud. Verkopen doe ik al sinds mijn veertiende. Wat klein begon, is blijven groeien. Net als mijn interesse in de mensen en keuzes achter elke verkoop.",
+      doors: [
+        { n: "01", label: "Profiel", href: "/professioneel" },
+        { n: "02", label: "Artikelen", href: "/artikelen" },
+        { n: "03", label: "Buiten beeld", href: "/prive" },
+      ],
+      latest: "Recente artikelen",
+      all: "Alle artikelen",
+      allHref: "/artikelen",
+      photoAlt: "Twee silhouetten op een duin bij zonsondergang, met de zee op de achtergrond",
+      heroAlt: "Een kat kijkt tussen de spijlen van een witte trap door",
+      scroll: "Scroll",
+    }
+  : {
+      sub: "Criminology & entrepreneurship",
+      statement:
+        "Criminology teaches me to pause and ask why people do what they do. My business teaches me to put that into practice, day after day, figure after figure. It's less a master plan than a habit that kept growing.",
+      doors: [
+        { n: "01", label: "Profile", href: "/en/professional" },
+        { n: "02", label: "Articles", href: "/en/articles" },
+      ],
+      latest: "Recent articles",
+      all: "All articles",
+      allHref: "/en/articles",
+      photoAlt: "Two silhouettes on a dune at sunset, with the sea in the background",
+      heroAlt: "A cat looks out between the white balusters of a staircase",
+      scroll: "Scroll",
+    };
+
+const statementWords = copy.statement.split(" ");
+const nameLines = ["Maud", "Hendrix"].map((w) => w.split(""));
+let charIndex = 0;
+
+const entries = (
+  await getCollection(isNl ? "articlesNl" : "articlesEn", ({ data }) => !data.draft)
+)
+  .sort((a, b) => b.data.date.localeCompare(a.data.date) || a.data.title.localeCompare(b.data.title))
+  .slice(0, 8);
+
+const fmt = new Intl.DateTimeFormat(isNl ? "nl-BE" : "en-GB", {
+  day: "numeric",
+  month: "short",
+  year: "numeric",
+  timeZone: "UTC",
+});
+const latest = entries.map((e) => ({
+  href: isNl ? `/artikelen/${e.id}` : `/en/articles/${e.data.slugEn ?? e.id}`,
+  title: e.data.title,
+  iso: e.data.date,
+  date: fmt.format(new Date(`${e.data.date}T00:00:00Z`)),
+}));
+---
+
+<SiteHeader locale={locale} nlPath="/" enPath="/" />
+
+<main class="home">
+  <section class="hero" data-hero>
+    <div class="hero-text">
+      <h1 class="name" aria-label="Maud Hendrix">
+        {nameLines.map((chars) => (
+          <span class="line" aria-hidden="true">
+            {chars.map((c) => (
+              <span class="ch" style={`--i:${charIndex++}`}>{c}</span>
+            ))}
+          </span>
+        ))}
+      </h1>
+      <p class="sub">{copy.sub}</p>
+    </div>
+    <div class="hero-photo">
+      <Image
+        src={catStairs}
+        alt={copy.heroAlt}
+        widths={[480, 800, 1100]}
+        sizes="(min-width: 900px) 40vw, 90vw"
+        loading="eager"
+        class="hero-img"
+        data-hero-img
+      />
+    </div>
+  </section>
+
+
+  <section class="statement" data-statement>
+    <p aria-label={copy.statement}>
+      {statementWords.map((w, i) => (
+        <span class="w" aria-hidden="true" style={`--k:${i}`}>{w} </span>
+      ))}
+    </p>
+  </section>
+
+  <section class="doors" aria-label="Pagina's">
+    <ul>
+      {copy.doors.map((d) => (
+        <li data-reveal>
+          <a href={d.href} class="door">
+            <span class="door-n">{d.n}</span>
+            <span class="door-label">{d.label}</span>
+            <span class="door-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="band" data-parallax-band>
+    <Image
+      src={duneDuo}
+      alt={copy.photoAlt}
+      widths={[800, 1400, 2200]}
+      sizes="100vw"
+      loading="lazy"
+      class="band-img"
+      data-parallax-img
+    />
+  </section>
+
+  <section class="latest">
+    <h2 data-reveal>{copy.latest}</h2>
+    <ul>
+      {latest.map((a) => (
+        <li data-reveal>
+          <a href={a.href} class="art">
+            <time datetime={a.iso}>{a.date}</time>
+            <span class="art-title">{a.title}</span>
+            <span class="art-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <a class="all" href={copy.allHref}>{copy.all} →</a>
+  </section>
+</main>
+
+<SiteFooter locale={locale} />
+
+<script>
+  // Scrolleffecten. Alles staat uit bij html.reduce-motion of de
+  // systeeminstelling prefers-reduced-motion (de footer-schakelaar zet die klasse).
+  const root = document.documentElement;
+  const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const reduced = () => root.classList.contains("reduce-motion") || media.matches;
+
+  const heroImg = document.querySelector<HTMLElement>("[data-hero-img]");
+  const hero = document.querySelector<HTMLElement>("[data-hero]");
+  const band = document.querySelector<HTMLElement>("[data-parallax-band]");
+  const bandImg = document.querySelector<HTMLElement>("[data-parallax-img]");
+  const statement = document.querySelector<HTMLElement>("[data-statement]");
+  const words = statement ? Array.from(statement.querySelectorAll<HTMLElement>(".w")) : [];
+
+  let ticking = false;
+  function update() {
+    ticking = false;
+    const vh = window.innerHeight;
+    if (reduced()) {
+      heroImg?.style.removeProperty("transform");
+      bandImg?.style.removeProperty("transform");
+      band?.style.removeProperty("--clip");
+      words.forEach((w) => w.style.removeProperty("opacity"));
+      return;
+    }
+    if (hero && heroImg) {
+      const p = Math.min(1, Math.max(0, window.scrollY / vh));
+      heroImg.style.transform = `translate3d(0, ${p * 8}%, 0) scale(${1.08 + p * 0.06})`;
+    }
+    if (band && bandImg) {
+      const r = band.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < vh) {
+        const progress = (vh - r.top) / (vh + r.height);
+        bandImg.style.transform = `translate3d(0, ${(progress - 0.5) * -12}%, 0) scale(1.15)`;
+        // Het vlak opent van smal naar volle breedte terwijl het in beeld komt.
+        const open = Math.min(1, Math.max(0, (vh - r.top) / (vh * 0.7)));
+        band.style.setProperty("--clip", `${((1 - open) * 12).toFixed(2)}%`);
+      }
+    }
+    if (statement && words.length) {
+      const r = statement.getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, (vh * 0.85 - r.top) / (r.height + vh * 0.25)));
+      const lit = p * words.length * 1.15;
+      words.forEach((w, i) => {
+        w.style.opacity = String(Math.min(1, Math.max(0.22, 0.22 + (lit - i) * 0.5)));
+      });
+    }
+  }
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  update();
+
+  // Zachte onthulling bij binnenkomen in beeld.
+  const items = document.querySelectorAll<HTMLElement>("[data-reveal]");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-in");
+            io.unobserve(e.target);
+          }
+        }
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.05 }
+    );
+    items.forEach((el) => io.observe(el));
+  } else {
+    items.forEach((el) => el.classList.add("is-in"));
+  }
+</script>
+
+<style>
+  .home {
+    padding-inline: clamp(20px, 3vw, 40px);
+  }
+
+  /* Eerste scherm: naam in redelijk formaat, naast een foto. */
+  .hero {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: clamp(24px, 5vw, 80px);
+    align-items: end;
+    min-height: min(calc(100svh - var(--header-h) - 80px), 760px);
+    padding-block: clamp(24px, 4vw, 56px);
+  }
+  .name {
+    margin: 0;
+    font-weight: 900;
+    font-size: clamp(3.2rem, 8.5vw, 8.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.06em;
+    color: var(--ink);
+  }
+  .line {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.08em;
+  }
+  .ch {
+    display: inline-block;
+    animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    animation-delay: calc(var(--i) * 55ms + 120ms);
+  }
+  @keyframes rise {
+    from {
+      transform: translateY(105%);
+    }
+    to {
+      transform: none;
+    }
+  }
+  .sub {
+    margin-top: clamp(16px, 2.4vw, 28px);
+    padding-top: 14px;
+    border-top: 2px solid var(--rust);
+    max-width: 22em;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 500;
+  }
+  .hero-photo {
+    height: clamp(320px, 58svh, 620px);
+    overflow: hidden;
+    background: var(--periwinkle);
+    border-radius: 2px;
+  }
+  .hero-photo :global(.hero-img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 60% 60%;
+    transform: scale(1.08);
+    will-change: transform;
+  }
+
+  /* Intro in een gekleurd vlak; woorden lichten op tijdens het scrollen. */
+  .statement {
+    margin-inline: calc(clamp(20px, 3vw, 40px) * -1);
+    background: var(--rust);
+    color: #f8f3ea;
+    padding: clamp(72px, 12vw, 180px) clamp(20px, 3vw, 40px);
+  }
+  .statement p {
+    max-width: 26em;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.7rem, 4vw, 3.4rem);
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+  }
+  .w {
+    transition: opacity 0.15s linear;
+  }
+
+  .doors {
+    padding-top: clamp(56px, 8vw, 112px);
+  }
+  .doors ul,
+  .latest ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .doors li,
+  .latest li {
+    border-top: 1px solid var(--line);
+  }
+  .doors li:last-child,
+  .latest li:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+  .door {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: baseline;
+    gap: clamp(16px, 3vw, 40px);
+    padding-block: clamp(10px, 1.6vw, 22px);
+    padding-inline: 0;
+    color: var(--ink);
+    text-decoration: none;
+    transition: padding-inline 0.35s ease, color 0.35s ease;
+  }
+  /* Kleurvlak schuift van onder omhoog bij hover. */
+  .door::before,
+  .art::before {
+    content: "";
+    position: absolute;
+    inset: 0 calc(clamp(20px, 3vw, 40px) * -1);
+    background: var(--rust);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: -1;
+  }
+  .door:hover::before,
+  .door:focus-visible::before,
+  .art:hover::before,
+  .art:focus-visible::before {
+    transform: scaleY(1);
+  }
+  .door:hover,
+  .door:focus-visible,
+  .art:hover,
+  .art:focus-visible {
+    color: #f8f3ea;
+  }
+  .door-n {
+    font-size: 14px;
+    width: 2.2em;
+    flex: 0 0 auto;
+  }
+  .door-label {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.6rem, 8vw, 7rem);
+    line-height: 1.02;
+    letter-spacing: var(--tracking-display);
+    flex: 1;
+  }
+  .door-arrow,
+  .art-arrow {
+    font-size: clamp(1.4rem, 3vw, 2.6rem);
+    transition: transform 0.3s ease;
+  }
+  .door:hover,
+  .door:focus-visible {
+    padding-inline: clamp(12px, 2vw, 32px);
+  }
+  .door:hover .door-arrow,
+  .art:hover .art-arrow {
+    transform: translateX(10px);
+  }
+
+  .band {
+    --clip: 12%;
+    margin-block: clamp(64px, 10vw, 140px);
+    margin-inline: calc(clamp(20px, 3vw, 40px) * -1);
+    height: clamp(320px, 62vw, 820px);
+    overflow: hidden;
+    background: var(--periwinkle);
+    clip-path: inset(0 var(--clip) 0 var(--clip));
+  }
+  .band :global(.band-img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: transform;
+    transform: scale(1.15);
+  }
+
+  .latest {
+    padding-bottom: clamp(72px, 10vw, 140px);
+  }
+  .latest h2 {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    margin-bottom: 28px;
+  }
+  .art {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: 9.5em 1fr auto;
+    align-items: baseline;
+    gap: 16px;
+    padding-block: clamp(16px, 2vw, 26px);
+    color: var(--ink);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .art time {
+    font-size: 14px;
+  }
+  .art-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.25rem, 2.4vw, 2rem);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+  }
+  .all {
+    display: inline-block;
+    margin-top: 32px;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--ink);
+    border-bottom: 2px solid var(--rust);
+  }
+  .door:focus-visible,
+  .art:focus-visible,
+  .all:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 4px;
+  }
+
+  /* Onthulling: alleen verbergen als JS actief is (html.js). */
+  :global(html.js) [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  :global(html.js) [data-reveal].is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Beweging uit: alles statisch en direct zichtbaar. */
+  :global(html.reduce-motion) [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  :global(html.reduce-motion) .ch {
+    animation: none !important;
+  }
+  :global(html.reduce-motion) .band {
+    clip-path: none;
+  }
+  :global(html.reduce-motion) .door::before,
+  :global(html.reduce-motion) .art::before {
+    transition: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ch {
+      animation: none !important;
+    }
+    .band {
+      clip-path: none;
+    }
+  }
+
+  @media (max-width: 860px) {
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: 0;
+    }
+    .hero-photo {
+      height: clamp(280px, 55svh, 480px);
+      order: -1;
+    }
+  }
+  @media (max-width: 640px) {
+    .art {
+      grid-template-columns: 1fr auto;
+    }
+    .art time {
+      grid-column: 1 / -1;
+    }
+  }
+</style>
