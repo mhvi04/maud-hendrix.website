@@ -15,7 +15,7 @@ faq:
   - question: "What is boosting on Vinted?"
     answer: "Boosting on Vinted is the paid visibility feature that lets a seller temporarily promote a listing. It doesn't guarantee a sale, but it drives extra clicks, favourites and messages, which in turn improves organic ranking in search results."
   - question: "What does boosting cost on Vinted?"
-    answer: "A boost on Vinted costs [DATA NODIG: prijs per boost] per boost, depending on duration and item price. Based on 206 boosts and a €482 total budget, revenue per euro invested came out at €93 for boosts that led to a sale."
+    answer: "In my own data: 206 boosts for a total budget of €482. Revenue per euro invested came out at €93 for boosts that led to a sale."
   - question: "Is boosting worth it on Vinted?"
     answer: "Yes, but only if you use it deliberately: on an item that has already collected favourites without selling, and at the right moment. Based on 206 boosts and a €482 budget, revenue per euro invested came out at €93 for boosts that led to a sale. Without those conditions, a boost is money wasted."
   - question: "Is a 3-day or 7-day boost better on Vinted?"
@@ -116,7 +116,7 @@ Boosting on Vinted is the paid visibility feature that lets a seller temporarily
 
 ### What does boosting cost on Vinted?
 
-A boost on Vinted costs [DATA NODIG: prijs per boost] per boost, depending on duration and item price. Based on 206 boosts and a €482 total budget, revenue per euro invested came out at €93 for boosts that led to a sale.
+In my own data: 206 boosts for a total budget of €482. Revenue per euro invested came out at €93 for boosts that led to a sale.
 
 ### Is boosting worth it on Vinted?
 

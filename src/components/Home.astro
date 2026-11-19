@@ -7,6 +7,9 @@ import { getCollection } from "astro:content";
 import SiteHeader from "./SiteHeader.astro";
 import SiteFooter from "./SiteFooter.astro";
 import duneDuo from "../assets/gallery/dune-duo.jpg";
+import rlRij from "../assets/gallery/ralph-lauren-rij.jpg";
+import rlHand from "../assets/gallery/ralph-lauren-hand.jpg";
+import rlCamera from "../assets/gallery/ralph-lauren-camera.jpg";
 import catStairs from "../assets/gallery/cat-stairs-bw.jpg";
 import type { Language } from "../i18n/ui";
 
@@ -30,6 +33,9 @@ const copy = isNl
       all: "Alle artikelen",
       allHref: "/artikelen",
       photoAlt: "Twee silhouetten op een duin bij zonsondergang, met de zee op de achtergrond",
+      rijAlt: "Een rij opgevouwen Ralph Lauren polo's in wit, roze, rood, oranje, geel, turquoise en marineblauw",
+      handAlt: "Een stapel opgevouwen pastelkleurige Ralph Lauren oxfordhemden naast een houten mannequinhand",
+      cameraAlt: "Een vintage fototoestel op een stapel opgevouwen pastelkleurige Ralph Lauren hemden voor een landkaart",
       heroAlt: "Een kat kijkt tussen de spijlen van een witte trap door",
       scroll: "Scroll",
     }
@@ -45,6 +51,9 @@ const copy = isNl
       all: "All articles",
       allHref: "/en/articles",
       photoAlt: "Two silhouettes on a dune at sunset, with the sea in the background",
+      rijAlt: "A row of folded Ralph Lauren polo shirts in white, pink, red, orange, yellow, teal and navy",
+      handAlt: "A stack of folded Ralph Lauren oxford shirts in pastel colours next to a wooden mannequin hand",
+      cameraAlt: "A vintage film camera on a stack of folded pastel Ralph Lauren shirts in front of a map",
       heroAlt: "A cat looks out between the white balusters of a staircase",
       scroll: "Scroll",
     };
@@ -123,6 +132,14 @@ const latest = entries.map((e) => ({
         </li>
       ))}
     </ul>
+  </section>
+
+  <section class="studio" aria-label="Studio Maud">
+    <div class="studio-duo">
+      <Image src={rlHand} alt={copy.handAlt} widths={[500, 800, 1200]} sizes="(max-width: 860px) 50vw, 40vw" loading="lazy" data-reveal />
+      <Image src={rlCamera} alt={copy.cameraAlt} widths={[500, 800, 1200]} sizes="(max-width: 860px) 50vw, 40vw" loading="lazy" data-reveal />
+    </div>
+    <Image src={rlRij} alt={copy.rijAlt} widths={[800, 1400, 2200]} sizes="100vw" loading="lazy" class="studio-rij" data-reveal />
   </section>
 
   <section class="band" data-parallax-band>
@@ -394,6 +411,28 @@ const latest = entries.map((e) => ({
   .door:hover .door-arrow,
   .art:hover .art-arrow {
     transform: translateX(10px);
+  }
+
+  .studio {
+    margin-block: clamp(64px, 10vw, 140px) 0;
+  }
+  .studio-duo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(12px, 2vw, 28px);
+    align-items: start;
+  }
+  .studio-duo :global(img:nth-child(2)) {
+    margin-top: clamp(32px, 8vw, 120px);
+  }
+  .studio-duo :global(img),
+  .studio :global(.studio-rij) {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .studio :global(.studio-rij) {
+    margin-top: clamp(12px, 2vw, 28px);
   }
 
   .band {

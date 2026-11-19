@@ -1,10 +1,12 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
+import ReadingProgress from "../../components/ReadingProgress.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import TableOfContents from "../../components/TableOfContents.astro";
 import VerderLezen from "../../components/VerderLezen.astro";
 import { getCollection, render } from "astro:content";
+import { estimateReadingMinutes } from "../../lib/reading-time";
 import { getImage } from "astro:assets";
 import { existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -19,6 +21,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content, headings } = await render(entry);
+const readingMinutes = estimateReadingMinutes(entry.body ?? "");
 const publishedDate = entry.data.date.startsWith("[") ? undefined : entry.data.date;
 
 // Alleen een taalwissel/hreflang tonen als er ook echt een Engelse
@@ -87,17 +90,18 @@ const relatedArticles = (entry.data.related ?? [])
     nlPath={hasEnglishVersion ? nlPath : undefined}
     enPath={hasEnglishVersion ? enPath : undefined}
   />
+  <ReadingProgress />
   <main class="article">
     <div class="wrap">
       <div class="intro">
         <a href="/artikelen" class="back mono">← Alle artikelen</a>
         <span class="tag mono">{entry.data.tag}</span>
         <h1>{entry.data.title}</h1>
-        <p class="date mono">{entry.data.date}</p>
+        <p class="date mono">{entry.data.date} · {readingMinutes} min leestijd</p>
       </div>
       <div class="layout">
         <TableOfContents headings={headings} locale="nl" />
-        <div class="prose">
+        <div class="prose" data-reading-body>
           <Content />
           <VerderLezen articles={relatedArticles} locale="nl" />
         </div>

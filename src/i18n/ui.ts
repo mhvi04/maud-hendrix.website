@@ -21,6 +21,7 @@ export const ui = {
       navLabel: "Hoofdmenu",
       logoLabel: "Maud Hendrix, naar de startpagina",
       tagline: "Criminologie & ondernemerschap",
+      search: "Zoeken",
     },
     footer: {
       location: "Gent, België",
@@ -29,6 +30,9 @@ export const ui = {
       linkedin: "LinkedIn",
       motionOff: "Beweging uitzetten",
       motionOn: "Beweging aanzetten",
+    },
+    reading: {
+      minutes: "min leestijd",
     },
     search: {
       triggerLabel: "Zoeken (Cmd+K)",
@@ -63,6 +67,7 @@ export const ui = {
       navLabel: "Main menu",
       logoLabel: "Maud Hendrix, to the home page",
       tagline: "Criminology & entrepreneurship",
+      search: "Search",
     },
     footer: {
       location: "Ghent, Belgium",
@@ -71,6 +76,9 @@ export const ui = {
       linkedin: "LinkedIn",
       motionOff: "Turn motion off",
       motionOn: "Turn motion on",
+    },
+    reading: {
+      minutes: "min read",
     },
     search: {
       triggerLabel: "Search (Cmd+K)",

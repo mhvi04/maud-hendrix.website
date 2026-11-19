@@ -199,35 +199,6 @@ import vintedProfielOud from "../../../assets/proof/vinted-profiel-oud.jpg";
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="contact">
-      <div class="wrap contact-grid">
-        <div>
-          <span class="label label--on-dark">Contact</span>
-          <h2>Let's <em>talk.</em></h2>
-          <p>
-            Open to internships, student jobs and collaborations around
-            reselling, e-commerce or data, and to conversations that bring
-            criminology and trade together.
-          </p>
-          <div class="contact-actions">
-            <a class="btn btn--mustard" href="mailto:StudioMaud@outlook.com"
-              >Send an email</a
-            >
-          </div>
-        </div>
-        <div class="contact-meta">
-          <p class="mono"><span>Email</span>StudioMaud@outlook.com</p>
-          <p class="mono">
-            <span>LinkedIn</span>
-            <a href="https://www.linkedin.com/in/maud-hendrix-522245374" target="_blank" rel="noopener"
-              >maud-hendrix-522245374</a
-            >
-          </p>
-          <p class="mono"><span>Location</span>Ghent, Belgium</p>
-        </div>
-      </div>
-    </section>
   </main>
 
   <SiteFooter locale="en" />
@@ -521,78 +492,6 @@ import vintedProfielOud from "../../../assets/proof/vinted-profiel-oud.jpg";
   }
 
   /* CONTACT */
-  .contact {
-    background: var(--navy);
-    color: var(--paper);
-    padding-block: clamp(48px, 7vw, 88px);
-  }
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 40px;
-  }
-  .contact h2 {
-    color: var(--paper);
-    font-size: clamp(30px, 4vw, 44px);
-    font-weight: 600;
-    margin-block: 14px 16px;
-  }
-  .contact p {
-    font-size: 16px;
-    line-height: 1.6;
-    max-width: 46ch;
-    opacity: 0.92;
-    margin-bottom: 26px;
-  }
-  .contact-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-  }
-  .contact .btn {
-    border-color: var(--paper);
-    color: var(--paper);
-  }
-  .contact .btn:hover {
-    background: var(--paper);
-    color: var(--navy);
-  }
-  .contact-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    justify-content: center;
-    border-left: 2px solid rgba(250, 246, 234, 0.35);
-    padding-left: 32px;
-  }
-  .contact-meta p {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    font-size: 14px;
-    margin: 0;
-  }
-  .contact-meta span {
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--mustard);
-  }
-  .contact-meta a {
-    text-decoration: none;
-    border-bottom: 1px solid rgba(250, 246, 234, 0.5);
-    width: fit-content;
-  }
-
   @media (max-width: 680px) {
-    .contact-grid {
-      grid-template-columns: 1fr;
-    }
-    .contact-meta {
-      border-left: none;
-      padding-left: 0;
-      border-top: 2px solid rgba(250, 246, 234, 0.35);
-      padding-top: 24px;
-    }
   }
 </style>
