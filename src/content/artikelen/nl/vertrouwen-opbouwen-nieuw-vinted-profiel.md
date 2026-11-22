@@ -17,6 +17,8 @@ faq:
     answer: "Door je eerste items bewust scherp te prijzen, niet verlieslatend maar aan de lagere kant van de marktprijs. Het doel is niet maximale marge op die eerste transacties, maar maximale snelheid: snel verkopen, snel verzenden, en de koper daarna proactief uitnodigen om een beoordeling achter te laten."
 ---
 
+*Dit artikel bevat affiliatelinks. Koop je via zo'n link, dan krijg ik een kleine commissie, zonder extra kost voor jou.*
+
 Iedereen begint met nul. Geen beoordelingen, geen verkopen, geen reden voor een koper om jou te vertrouwen boven de tientallen andere aanbieders die hetzelfde item online hebben staan. Dat is de reële startpositie van een nieuw Vinted-profiel, en het heeft geen zin om dat te ontkennen.
 
 Maar het is ook geen permanente toestand. Vertrouwen op Vinted bouwt zich op in lagen, en sommige van die lagen zijn sneller te bouwen dan je denkt.
@@ -47,7 +49,7 @@ De derde laag zijn de eerste reviews zelf. Die eerste tien zijn het moeilijkste 
 
 ## Laag 4: verpakking, het eerste fysieke bewijs
 
-Een vierde element dat beginners onderschatten is de verpakking. Uit de reviewteksten die ik over de jaren heb verzameld, komen woorden als "netjes ingepakt" en "mooi verpakt" significant vaker voor bij positieve beoordelingen van nieuwe kopers. De unboxing is het eerste fysieke bewijs van hoe serieus jij het neemt. Een propere verpakking, een briefje erbij, en kleding die schoon en gevouwen aankomt, dat zijn de dingen die een nieuwe koper motiveren om vijf sterren te geven en niet vier.
+Een vierde element dat beginners onderschatten is de verpakking. Uit de reviewteksten die ik over de jaren heb verzameld, komen woorden als "netjes ingepakt" en "mooi verpakt" significant vaker voor bij positieve beoordelingen van nieuwe kopers. De unboxing is het eerste fysieke bewijs van hoe serieus jij het neemt. Een propere verpakking, een briefje erbij, en kleding die schoon en gevouwen aankomt, dat zijn de dingen die een nieuwe koper motiveren om vijf sterren te geven en niet vier. <a href="https://partner.bol.com/click/click?p=2&t=url&s=1562737&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fbe%2Fnl%2Fp%2Ftissuepapier-vel-50x70-cm-14-gr-diverse-kleuren-30vellen%2F9200000113348787%2F&name=Creativ%20Company%20Tissuepapier%20%E2%80%93%20Zijdepapier%20voor%20Decoupage%20en%20Knutselen%20%E2%80%93%2050%20x%2070%20cm%20%E2%80%93...&subid=blog-setup-zijdepapier" target="_blank" rel="sponsored noopener">Zijdepapier</a> maakt een pakket veel professioneler en leverde mij veel goede reviews op. Dat geldt ook voor <a href="https://partner.bol.com/click/click?p=2&t=url&s=1562737&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fbe%2Fnl%2Fp%2Fsystemyze-42x-bedankt-kaartjes-met-envelop-thank-you-cards-wenskaarten-a6-formaat%2F9300000250415352%2F&name=Systemyze%2042x%20Bedankt%20Kaartjes%20Met%20Envelop%20%E2%80%93%20Thank%20You%20Cards%20%E2%80%93%20Wenskaarten%20%E2%80%93%20A6%20Formaat&subid=blog-setup-bedanktkaartjes" target="_blank" rel="sponsored noopener">bedankkaartjes</a> — [zie mijn verzendsetup](/artikelen/verzendmateriaal-voor-vinted).
 
 <div class="shape-divider" aria-hidden="true">
   <span class="shape shape--triangle"></span>

@@ -11,6 +11,8 @@ draft: false
 related: ["verborgen-kosten-van-vinted", "wraakreviews-op-vinted"]
 ---
 
+*This article contains affiliate links. If you buy through one of them, I earn a small commission at no extra cost to you.*
+
 You're tracking your order, the tracking stops updating, or the package arrives with a torn box and a broken item inside. Frustrating, but not unsolvable. Vinted has a set policy for this, and it's important you act fast, because there's a tight deadline attached.
 
 ## First things first: you only have two days
@@ -28,7 +30,7 @@ If the item was properly packaged according to Vinted Go's packaging rules, but 
 - the buyer can get a refund under the refund policy, and
 - the seller can get compensated for the lost or damaged item, with the amount depending on which shipping service was used.
 
-If the item wasn't packaged properly and there are indications the terms or catalog rules weren't followed, the right to a refund or compensation falls away. So packing it well isn't just courtesy, it's a condition for your own protection.
+If the item wasn't packaged properly and there are indications the terms or catalog rules weren't followed, the right to a refund or compensation falls away. So packing it well isn't just courtesy, it's a condition for your own protection. My clothing goes in bags — [see my shipping setup](/en/articles/shipping-supplies-for-vinted) — and heavy or fragile items go in a box, such as <a href="https://partner.bol.com/click/click?p=2&t=url&s=1562737&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fbe%2Fnl%2Fp%2Fbanzaa-verzenddozen-30-5x22x15cm-fsc-gerecycled-karton-25-dozen%2F9300000039759212%2F&name=FSC%20Gerecycled%20Kartonnen%20Dozen%20-%2030.5x22x15cm%20-%20Set%20van%2025%20-%20**Verzenddozen**%20-...&subid=blog-setup-dozen" target="_blank" rel="sponsored noopener">these recycled cardboard shipping boxes</a>.
 
 ## What exactly you get back
 

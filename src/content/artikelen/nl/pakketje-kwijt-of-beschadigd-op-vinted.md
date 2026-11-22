@@ -10,6 +10,8 @@ draft: false
 related: ["verborgen-kosten-van-vinted", "wraakreviews-op-vinted"]
 ---
 
+*Dit artikel bevat affiliatelinks. Koop je via zo'n link, dan krijg ik een kleine commissie, zonder extra kost voor jou.*
+
 Je volgt je bestelling, de tracking stopt te bewegen, of het pakket komt aan met een gescheurde doos en een kapot artikel erin. Vervelend, maar niet onoplosbaar. Vinted heeft hier een vast beleid voor, en het is belangrijk dat je snel handelt, want er zit een strakke deadline op.
 
 ## Eerst dit: je hebt maar twee dagen
@@ -27,7 +29,7 @@ Als het artikel goed verpakt was volgens de verpakkingsregels van Vinted Go, maa
 - kan de koper een terugbetaling krijgen volgens het terugbetalingsbeleid, en
 - kan de verkoper een vergoeding krijgen voor het verloren of beschadigde artikel, het bedrag hangt af van welke pakketdienst gebruikt werd.
 
-Was het artikel niet goed verpakt en zijn er aanwijzingen dat de voorwaarden of catalogusregels niet werden nageleefd, dan vervalt het recht op terugbetaling of vergoeding. Goed verpakken is dus niet alleen beleefd, het is een voorwaarde voor je eigen bescherming.
+Was het artikel niet goed verpakt en zijn er aanwijzingen dat de voorwaarden of catalogusregels niet werden nageleefd, dan vervalt het recht op terugbetaling of vergoeding. Goed verpakken is dus niet alleen beleefd, het is een voorwaarde voor je eigen bescherming. Kleding gaat bij mij in zakken — [zie mijn verzendsetup](/artikelen/verzendmateriaal-voor-vinted) — en zware en breekbare items in een doos, zoals <a href="https://partner.bol.com/click/click?p=2&t=url&s=1562737&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fbe%2Fnl%2Fp%2Fbanzaa-verzenddozen-30-5x22x15cm-fsc-gerecycled-karton-25-dozen%2F9300000039759212%2F&name=FSC%20Gerecycled%20Kartonnen%20Dozen%20-%2030.5x22x15cm%20-%20Set%20van%2025%20-%20**Verzenddozen**%20-...&subid=blog-setup-dozen" target="_blank" rel="sponsored noopener">deze verzenddozen van gerecycled karton</a>.
 
 ## Wat je exact terugkrijgt
 
