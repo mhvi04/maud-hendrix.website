@@ -17,6 +17,8 @@ faq:
     answer: "By deliberately pricing your first items sharply, not at a loss but at the lower end of the market price. The goal isn't maximum margin on those first transactions, it's maximum speed: sell fast, ship fast, and then proactively invite the buyer to leave a review afterward."
 ---
 
+*This article contains affiliate links. If you buy through one of them, I earn a small commission at no extra cost to you.*
+
 Everyone starts at zero. No reviews, no sales, no reason for a buyer to trust you over the dozens of other sellers listing the exact same item. That's the real starting position of a new Vinted profile, and there's no point denying it.
 
 But it's not a permanent state either. Trust on Vinted builds up in layers, and some of those layers build faster than you'd think.
@@ -47,7 +49,7 @@ The third layer is the first reviews themselves. Those first ten are the hardest
 
 ## Layer 4: packaging, the first physical proof
 
-A fourth element beginners underestimate is packaging. In the review texts I've collected over the years, words like "neatly packaged" and "beautifully wrapped" show up significantly more often in positive reviews from new buyers. The unboxing is the first physical proof of how seriously you take this. Tidy packaging, a little note, and clothing that arrives clean and folded, those are the things that motivate a new buyer to leave five stars instead of four.
+A fourth element beginners underestimate is packaging. In the review texts I've collected over the years, words like "neatly packaged" and "beautifully wrapped" show up significantly more often in positive reviews from new buyers. The unboxing is the first physical proof of how seriously you take this. Tidy packaging, a little note, and clothing that arrives clean and folded, those are the things that motivate a new buyer to leave five stars instead of four. <a href="https://partner.bol.com/click/click?p=2&t=url&s=1562737&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fbe%2Fnl%2Fp%2Ftissuepapier-vel-50x70-cm-14-gr-diverse-kleuren-30vellen%2F9200000113348787%2F&name=Creativ%20Company%20Tissuepapier%20%E2%80%93%20Zijdepapier%20voor%20Decoupage%20en%20Knutselen%20%E2%80%93%2050%20x%2070%20cm%20%E2%80%93...&subid=blog-setup-zijdepapier" target="_blank" rel="sponsored noopener">Tissue paper</a> makes a parcel look far more professional and earned me many good reviews. The same goes for <a href="https://partner.bol.com/click/click?p=2&t=url&s=1562737&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fbe%2Fnl%2Fp%2Fsystemyze-42x-bedankt-kaartjes-met-envelop-thank-you-cards-wenskaarten-a6-formaat%2F9300000250415352%2F&name=Systemyze%2042x%20Bedankt%20Kaartjes%20Met%20Envelop%20%E2%80%93%20Thank%20You%20Cards%20%E2%80%93%20Wenskaarten%20%E2%80%93%20A6%20Formaat&subid=blog-setup-bedanktkaartjes" target="_blank" rel="sponsored noopener">thank-you cards</a> — [see my shipping setup](/en/articles/shipping-supplies-for-vinted).
 
 <div class="shape-divider" aria-hidden="true">
   <span class="shape shape--triangle"></span>
