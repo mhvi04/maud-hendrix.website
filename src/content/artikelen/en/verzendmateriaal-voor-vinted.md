@@ -1,7 +1,8 @@
 ---
 slugEn: "shipping-supplies-for-vinted"
-title: "My Vinted shipping setup: what I use and why"
-excerpt: "Mailer bags, boxes, tissue paper and thank-you cards: the shipping supplies I use after about 1,000 Vinted parcels, and what you can skip."
+title: "My Vinted setup: from quality check to packing"
+seoTitle: "Prepping and shipping clothes on Vinted: my setup"
+excerpt: "Quality checks, honest photos and the shipping supplies I use after about 1,000 Vinted parcels, plus what you can skip."
 date: "2026-11-22"
 tag: "Practice"
 thema: "kopers"
@@ -13,9 +14,119 @@ related: ["vertrouwen-opbouwen-nieuw-vinted-profiel", "verborgen-kosten-van-vint
 
 <p>Your first Vinted sales usually go out in whatever you have lying around. A box from the basement, a roll of tape, done. For your first ten items that works fine.</p>
 
-<p>After that, packing becomes something you repeat with every sale. That is when the time it takes starts to add up, and so does how your parcel looks when the buyer opens it.</p>
+<p>After that, it becomes something you repeat with every sale. A second-hand item should arrive as well cared for as possible, and the photos should show what the buyer is really getting. Meanwhile the packing itself should not take too much time.</p>
 
-<p>By now I have shipped around 1,000 parcels. My setup comes down to a few things you really need, two things that make a difference to the buyer, and one purchase I would not recommend. Below is what I use, why, and what you can safely skip.</p>
+<p>I mainly sell Ralph Lauren and have shipped around 1,000 parcels by now. Good presentation, an honest description and a careful check together build trust with a buyer. This article covers two steps: getting the item ready and packing it. For each product you will find why it is useful and what you can skip.</p>
+
+<h2>Check first, photograph second</h2>
+
+<p>I think it is important that clothing is checked before it goes online. The photos should show the item's real condition. A flaw is either visible in the photo or clearly stated in the description.</p>
+
+<p>How I treat an item depends on the material, the care label and the condition. With Ralph Lauren that includes sweaters, shirts and polos. Some items need hardly any preparation, others take more work.</p>
+
+<p>So I do not wash, steam or treat every item by default. With delicate fabrics and knitwear you need to be extra careful. Do not treat every garment the same way.</p>
+
+<p>For how to capture an item's condition well, see <a href="/en/articles/vinted-photos-that-sell">Vinted photos that sell</a>.</p>
+
+<h2>Creases, lint and stains</h2>
+
+<p>Creases, lint and stains each have their own tool. I mention the products below as examples of what exists, not as models I have tested myself.</p>
+
+<p>A garment steamer removes creases and makes an item presentable without having to iron everything first. One example is the garment steamer from the Philips 7000 Series. Also read what I write about steamers further down.</p>
+
+<script type="text/javascript">
+var bol_sitebar_v2={
+  "id": "bol_1795421054874",
+  "baseUrl": "partner.bol.com",
+  "productId": "9300000100733126",
+  "familyId": "",
+  "siteId": "1562737",
+  "target": true,
+  "rating": true,
+  "price": true,
+  "deliveryDescription": true,
+  "button": true,
+  "linkName": "Philips%207000%20Series%20Kledingstomer%20-%20warm%20in%2030...",
+  "linkSubId": "blog-setup-stomer"
+};
+</script>
+<script
+  type="text/javascript"
+  src="https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js"
+  id="bol_1795421054874">
+</script>
+
+<p>A cheaper option from the same brand is the garment steamer from the Philips 3000 Series.</p>
+
+<script type="text/javascript">
+var bol_sitebar_v2={
+  "id": "bol_1795421100783",
+  "baseUrl": "partner.bol.com",
+  "productId": "9300000024256490",
+  "familyId": "",
+  "siteId": "1562737",
+  "target": true,
+  "rating": true,
+  "price": true,
+  "deliveryDescription": true,
+  "button": true,
+  "linkName": "Philips%203000%20series%20Kledingstomer%20-%20warm%20in%2030...",
+  "linkSubId": "blog-setup-stoomgoedkoop"
+};
+</script>
+<script
+  type="text/javascript"
+  src="https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js"
+  id="bol_1795421100783">
+</script>
+
+<p>A lint remover takes off surface lint and small pills. The Philips GC026/80 is one example. Use it carefully on knitwear and delicate fabrics.</p>
+
+<script type="text/javascript">
+var bol_sitebar_v2={
+  "id": "bol_1795432538410",
+  "baseUrl": "partner.bol.com",
+  "productId": "9200000105505503",
+  "familyId": "",
+  "siteId": "1562737",
+  "target": true,
+  "rating": true,
+  "price": true,
+  "deliveryDescription": true,
+  "button": true,
+  "linkName": "Philips%20GC026%2F80%20-%20Pluizenverwijderaar%20-%20Kledi...",
+  "linkSubId": "blog-setup-pluisjes"
+};
+</script>
+<script
+  type="text/javascript"
+  src="https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js"
+  id="bol_1795432538410">
+</script>
+
+<p>For stains there is ox gall, for example from Siderius. Check the care label before you treat a stain. If a stain will not come out, show it in the photo or mention it in the description.</p>
+
+<script type="text/javascript">
+var bol_sitebar_v2={
+  "id": "bol_1795432653961",
+  "baseUrl": "partner.bol.com",
+  "productId": "9200000005192892",
+  "familyId": "",
+  "siteId": "1562737",
+  "target": true,
+  "rating": true,
+  "price": true,
+  "deliveryDescription": true,
+  "button": true,
+  "linkName": "Ossegal%20Wasmachine%20Siderius",
+  "linkSubId": "blog-setup-vlekken"
+};
+</script>
+<script
+  type="text/javascript"
+  src="https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js"
+  id="bol_1795432653961">
+</script>
 
 <h2>Mailer bags are the foundation</h2>
 
@@ -47,7 +158,7 @@ var bol_sitebar_v2={
   id="bol_1795389169336">
 </script>
 
-<p>With this setup I spend about one to two minutes per parcel. Most of that speed comes from the bags. There is no cutting or taping involved.</p>
+<p>With this setup I spend about one to two minutes per parcel on the packing itself. Checking and freshening up the item is a separate step that is not included. Most of the speed comes from the bags, because there is no cutting or taping involved.</p>
 
 <h2>Boxes for heavy and fragile items</h2>
 
@@ -77,12 +188,12 @@ var bol_sitebar_v2={
 
 <h2>What I would not buy</h2>
 
-<p>A garment steamer. I bought one and never used it.</p>
+<p>A garment steamer. I once bought one and ended up never using it. So my verdict is not about how well such a device works, but about the fact that mine went unused.</p>
 
 <p>If you are buying supplies, start with mailer bags and tape. Those are the two things that come back with almost every parcel. Add the rest once you notice you are missing it.</p>
 
 <h2>In one sentence</h2>
 
-<p>You need very little for Vinted: mailer bags and tape for almost everything, a box for heavy and fragile items. Tissue paper and a thank-you card make your parcel look more professional and earned me good reviews. Buy what you use for every parcel first and wait with the rest.</p>
+<p>A buyer's trust starts before packing: check the item, show its real condition in your photos and describe honestly what is there. After that you need very little: mailer bags and tape for almost everything, a box for heavy and fragile items. Tissue paper and a thank-you card make your parcel look more professional and earned me good reviews. Buy what you use for every parcel first and wait with the rest.</p>
 
 <p><em>Source: my own experience with around 1,000 Vinted parcels shipped.</em></p>

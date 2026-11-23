@@ -38,6 +38,9 @@ const articleSchema = ({ image }: SchemaContext) =>
     // Titel zonder " — Maud Hendrix"-suffix in <title>/og:title/twitter:title,
     // voor titels die anders boven de ~60 tekens uitkomen.
     noTitleSuffix: z.boolean().optional().default(false),
+    // Aparte SEO-titel voor <title>/og:title/twitter:title. De H1 blijft
+    // `title`. Een seoTitle krijgt nooit de " — Maud Hendrix"-suffix.
+    seoTitle: z.string().optional(),
     // Alleen op Engelse artikels: de Engelstalige URL-slug. Het bestandsnaam/id
     // blijft de Nederlandse slug en dient als sleutel om NL en EN te koppelen.
     slugEn: z.string().optional(),

@@ -1,6 +1,7 @@
 ---
-title: "Mijn verzendsetup voor Vinted: wat ik gebruik en waarom"
-excerpt: "Verzendzakken, dozen, zijdepapier en bedankkaartjes: het verzendmateriaal dat ik na zo'n 1.000 Vinted-pakketten gebruik en wat je kunt overslaan."
+title: "Mijn Vinted-setup: van kwaliteitscontrole tot inpakken"
+seoTitle: "Kleding klaarmaken en verzenden op Vinted: mijn setup"
+excerpt: "Kwaliteitscontrole, eerlijke foto's en het verzendmateriaal dat ik gebruik na zo'n 1.000 Vinted-pakketten, plus wat je kunt overslaan."
 date: "2026-11-22"
 tag: "Praktijk"
 thema: "kopers"
@@ -12,9 +13,119 @@ related: ["vertrouwen-opbouwen-nieuw-vinted-profiel", "verborgen-kosten-van-vint
 
 <p>Je eerste verkopen op Vinted verstuur je meestal in wat er toevallig in huis ligt. Een doos uit de kelder, een rol tape en klaar. Voor de eerste tien items is dat prima.</p>
 
-<p>Daarna wordt inpakken iets dat bij elke verkoop terugkomt. Dan begint het te tellen hoeveel tijd je eraan kwijt bent en hoe je pakket eruitziet als de koper het opent.</p>
+<p>Daarna wordt het iets dat bij elke verkoop terugkomt. Een tweedehands item moet zo verzorgd mogelijk aankomen en de foto's moeten tonen wat de koper echt krijgt. Het inpakken zelf mag ondertussen niet te veel tijd kosten.</p>
 
-<p>Ik heb intussen rond de 1.000 pakketten verstuurd. Mijn setup bestaat uit een paar dingen die je echt nodig hebt, twee dingen die het verschil maken bij de koper en één aankoop die ik niet zou aanraden. Hieronder staat per product waarom ik het gebruik en wat je gerust kunt overslaan.</p>
+<p>Ik verkoop vooral Ralph Lauren en heb intussen rond de 1.000 pakketten verstuurd. Een goede presentatie, een eerlijke beschrijving en een zorgvuldige controle zorgen samen voor vertrouwen bij een koper. Dit artikel gaat over twee stappen: het item klaarmaken en het inpakken. Per product staat erbij waarom het nuttig is en wat je kunt overslaan.</p>
+
+<h2>Eerst controleren, dan pas foto's</h2>
+
+<p>Ik vind het belangrijk dat kleding gecontroleerd wordt voor ze online verschijnt. De foto's moeten de echte staat van het item tonen. Een gebrek is zichtbaar op de foto of staat duidelijk in de beschrijving.</p>
+
+<p>Hoe ik een item behandel, hangt af van het materiaal, het onderhoudslabel en de staat. Bij Ralph Lauren gaat het onder andere om truien, hemden en polo's. Sommige items hebben nauwelijks voorbereiding nodig, andere vragen meer werk.</p>
+
+<p>Ik was, stoom of behandel dus niet standaard elk item. Bij delicate stoffen en gebreide kleding moet je extra voorzichtig zijn. Behandel niet elk kledingstuk op dezelfde manier.</p>
+
+<p>Hoe je de staat van een item goed in beeld brengt, lees je in <a href="/artikelen/vinted-fotos-die-verkopen">Vinted-foto's die verkopen</a>.</p>
+
+<h2>Kreukels, pluisjes en vlekken</h2>
+
+<p>Voor kreukels, pluisjes en vlekken bestaat telkens een eigen hulpmiddel. De producten hieronder noem ik als voorbeeld van wat er bestaat, niet als modellen die ik zelf getest heb.</p>
+
+<p>Een kledingstomer haalt kreukels weg en maakt een item presentabel zonder dat je alles eerst moet strijken. Een voorbeeld is de kledingstomer uit de Philips 7000 Series. Lees ook wat ik verderop over stoommachines schrijf.</p>
+
+<script type="text/javascript">
+var bol_sitebar_v2={
+  "id": "bol_1795421054874",
+  "baseUrl": "partner.bol.com",
+  "productId": "9300000100733126",
+  "familyId": "",
+  "siteId": "1562737",
+  "target": true,
+  "rating": true,
+  "price": true,
+  "deliveryDescription": true,
+  "button": true,
+  "linkName": "Philips%207000%20Series%20Kledingstomer%20-%20warm%20in%2030...",
+  "linkSubId": "blog-setup-stomer"
+};
+</script>
+<script
+  type="text/javascript"
+  src="https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js"
+  id="bol_1795421054874">
+</script>
+
+<p>Een goedkopere optie van hetzelfde merk is de kledingstomer uit de Philips 3000 Series.</p>
+
+<script type="text/javascript">
+var bol_sitebar_v2={
+  "id": "bol_1795421100783",
+  "baseUrl": "partner.bol.com",
+  "productId": "9300000024256490",
+  "familyId": "",
+  "siteId": "1562737",
+  "target": true,
+  "rating": true,
+  "price": true,
+  "deliveryDescription": true,
+  "button": true,
+  "linkName": "Philips%203000%20series%20Kledingstomer%20-%20warm%20in%2030...",
+  "linkSubId": "blog-setup-stoomgoedkoop"
+};
+</script>
+<script
+  type="text/javascript"
+  src="https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js"
+  id="bol_1795421100783">
+</script>
+
+<p>Een pluizenverwijderaar haalt oppervlakkige pluisjes en kleine bolletjes weg. De Philips GC026/80 is daar een voorbeeld van. Bij gebreide kleding en delicate stoffen ga je er voorzichtig mee om.</p>
+
+<script type="text/javascript">
+var bol_sitebar_v2={
+  "id": "bol_1795432538410",
+  "baseUrl": "partner.bol.com",
+  "productId": "9200000105505503",
+  "familyId": "",
+  "siteId": "1562737",
+  "target": true,
+  "rating": true,
+  "price": true,
+  "deliveryDescription": true,
+  "button": true,
+  "linkName": "Philips%20GC026%2F80%20-%20Pluizenverwijderaar%20-%20Kledi...",
+  "linkSubId": "blog-setup-pluisjes"
+};
+</script>
+<script
+  type="text/javascript"
+  src="https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js"
+  id="bol_1795432538410">
+</script>
+
+<p>Voor vlekken bestaat er ossegal, bijvoorbeeld die van Siderius. Kijk eerst naar het onderhoudslabel voor je een vlek behandelt. Gaat een vlek niet weg, dan toon je hem op de foto of vermeld je hem in de beschrijving.</p>
+
+<script type="text/javascript">
+var bol_sitebar_v2={
+  "id": "bol_1795432653961",
+  "baseUrl": "partner.bol.com",
+  "productId": "9200000005192892",
+  "familyId": "",
+  "siteId": "1562737",
+  "target": true,
+  "rating": true,
+  "price": true,
+  "deliveryDescription": true,
+  "button": true,
+  "linkName": "Ossegal%20Wasmachine%20Siderius",
+  "linkSubId": "blog-setup-vlekken"
+};
+</script>
+<script
+  type="text/javascript"
+  src="https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js"
+  id="bol_1795432653961">
+</script>
 
 <h2>Verzendzakken zijn de basis</h2>
 
@@ -46,7 +157,7 @@ var bol_sitebar_v2={
   id="bol_1795389169336">
 </script>
 
-<p>Met deze setup ben ik per pakket ongeveer één tot twee minuten bezig. Die snelheid komt vooral van de zakken. Ze vragen geen knip- of plakwerk.</p>
+<p>Met deze setup ben ik per pakket ongeveer één tot twee minuten bezig met het inpakken zelf. Het controleren en opfrissen is een aparte stap die daar niet in zit. De snelheid komt vooral van de zakken, want ze vragen geen knip- of plakwerk.</p>
 
 <h2>Dozen voor zware en breekbare items</h2>
 
@@ -76,12 +187,12 @@ var bol_sitebar_v2={
 
 <h2>Wat ik niet zou kopen</h2>
 
-<p>Een stoommachine. Ik heb er een gekocht en nooit gebruikt.</p>
+<p>Een stoommachine. Ik heb er ooit een gekocht en uiteindelijk nooit gebruikt. Mijn oordeel gaat dus niet over hoe goed zo'n toestel werkt, wel over het feit dat het bij mij ongebruikt bleef.</p>
 
 <p>Ga je materiaal kopen, begin dan met verzendzakken en tape. Dat zijn de twee dingen die bij bijna elk pakket terugkomen. De rest kun je toevoegen wanneer je merkt dat je het mist.</p>
 
 <h2>In één zin</h2>
 
-<p>Voor Vinted heb je weinig nodig: verzendzakken en tape voor bijna alles, een doos voor zware en breekbare items. Zijdepapier en een bedankkaartje maken je pakket professioneler en leverden mij goede reviews op. Koop eerst wat je bij elk pakket gebruikt en wacht met de rest.</p>
+<p>Vertrouwen bij een koper begint voor het inpakken: controleer een item, toon de echte staat op je foto's en beschrijf eerlijk wat er is. Daarna heb je weinig nodig: verzendzakken en tape voor bijna alles, een doos voor zware en breekbare items. Zijdepapier en een bedankkaartje maken je pakket professioneler en leverden mij goede reviews op. Koop eerst wat je bij elk pakket gebruikt en wacht met de rest.</p>
 
 <p><em>Bron: eigen ervaring met ongeveer 1.000 verstuurde Vinted-pakketten.</em></p>
