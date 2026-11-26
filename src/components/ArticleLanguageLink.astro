@@ -1,0 +1,45 @@
+---
+// ArticleLanguageLink.astro
+// Regel boven de artikeltitel die naar dezelfde tekst in de andere taal
+// verwijst. nlPath/enPath zijn locale-interne paden (zonder /en-prefix); de
+// Engelse slug kan afwijken van de Nederlandse, de koppeling loopt via de
+// artikel-id (zie slugEn in content.config.ts).
+import { getRelativeLocaleUrl } from "astro:i18n";
+import type { Language } from "../i18n/ui";
+
+interface Props {
+  locale: Language;
+  nlPath: string;
+  enPath: string;
+}
+
+const { locale, nlPath, enPath } = Astro.props;
+const targetLocale: Language = locale === "nl" ? "en" : "nl";
+const href = getRelativeLocaleUrl(targetLocale, locale === "nl" ? enPath : nlPath);
+const text = locale === "nl" ? "Read this article in English →" : "Lees dit artikel in het Nederlands →";
+---
+
+<p class="article-lang mono">
+  <a href={href} hreflang={targetLocale} lang={targetLocale}>{text}</a>
+</p>
+
+<style>
+  .article-lang {
+    margin: 0 0 20px;
+    font-size: 13px;
+  }
+  .article-lang a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--rust);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+  .article-lang a:hover {
+    text-decoration-color: var(--ink);
+  }
+  .article-lang a:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 4px;
+  }
+</style>

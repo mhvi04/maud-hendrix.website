@@ -1,9 +1,10 @@
 ---
 // LanguageSwitch.astro
-// Kleine taalwissel-link: springt van de huidige pagina naar de vertaalde
-// versie van diezelfde pagina. nlPath/enPath zijn de locale-interne paden
-// (dus zonder /en-prefix), omdat getRelativeLocaleUrl die prefix zelf
-// toevoegt voor niet-standaardtalen.
+// Tekstswitch "NL / EN". De actieve taal is gewone tekst in de inktkleur, de
+// andere taal is een link op 50% opacity naar dezelfde pagina in die taal.
+// Lettertype en grootte worden geërfd van de omgeving, zodat hij in de
+// header exact meeloopt met "Menu". nlPath/enPath zijn locale-interne paden
+// (zonder /en-prefix), omdat getRelativeLocaleUrl die prefix zelf toevoegt.
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { useTranslations, type Language } from "../i18n/ui";
 
@@ -14,32 +15,56 @@ interface Props {
 }
 
 const { locale, nlPath, enPath } = Astro.props;
-const targetLocale: Language = locale === "nl" ? "en" : "nl";
-const targetPath = locale === "nl" ? enPath : nlPath;
-const href = getRelativeLocaleUrl(targetLocale, targetPath);
 const t = useTranslations(locale).nav;
+const nlHref = getRelativeLocaleUrl("nl", nlPath);
+const enHref = getRelativeLocaleUrl("en", enPath);
+const langs = [
+  { code: "nl" as const, label: "NL", href: nlHref },
+  { code: "en" as const, label: "EN", href: enHref },
+];
 ---
 
-<a href={href} class="lang-switch mono" hreflang={targetLocale} aria-label={t.switchLanguageLabel}>
-  {t.switchLanguage}
-</a>
+<span class="lang-switch">
+  {langs.map((l, i) => (
+    <Fragment>
+      {i > 0 && <span class="sep" aria-hidden="true">/</span>}
+      {l.code === locale ? (
+        <span class="lang is-active" lang={l.code} aria-current="true">{l.label}</span>
+      ) : (
+        <a class="lang" href={l.href} hreflang={l.code} lang={l.code} aria-label={t.switchLanguageLabel}>{l.label}</a>
+      )}
+    </Fragment>
+  ))}
+</span>
 
 <style>
   .lang-switch {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
+    gap: 0.4em;
+    font: inherit;
     color: var(--ink);
-    text-decoration: none;
-    border: 1px solid var(--ink);
-    padding: 5px 10px;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    white-space: nowrap;
   }
-  .lang-switch:hover {
-    transform: translateY(-2px);
-    box-shadow: none;
+  .lang {
+    color: inherit;
+    text-decoration: none;
+    /* Ruim tikvlak, zonder de layout groter te maken. */
+    padding-block: 12px;
+  }
+  a.lang,
+  .sep {
+    opacity: 0.5;
+  }
+  a.lang {
+    transition: opacity 0.15s ease;
+  }
+  a.lang:hover {
+    opacity: 1;
+  }
+  a.lang:focus-visible {
+    opacity: 1;
+    outline: 2px solid var(--ink);
+    outline-offset: 4px;
   }
 </style>

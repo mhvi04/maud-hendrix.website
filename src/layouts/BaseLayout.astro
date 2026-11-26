@@ -3,6 +3,7 @@ import "../styles/global.css";
 import PersonSchema from "../components/PersonSchema.astro";
 import SmoothScroll from "../components/SmoothScroll.astro";
 import CommandPalette from "../components/CommandPalette.astro";
+import LanguageNotice from "../components/LanguageNotice.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import type { Language } from "../i18n/ui";
 
@@ -56,7 +57,7 @@ const isSelfCanonical = !canonicalPath || canonicalPath === Astro.url.pathname;
 const hasTranslation = Boolean(nlPath) && Boolean(enPath) && isSelfCanonical;
 const hreflangAlternates = hasTranslation
   ? [
-      { hreflang: "nl", href: new URL(getRelativeLocaleUrl("nl", nlPath!), Astro.site).toString() },
+      { hreflang: "nl-BE", href: new URL(getRelativeLocaleUrl("nl", nlPath!), Astro.site).toString() },
       { hreflang: "en", href: new URL(getRelativeLocaleUrl("en", enPath!), Astro.site).toString() },
       { hreflang: "x-default", href: new URL(getRelativeLocaleUrl("nl", nlPath!), Astro.site).toString() },
     ]
@@ -171,5 +172,6 @@ const jsonLd =
     <SmoothScroll />
     <slot />
     {commandPalette && <CommandPalette locale={locale} />}
+    {locale === "nl" && nlPath && enPath && <LanguageNotice enPath={enPath} />}
   </body>
 </html>

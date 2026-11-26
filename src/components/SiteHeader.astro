@@ -52,6 +52,11 @@ const showLanguageSwitch = Boolean(nlPath) && Boolean(enPath);
         <path d="M14.5 14.5L20 20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
       </svg>
     </button>
+    {showLanguageSwitch && (
+      <div class="lang-slot">
+        <LanguageSwitch locale={locale} nlPath={nlPath!} enPath={enPath!} />
+      </div>
+    )}
     <button
       type="button"
       class="menu-toggle"
@@ -81,7 +86,11 @@ const showLanguageSwitch = Boolean(nlPath) && Boolean(enPath);
     <div class="menu-foot">
       <p>Maud Hendrix · {t.menu.tagline}</p>
       <div class="menu-tools">
-        {showLanguageSwitch && <LanguageSwitch locale={locale} nlPath={nlPath!} enPath={enPath!} />}
+        {showLanguageSwitch && (
+          <div class="menu-lang">
+            <LanguageSwitch locale={locale} nlPath={nlPath!} enPath={enPath!} />
+          </div>
+        )}
         <button type="button" class="menu-search" data-cmdk-open>
           {t.menu.search}
           <svg width="16" height="16" viewBox="0 0 22 22" fill="none" aria-hidden="true">
@@ -166,7 +175,17 @@ const showLanguageSwitch = Boolean(nlPath) && Boolean(enPath);
     font-size: 14px;
     line-height: 1.3;
     margin-right: auto;
+    min-width: 0;
     color: var(--ink);
+  }
+  .lang-slot {
+    flex: none;
+    font-size: 18px;
+    /* Net links van "Menu": zelfde font en grootte, dichtbij de knop. */
+    margin-right: calc(-1 * clamp(4px, 2vw, 24px));
+  }
+  .menu-lang {
+    font-size: 18px;
   }
   .search-btn {
     display: inline-flex;
@@ -283,6 +302,12 @@ const showLanguageSwitch = Boolean(nlPath) && Boolean(enPath);
     overflow: hidden;
   }
 
+  @media (max-width: 420px) {
+    /* Op smalle schermen krijgt de taalswitch voorrang op de plaatsnaam. */
+    .place {
+      visibility: hidden;
+    }
+  }
   @media (max-width: 560px) {
     .place {
       font-size: 13px;
